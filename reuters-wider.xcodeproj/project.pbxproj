@@ -19,7 +19,7 @@
 		C50AFA161A10FA7800F87E08 /* Calibre-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA0E1A10FA7800F87E08 /* Calibre-Light.otf */; };
 		C50AFA171A10FA7800F87E08 /* Calibre-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA0F1A10FA7800F87E08 /* Calibre-Reg.otf */; };
 		C50AFA181A10FA7800F87E08 /* Leitura-Italic2.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA101A10FA7800F87E08 /* Leitura-Italic2.otf */; };
-		C50AFA191A10FA7800F87E08 /* Leitura-NewsRoman 1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman 1.otf */; };
+		C50AFA191A10FA7800F87E08 /* Leitura-NewsRoman1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman1.otf */; };
 		C50AFA1A1A10FA7800F87E08 /* Leitura-Roman1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA121A10FA7800F87E08 /* Leitura-Roman1.otf */; };
 		C50AFA1B1A10FA7800F87E08 /* Leitura-Roman3.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA131A10FA7800F87E08 /* Leitura-Roman3.otf */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,7 @@
 		C50AFA0E1A10FA7800F87E08 /* Calibre-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibre-Light.otf"; sourceTree = "<group>"; };
 		C50AFA0F1A10FA7800F87E08 /* Calibre-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibre-Reg.otf"; sourceTree = "<group>"; };
 		C50AFA101A10FA7800F87E08 /* Leitura-Italic2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic2.otf"; sourceTree = "<group>"; };
-		C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman 1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-NewsRoman 1.otf"; sourceTree = "<group>"; };
+		C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-NewsRoman1.otf"; sourceTree = "<group>"; };
 		C50AFA121A10FA7800F87E08 /* Leitura-Roman1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman1.otf"; sourceTree = "<group>"; };
 		C50AFA131A10FA7800F87E08 /* Leitura-Roman3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman3.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +171,7 @@
 				C50AFA0E1A10FA7800F87E08 /* Calibre-Light.otf */,
 				C50AFA0F1A10FA7800F87E08 /* Calibre-Reg.otf */,
 				C50AFA101A10FA7800F87E08 /* Leitura-Italic2.otf */,
-				C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman 1.otf */,
+				C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman1.otf */,
 				C50AFA121A10FA7800F87E08 /* Leitura-Roman1.otf */,
 				C50AFA131A10FA7800F87E08 /* Leitura-Roman3.otf */,
 			);
@@ -273,7 +273,7 @@
 				2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */,
 				209060491A10BB50001EC87E /* Images.xcassets in Resources */,
 				C50AFA171A10FA7800F87E08 /* Calibre-Reg.otf in Resources */,
-				C50AFA191A10FA7800F87E08 /* Leitura-NewsRoman 1.otf in Resources */,
+				C50AFA191A10FA7800F87E08 /* Leitura-NewsRoman1.otf in Resources */,
 				C50AFA161A10FA7800F87E08 /* Calibre-Light.otf in Resources */,
 				C50AFA181A10FA7800F87E08 /* Leitura-Italic2.otf in Resources */,
 				C50AFA1B1A10FA7800F87E08 /* Leitura-Roman3.otf in Resources */,
