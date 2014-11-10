@@ -14,6 +14,14 @@
 		209060491A10BB50001EC87E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209060481A10BB50001EC87E /* Images.xcassets */; };
 		2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2090604A1A10BB51001EC87E /* LaunchScreen.xib */; };
 		209060581A10BB51001EC87E /* reuters_widerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 209060571A10BB51001EC87E /* reuters_widerTests.m */; };
+		C50AFA141A10FA7800F87E08 /* Archer-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA0C1A10FA7800F87E08 /* Archer-Thin.otf */; };
+		C50AFA151A10FA7800F87E08 /* Archer-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA0D1A10FA7800F87E08 /* Archer-XLight.otf */; };
+		C50AFA161A10FA7800F87E08 /* Calibre-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA0E1A10FA7800F87E08 /* Calibre-Light.otf */; };
+		C50AFA171A10FA7800F87E08 /* Calibre-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA0F1A10FA7800F87E08 /* Calibre-Reg.otf */; };
+		C50AFA181A10FA7800F87E08 /* Leitura-Italic2.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA101A10FA7800F87E08 /* Leitura-Italic2.otf */; };
+		C50AFA191A10FA7800F87E08 /* Leitura-NewsRoman 1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman 1.otf */; };
+		C50AFA1A1A10FA7800F87E08 /* Leitura-Roman1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA121A10FA7800F87E08 /* Leitura-Roman1.otf */; };
+		C50AFA1B1A10FA7800F87E08 /* Leitura-Roman3.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA131A10FA7800F87E08 /* Leitura-Roman3.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +49,14 @@
 		209060561A10BB51001EC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209060571A10BB51001EC87E /* reuters_widerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reuters_widerTests.m; sourceTree = "<group>"; };
 		C50AFA0B1A10F46700F87E08 /* Variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variables.h; sourceTree = "<group>"; };
+		C50AFA0C1A10FA7800F87E08 /* Archer-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archer-Thin.otf"; sourceTree = "<group>"; };
+		C50AFA0D1A10FA7800F87E08 /* Archer-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archer-XLight.otf"; sourceTree = "<group>"; };
+		C50AFA0E1A10FA7800F87E08 /* Calibre-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibre-Light.otf"; sourceTree = "<group>"; };
+		C50AFA0F1A10FA7800F87E08 /* Calibre-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibre-Reg.otf"; sourceTree = "<group>"; };
+		C50AFA101A10FA7800F87E08 /* Leitura-Italic2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic2.otf"; sourceTree = "<group>"; };
+		C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman 1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-NewsRoman 1.otf"; sourceTree = "<group>"; };
+		C50AFA121A10FA7800F87E08 /* Leitura-Roman1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman1.otf"; sourceTree = "<group>"; };
+		C50AFA131A10FA7800F87E08 /* Leitura-Roman3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman3.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +166,14 @@
 		C50AFA091A10F42200F87E08 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C50AFA0C1A10FA7800F87E08 /* Archer-Thin.otf */,
+				C50AFA0D1A10FA7800F87E08 /* Archer-XLight.otf */,
+				C50AFA0E1A10FA7800F87E08 /* Calibre-Light.otf */,
+				C50AFA0F1A10FA7800F87E08 /* Calibre-Reg.otf */,
+				C50AFA101A10FA7800F87E08 /* Leitura-Italic2.otf */,
+				C50AFA111A10FA7800F87E08 /* Leitura-NewsRoman 1.otf */,
+				C50AFA121A10FA7800F87E08 /* Leitura-Roman1.otf */,
+				C50AFA131A10FA7800F87E08 /* Leitura-Roman3.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -244,9 +268,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C50AFA1A1A10FA7800F87E08 /* Leitura-Roman1.otf in Resources */,
 				209060471A10BB50001EC87E /* Main.storyboard in Resources */,
 				2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */,
 				209060491A10BB50001EC87E /* Images.xcassets in Resources */,
+				C50AFA171A10FA7800F87E08 /* Calibre-Reg.otf in Resources */,
+				C50AFA191A10FA7800F87E08 /* Leitura-NewsRoman 1.otf in Resources */,
+				C50AFA161A10FA7800F87E08 /* Calibre-Light.otf in Resources */,
+				C50AFA181A10FA7800F87E08 /* Leitura-Italic2.otf in Resources */,
+				C50AFA1B1A10FA7800F87E08 /* Leitura-Roman3.otf in Resources */,
+				C50AFA151A10FA7800F87E08 /* Archer-XLight.otf in Resources */,
+				C50AFA141A10FA7800F87E08 /* Archer-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
