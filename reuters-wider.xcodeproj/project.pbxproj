@@ -40,6 +40,7 @@
 		209060511A10BB51001EC87E /* reuters-widerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "reuters-widerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		209060561A10BB51001EC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209060571A10BB51001EC87E /* reuters_widerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reuters_widerTests.m; sourceTree = "<group>"; };
+		C50AFA0B1A10F46700F87E08 /* Variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variables.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,8 @@
 		2090603A1A10BB50001EC87E /* reuters-wider */ = {
 			isa = PBXGroup;
 			children = (
+				C50AFA0A1A10F44A00F87E08 /* Utils */,
+				C50AFA081A10F41A00F87E08 /* Assets */,
 				2090603F1A10BB50001EC87E /* AppDelegate.h */,
 				209060401A10BB50001EC87E /* AppDelegate.m */,
 				209060421A10BB50001EC87E /* ViewController.h */,
@@ -134,6 +137,29 @@
 				209060561A10BB51001EC87E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C50AFA081A10F41A00F87E08 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C50AFA091A10F42200F87E08 /* Fonts */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		C50AFA091A10F42200F87E08 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		C50AFA0A1A10F44A00F87E08 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C50AFA0B1A10F46700F87E08 /* Variables.h */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
