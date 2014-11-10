@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D041A10EFD000517B46 /* CSArchivesViewController.m */; };
+		208C9D091A10F15E00517B46 /* CSArchivesTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D081A10F15E00517B46 /* CSArchivesTransition.m */; };
 		2090603E1A10BB50001EC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2090603D1A10BB50001EC87E /* main.m */; };
 		209060411A10BB50001EC87E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 209060401A10BB50001EC87E /* AppDelegate.m */; };
-		209060441A10BB50001EC87E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209060431A10BB50001EC87E /* ViewController.m */; };
 		209060471A10BB50001EC87E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209060451A10BB50001EC87E /* Main.storyboard */; };
 		209060491A10BB50001EC87E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209060481A10BB50001EC87E /* Images.xcassets */; };
 		2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2090604A1A10BB51001EC87E /* LaunchScreen.xib */; };
 		209060581A10BB51001EC87E /* reuters_widerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 209060571A10BB51001EC87E /* reuters_widerTests.m */; };
+		20C8D2231A1104800078656A /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C8D2221A1104800078656A /* CSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +29,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		208C9D031A10EFD000517B46 /* CSArchivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesViewController.h; sourceTree = "<group>"; };
+		208C9D041A10EFD000517B46 /* CSArchivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesViewController.m; sourceTree = "<group>"; };
+		208C9D071A10F15E00517B46 /* CSArchivesTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesTransition.h; sourceTree = "<group>"; };
+		208C9D081A10F15E00517B46 /* CSArchivesTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesTransition.m; sourceTree = "<group>"; };
 		209060381A10BB50001EC87E /* reuters-wider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reuters-wider.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2090603C1A10BB50001EC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2090603D1A10BB50001EC87E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2090603F1A10BB50001EC87E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		209060401A10BB50001EC87E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		209060421A10BB50001EC87E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		209060431A10BB50001EC87E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		209060461A10BB50001EC87E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		209060481A10BB50001EC87E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2090604B1A10BB51001EC87E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		209060511A10BB51001EC87E /* reuters-widerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "reuters-widerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		209060561A10BB51001EC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209060571A10BB51001EC87E /* reuters_widerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reuters_widerTests.m; sourceTree = "<group>"; };
+		20C8D2211A1104800078656A /* CSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
+		20C8D2221A1104800078656A /* CSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +77,19 @@
 		208C9CF61A10D09B00517B46 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				208C9D031A10EFD000517B46 /* CSArchivesViewController.h */,
+				208C9D041A10EFD000517B46 /* CSArchivesViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		208C9D061A10F0E100517B46 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				208C9D071A10F15E00517B46 /* CSArchivesTransition.h */,
+				208C9D081A10F15E00517B46 /* CSArchivesTransition.m */,
+			);
+			name = Segues;
 			sourceTree = "<group>";
 		};
 		2090602F1A10BB50001EC87E = {
@@ -98,14 +115,15 @@
 			children = (
 				2090603F1A10BB50001EC87E /* AppDelegate.h */,
 				209060401A10BB50001EC87E /* AppDelegate.m */,
-				209060421A10BB50001EC87E /* ViewController.h */,
-				209060431A10BB50001EC87E /* ViewController.m */,
 				209060451A10BB50001EC87E /* Main.storyboard */,
 				209060481A10BB50001EC87E /* Images.xcassets */,
 				2090604A1A10BB51001EC87E /* LaunchScreen.xib */,
+				208C9D061A10F0E100517B46 /* Segues */,
 				208C9CF61A10D09B00517B46 /* ViewControllers */,
 				208C9CF51A10C62E00517B46 /* Views */,
 				2090603B1A10BB50001EC87E /* Supporting Files */,
+				20C8D2211A1104800078656A /* CSViewController.h */,
+				20C8D2221A1104800078656A /* CSViewController.m */,
 			);
 			path = "reuters-wider";
 			sourceTree = "<group>";
@@ -238,9 +256,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209060441A10BB50001EC87E /* ViewController.m in Sources */,
+				20C8D2231A1104800078656A /* CSViewController.m in Sources */,
+				208C9D091A10F15E00517B46 /* CSArchivesTransition.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
 				2090603E1A10BB50001EC87E /* main.m in Sources */,
+				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
