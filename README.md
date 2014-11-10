@@ -1,3 +1,1 @@
-# reuters-wider
-
-Hey!
+# wider, an application for Reuters
