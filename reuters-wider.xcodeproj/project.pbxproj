@@ -60,6 +60,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		208C9CF51A10C62E00517B46 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		208C9CF61A10D09B00517B46 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		2090602F1A10BB50001EC87E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,8 @@
 				209060451A10BB50001EC87E /* Main.storyboard */,
 				209060481A10BB50001EC87E /* Images.xcassets */,
 				2090604A1A10BB51001EC87E /* LaunchScreen.xib */,
+				208C9CF61A10D09B00517B46 /* ViewControllers */,
+				208C9CF51A10C62E00517B46 /* Views */,
 				2090603B1A10BB50001EC87E /* Supporting Files */,
 			);
 			path = "reuters-wider";
@@ -163,11 +180,13 @@
 		209060301A10BB50001EC87E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CS;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Gobelins;
 				TargetAttributes = {
 					209060371A10BB50001EC87E = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 3RQFQA54Q5;
 					};
 					209060501A10BB51001EC87E = {
 						CreatedOnToolsVersion = 6.1;
@@ -412,6 +431,7 @@
 				2090605D1A10BB51001EC87E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2090605E1A10BB51001EC87E /* Build configuration list for PBXNativeTarget "reuters-widerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +440,7 @@
 				209060601A10BB51001EC87E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
