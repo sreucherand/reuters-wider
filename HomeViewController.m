@@ -16,11 +16,14 @@
 @implementation HomeViewController
 @synthesize filterButton;
 @synthesize issueLabel;
+@synthesize headingLabel;
+@synthesize issueDateLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view
     
+    // Issue number related
     [issueLabel setFont:LEITURA_ROMAN_2];
     [issueLabel setTextColor:ISSUE_NR_COLOR];
     issueLabel.textAlignment = NSTextAlignmentCenter;
@@ -31,6 +34,21 @@
                             range:(NSRange){0,[attributeString length]}];
     
     issueLabel.attributedText = [attributeString copy];
+    
+    // Heading related
+    [headingLabel setFont:LEITURA_ROMAN_3_34];
+    [headingLabel setTextColor:BLACK_COLOR];
+    headingLabel.textAlignment = NSTextAlignmentCenter;
+    headingLabel.text = @"Hong-Kong for democracy";
+    
+    // Date issue related
+    [issueDateLabel setFont:LEITURA_ITALIC_1_15];
+    [issueDateLabel setTextColor:ISSUE_NR_COLOR];
+    issueDateLabel.textAlignment = NSTextAlignmentCenter;
+    
+    NSAttributedString *attributedStringKerned = [[NSAttributedString alloc] initWithString:@"October 2014" attributes:@{NSKernAttributeName : @(0.75f)}];
+
+    issueDateLabel.attributedText = attributedStringKerned;
 }
 
 - (void)didReceiveMemoryWarning {

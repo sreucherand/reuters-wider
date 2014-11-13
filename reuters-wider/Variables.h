@@ -21,9 +21,12 @@
 // Fonts
 #define CALIBRE_REG [UIFont fontWithName:@"Calibre-Reg" size:18]
 #define LEITURA_ROMAN_2 [UIFont fontWithName:@"Leitura-Roman2" size:17]
+#define LEITURA_ROMAN_3_34 [UIFont fontWithName:@"Leitura-Roman3" size:34]
+#define LEITURA_ITALIC_1_15 [UIFont fontWithName:@"Leitura-Italic1" size:15]
 
 
 // Colors
 #define ISSUE_NR_COLOR [UIColor colorWithRed:(77.0f/255.0f) green:(77.0f/255.0f) blue:(77.0f/255.0f) alpha:1.0f]
+#define BLACK_COLOR [UIColor colorWithRed:(0.0f/255.0f) green:(0.0f/255.0f) blue:(0.0f/255.0f) alpha:1.0f]
 
 #endif

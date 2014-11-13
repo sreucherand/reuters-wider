@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tQh-fV-CUU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tQh-fV-CUU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -45,25 +46,57 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-y5-BFs">
-                                <rect key="frame" x="122" y="135" width="77" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZLB-jF-5ak">
+                                <rect key="frame" x="0.0" y="248" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="1rH-ob-Wxy"/>
+                                    <constraint firstAttribute="width" secondItem="ZLB-jF-5ak" secondAttribute="height" multiplier="1:1" id="Qgv-aN-2rW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Issue number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-y5-BFs">
+                                <rect key="frame" x="100" y="68" width="120" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Heading label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-JC-yBA">
+                                <rect key="frame" x="103" y="122" width="115" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="dKY-rJ-Kr1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYX-I5-QSN">
+                                <rect key="frame" x="139" y="163" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="msX-JC-yBA" secondAttribute="centerX" id="3oZ-i3-6gl"/>
+                            <constraint firstItem="mYX-I5-QSN" firstAttribute="top" secondItem="msX-JC-yBA" secondAttribute="bottom" constant="24" id="4Rg-6n-87C"/>
+                            <constraint firstAttribute="trailing" secondItem="ZLB-jF-5ak" secondAttribute="trailing" id="4jF-dD-Y7L"/>
                             <constraint firstItem="jv9-mH-KM3" firstAttribute="top" secondItem="kZO-Re-JRw" secondAttribute="bottom" constant="15" id="GRj-2I-do8"/>
-                            <constraint firstItem="Fzq-y5-BFs" firstAttribute="top" secondItem="kZO-Re-JRw" secondAttribute="bottom" constant="115" id="Kp0-wt-JhF"/>
+                            <constraint firstItem="ZLB-jF-5ak" firstAttribute="leading" secondItem="60D-dp-vwu" secondAttribute="leading" id="L9t-1b-5Sv"/>
+                            <constraint firstAttribute="centerX" secondItem="mYX-I5-QSN" secondAttribute="centerX" id="Oh9-58-Ymg"/>
                             <constraint firstItem="NgB-9H-avb" firstAttribute="leading" secondItem="60D-dp-vwu" secondAttribute="leadingMargin" id="TBT-qa-PFB"/>
+                            <constraint firstItem="Fzq-y5-BFs" firstAttribute="top" secondItem="kZO-Re-JRw" secondAttribute="bottom" constant="58" id="ZlK-ju-zgt"/>
                             <constraint firstItem="NgB-9H-avb" firstAttribute="top" secondItem="kZO-Re-JRw" secondAttribute="bottom" constant="15" id="ccx-gh-mNk"/>
+                            <constraint firstItem="oc5-pc-cU2" firstAttribute="top" secondItem="ZLB-jF-5ak" secondAttribute="bottom" id="fYf-Rf-tav"/>
+                            <constraint firstItem="msX-JC-yBA" firstAttribute="top" secondItem="Fzq-y5-BFs" secondAttribute="bottom" constant="32" id="jkK-GI-VXK"/>
+                            <constraint firstAttribute="centerX" secondItem="Fzq-y5-BFs" secondAttribute="centerX" id="oyj-x0-O8M"/>
                             <constraint firstItem="jv9-mH-KM3" firstAttribute="trailing" secondItem="60D-dp-vwu" secondAttribute="trailingMargin" constant="1" id="uSN-Lr-uFt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="filterButton" destination="jv9-mH-KM3" id="H3w-5g-Wwe"/>
+                        <outlet property="headingLabel" destination="msX-JC-yBA" id="Dmb-Os-UlZ"/>
                         <outlet property="homeButton" destination="NgB-9H-avb" id="SLk-Fa-Gca"/>
+                        <outlet property="issueDateLabel" destination="mYX-I5-QSN" id="zar-qd-U7A"/>
                         <outlet property="issueLabel" destination="Fzq-y5-BFs" id="XxO-Gk-n5X"/>
                     </connections>
                 </viewController>
@@ -74,6 +107,7 @@
     </scenes>
     <resources>
         <image name="iconGlass.png" width="23" height="23"/>
+        <image name="map.jpg" width="320" height="320"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
