@@ -24,6 +24,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Leitura-Roman2.otf</string>
 		<string>Archer-Thin.otf</string>
 		<string>Archer-XLight.otf</string>
 		<string>Calibre-Light.otf</string>
