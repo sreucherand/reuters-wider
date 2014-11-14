@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203EFFAF1A1658870085D493 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203EFFAD1A16578E0085D493 /* QuartzCore.framework */; };
+		206C55EA1A16022400E2B152 /* CSArchivesViewBackTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 206C55E91A16022400E2B152 /* CSArchivesViewBackTransition.m */; };
 		208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D041A10EFD000517B46 /* CSArchivesViewController.m */; };
 		208C9D091A10F15E00517B46 /* CSArchivesTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D081A10F15E00517B46 /* CSArchivesTransition.m */; };
 		2090603E1A10BB50001EC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2090603D1A10BB50001EC87E /* main.m */; };
@@ -16,6 +18,7 @@
 		2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2090604A1A10BB51001EC87E /* LaunchScreen.xib */; };
 		209060581A10BB51001EC87E /* reuters_widerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 209060571A10BB51001EC87E /* reuters_widerTests.m */; };
 		20C8D2231A1104800078656A /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C8D2221A1104800078656A /* CSViewController.m */; };
+		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DE9C5460100CC02C50B3172 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		203EFFAD1A16578E0085D493 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		206C55E81A16022400E2B152 /* CSArchivesViewBackTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesViewBackTransition.h; sourceTree = "<group>"; };
+		206C55E91A16022400E2B152 /* CSArchivesViewBackTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesViewBackTransition.m; sourceTree = "<group>"; };
+		206C55EC1A163B0400E2B152 /* reuters-wider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reuters-wider-Prefix.pch"; sourceTree = "<group>"; };
 		208C9D031A10EFD000517B46 /* CSArchivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesViewController.h; sourceTree = "<group>"; };
 		208C9D041A10EFD000517B46 /* CSArchivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesViewController.m; sourceTree = "<group>"; };
 		208C9D071A10F15E00517B46 /* CSArchivesTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesTransition.h; sourceTree = "<group>"; };
@@ -46,6 +54,8 @@
 		209060571A10BB51001EC87E /* reuters_widerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reuters_widerTests.m; sourceTree = "<group>"; };
 		20C8D2211A1104800078656A /* CSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
 		20C8D2221A1104800078656A /* CSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
+		88E1419E8DE38584B52B073B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CF6F3471471999C3208FDAAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203EFFAF1A1658870085D493 /* QuartzCore.framework in Frameworks */,
+				F76C03B76B2A679466431906 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200681A21A165D2800BBE925 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +107,8 @@
 			children = (
 				208C9D071A10F15E00517B46 /* CSArchivesTransition.h */,
 				208C9D081A10F15E00517B46 /* CSArchivesTransition.m */,
+				206C55E81A16022400E2B152 /* CSArchivesViewBackTransition.h */,
+				206C55E91A16022400E2B152 /* CSArchivesViewBackTransition.m */,
 			);
 			name = Segues;
 			sourceTree = "<group>";
@@ -98,6 +119,8 @@
 				2090603A1A10BB50001EC87E /* reuters-wider */,
 				209060541A10BB51001EC87E /* reuters-widerTests */,
 				209060391A10BB50001EC87E /* Products */,
+				64A33D5A2E0AB9C3CB7B1951 /* Pods */,
+				FEE8AF2D9C66F999A4901A4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +136,7 @@
 		2090603A1A10BB50001EC87E /* reuters-wider */ = {
 			isa = PBXGroup;
 			children = (
+				200681A21A165D2800BBE925 /* lib */,
 				2090603F1A10BB50001EC87E /* AppDelegate.h */,
 				209060401A10BB50001EC87E /* AppDelegate.m */,
 				209060451A10BB50001EC87E /* Main.storyboard */,
@@ -133,6 +157,7 @@
 			children = (
 				2090603C1A10BB50001EC87E /* Info.plist */,
 				2090603D1A10BB50001EC87E /* main.m */,
+				206C55EC1A163B0400E2B152 /* reuters-wider-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,6 +179,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		64A33D5A2E0AB9C3CB7B1951 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF6F3471471999C3208FDAAE /* Pods.debug.xcconfig */,
+				88E1419E8DE38584B52B073B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FEE8AF2D9C66F999A4901A4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				203EFFAD1A16578E0085D493 /* QuartzCore.framework */,
+				0DE9C5460100CC02C50B3172 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2090605B1A10BB51001EC87E /* Build configuration list for PBXNativeTarget "reuters-wider" */;
 			buildPhases = (
+				73CD3EE236D6514C38AB80C9 /* Check Pods Manifest.lock */,
 				209060341A10BB50001EC87E /* Sources */,
 				209060351A10BB50001EC87E /* Frameworks */,
 				209060361A10BB50001EC87E /* Resources */,
+				2E50AA44F2F1294BBF5B784D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +296,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E50AA44F2F1294BBF5B784D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73CD3EE236D6514C38AB80C9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		209060341A10BB50001EC87E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +339,7 @@
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
 				2090603E1A10BB50001EC87E /* main.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
+				206C55EA1A16022400E2B152 /* CSArchivesViewBackTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,8 +459,12 @@
 		};
 		2090605C1A10BB51001EC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF6F3471471999C3208FDAAE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/reuters-wider-Prefix.pch";
 				INFOPLIST_FILE = "reuters-wider/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -390,8 +473,12 @@
 		};
 		2090605D1A10BB51001EC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88E1419E8DE38584B52B073B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/reuters-wider-Prefix.pch";
 				INFOPLIST_FILE = "reuters-wider/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

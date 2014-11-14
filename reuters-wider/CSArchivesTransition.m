@@ -16,26 +16,10 @@
     CSArchivesViewController *destinationViewController = self.destinationViewController;
     
     [sourceViewController.view addSubview:destinationViewController.view];
-//
-//    destinationViewController.topViewLeftConstant.constant = -self.width;
-//    destinationViewController.topViewRightConstant.constant = self.width;
-//    [destinationViewController.topView layoutIfNeeded];
-////    
-////    destinationViewController.bottomViewLeftConstant.constant = 50;
-////    [destinationViewController.bottomView layoutIfNeeded];
-//    
-//    [UIView animateWithDuration:1 animations:^{
-//        destinationViewController.topViewLeftConstant.constant = 0;
-//        destinationViewController.topViewRightConstant.constant = 0;
-//        
-////        destinationViewController.bottomViewLeftConstant.constant = 0;
-////        destinationViewController.bottomViewRightConstant.constant = 0;
-//        
-//        [destinationViewController.topView layoutIfNeeded];
-//        [destinationViewController.bottomView layoutIfNeeded];
-//    } completion:^(BOOL finished) {
-//        NSLog(@"Coucou");
-//    }];
+    
+    [destinationViewController openWith:^{
+        [sourceViewController presentViewController:destinationViewController animated:NO completion:nil];
+    }];
 }
 
 @end

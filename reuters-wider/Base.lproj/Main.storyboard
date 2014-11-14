@@ -22,7 +22,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lj2-AV-3ps" kind="custom" customClass="CSArchivesTransition" id="3ks-JK-BU2"/>
+                                    <segue destination="lj2-AV-3ps" kind="custom" customClass="CSArchivesTransition" id="UWg-Ix-o3o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,23 +45,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gW-2U-EXo">
-                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                <color key="backgroundColor" red="1" green="0.70443222929000249" blue="0.22435503784515165" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nT1-eJ-eeH">
-                                <rect key="frame" x="127" y="196" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.22523073307942099" green="0.9787672160649582" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HM1-By-ODX">
+                                <rect key="frame" x="42" y="13" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backtohome:" destination="lj2-AV-3ps" eventType="touchUpInside" id="7RJ-AI-1lD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="bottomView" destination="nT1-eJ-eeH" id="v0k-HX-14I"/>
-                        <outlet property="topView" destination="5gW-2U-EXo" id="Txo-p7-JCv"/>
+                        <segue destination="i9L-fN-DPg" kind="unwind" identifier="UnwindToHomeSegueIdentifier" unwindAction="returnedFromSegue:" id="A58-a4-kkt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bc-3H-aJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="i9L-fN-DPg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="485" y="131"/>
         </scene>

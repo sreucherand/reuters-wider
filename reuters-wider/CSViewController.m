@@ -9,6 +9,7 @@
 #import "CSViewController.h"
 #import "CSArchivesTransition.h"
 #import "CSArchivesViewController.h"
+#import "CSArchivesViewBackTransition.h"
 
 @interface CSViewController ()
 
@@ -26,16 +27,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)returnedFromSegue:(UIStoryboardSegue*)sender
+{
+    NSLog(@"unwound from custom segue controller");
+}
 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    CSArchivesViewController *destinationViewController = [segue destinationViewController];
+- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
     
-    ((CSArchivesTransition *)segue).width = CGRectGetWidth(destinationViewController.view.frame);
+    if ([identifier isEqualToString:@"UnwindToHomeSegueIdentifier"]) {
+        CSArchivesViewBackTransition *segue = [[CSArchivesViewBackTransition alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
+        return segue;
+    }
+    
+    return [super segueForUnwindingToViewController:toViewController fromViewController:fromViewController identifier:identifier];
 }
 
 

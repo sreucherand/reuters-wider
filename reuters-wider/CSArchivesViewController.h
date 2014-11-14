@@ -10,12 +10,10 @@
 
 @interface CSArchivesViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *topView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewLeftConstant;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewRightConstant;
+@property (strong, nonatomic) UIView *topView;
+@property (strong, nonatomic) UIView *bottomView;
 
-@property (weak, nonatomic) IBOutlet UIView *bottomView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewLeftConstant;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewRightConstant;
+- (void)openWith:(void(^)())completion;
+- (void)closeWith:(void(^)())completion;
 
 @end

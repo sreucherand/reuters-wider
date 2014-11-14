@@ -10,4 +10,6 @@
 
 @interface CSViewController : UIViewController
 
+-(IBAction)returnedFromSegue:(UIStoryboardSegue*)sender;
+
 @end
