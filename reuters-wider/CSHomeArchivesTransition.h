@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSArchivesTransition : UIStoryboardSegue
-
-@property (assign, nonatomic) CGFloat width;
+@interface CSHomeArchivesTransition : UIStoryboardSegue
 
 @end
