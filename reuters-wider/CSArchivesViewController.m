@@ -107,9 +107,13 @@
     [self.bottomView layoutIfNeeded];
 }
 
-- (IBAction)backtohome:(id)sender {
+#pragma marks - IBActions
+
+- (IBAction)returnToHome:(id)sender {
     [self performSegueWithIdentifier:@"UnwindToHomeSegueIdentifier" sender:self];
 }
+
+#pragma marks - Transitions
 
 - (void)openWith:(void (^)())completion {
     [self.topView setEasingFunction:easeInOutExpo forKeyPath:@"center"];
@@ -122,7 +126,6 @@
     self.bottomViewRightConstraint.constant = 0;
     
     [UIView animateWithDuration:1 animations:^{
-        NSLog(@"coucou");
         [self.topView layoutIfNeeded];
         [self.bottomView layoutIfNeeded];
     } completion:^(BOOL finished) {
@@ -143,7 +146,10 @@
         [self.topView layoutIfNeeded];
         [self.bottomView layoutIfNeeded];
     } completion:^(BOOL finished) {
-        completion();
+        if (finished) {
+            completion();
+        }
+        
         [self.topView removeEasingFunctionForKeyPath:@"center"];
         [self.bottomView removeEasingFunctionForKeyPath:@"center"];
     }];

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSArchivesViewBackTransition : UIStoryboardSegue
+@interface CSArchivesHomeTransition : UIStoryboardSegue
 
 @end
