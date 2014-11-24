@@ -1,0 +1,10 @@
+PODS:
+  - UIView-Easing (0.0.1)
+
+DEPENDENCIES:
+  - UIView-Easing (~> 0.0.1)
+
+SPEC CHECKSUMS:
+  UIView-Easing: 96b6088cfa5dde48970e74101de863d90c81dba1
+
+COCOAPODS: 0.34.4

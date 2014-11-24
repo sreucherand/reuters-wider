@@ -1,0 +1,16 @@
+//
+//  reuters-wider-Prefix.pch
+//  reuters-wider
+//
+//  Created by REUCHERAND Sylvain on 14/11/2014.
+//  Copyright (c) 2014 Gobelins. All rights reserved.
+//
+
+#ifndef reuters_wider_reuters_wider_Prefix_pch
+#define reuters_wider_reuters_wider_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIView+Easing.h>
+
+#endif

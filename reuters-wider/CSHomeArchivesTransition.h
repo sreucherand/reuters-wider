@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CSArchivesTransition.h
 //  reuters-wider
 //
 //  Created by REUCHERAND Sylvain on 10/11/2014.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CSHomeArchivesTransition : UIStoryboardSegue
 
 @end
-
