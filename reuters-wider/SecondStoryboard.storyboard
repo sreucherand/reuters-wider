@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Calibre-Reg.otf">
+            <string>Calibre-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="dL5-il-N6B">
+            <objects>
+                <viewController id="6Wh-5r-QVw" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TO8-0s-Q18"/>
+                        <viewControllerLayoutGuide type="bottom" id="xJ3-vR-3p6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c4n-Cy-4oa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7t-m3-rhT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="25" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vH2-GO-wwn">
+                                        <rect key="frame" x="279" y="20" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="S5D-UN-Shs"/>
+                                            <constraint firstAttribute="width" constant="25" id="qwf-cf-zkz"/>
+                                        </constraints>
+                                        <state key="normal" image="iconGlass.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="22" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="497-H5-q7f">
+                                        <rect key="frame" x="16" y="26" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="ZYa-zA-4ig"/>
+                                            <constraint firstAttribute="height" constant="25" id="gSu-bb-Vrw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Calibre-Regular" family="Calibre" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="40" minY="40" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="W">
+                                            <color key="titleColor" red="0.2901960784" green="0.29803921570000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="map.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="m4c-Sm-PJn">
+                                        <rect key="frame" x="0.0" y="248" width="320" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="m4c-Sm-PJn" secondAttribute="height" multiplier="1:1" id="8UM-kh-vPk"/>
+                                            <constraint firstAttribute="width" constant="320" id="AzQ-gJ-ab5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Issue number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-dg-ItV">
+                                        <rect key="frame" x="100" y="68" width="120" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Heading label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iu-AI-3VE">
+                                        <rect key="frame" x="103" y="122" width="115" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="zZg-Zo-8mB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtH-WK-bob">
+                                        <rect key="frame" x="139" y="163" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FtH-WK-bob" firstAttribute="top" secondItem="1iu-AI-3VE" secondAttribute="bottom" constant="24" id="1uh-T4-FZ4"/>
+                                    <constraint firstAttribute="centerX" secondItem="1iu-AI-3VE" secondAttribute="centerX" id="5qY-Q6-g1m"/>
+                                    <constraint firstAttribute="centerX" secondItem="2aK-dg-ItV" secondAttribute="centerX" id="8YJ-7Q-hXr"/>
+                                    <constraint firstItem="m4c-Sm-PJn" firstAttribute="leading" secondItem="q7t-m3-rhT" secondAttribute="leading" id="DHj-U5-gFe"/>
+                                    <constraint firstItem="497-H5-q7f" firstAttribute="leading" secondItem="q7t-m3-rhT" secondAttribute="leadingMargin" id="Ic0-Si-YQN"/>
+                                    <constraint firstAttribute="trailing" secondItem="m4c-Sm-PJn" secondAttribute="trailing" id="JBK-Ze-GMP"/>
+                                    <constraint firstItem="vH2-GO-wwn" firstAttribute="trailing" secondItem="q7t-m3-rhT" secondAttribute="trailingMargin" constant="1" id="bta-WD-WJg"/>
+                                    <constraint firstAttribute="centerX" secondItem="FtH-WK-bob" secondAttribute="centerX" id="frV-xg-XwD"/>
+                                    <constraint firstItem="1iu-AI-3VE" firstAttribute="top" secondItem="2aK-dg-ItV" secondAttribute="bottom" constant="32" id="wTW-OT-GZH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="filterButton" destination="497-H5-q7f" id="Qjk-7k-o0a"/>
+                        <outlet property="headingLabel" destination="1iu-AI-3VE" id="u0Y-cM-Sd3"/>
+                        <outlet property="homeButton" destination="497-H5-q7f" id="iHF-hT-T5T"/>
+                        <outlet property="issueDateLabel" destination="FtH-WK-bob" id="Xwf-dF-gD3"/>
+                        <outlet property="issueLabel" destination="2aK-dg-ItV" id="gxc-Iu-MmI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6KV-KF-tEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223.46666666666667" y="389.07999999999998"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iconGlass.png" width="23" height="23"/>
+        <image name="map.jpg" width="23" height="23"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

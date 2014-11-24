@@ -179,9 +179,12 @@
 		2090603A1A10BB50001EC87E /* reuters-wider */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				20C34B9A1A23290400B9D856 /* Resources */,
+=======
 				C50AFA0A1A10F44A00F87E08 /* Utils */,
 				C50AFA081A10F41A00F87E08 /* Assets */,
+>>>>>>> dev/merge
 				20A55B0C1A223B0A003B601B /* Layouts */,
 				2090603F1A10BB50001EC87E /* AppDelegate.h */,
 				209060401A10BB50001EC87E /* AppDelegate.m */,
