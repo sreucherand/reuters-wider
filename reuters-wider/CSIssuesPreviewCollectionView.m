@@ -44,10 +44,10 @@
     CGPoint velocity = [(UIPanGestureRecognizer *)gestureRecognizer velocityInView:self];
     
     if (fabs(velocity.y) < fabs(velocity.x)) {
-        return YES;
+        //return YES;
     }
     
-    return NO;
+    return YES;
 }
 
 @end

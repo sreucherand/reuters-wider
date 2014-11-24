@@ -71,14 +71,27 @@
     return cell;
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    CGFloat hue = (arc4random() % 256 / 256.0);
-    CGFloat saturation = (arc4random() % 128 / 256.0) + 0.5;
-    CGFloat brightness = (arc4random() % 128 / 256.0) + 0.5;
-    
-    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-    
-    [self.gradientIndicatorView switchToGradientColor:color];
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+}
+
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView:(UIScrollView *)scrollView {
+//    self.issuesPreviewCollectionViewLastContentOffset = CGPointMake(scrollView.contentOffset.x, 0);
+//}
+//    CGFloat hue = (arc4random() % 256 / 256.0);
+//    CGFloat saturation = (arc4random() % 128 / 256.0) + 0.5;
+//    CGFloat brightness = (arc4random() % 128 / 256.0) + 0.5;
+//    
+//    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1.0f];
+//    
+//    [self.gradientIndicatorView switchToGradientColor:color withProgression:<#(CGFloat)#>];
+//    
+//    [self.issuesPreviewCollectionView setScrollEnabled:NO];
+//}
+
+#pragma marks - CSGradientIndicatorView
+
+- (void)animationDidFinished {
+    [self.issuesPreviewCollectionView setScrollEnabled:YES];
 }
 
 # pragma marks - UISegue

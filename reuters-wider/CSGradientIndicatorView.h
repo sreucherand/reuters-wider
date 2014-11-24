@@ -10,6 +10,6 @@
 
 @interface CSGradientIndicatorView : UIView
 
-- (void)switchToGradientColor:(UIColor *)color;
+- (void)switchToGradientColor:(UIColor *)color withProgression:(CGFloat)progression;
 
 @end

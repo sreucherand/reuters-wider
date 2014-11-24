@@ -10,6 +10,7 @@
 
 @interface CSGradientIndicatorView ()
 
+@property (strong, nonatomic) UIColor *returnColor;
 @property (strong, nonatomic) UIColor *currentColor;
 @property (strong, nonatomic) CAGradientLayer *gradientLayer;
 
@@ -43,11 +44,10 @@
     return self;
 }
 
-- (void)switchToGradientColor:(UIColor *)color {
+- (void)switchToGradientColor:(UIColor *)color withProgression:(CGFloat)progression {
     if (![self.currentColor isEqual:color]) {
-        NSLog(@"switch color");
-        
-        self.currentColor = color;
+        self.gradientLayer.colors = @[(id)color.CGColor, (id)[color colorWithAlphaComponent:0].CGColor, (id)self.currentColor.CGColor, (id)[self.currentColor colorWithAlphaComponent:0].CGColor];
+        self.gradientLayer.locations = @[[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:progression], [NSNumber numberWithFloat:progression], [NSNumber numberWithFloat:1.0f]];
     }
 }
 
