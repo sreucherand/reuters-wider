@@ -23,13 +23,14 @@
 		C50AFA1A1A10FA7800F87E08 /* Leitura-Roman1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA121A10FA7800F87E08 /* Leitura-Roman1.otf */; };
 		C50AFA1B1A10FA7800F87E08 /* Leitura-Roman3.otf in Resources */ = {isa = PBXBuildFile; fileRef = C50AFA131A10FA7800F87E08 /* Leitura-Roman3.otf */; };
 		C57FB1CB1A1367D000C52CF2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C57FB1CA1A1367D000C52CF2 /* HomeViewController.m */; };
+		C58F92091A2326E20009A1DC /* SecondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58F92081A2326E20009A1DC /* SecondStoryboard.storyboard */; };
+		C58F920B1A2327F10009A1DC /* Leitura-Italic1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C58F920A1A2327F10009A1DC /* Leitura-Italic1.otf */; };
+		C58F920E1A2328CC0009A1DC /* map@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F920C1A2328CC0009A1DC /* map@1x.png */; };
+		C58F920F1A2328CC0009A1DC /* map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F920D1A2328CC0009A1DC /* map@2x.png */; };
 		C5E00A241A14C35D00AF6259 /* iconGlass@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E00A211A14C35D00AF6259 /* iconGlass@1x.png */; };
 		C5E00A251A14C35D00AF6259 /* iconGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E00A221A14C35D00AF6259 /* iconGlass@2x.png */; };
 		C5E00A261A14C35D00AF6259 /* iconGlass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E00A231A14C35D00AF6259 /* iconGlass@3x.png */; };
 		C5E00A281A14E9F400AF6259 /* Leitura-Roman2.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5E00A271A14E9F400AF6259 /* Leitura-Roman2.otf */; };
-		EBA1BF4F1A15013E00DD99AC /* Leitura-Italic1.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBA1BF4E1A15013E00DD99AC /* Leitura-Italic1.otf */; };
-		EBA1BF531A15062E00DD99AC /* map@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBA1BF511A15062E00DD99AC /* map@2x.jpg */; };
-		EBA1BF541A15062E00DD99AC /* map@1x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBA1BF521A15062E00DD99AC /* map@1x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,13 +68,14 @@
 		C50AFA131A10FA7800F87E08 /* Leitura-Roman3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman3.otf"; sourceTree = "<group>"; };
 		C57FB1C91A1367D000C52CF2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
 		C57FB1CA1A1367D000C52CF2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
+		C58F92081A2326E20009A1DC /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
+		C58F920A1A2327F10009A1DC /* Leitura-Italic1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic1.otf"; sourceTree = "<group>"; };
+		C58F920C1A2328CC0009A1DC /* map@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@1x.png"; sourceTree = "<group>"; };
+		C58F920D1A2328CC0009A1DC /* map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@2x.png"; sourceTree = "<group>"; };
 		C5E00A211A14C35D00AF6259 /* iconGlass@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGlass@1x.png"; sourceTree = "<group>"; };
 		C5E00A221A14C35D00AF6259 /* iconGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGlass@2x.png"; sourceTree = "<group>"; };
 		C5E00A231A14C35D00AF6259 /* iconGlass@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGlass@3x.png"; sourceTree = "<group>"; };
 		C5E00A271A14E9F400AF6259 /* Leitura-Roman2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman2.otf"; sourceTree = "<group>"; };
-		EBA1BF4E1A15013E00DD99AC /* Leitura-Italic1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Leitura-Italic1.otf"; path = "../../../Desktop/Leitura-Italic1.otf"; sourceTree = "<group>"; };
-		EBA1BF511A15062E00DD99AC /* map@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "map@2x.jpg"; path = "../../../Desktop/map@2x.jpg"; sourceTree = "<group>"; };
-		EBA1BF521A15062E00DD99AC /* map@1x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "map@1x.jpg"; path = "../../../Desktop/map@1x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				209060421A10BB50001EC87E /* ViewController.h */,
 				209060431A10BB50001EC87E /* ViewController.m */,
 				209060451A10BB50001EC87E /* Main.storyboard */,
+				C58F92081A2326E20009A1DC /* SecondStoryboard.storyboard */,
 				209060481A10BB50001EC87E /* Images.xcassets */,
 				2090604A1A10BB51001EC87E /* LaunchScreen.xib */,
 				208C9CF61A10D09B00517B46 /* ViewControllers */,
@@ -187,7 +190,7 @@
 		C50AFA091A10F42200F87E08 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				EBA1BF4E1A15013E00DD99AC /* Leitura-Italic1.otf */,
+				C58F920A1A2327F10009A1DC /* Leitura-Italic1.otf */,
 				C5E00A271A14E9F400AF6259 /* Leitura-Roman2.otf */,
 				C50AFA0C1A10FA7800F87E08 /* Archer-Thin.otf */,
 				C50AFA0D1A10FA7800F87E08 /* Archer-XLight.otf */,
@@ -222,8 +225,8 @@
 		EBA1BF501A1505E600DD99AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				EBA1BF511A15062E00DD99AC /* map@2x.jpg */,
-				EBA1BF521A15062E00DD99AC /* map@1x.jpg */,
+				C58F920C1A2328CC0009A1DC /* map@1x.png */,
+				C58F920D1A2328CC0009A1DC /* map@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -311,21 +314,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C50AFA1A1A10FA7800F87E08 /* Leitura-Roman1.otf in Resources */,
-				EBA1BF531A15062E00DD99AC /* map@2x.jpg in Resources */,
+				C58F92091A2326E20009A1DC /* SecondStoryboard.storyboard in Resources */,
 				C5E00A261A14C35D00AF6259 /* iconGlass@3x.png in Resources */,
 				209060471A10BB50001EC87E /* Main.storyboard in Resources */,
 				2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */,
-				EBA1BF4F1A15013E00DD99AC /* Leitura-Italic1.otf in Resources */,
 				209060491A10BB50001EC87E /* Images.xcassets in Resources */,
 				C5E00A281A14E9F400AF6259 /* Leitura-Roman2.otf in Resources */,
+				C58F920F1A2328CC0009A1DC /* map@2x.png in Resources */,
 				C50AFA171A10FA7800F87E08 /* Calibre-Reg.otf in Resources */,
 				C50AFA191A10FA7800F87E08 /* Leitura-NewsRoman1.otf in Resources */,
 				C50AFA161A10FA7800F87E08 /* Calibre-Light.otf in Resources */,
 				C5E00A241A14C35D00AF6259 /* iconGlass@1x.png in Resources */,
-				EBA1BF541A15062E00DD99AC /* map@1x.jpg in Resources */,
 				C50AFA181A10FA7800F87E08 /* Leitura-Italic2.otf in Resources */,
 				C50AFA1B1A10FA7800F87E08 /* Leitura-Roman3.otf in Resources */,
 				C50AFA151A10FA7800F87E08 /* Archer-XLight.otf in Resources */,
+				C58F920E1A2328CC0009A1DC /* map@1x.png in Resources */,
+				C58F920B1A2327F10009A1DC /* Leitura-Italic1.otf in Resources */,
 				C5E00A251A14C35D00AF6259 /* iconGlass@2x.png in Resources */,
 				C50AFA141A10FA7800F87E08 /* Archer-Thin.otf in Resources */,
 			);
