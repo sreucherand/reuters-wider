@@ -8,6 +8,10 @@
 
 #import "CSIssuePreviewCollectionView.h"
 
+@interface CSIssuePreviewCollectionView () <UIGestureRecognizerDelegate>
+
+@end
+
 @implementation CSIssuePreviewCollectionView
 
 /*
@@ -32,6 +36,18 @@
             cell.frame = CGRectMake(width*2*indexPath.row/2-self.contentOffset.x, cell.frame.origin.y, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
         }
     }];
+}
+
+#pragma marks - UIPanGestureRecognizer
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    CGPoint velocity = [(UIPanGestureRecognizer *)gestureRecognizer velocityInView:self];
+    
+    if (fabs(velocity.y) < fabs(velocity.x)) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end

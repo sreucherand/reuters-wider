@@ -66,6 +66,7 @@
 		20A55B161A228737003B601B /* CSGradientIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGradientIndicatorView.m; sourceTree = "<group>"; };
 		20BACB791A1AA33C00EB78CC /* CSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeViewController.h; sourceTree = "<group>"; };
 		20BACB7A1A1AA33C00EB78CC /* CSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSHomeViewController.m; sourceTree = "<group>"; };
+		20C34B9B1A23293400B9D856 /* CSEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSEnums.h; sourceTree = "<group>"; };
 		88E1419E8DE38584B52B073B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CF6F3471471999C3208FDAAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +141,7 @@
 		2090603A1A10BB50001EC87E /* reuters-wider */ = {
 			isa = PBXGroup;
 			children = (
+				20C34B9A1A23290400B9D856 /* Resources */,
 				20A55B0C1A223B0A003B601B /* Layouts */,
 				2090603F1A10BB50001EC87E /* AppDelegate.h */,
 				209060401A10BB50001EC87E /* AppDelegate.m */,
@@ -237,6 +239,14 @@
 				206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */,
 			);
 			name = HomeArchives;
+			sourceTree = "<group>";
+		};
+		20C34B9A1A23290400B9D856 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				20C34B9B1A23293400B9D856 /* CSEnums.h */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		64A33D5A2E0AB9C3CB7B1951 /* Pods */ = {
