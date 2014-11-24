@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Gobelins. All rights reserved.
 //
 
-#import "CSIssuePreviewCollectionView.h"
+#import "CSIssuesPreviewCollectionView.h"
 
-@interface CSIssuePreviewCollectionView () <UIGestureRecognizerDelegate>
+@interface CSIssuesPreviewCollectionView () <UIGestureRecognizerDelegate>
 
 @end
 
-@implementation CSIssuePreviewCollectionView
+@implementation CSIssuesPreviewCollectionView
 
 /*
 // Only override drawRect: if you perform custom drawing.

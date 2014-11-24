@@ -10,6 +10,7 @@
 #import "CSArchivesHomeTransition.h"
 #import "CSIssuesPreviewFlowLayout.h"
 #import "CSGradientIndicatorView.h"
+#import "CSIssuesPreviewDescriptionViewCell.h"
 
 @interface CSHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -47,7 +48,7 @@
     
     [self.issuesPreviewCollectionView setCollectionViewLayout:layout];
     
-    self.bottomConstraintGradientIndicatorView.constant = CGRectGetWidth(self.view.frame) - CGRectGetHeight(self.gradientIndicatorView.frame)/2;
+    self.bottomConstraintGradientIndicatorView.constant = CGRectGetWidth(self.view.frame)-CGRectGetHeight(self.gradientIndicatorView.frame)+25;
 }
 
 # pragma marks - UICollectionView
@@ -57,12 +58,14 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell;
-
+    UICollectionViewCell *cell = nil;
+    
     if (indexPath.row % 2 != 0) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
+        cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
     } else {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
+        CSIssuesPreviewDescriptionViewCell *issueCell = (CSIssuesPreviewDescriptionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
+        issueCell.issuesPreviewHeaderLabel.text = @"Hong-Kong for democracy";
+        cell = issueCell;
     }
     
     return cell;

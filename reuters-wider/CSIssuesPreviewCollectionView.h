@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSIssuePreviewCollectionView : UICollectionView
+@interface CSIssuesPreviewCollectionView : UICollectionView
 
 @end

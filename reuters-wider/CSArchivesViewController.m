@@ -13,12 +13,12 @@
 @property (strong, nonatomic) NSLayoutConstraint *topViewLeftConstraint;
 @property (strong, nonatomic) NSLayoutConstraint *topViewRightConstraint;
 @property (strong, nonatomic) NSLayoutConstraint *topViewTopConstraint;
-@property (strong, nonatomic) NSLayoutConstraint *topViewHeightConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *topViewBottomConstraint;
 
 @property (strong, nonatomic) NSLayoutConstraint *bottomViewLeftConstraint;
 @property (strong, nonatomic) NSLayoutConstraint *bottomViewRightConstraint;
-@property (strong, nonatomic) NSLayoutConstraint *bottomViewTopConstraint;
 @property (strong, nonatomic) NSLayoutConstraint *bottomViewBottomConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *bottomViewHeightConstraint;
 
 @end
 
@@ -63,13 +63,13 @@
                                                                    attribute:NSLayoutAttributeTop
                                                                   multiplier:1
                                                                     constant:0];
-    self.topViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.topView
-                                                                attribute:NSLayoutAttributeHeight
+    self.topViewBottomConstraint = [NSLayoutConstraint constraintWithItem:self.topView
+                                                                attribute:NSLayoutAttributeBottom
                                                                 relatedBy:NSLayoutRelationEqual
-                                                                   toItem:nil
-                                                                attribute:NSLayoutAttributeNotAnAttribute
+                                                                   toItem:self.bottomView
+                                                                attribute:NSLayoutAttributeTop
                                                                multiplier:1
-                                                                 constant:200];
+                                                                 constant:0];
     
     self.bottomViewLeftConstraint = [NSLayoutConstraint constraintWithItem:self.bottomView
                                                                  attribute:NSLayoutAttributeLeft
@@ -85,13 +85,13 @@
                                                                   attribute:NSLayoutAttributeRight
                                                                  multiplier:1
                                                                    constant:CGRectGetWidth(self.view.frame)];
-    self.bottomViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.bottomView
-                                                                attribute:NSLayoutAttributeTop
+    self.bottomViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.bottomView
+                                                                attribute:NSLayoutAttributeHeight
                                                                 relatedBy:NSLayoutRelationEqual
-                                                                   toItem:self.topView
-                                                                attribute:NSLayoutAttributeBottom
+                                                                   toItem:nil
+                                                                attribute:NSLayoutAttributeNotAnAttribute
                                                                multiplier:1
-                                                                 constant:0];
+                                                                 constant:CGRectGetWidth(self.view.frame)];
     self.bottomViewBottomConstraint = [NSLayoutConstraint constraintWithItem:self.bottomView
                                                                    attribute:NSLayoutAttributeBottom
                                                                    relatedBy:NSLayoutRelationEqual
@@ -100,8 +100,8 @@
                                                                   multiplier:1
                                                                     constant:0];
     
-    [self.view addConstraints:@[self.topViewLeftConstraint, self.topViewRightConstraint, self.topViewTopConstraint, self.topViewHeightConstraint]];
-    [self.view addConstraints:@[self.bottomViewLeftConstraint, self.bottomViewRightConstraint, self.bottomViewTopConstraint, self.bottomViewBottomConstraint]];
+    [self.view addConstraints:@[self.topViewLeftConstraint, self.topViewRightConstraint, self.topViewTopConstraint, self.topViewBottomConstraint]];
+    [self.view addConstraints:@[self.bottomViewLeftConstraint, self.bottomViewRightConstraint, self.bottomViewHeightConstraint, self.bottomViewBottomConstraint]];
     
     [self.topView layoutIfNeeded];
     [self.bottomView layoutIfNeeded];

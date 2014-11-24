@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		203EFFAF1A1658870085D493 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203EFFAD1A16578E0085D493 /* QuartzCore.framework */; };
 		206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */; };
+		20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A751A23609600EF38F3 /* Leitura-Italic1.otf */; };
+		20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A761A23609600EF38F3 /* Leitura-Italic2.otf */; };
+		20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A771A23609600EF38F3 /* Leitura-NewsRoman1.otf */; };
+		20801A7E1A23609600EF38F3 /* Leitura-Roman1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A781A23609600EF38F3 /* Leitura-Roman1.otf */; };
+		20801A7F1A23609600EF38F3 /* Leitura-Roman2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A791A23609600EF38F3 /* Leitura-Roman2.otf */; };
+		20801A801A23609600EF38F3 /* Leitura-Roman3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A7A1A23609600EF38F3 /* Leitura-Roman3.otf */; };
+		20801A851A2360A800EF38F3 /* Archer-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A811A2360A800EF38F3 /* Archer-Thin.otf */; };
+		20801A861A2360A800EF38F3 /* Archer-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A821A2360A800EF38F3 /* Archer-XLight.otf */; };
+		20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A831A2360A800EF38F3 /* Calibre-Light.otf */; };
+		20801A881A2360A800EF38F3 /* Calibre-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A841A2360A800EF38F3 /* Calibre-Reg.otf */; };
+		20801A8C1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20801A8B1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m */; };
+		20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20801A8E1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m */; };
+		20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20801A911A237F3E00EF38F3 /* CSGradientIndicatorView.m */; };
 		208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D041A10EFD000517B46 /* CSArchivesViewController.m */; };
 		208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D081A10F15E00517B46 /* CSHomeArchivesTransition.m */; };
 		2090603E1A10BB50001EC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2090603D1A10BB50001EC87E /* main.m */; };
@@ -19,8 +32,6 @@
 		209060581A10BB51001EC87E /* reuters_widerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 209060571A10BB51001EC87E /* reuters_widerTests.m */; };
 		20A55B0B1A222C46003B601B /* CSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A55B0A1A222C46003B601B /* CSMainNavigationController.m */; };
 		20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A55B0E1A223B32003B601B /* CSIssuesPreviewFlowLayout.m */; };
-		20A55B121A223C50003B601B /* CSIssuePreviewCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A55B111A223C50003B601B /* CSIssuePreviewCollectionView.m */; };
-		20A55B171A228737003B601B /* CSGradientIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A55B161A228737003B601B /* CSGradientIndicatorView.m */; };
 		20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BACB7A1A1AA33C00EB78CC /* CSHomeViewController.m */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -41,6 +52,23 @@
 		206C55E81A16022400E2B152 /* CSArchivesHomeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesHomeTransition.h; sourceTree = "<group>"; };
 		206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesHomeTransition.m; sourceTree = "<group>"; };
 		206C55EC1A163B0400E2B152 /* reuters-wider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reuters-wider-Prefix.pch"; sourceTree = "<group>"; };
+		20801A741A235FED00EF38F3 /* Variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variables.h; sourceTree = "<group>"; };
+		20801A751A23609600EF38F3 /* Leitura-Italic1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic1.otf"; sourceTree = "<group>"; };
+		20801A761A23609600EF38F3 /* Leitura-Italic2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic2.otf"; sourceTree = "<group>"; };
+		20801A771A23609600EF38F3 /* Leitura-NewsRoman1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-NewsRoman1.otf"; sourceTree = "<group>"; };
+		20801A781A23609600EF38F3 /* Leitura-Roman1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman1.otf"; sourceTree = "<group>"; };
+		20801A791A23609600EF38F3 /* Leitura-Roman2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman2.otf"; sourceTree = "<group>"; };
+		20801A7A1A23609600EF38F3 /* Leitura-Roman3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman3.otf"; sourceTree = "<group>"; };
+		20801A811A2360A800EF38F3 /* Archer-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archer-Thin.otf"; sourceTree = "<group>"; };
+		20801A821A2360A800EF38F3 /* Archer-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archer-XLight.otf"; sourceTree = "<group>"; };
+		20801A831A2360A800EF38F3 /* Calibre-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibre-Light.otf"; sourceTree = "<group>"; };
+		20801A841A2360A800EF38F3 /* Calibre-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibre-Reg.otf"; sourceTree = "<group>"; };
+		20801A8A1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSIssuesPreviewDescriptionViewCell.h; path = "reuters-wider/CSIssuesPreviewDescriptionViewCell.h"; sourceTree = "<group>"; };
+		20801A8B1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSIssuesPreviewDescriptionViewCell.m; path = "reuters-wider/CSIssuesPreviewDescriptionViewCell.m"; sourceTree = "<group>"; };
+		20801A8D1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSIssuesPreviewCollectionView.h; path = "reuters-wider/CSIssuesPreviewCollectionView.h"; sourceTree = "<group>"; };
+		20801A8E1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSIssuesPreviewCollectionView.m; path = "reuters-wider/CSIssuesPreviewCollectionView.m"; sourceTree = "<group>"; };
+		20801A901A237F3E00EF38F3 /* CSGradientIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSGradientIndicatorView.h; path = "reuters-wider/CSGradientIndicatorView.h"; sourceTree = "<group>"; };
+		20801A911A237F3E00EF38F3 /* CSGradientIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSGradientIndicatorView.m; path = "reuters-wider/CSGradientIndicatorView.m"; sourceTree = "<group>"; };
 		208C9D031A10EFD000517B46 /* CSArchivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesViewController.h; sourceTree = "<group>"; };
 		208C9D041A10EFD000517B46 /* CSArchivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesViewController.m; sourceTree = "<group>"; };
 		208C9D071A10F15E00517B46 /* CSHomeArchivesTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeArchivesTransition.h; sourceTree = "<group>"; };
@@ -60,10 +88,6 @@
 		20A55B0A1A222C46003B601B /* CSMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMainNavigationController.m; sourceTree = "<group>"; };
 		20A55B0D1A223B32003B601B /* CSIssuesPreviewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSIssuesPreviewFlowLayout.h; sourceTree = "<group>"; };
 		20A55B0E1A223B32003B601B /* CSIssuesPreviewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSIssuesPreviewFlowLayout.m; sourceTree = "<group>"; };
-		20A55B101A223C50003B601B /* CSIssuePreviewCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSIssuePreviewCollectionView.h; sourceTree = "<group>"; };
-		20A55B111A223C50003B601B /* CSIssuePreviewCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSIssuePreviewCollectionView.m; sourceTree = "<group>"; };
-		20A55B151A228737003B601B /* CSGradientIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGradientIndicatorView.h; sourceTree = "<group>"; };
-		20A55B161A228737003B601B /* CSGradientIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGradientIndicatorView.m; sourceTree = "<group>"; };
 		20BACB791A1AA33C00EB78CC /* CSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeViewController.h; sourceTree = "<group>"; };
 		20BACB7A1A1AA33C00EB78CC /* CSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSHomeViewController.m; sourceTree = "<group>"; };
 		20C34B9B1A23293400B9D856 /* CSEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSEnums.h; sourceTree = "<group>"; };
@@ -91,11 +115,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20801A711A235FBD00EF38F3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				20801A741A235FED00EF38F3 /* Variables.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		20801A721A235FC300EF38F3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				20801A731A235FD100EF38F3 /* Fonts */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		20801A731A235FD100EF38F3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				20801A811A2360A800EF38F3 /* Archer-Thin.otf */,
+				20801A821A2360A800EF38F3 /* Archer-XLight.otf */,
+				20801A831A2360A800EF38F3 /* Calibre-Light.otf */,
+				20801A841A2360A800EF38F3 /* Calibre-Reg.otf */,
+				20801A751A23609600EF38F3 /* Leitura-Italic1.otf */,
+				20801A761A23609600EF38F3 /* Leitura-Italic2.otf */,
+				20801A771A23609600EF38F3 /* Leitura-NewsRoman1.otf */,
+				20801A781A23609600EF38F3 /* Leitura-Roman1.otf */,
+				20801A791A23609600EF38F3 /* Leitura-Roman2.otf */,
+				20801A7A1A23609600EF38F3 /* Leitura-Roman3.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		20801A891A2363C700EF38F3 /* IssuesDescription */ = {
+			isa = PBXGroup;
+			children = (
+				20801A8A1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.h */,
+				20801A8B1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m */,
+			);
+			name = IssuesDescription;
+			sourceTree = "<group>";
+		};
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				20801A891A2363C700EF38F3 /* IssuesDescription */,
 				20A55B141A228712003B601B /* GradientIndicator */,
-				20A55B131A2286E1003B601B /* IssuePreview */,
+				20A55B131A2286E1003B601B /* IssuesPreview */,
 			);
 			name = Views;
 			path = ..;
@@ -141,6 +208,8 @@
 		2090603A1A10BB50001EC87E /* reuters-wider */ = {
 			isa = PBXGroup;
 			children = (
+				20801A721A235FC300EF38F3 /* Assets */,
+				20801A711A235FBD00EF38F3 /* Utils */,
 				20C34B9A1A23290400B9D856 /* Resources */,
 				20A55B0C1A223B0A003B601B /* Layouts */,
 				2090603F1A10BB50001EC87E /* AppDelegate.h */,
@@ -194,20 +263,20 @@
 			name = Layouts;
 			sourceTree = "<group>";
 		};
-		20A55B131A2286E1003B601B /* IssuePreview */ = {
+		20A55B131A2286E1003B601B /* IssuesPreview */ = {
 			isa = PBXGroup;
 			children = (
-				20A55B101A223C50003B601B /* CSIssuePreviewCollectionView.h */,
-				20A55B111A223C50003B601B /* CSIssuePreviewCollectionView.m */,
+				20801A8D1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.h */,
+				20801A8E1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m */,
 			);
-			name = IssuePreview;
+			name = IssuesPreview;
 			sourceTree = "<group>";
 		};
 		20A55B141A228712003B601B /* GradientIndicator */ = {
 			isa = PBXGroup;
 			children = (
-				20A55B151A228737003B601B /* CSGradientIndicatorView.h */,
-				20A55B161A228737003B601B /* CSGradientIndicatorView.m */,
+				20801A901A237F3E00EF38F3 /* CSGradientIndicatorView.h */,
+				20801A911A237F3E00EF38F3 /* CSGradientIndicatorView.m */,
 			);
 			name = GradientIndicator;
 			sourceTree = "<group>";
@@ -351,7 +420,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */,
+				20801A801A23609600EF38F3 /* Leitura-Roman3.otf in Resources */,
+				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
+				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
+				20801A851A2360A800EF38F3 /* Archer-Thin.otf in Resources */,
+				20801A7E1A23609600EF38F3 /* Leitura-Roman1.otf in Resources */,
+				20801A7F1A23609600EF38F3 /* Leitura-Roman2.otf in Resources */,
 				209060471A10BB50001EC87E /* Main.storyboard in Resources */,
+				20801A881A2360A800EF38F3 /* Calibre-Reg.otf in Resources */,
+				20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */,
+				20801A861A2360A800EF38F3 /* Archer-XLight.otf in Resources */,
 				2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */,
 				209060491A10BB50001EC87E /* Images.xcassets in Resources */,
 			);
@@ -404,16 +483,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20A55B171A228737003B601B /* CSGradientIndicatorView.m in Sources */,
 				20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */,
 				208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */,
+				20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
 				2090603E1A10BB50001EC87E /* main.m in Sources */,
 				20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */,
 				20A55B0B1A222C46003B601B /* CSMainNavigationController.m in Sources */,
-				20A55B121A223C50003B601B /* CSIssuePreviewCollectionView.m in Sources */,
+				20801A8C1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
 				206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */,
+				20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
