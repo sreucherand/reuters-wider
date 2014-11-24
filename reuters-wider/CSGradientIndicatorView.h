@@ -10,6 +10,9 @@
 
 @interface CSGradientIndicatorView : UIView
 
-- (void)switchToGradientColor:(UIColor *)color withProgression:(CGFloat)progression;
+@property (strong, nonatomic) UIColor *topColor;
+@property (strong, nonatomic) UIColor *bottomColor;
+
+- (void)interpolateBetweenColor:(UIColor *)topColor andColor:(UIColor *)bottomColor withProgression:(CGFloat)progression;
 
 @end

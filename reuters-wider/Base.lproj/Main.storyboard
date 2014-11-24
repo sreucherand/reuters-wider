@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lU6-TA-Oov">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lU6-TA-Oov">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -182,11 +182,39 @@
                         <outlet property="bottomConstraintGradientIndicatorView" destination="sTY-n9-8fm" id="RGt-ru-Hpc"/>
                         <outlet property="gradientIndicatorView" destination="4Oq-aR-zdM" id="9My-Un-TFJ"/>
                         <outlet property="issuesPreviewCollectionView" destination="Zke-aA-vSS" id="i51-bl-N9c"/>
+                        <segue destination="bpo-8M-6cb" kind="push" identifier="pushTempID" id="AJ4-4D-0jU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQ6-jL-XVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="1455"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Ari-Hk-aGb">
+            <objects>
+                <tableViewController id="bpo-8M-6cb" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="10X-DE-MXG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g6h-Iu-5MZ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6h-Iu-5MZ" id="IXS-Lo-rzv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bpo-8M-6cb" id="IWu-Hz-hxv"/>
+                            <outlet property="delegate" destination="bpo-8M-6cb" id="Wa5-E2-20b"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Fq9-LG-oeg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCt-Pf-27A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1431" y="1455"/>
         </scene>
     </scenes>
     <resources>

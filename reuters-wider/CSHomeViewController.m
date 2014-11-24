@@ -8,15 +8,18 @@
 
 #import "CSHomeViewController.h"
 #import "CSArchivesHomeTransition.h"
+#import "CSIssuesPreviewCollectionView.h"
 #import "CSIssuesPreviewFlowLayout.h"
 #import "CSGradientIndicatorView.h"
 #import "CSIssuesPreviewDescriptionViewCell.h"
 
-@interface CSHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface CSHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CSIssuesPreviewCollectionViewProtocol>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *issuesPreviewCollectionView;
+@property (weak, nonatomic) IBOutlet CSIssuesPreviewCollectionView *issuesPreviewCollectionView;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientIndicatorView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraintGradientIndicatorView;
+
+@property (strong, nonatomic) NSMutableArray *colors;
 
 @end
 
@@ -28,8 +31,18 @@
     
     self.issuesPreviewCollectionView.delegate = self;
     self.issuesPreviewCollectionView.dataSource = self;
+    self.issuesPreviewCollectionView.coucou = self;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.colors = [[NSMutableArray alloc] init];
+    
+    [self.colors addObject:[UIColor blueColor]];
+    [self.colors addObject:[UIColor yellowColor]];
+    [self.colors addObject:[UIColor redColor]];
+    [self.colors addObject:[UIColor greenColor]];
+    
+    self.gradientIndicatorView.topColor = [self.colors objectAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +73,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = nil;
     
-    if (indexPath.row % 2 != 0) {
+    if (indexPath.item % 2 != 0) {
         cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
     } else {
         CSIssuesPreviewDescriptionViewCell *issueCell = (CSIssuesPreviewDescriptionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
@@ -72,21 +85,29 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat percentage = fabs(self.issuesPreviewCollectionView.contentOffset.x)/CGRectGetWidth(self.issuesPreviewCollectionView.frame);
+    
+    NSArray *indexes = [self.issuesPreviewCollectionView indexPathsForVisibleItems];
+    NSArray *sortedIndexes = [indexes sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSIndexPath *first = (NSIndexPath *)obj1;
+        NSIndexPath *second = (NSIndexPath *)obj2;
+        
+        return [first compare:second];
+    }];
+    
+    NSInteger fromIndex = [(NSIndexPath *)[sortedIndexes firstObject] item]/2;
+    NSInteger toIndex = [(NSIndexPath *)[sortedIndexes lastObject] item]/2;
+    
+    if ([indexes count] == 4) {
+        [self.gradientIndicatorView interpolateBetweenColor:[self.colors objectAtIndex:fromIndex] andColor:[self.colors objectAtIndex:toIndex] withProgression:percentage-fromIndex];
+    }
 }
 
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView:(UIScrollView *)scrollView {
-//    self.issuesPreviewCollectionViewLastContentOffset = CGPointMake(scrollView.contentOffset.x, 0);
-//}
-//    CGFloat hue = (arc4random() % 256 / 256.0);
-//    CGFloat saturation = (arc4random() % 128 / 256.0) + 0.5;
-//    CGFloat brightness = (arc4random() % 128 / 256.0) + 0.5;
-//    
-//    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1.0f];
-//    
-//    [self.gradientIndicatorView switchToGradientColor:color withProgression:<#(CGFloat)#>];
-//    
-//    [self.issuesPreviewCollectionView setScrollEnabled:NO];
-//}
+- (void)didReleasePicture {
+    NSLog(@"coucourelease");
+    
+    [self performSegueWithIdentifier:@"pushTempID" sender:self];
+}
 
 #pragma marks - CSGradientIndicatorView
 

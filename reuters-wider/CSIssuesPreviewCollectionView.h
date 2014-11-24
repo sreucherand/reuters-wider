@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CSIssuesPreviewCollectionViewProtocol <NSObject>
+@required;
+
+- (void)didReleasePicture;
+
+@end
+
 @interface CSIssuesPreviewCollectionView : UICollectionView
+
+@property (assign, nonatomic) id <CSIssuesPreviewCollectionViewProtocol> coucou;
 
 @end

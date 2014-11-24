@@ -39,10 +39,10 @@
     
     NSIndexPath *indexPath = attributes.indexPath;
     
-    if (indexPath.row %2 != 0) {
-        frame = CGRectMake(width*(indexPath.row-1)/2, height-width, width, width);
+    if (indexPath.item %2 != 0) {
+        frame = CGRectMake(width*(indexPath.item-1)/2, height-width, width, width);
     } else {
-        frame = CGRectMake(width*indexPath.row/2, 0, width, height-width);
+        frame = CGRectMake(width*indexPath.item/2, 0, width, height-width);
     }
     
     attributes.frame = frame;

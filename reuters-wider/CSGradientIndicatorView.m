@@ -10,45 +10,53 @@
 
 @interface CSGradientIndicatorView ()
 
-@property (strong, nonatomic) UIColor *returnColor;
-@property (strong, nonatomic) UIColor *currentColor;
-@property (strong, nonatomic) CAGradientLayer *gradientLayer;
+@property (assign, nonatomic) CGFloat progression;
 
 @end
 
 @implementation CSGradientIndicatorView
 
-/*
+- (void)awakeFromNib {
+    self.topColor = [UIColor blackColor];
+    self.bottomColor = [UIColor blackColor];
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
+    CGFloat locations[4];
     
-    if (self) {
-        self.currentColor = [UIColor blackColor];
-        
-        self.gradientLayer = [CAGradientLayer layer];
-        
-        self.gradientLayer.frame = self.bounds;
-        self.gradientLayer.colors = @[(id)self.currentColor.CGColor, (id)[self.currentColor colorWithAlphaComponent:0].CGColor];
-        self.gradientLayer.locations = @[[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f]];
-        
-        [self.layer addSublayer:self.gradientLayer];
+    locations[0] = 0;
+    locations[1] = self.progression;
+    locations[2] = self.progression;
+    locations[3] = 1;
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
+    
+    NSMutableArray *colors = [[NSMutableArray alloc] initWithCapacity:4];
+    
+    [colors addObject:(id)[self.bottomColor CGColor]];
+    [colors addObject:(id)[self.bottomColor colorWithAlphaComponent:0].CGColor];
+    [colors addObject:(id)self.topColor.CGColor];
+    [colors addObject:(id)[self.topColor colorWithAlphaComponent:0].CGColor];
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
+    
+    CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, CGRectGetHeight(self.bounds)), 0);
+    
+    CGColorSpaceRelease(space);
+}
+
+- (void)interpolateBetweenColor:(UIColor *)topColor andColor:(UIColor *)bottomColor withProgression:(CGFloat)progression {
+    if (![self.topColor isEqual:topColor] || ![self.bottomColor isEqual:bottomColor]) {
+        self.topColor = topColor;
+        self.bottomColor = bottomColor;
     }
     
-    return self;
-}
-
-- (void)switchToGradientColor:(UIColor *)color withProgression:(CGFloat)progression {
-    if (![self.currentColor isEqual:color]) {
-        self.gradientLayer.colors = @[(id)color.CGColor, (id)[color colorWithAlphaComponent:0].CGColor, (id)self.currentColor.CGColor, (id)[self.currentColor colorWithAlphaComponent:0].CGColor];
-        self.gradientLayer.locations = @[[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:progression], [NSNumber numberWithFloat:progression], [NSNumber numberWithFloat:1.0f]];
-    }
+    self.progression = progression;
+    
+    [self setNeedsDisplay];
 }
 
 @end
