@@ -11,12 +11,15 @@
 @protocol CSIssuesPreviewCollectionViewProtocol <NSObject>
 @required;
 
-- (void)didReleasePicture;
+- (void)didBeganPullPicture;
+- (void)didPullPicture:(NSNumber *)percentage;
+- (void)didReleasePicture:(NSNumber *)percentage;
 
 @end
 
 @interface CSIssuesPreviewCollectionView : UICollectionView
 
+@property (assign, nonatomic) NSInteger currentIndex;
 @property (assign, nonatomic) id <CSIssuesPreviewCollectionViewProtocol> coucou;
 
 @end

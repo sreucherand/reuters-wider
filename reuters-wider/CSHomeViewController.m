@@ -85,6 +85,8 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.gradientIndicatorView clearAnimation];
+    
     CGFloat percentage = fabs(self.issuesPreviewCollectionView.contentOffset.x)/CGRectGetWidth(self.issuesPreviewCollectionView.frame);
     
     NSArray *indexes = [self.issuesPreviewCollectionView indexPathsForVisibleItems];
@@ -103,10 +105,31 @@
     }
 }
 
-- (void)didReleasePicture {
-    NSLog(@"coucourelease");
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGRect rect = (CGRect){.origin = scrollView.contentOffset, .size = scrollView.bounds.size};
+    CGPoint point = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     
-    [self performSegueWithIdentifier:@"pushTempID" sender:self];
+    NSIndexPath *indexPath = [self.issuesPreviewCollectionView indexPathForItemAtPoint:point];
+    
+    self.issuesPreviewCollectionView.currentIndex = indexPath.item/2;
+}
+
+- (void)didBeganPullPicture {
+    [self.issuesPreviewCollectionView setScrollEnabled:NO];
+}
+
+- (void)didPullPicture:(NSNumber *)percentage {
+    [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:[self.colors objectAtIndex:self.issuesPreviewCollectionView.currentIndex] withProgression:1-[percentage floatValue]];
+}
+
+- (void)didReleasePicture:(NSNumber *)percentage {
+    if ([percentage floatValue] < 1) {
+        [self.gradientIndicatorView animateWidthDuration:0.25 delay:0 completion:^{
+            [self.issuesPreviewCollectionView setScrollEnabled:YES];
+        }];
+    } else {
+        [self performSegueWithIdentifier:@"pushTempID" sender:self];
+    }
 }
 
 #pragma marks - CSGradientIndicatorView

@@ -58,20 +58,48 @@
 #pragma marks - UIPanGestureRecognizer
 
 - (void)coucou:(UIPanGestureRecognizer *)gestureRecognizer {
+    CGPoint translation = [gestureRecognizer translationInView:self];
+    
+    if (translation.y > 0) {
+        translation.y = 0;
+    }
+    
+    if (fabs(translation.y) > 50) {
+        translation.y = -50;
+    }
+    
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        if ([self.coucou respondsToSelector:@selector(didBeganPullPicture)]) {
+            [self.coucou performSelector:@selector(didBeganPullPicture)];
+        }
+        
         self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame));
-        [self.superview addSubview:self.imageView];
+        [self.superview insertSubview:self.imageView aboveSubview:self];
     }
     
     if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame)+[gestureRecognizer translationInView:self].y, CGRectGetWidth(self.imageView.frame), CGRectGetWidth(self.imageView.frame));
+        self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame)+translation.y, CGRectGetWidth(self.imageView.frame), CGRectGetWidth(self.imageView.frame));
+        
+        if ([self.coucou respondsToSelector:@selector(didPullPicture:)]) {
+            [self.coucou performSelector:@selector(didPullPicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/50)]];
+        }
     }
     
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        [self.imageView removeFromSuperview];
+        if ([self.coucou respondsToSelector:@selector(didReleasePicture:)]) {
+            [self.coucou performSelector:@selector(didReleasePicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/50)]];
+        }
         
-        if ([self.coucou respondsToSelector:@selector(didReleasePicture)]) {
-            [self.coucou performSelector:@selector(didReleasePicture)];
+        if (fabs(translation.y/50) < 1) {
+            [UIView animateWithDuration:0.25 animations:^{
+                self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame));
+            } completion:^(BOOL finished) {
+                if (finished) {
+                    self.panGestureRecognizer.enabled = YES;
+                    
+                    [self.imageView removeFromSuperview];
+                }
+            }];
         }
     }
 }
