@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSLayoutConstraint *bottomViewBottomConstraint;
 @property (strong, nonatomic) NSLayoutConstraint *bottomViewHeightConstraint;
 
+@property (strong, nonatomic) UIButton *backButton;
+
 @end
 
 @implementation CSArchivesViewController
@@ -33,8 +35,8 @@
     self.topView = [[UIView alloc] initWithFrame:CGRectZero];
     self.bottomView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    self.topView.backgroundColor = [UIColor redColor];
-    self.bottomView.backgroundColor = [UIColor blueColor];
+    self.topView.backgroundColor = [UIColor colorWithRed:74.0/255.0 green:76.0/255.0 blue:158.0/255.0 alpha:1];
+    self.bottomView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
     
     [self.view insertSubview:self.topView atIndex:0];
     [self.view insertSubview:self.bottomView atIndex:0];
@@ -105,11 +107,19 @@
     
     [self.topView layoutIfNeeded];
     [self.bottomView layoutIfNeeded];
+    
+    self.backButton = [[UIButton alloc] init];
+    [self.backButton addTarget:self action:@selector(returnToHome:) forControlEvents:UIControlEventTouchUpInside];
+    [self.backButton setImage:[UIImage imageNamed:@"iconBack"] forState:UIControlStateNormal];
+    [self.backButton setImage:[UIImage imageNamed:@"iconBackOnpress"] forState:UIControlStateHighlighted];
+    self.backButton.frame = CGRectMake(10.0, 20.0, 40.0, 40.0);
+    [self.topView addSubview:self.backButton];
 }
 
 #pragma marks - IBActions
 
-- (IBAction)returnToHome:(id)sender {
+- (void)returnToHome:(id)sender {
+    [self.backButton setSelected:!self.backButton.selected];
     [self performSegueWithIdentifier:@"UnwindToHomeSegueIdentifier" sender:self];
 }
 
