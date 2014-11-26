@@ -10,7 +10,16 @@
 
 @interface CSGradientIndicatorView ()
 
+@property (strong, nonatomic) NSTimer *timer;
+
 @property (assign, nonatomic) CGFloat progression;
+@property (assign, nonatomic) CGFloat startTime;
+@property (assign, nonatomic) CGFloat startValue;
+@property (assign, nonatomic) CGFloat endValue;
+@property (assign, nonatomic) CGFloat delay;
+@property (assign, nonatomic) CGFloat duration;
+
+@property (copy)void (^doStuff)(void);
 
 @end
 
@@ -57,6 +66,46 @@
     self.progression = progression;
     
     [self setNeedsDisplay];
+}
+
+- (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay completion:(void (^)())completion {
+    if (self.timer == nil) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1/6
+                                                      target:self
+                                                    selector:@selector(updateAnimation)
+                                                    userInfo:nil
+                                                     repeats:YES];
+        
+        self.delay = delay;
+        self.duration = duration;
+        self.startTime = CACurrentMediaTime();
+        self.startValue = self.progression;
+        self.endValue = 1.0;
+        self.doStuff = completion;
+    }
+}
+
+- (void)updateAnimation {
+    CGFloat currentTime = CACurrentMediaTime();
+    
+    if (currentTime > self.startTime+self.delay+self.duration) {
+        if (self.doStuff != nil) {
+            self.doStuff();
+        }
+        
+        [self clearAnimation];
+        
+        return;
+    }
+    
+    self.progression = PRTweenTimingFunctionLinear(currentTime - self.delay - self.startTime, self.startValue, self.endValue - self.startValue, self.duration);
+    
+    [self setNeedsDisplay];
+}
+
+- (void)clearAnimation {
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 @end

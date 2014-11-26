@@ -14,5 +14,7 @@
 @property (strong, nonatomic) UIColor *bottomColor;
 
 - (void)interpolateBetweenColor:(UIColor *)topColor andColor:(UIColor *)bottomColor withProgression:(CGFloat)progression;
+- (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay completion:(void(^)())completion;
+- (void)clearAnimation;
 
 @end

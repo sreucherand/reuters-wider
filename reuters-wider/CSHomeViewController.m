@@ -43,15 +43,6 @@
     [self.colors addObject:[UIColor greenColor]];
     
     self.gradientIndicatorView.topColor = [self.colors objectAtIndex:0];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
     
     CSIssuesPreviewFlowLayout *layout = [[CSIssuesPreviewFlowLayout alloc] init];
     
@@ -64,6 +55,11 @@
     self.bottomConstraintGradientIndicatorView.constant = CGRectGetWidth(self.view.frame)-CGRectGetHeight(self.gradientIndicatorView.frame)+25;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 # pragma marks - UICollectionView
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -72,12 +68,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = nil;
-    
     if (indexPath.item % 2 != 0) {
         cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
     } else {
         CSIssuesPreviewDescriptionViewCell *issueCell = (CSIssuesPreviewDescriptionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
-        issueCell.issuesPreviewHeaderLabel.text = @"Hong-Kong for democracy";
+        issueCell.issuesPreviewHeaderLabel.text = @"Hong-Kong\nfor democracy";
         cell = issueCell;
     }
     
@@ -85,6 +80,8 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.gradientIndicatorView clearAnimation];
+    
     CGFloat percentage = fabs(self.issuesPreviewCollectionView.contentOffset.x)/CGRectGetWidth(self.issuesPreviewCollectionView.frame);
     
     NSArray *indexes = [self.issuesPreviewCollectionView indexPathsForVisibleItems];
@@ -103,10 +100,31 @@
     }
 }
 
-- (void)didReleasePicture {
-    NSLog(@"coucourelease");
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGRect rect = (CGRect){.origin = scrollView.contentOffset, .size = scrollView.bounds.size};
+    CGPoint point = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     
-    [self performSegueWithIdentifier:@"pushTempID" sender:self];
+    NSIndexPath *indexPath = [self.issuesPreviewCollectionView indexPathForItemAtPoint:point];
+    
+    self.issuesPreviewCollectionView.currentIndex = indexPath.item/2;
+}
+
+- (void)didBeganPullPicture {
+    [self.issuesPreviewCollectionView setScrollEnabled:NO];
+}
+
+- (void)didPullPicture:(NSNumber *)percentage {
+    [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:[self.colors objectAtIndex:self.issuesPreviewCollectionView.currentIndex] withProgression:1-[percentage floatValue]];
+}
+
+- (void)didReleasePicture:(NSNumber *)percentage {
+    if ([percentage floatValue] < 1) {
+        [self.gradientIndicatorView animateWidthDuration:0.25 delay:0 completion:^{
+            [self.issuesPreviewCollectionView setScrollEnabled:YES];
+        }];
+    } else {
+        [self performSegueWithIdentifier:@"pushTempID" sender:self];
+    }
 }
 
 #pragma marks - CSGradientIndicatorView

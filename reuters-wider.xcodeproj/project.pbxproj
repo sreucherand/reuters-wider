@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201F51261A24D1C900191CB3 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */; };
 		203EFFAF1A1658870085D493 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203EFFAD1A16578E0085D493 /* QuartzCore.framework */; };
 		206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */; };
 		20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A751A23609600EF38F3 /* Leitura-Italic1.otf */; };
@@ -48,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		0DE9C5460100CC02C50B3172 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		201F51241A24D1C900191CB3 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTweenTimingFunctions.h; sourceTree = "<group>"; };
+		201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTweenTimingFunctions.m; sourceTree = "<group>"; };
 		203EFFAD1A16578E0085D493 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		206C55E81A16022400E2B152 /* CSArchivesHomeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesHomeTransition.h; sourceTree = "<group>"; };
 		206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesHomeTransition.m; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 		20C34B9A1A23290400B9D856 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				201F51241A24D1C900191CB3 /* PRTweenTimingFunctions.h */,
+				201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */,
 				20C34B9B1A23293400B9D856 /* CSEnums.h */,
 			);
 			name = Resources;
@@ -484,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */,
+				201F51261A24D1C900191CB3 /* PRTweenTimingFunctions.m in Sources */,
 				208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */,
 				20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
