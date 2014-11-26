@@ -10,8 +10,6 @@
 
 @interface CSIssuesPreviewDescriptionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *issuesPreviewNumeroLabel;
-@property (weak, nonatomic) IBOutlet UILabel *issuesPreviewHeaderLabel;
-@property (weak, nonatomic) IBOutlet UILabel *issuesPreviewDateLabel;
+- (void)hydrateWidthNumber:(NSInteger)number title:(NSString *)title date:(NSDate *)date;
 
 @end

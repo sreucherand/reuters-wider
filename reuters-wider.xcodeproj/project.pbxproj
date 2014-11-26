@@ -41,6 +41,7 @@
 		20A55B0B1A222C46003B601B /* CSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A55B0A1A222C46003B601B /* CSMainNavigationController.m */; };
 		20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A55B0E1A223B32003B601B /* CSIssuesPreviewFlowLayout.m */; };
 		20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BACB7A1A1AA33C00EB78CC /* CSHomeViewController.m */; };
+		20E37A9E1A26224E00CE441B /* CSIssuesPreviewPictureViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E37A9D1A26224E00CE441B /* CSIssuesPreviewPictureViewCell.m */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,8 @@
 		20BACB791A1AA33C00EB78CC /* CSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeViewController.h; sourceTree = "<group>"; };
 		20BACB7A1A1AA33C00EB78CC /* CSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSHomeViewController.m; sourceTree = "<group>"; };
 		20C34B9B1A23293400B9D856 /* CSEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSEnums.h; sourceTree = "<group>"; };
+		20E37A9C1A26224E00CE441B /* CSIssuesPreviewPictureViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSIssuesPreviewPictureViewCell.h; sourceTree = "<group>"; };
+		20E37A9D1A26224E00CE441B /* CSIssuesPreviewPictureViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSIssuesPreviewPictureViewCell.m; sourceTree = "<group>"; };
 		88E1419E8DE38584B52B073B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CF6F3471471999C3208FDAAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +215,7 @@
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				20E37A9A1A26221100CE441B /* IssuesPreviewPicture */,
 				20801A891A2363C700EF38F3 /* IssuesDescription */,
 				20A55B141A228712003B601B /* GradientIndicator */,
 				20A55B131A2286E1003B601B /* IssuesPreview */,
@@ -370,6 +374,15 @@
 				203010371A25ECFC0088FD7C /* articles.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		20E37A9A1A26221100CE441B /* IssuesPreviewPicture */ = {
+			isa = PBXGroup;
+			children = (
+				20E37A9C1A26224E00CE441B /* CSIssuesPreviewPictureViewCell.h */,
+				20E37A9D1A26224E00CE441B /* CSIssuesPreviewPictureViewCell.m */,
+			);
+			name = IssuesPreviewPicture;
 			sourceTree = "<group>";
 		};
 		64A33D5A2E0AB9C3CB7B1951 /* Pods */ = {
@@ -554,6 +567,7 @@
 				203010411A25FD760088FD7C /* CSPartModel.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
 				203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */,
+				20E37A9E1A26224E00CE441B /* CSIssuesPreviewPictureViewCell.m in Sources */,
 				206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */,
 				20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */,
 			);

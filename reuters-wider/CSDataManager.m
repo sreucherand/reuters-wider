@@ -10,7 +10,7 @@
 
 @interface CSDataManager ()
 
-@property (strong, nonatomic) CSArticlesModel *articles;
+@property (strong, nonatomic) CSArticlesModel *data;
 
 @end
 
@@ -42,14 +42,14 @@
         NSData *data = [NSData dataWithContentsOfFile:path];
         NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
-        self.articles = [[CSArticlesModel alloc] initWithString:json error:nil];
+        self.data = [[CSArticlesModel alloc] initWithString:json error:nil];
     }
     
     return self;
 }
 
-- (CSArticlesModel *)getArticles {
-    return self.articles;
+- (NSArray *)getArticles {
+    return self.data.articles;
 }
 
 @end

@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *image;
-@property (strong, nonatomic) NSArray<CSPartModel> *parts;
+@property (strong, nonatomic) NSString *color;
+@property (strong, nonatomic) NSArray<CSPartModel, Optional> *parts;
 
 @end

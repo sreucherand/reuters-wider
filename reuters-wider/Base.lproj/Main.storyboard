@@ -107,14 +107,14 @@
                                             <outlet property="issuesPreviewNumeroLabel" destination="RdI-7y-rmf" id="frF-3v-be4"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PictureViewCellID" id="KdW-tW-36P">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PictureViewCellID" id="KdW-tW-36P" customClass="CSIssuesPreviewPictureViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="UJC-1s-iBO">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UJC-1s-iBO">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                 </imageView>
                                             </subviews>
@@ -126,6 +126,9 @@
                                             <constraint firstItem="UJC-1s-iBO" firstAttribute="top" secondItem="KdW-tW-36P" secondAttribute="top" id="Z9e-m6-eyQ"/>
                                             <constraint firstItem="UJC-1s-iBO" firstAttribute="leading" secondItem="KdW-tW-36P" secondAttribute="leading" id="lNT-KS-0hL"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="pictureImageView" destination="UJC-1s-iBO" id="T6S-zC-Yey"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -205,7 +208,6 @@
     </scenes>
     <resources>
         <image name="iconGlass" width="23" height="23"/>
-        <image name="map" width="320" height="320"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -7,12 +7,13 @@
 //
 
 #import "CSHomeViewController.h"
+#import "CSHomeArchivesTransition.h"
 #import "CSArchivesHomeTransition.h"
 #import "CSIssuesPreviewCollectionView.h"
 #import "CSIssuesPreviewFlowLayout.h"
 #import "CSGradientIndicatorView.h"
 #import "CSIssuesPreviewDescriptionViewCell.h"
-#import "CSBlockModel.h"
+#import "CSIssuesPreviewPictureViewCell.h"
 
 @interface CSHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CSIssuesPreviewCollectionViewProtocol>
 
@@ -43,7 +44,7 @@
     [self.colors addObject:[UIColor redColor]];
     [self.colors addObject:[UIColor greenColor]];
     
-    self.gradientIndicatorView.topColor = [self.colors objectAtIndex:0];
+    self.gradientIndicatorView.topColor = [UIColor colorWithString:[[[[CSDataManager sharedManager] getArticles] objectAtIndex:0] color]];
     
     CSIssuesPreviewFlowLayout *layout = [[CSIssuesPreviewFlowLayout alloc] init];
     
@@ -64,18 +65,23 @@
 # pragma marks - UICollectionView
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 8;
+    return [[[CSDataManager sharedManager] getArticles] count]*2;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = nil;
     if (indexPath.item % 2 != 0) {
-        cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
-    } else {
-        CSIssuesPreviewDescriptionViewCell *issueCell = (CSIssuesPreviewDescriptionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
-        issueCell.issuesPreviewHeaderLabel.text = @"Hong-Kong\nfor democracy";
-        cell = issueCell;
+        CSArticleModel *article = [[[CSDataManager sharedManager] getArticles] objectAtIndex:(indexPath.item-1)/2];
+        CSIssuesPreviewPictureViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
+        NSLog(@"%@", article.image);
+        cell.pictureImageView.image = [UIImage imageNamed:article.image];
+        
+        return cell;
     }
+    
+    CSArticleModel *article = [[[CSDataManager sharedManager] getArticles] objectAtIndex:indexPath.item/2];
+    CSIssuesPreviewDescriptionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
+    
+    [cell hydrateWidthNumber:article.number title:article.title date:[NSDate dateWithTimeIntervalSince1970:0]];
     
     return cell;
 }
@@ -96,8 +102,10 @@
     NSInteger fromIndex = [(NSIndexPath *)[sortedIndexes firstObject] item]/2;
     NSInteger toIndex = [(NSIndexPath *)[sortedIndexes lastObject] item]/2;
     
+    NSArray *articles = [[CSDataManager sharedManager] getArticles];
+    
     if ([indexes count] == 4) {
-        [self.gradientIndicatorView interpolateBetweenColor:[self.colors objectAtIndex:fromIndex] andColor:[self.colors objectAtIndex:toIndex] withProgression:percentage-fromIndex];
+        [self.gradientIndicatorView interpolateBetweenColor:[UIColor colorWithString:[[articles objectAtIndex:fromIndex] color]] andColor:[UIColor colorWithString:[[articles objectAtIndex:toIndex] color]] withProgression:percentage-fromIndex];
     }
 }
 
@@ -115,7 +123,8 @@
 }
 
 - (void)didPullPicture:(NSNumber *)percentage {
-    [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:[self.colors objectAtIndex:self.issuesPreviewCollectionView.currentIndex] withProgression:1-[percentage floatValue]];
+    CSArticleModel *article = [[[CSDataManager sharedManager] getArticles] objectAtIndex:self.issuesPreviewCollectionView.currentIndex];
+    [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:[UIColor colorWithString:article.color] withProgression:1-[percentage floatValue]];
 }
 
 - (void)didReleasePicture:(NSNumber *)percentage {
@@ -140,9 +149,9 @@
     // Close archives
 }
 
-/*
 #pragma mark - Navigation
 
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

@@ -2,10 +2,27 @@
     "articles": [
         {
             "id": 0,
+            "title": "Corruption\n in India",
+            "date": "November 2014",
+            "number": 29,
+            "image": "map-india",
+            "color": "#0e855d"
+        },
+        {
+            "id": 1,
+            "title": "Climate change\n in the Sahel",
+            "date": "November 2014",
+            "number": 30,
+            "image": "map-sahel",
+            "color": "#cb9315"
+        },
+        {
+            "id": 2,
             "title": "Hong-Kong\n for democracy",
             "date": "November 2014",
             "number": 31,
-            "image": "image",
+            "image": "map-hong-kong",
+            "color": "#23348d",
             "parts": [
                 {
                     "id": 0,

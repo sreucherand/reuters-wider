@@ -13,6 +13,6 @@
 
 + (instancetype)sharedManager;
 
-- (CSArticlesModel *)getArticles;
+- (NSArray *)getArticles;
 
 @end

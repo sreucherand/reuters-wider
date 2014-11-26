@@ -11,11 +11,22 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// Classes
 #import "CSDataManager.h"
 #import "CSEnums.h"
 #import "CSVariables.h"
 #import "PRTweenTimingFunctions.h"
 
+// Models
+#import "CSArticlesModel.h"
+#import "CSArticleModel.h"
+#import "CSPartModel.h"
+#import "CSBlockModel.h"
+#import "CSBlockContentModel.h"
+
+// Pods
 #import <UIView+Easing.h>
+#import <ColorUtils.h>
 
 #endif

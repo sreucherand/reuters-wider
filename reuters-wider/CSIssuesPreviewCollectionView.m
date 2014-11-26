@@ -13,7 +13,9 @@
 @property (assign, nonatomic) CGPoint origin;
 
 @property (strong, nonatomic) UIPanGestureRecognizer* verticalPanGestureRecognizer;
-@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIView *transitionView;
+@property (strong, nonatomic) UIImageView *transitionViewImageView;
+@property (strong, nonatomic) UILabel *transitionViewButtonView;
 
 @end
 
@@ -34,15 +36,24 @@
     
     self.verticalPanGestureRecognizer.delegate = self;
     
-    self.imageView = [[UIImageView alloc] init];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.imageView.image = [UIImage imageNamed:@"map"];
+    self.transitionView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.transitionView.backgroundColor = [UIColor whiteColor];
+    
+    self.transitionViewImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    self.transitionViewButtonView = [[UILabel alloc] initWithFrame:CGRectZero];
+    
+    self.transitionViewButtonView.text = @"Read";
+    self.transitionViewButtonView.textAlignment = NSTextAlignmentCenter;
+    
+    [self.transitionView addSubview:self.transitionViewImageView];
+    [self.transitionView addSubview:self.transitionViewButtonView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
     CGFloat width = CGRectGetWidth(self.frame);
+    CGFloat height = CGRectGetHeight(self.frame);
     
     [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UICollectionViewCell *cell = obj;
@@ -53,6 +64,10 @@
             cell.frame = CGRectMake(width*2*indexPath.item/2-self.contentOffset.x, cell.frame.origin.y, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
         }
     }];
+    
+    self.transitionView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-width, width, height);
+    self.transitionViewImageView.frame = (CGRect){.origin=CGPointZero, CGSizeMake(width, width)};
+    self.transitionViewButtonView.frame = (CGRect){.origin=CGPointMake(0, width), CGSizeMake(width, 60)};
 }
 
 #pragma marks - UIPanGestureRecognizer
@@ -73,12 +88,13 @@
             [self.coucou performSelector:@selector(didBeganPullPicture)];
         }
         
-        self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame));
-        [self.superview insertSubview:self.imageView aboveSubview:self];
+        self.transitionViewImageView.image = [UIImage imageNamed:[[[[CSDataManager sharedManager] getArticles] objectAtIndex:self.currentIndex] image]];
+        
+        [self.superview insertSubview:self.transitionView aboveSubview:self];
     }
     
     if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame)+translation.y, CGRectGetWidth(self.imageView.frame), CGRectGetWidth(self.imageView.frame));
+        self.transitionView.frame = (CGRect){.origin=CGPointMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame)+translation.y), .size=self.frame.size};
         
         if ([self.coucou respondsToSelector:@selector(didPullPicture:)]) {
             [self.coucou performSelector:@selector(didPullPicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/60)]];
@@ -92,12 +108,12 @@
         
         if (fabs(translation.y/60) < 1) {
             [UIView animateWithDuration:0.25 animations:^{
-                self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame));
+                self.transitionView.frame = (CGRect){.origin=CGPointMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame)), .size=self.frame.size};
             } completion:^(BOOL finished) {
                 if (finished) {
                     self.panGestureRecognizer.enabled = YES;
                     
-                    [self.imageView removeFromSuperview];
+                    [self.transitionView removeFromSuperview];
                 }
             }];
         }
