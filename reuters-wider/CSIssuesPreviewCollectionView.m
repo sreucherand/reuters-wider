@@ -64,8 +64,8 @@
         translation.y = 0;
     }
     
-    if (fabs(translation.y) > 50) {
-        translation.y = -50;
+    if (fabs(translation.y) > 60) {
+        translation.y = -60;
     }
     
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
@@ -81,16 +81,16 @@
         self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame)+translation.y, CGRectGetWidth(self.imageView.frame), CGRectGetWidth(self.imageView.frame));
         
         if ([self.coucou respondsToSelector:@selector(didPullPicture:)]) {
-            [self.coucou performSelector:@selector(didPullPicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/50)]];
+            [self.coucou performSelector:@selector(didPullPicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/60)]];
         }
     }
     
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
         if ([self.coucou respondsToSelector:@selector(didReleasePicture:)]) {
-            [self.coucou performSelector:@selector(didReleasePicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/50)]];
+            [self.coucou performSelector:@selector(didReleasePicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/60)]];
         }
         
-        if (fabs(translation.y/50) < 1) {
+        if (fabs(translation.y/60) < 1) {
             [UIView animateWithDuration:0.25 animations:^{
                 self.imageView.frame = CGRectMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame));
             } completion:^(BOOL finished) {

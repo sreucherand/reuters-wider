@@ -43,15 +43,6 @@
     [self.colors addObject:[UIColor greenColor]];
     
     self.gradientIndicatorView.topColor = [self.colors objectAtIndex:0];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
     
     CSIssuesPreviewFlowLayout *layout = [[CSIssuesPreviewFlowLayout alloc] init];
     
@@ -64,6 +55,11 @@
     self.bottomConstraintGradientIndicatorView.constant = CGRectGetWidth(self.view.frame)-CGRectGetHeight(self.gradientIndicatorView.frame)+25;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 # pragma marks - UICollectionView
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -72,12 +68,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = nil;
-    
     if (indexPath.item % 2 != 0) {
         cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
     } else {
         CSIssuesPreviewDescriptionViewCell *issueCell = (CSIssuesPreviewDescriptionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
-        issueCell.issuesPreviewHeaderLabel.text = @"Hong-Kong for democracy";
+        issueCell.issuesPreviewHeaderLabel.text = @"Hong-Kong\nfor democracy";
         cell = issueCell;
     }
     

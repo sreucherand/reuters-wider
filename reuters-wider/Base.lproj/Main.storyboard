@@ -96,23 +96,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdI-7y-rmf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="SaM-uV-kvh"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGy-7N-kH8">
-                                                    <rect key="frame" x="0.0" y="130" width="200" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="255-DQ-HOc"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="129" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9v-Ex-Fya">
-                                                    <rect key="frame" x="0.0" y="46" width="187" height="61"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9v-Ex-Fya">
+                                                    <rect key="frame" x="84" y="21" width="33" height="108"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -121,12 +115,15 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="RdI-7y-rmf" firstAttribute="top" secondItem="1rz-FM-Att" secondAttribute="top" id="5ZL-HU-NiC"/>
-                                            <constraint firstAttribute="bottom" secondItem="JGy-7N-kH8" secondAttribute="bottom" constant="50" id="D07-M7-HxV"/>
-                                            <constraint firstItem="JGy-7N-kH8" firstAttribute="leading" secondItem="1rz-FM-Att" secondAttribute="leading" id="GqZ-ZW-fA0"/>
-                                            <constraint firstAttribute="trailing" secondItem="JGy-7N-kH8" secondAttribute="trailing" id="GvD-sU-SxC"/>
-                                            <constraint firstItem="RdI-7y-rmf" firstAttribute="leading" secondItem="1rz-FM-Att" secondAttribute="leading" id="RfA-t5-wII"/>
-                                            <constraint firstAttribute="trailing" secondItem="RdI-7y-rmf" secondAttribute="trailing" id="Tnk-Kv-Fl7"/>
+                                            <constraint firstItem="o9v-Ex-Fya" firstAttribute="centerX" secondItem="JGy-7N-kH8" secondAttribute="centerX" id="6Bq-XW-ECb"/>
+                                            <constraint firstItem="RdI-7y-rmf" firstAttribute="leading" secondItem="1rz-FM-Att" secondAttribute="leading" id="7LF-va-10o"/>
+                                            <constraint firstAttribute="trailing" secondItem="RdI-7y-rmf" secondAttribute="trailing" id="Gm8-GK-czz"/>
+                                            <constraint firstAttribute="trailing" secondItem="JGy-7N-kH8" secondAttribute="trailing" id="Jym-yG-8wR"/>
+                                            <constraint firstItem="JGy-7N-kH8" firstAttribute="top" secondItem="o9v-Ex-Fya" secondAttribute="bottom" id="MVM-CA-W0T"/>
+                                            <constraint firstAttribute="bottom" secondItem="JGy-7N-kH8" secondAttribute="bottom" constant="50" id="W7o-XR-QhF"/>
+                                            <constraint firstItem="JGy-7N-kH8" firstAttribute="leading" secondItem="1rz-FM-Att" secondAttribute="leading" id="hVd-Ng-5bq"/>
+                                            <constraint firstItem="RdI-7y-rmf" firstAttribute="top" secondItem="1rz-FM-Att" secondAttribute="top" id="lDu-jL-bZ6"/>
+                                            <constraint firstItem="o9v-Ex-Fya" firstAttribute="top" secondItem="RdI-7y-rmf" secondAttribute="bottom" id="trP-mc-yC0"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="issuesPreviewDateLabel" destination="JGy-7N-kH8" id="rfW-ee-Ssb"/>

@@ -10,6 +10,16 @@
 
 @implementation CSIssuesPreviewDescriptionViewCell
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    }
+    
+    return self;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
