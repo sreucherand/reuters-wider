@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		201F51261A24D1C900191CB3 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */; };
+		203010381A25ECFC0088FD7C /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 203010371A25ECFC0088FD7C /* articles.json */; };
+		2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030103D1A25FC1E0088FD7C /* CSArticleModel.m */; };
+		203010411A25FD760088FD7C /* CSPartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010401A25FD760088FD7C /* CSPartModel.m */; };
+		203010441A25FE140088FD7C /* CSBlockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010431A25FE140088FD7C /* CSBlockModel.m */; };
+		203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010461A26009B0088FD7C /* CSBlockContentModel.m */; };
+		2030104B1A2605230088FD7C /* CSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030104A1A2605230088FD7C /* CSDataManager.m */; };
+		2030104E1A2608330088FD7C /* CSArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030104D1A2608330088FD7C /* CSArticlesModel.m */; };
 		203EFFAF1A1658870085D493 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203EFFAD1A16578E0085D493 /* QuartzCore.framework */; };
 		206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */; };
 		20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A751A23609600EF38F3 /* Leitura-Italic1.otf */; };
@@ -51,6 +58,19 @@
 		0DE9C5460100CC02C50B3172 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		201F51241A24D1C900191CB3 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTweenTimingFunctions.h; sourceTree = "<group>"; };
 		201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTweenTimingFunctions.m; sourceTree = "<group>"; };
+		203010371A25ECFC0088FD7C /* articles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
+		2030103C1A25FC1E0088FD7C /* CSArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticleModel.h; sourceTree = "<group>"; };
+		2030103D1A25FC1E0088FD7C /* CSArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticleModel.m; sourceTree = "<group>"; };
+		2030103F1A25FD760088FD7C /* CSPartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPartModel.h; sourceTree = "<group>"; };
+		203010401A25FD760088FD7C /* CSPartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPartModel.m; sourceTree = "<group>"; };
+		203010421A25FE140088FD7C /* CSBlockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBlockModel.h; sourceTree = "<group>"; };
+		203010431A25FE140088FD7C /* CSBlockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBlockModel.m; sourceTree = "<group>"; };
+		203010451A26009B0088FD7C /* CSBlockContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBlockContentModel.h; sourceTree = "<group>"; };
+		203010461A26009B0088FD7C /* CSBlockContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBlockContentModel.m; sourceTree = "<group>"; };
+		203010491A2605230088FD7C /* CSDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDataManager.h; sourceTree = "<group>"; };
+		2030104A1A2605230088FD7C /* CSDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSDataManager.m; sourceTree = "<group>"; };
+		2030104C1A2608330088FD7C /* CSArticlesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticlesModel.h; sourceTree = "<group>"; };
+		2030104D1A2608330088FD7C /* CSArticlesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticlesModel.m; sourceTree = "<group>"; };
 		203EFFAD1A16578E0085D493 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		206C55E81A16022400E2B152 /* CSArchivesHomeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesHomeTransition.h; sourceTree = "<group>"; };
 		206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesHomeTransition.m; sourceTree = "<group>"; };
@@ -118,10 +138,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		203010391A25FBB70088FD7C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2030103C1A25FC1E0088FD7C /* CSArticleModel.h */,
+				2030103D1A25FC1E0088FD7C /* CSArticleModel.m */,
+				2030103F1A25FD760088FD7C /* CSPartModel.h */,
+				203010401A25FD760088FD7C /* CSPartModel.m */,
+				203010421A25FE140088FD7C /* CSBlockModel.h */,
+				203010431A25FE140088FD7C /* CSBlockModel.m */,
+				203010451A26009B0088FD7C /* CSBlockContentModel.h */,
+				203010461A26009B0088FD7C /* CSBlockContentModel.m */,
+				2030104C1A2608330088FD7C /* CSArticlesModel.h */,
+				2030104D1A2608330088FD7C /* CSArticlesModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		203010481A2604EF0088FD7C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				203010491A2605230088FD7C /* CSDataManager.h */,
+				2030104A1A2605230088FD7C /* CSDataManager.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		20801A711A235FBD00EF38F3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				20801A741A235FED00EF38F3 /* CSVariables.h */,
+				20C34B9B1A23293400B9D856 /* CSEnums.h */,
+				201F51241A24D1C900191CB3 /* PRTweenTimingFunctions.h */,
+				201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -211,6 +260,8 @@
 		2090603A1A10BB50001EC87E /* reuters-wider */ = {
 			isa = PBXGroup;
 			children = (
+				203010481A2604EF0088FD7C /* Data */,
+				203010391A25FBB70088FD7C /* Models */,
 				20801A721A235FC300EF38F3 /* Assets */,
 				20801A711A235FBD00EF38F3 /* Utils */,
 				20C34B9A1A23290400B9D856 /* Resources */,
@@ -316,9 +367,7 @@
 		20C34B9A1A23290400B9D856 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				201F51241A24D1C900191CB3 /* PRTweenTimingFunctions.h */,
-				201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */,
-				20C34B9B1A23293400B9D856 /* CSEnums.h */,
+				203010371A25ECFC0088FD7C /* articles.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -437,6 +486,7 @@
 				20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */,
 				20801A861A2360A800EF38F3 /* Archer-XLight.otf in Resources */,
 				2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */,
+				203010381A25ECFC0088FD7C /* articles.json in Resources */,
 				209060491A10BB50001EC87E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,10 +544,16 @@
 				20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
 				2090603E1A10BB50001EC87E /* main.m in Sources */,
+				203010441A25FE140088FD7C /* CSBlockModel.m in Sources */,
 				20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */,
+				2030104B1A2605230088FD7C /* CSDataManager.m in Sources */,
 				20A55B0B1A222C46003B601B /* CSMainNavigationController.m in Sources */,
+				2030104E1A2608330088FD7C /* CSArticlesModel.m in Sources */,
 				20801A8C1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m in Sources */,
+				2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */,
+				203010411A25FD760088FD7C /* CSPartModel.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
+				203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */,
 				206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */,
 				20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */,
 			);

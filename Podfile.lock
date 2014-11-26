@@ -1,10 +1,13 @@
 PODS:
+  - JSONModel (1.0.1)
   - UIView-Easing (0.0.1)
 
 DEPENDENCIES:
+  - JSONModel
   - UIView-Easing (~> 0.0.1)
 
 SPEC CHECKSUMS:
+  JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
   UIView-Easing: 96b6088cfa5dde48970e74101de863d90c81dba1
 
 COCOAPODS: 0.35.0

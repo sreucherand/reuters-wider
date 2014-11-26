@@ -12,6 +12,7 @@
 #import "CSIssuesPreviewFlowLayout.h"
 #import "CSGradientIndicatorView.h"
 #import "CSIssuesPreviewDescriptionViewCell.h"
+#import "CSBlockModel.h"
 
 @interface CSHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CSIssuesPreviewCollectionViewProtocol>
 
