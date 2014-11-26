@@ -1,0 +1,325 @@
+{
+    "articles": [
+        {
+            "id": 0,
+            "title": "Hong-Kong\n for democracy",
+            "date": "November 2014",
+            "number": 31,
+            "image": "image",
+            "parts": [
+                {
+                    "id": 0,
+                    "title": "Hong-Kong\n for democracy",
+                    "duration": 4,
+                    "image": "image",
+                    "blocks": [
+                        {
+                            "id": 0,
+                            "type": "meta",
+                            "content": {
+                                "author": "Reuters",
+                                "category": "Politics"
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "type": "teasing",
+                            "content": {
+                                "text": "China said it would not tolerate the outside interference in Hong Kong affairs, rejecting as \"thoughtless\" a call from a British minister."
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "Hong Kong returned to Chinese rule in 1997 with the guarantee of wide ranging autonomy and an independent judiciary and media under a One country, Two systems formula."
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "type": "statement",
+                            "content": {
+                                "text": "streets demanding fully democratic elections"
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "It is the freest city in China, but every year on the anniversary of the handover from Britain, thousands take to elections amid mounting fears of increased meddling by Beijing's Communist Party leaders."
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "type": "pov",
+                            "content": {
+                                "views": [
+                                    {
+                                        "date": "29th September",
+                                        "author": "Reuters",
+                                        "text": "British Forign Office minister Hugo Swire, called for full universal suffrage."
+                                    },
+                                    {
+                                        "date": "27th September",
+                                        "author": "BBC News",
+                                        "text": "\"Hong Kong's internal affairs will not brook any interference by outside forces.\""
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "type": "subtitle",
+                            "content": {
+                                "text": "The government"
+                            }
+                        },
+                        {
+                            "id": 7,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "Instead, Zhang said candidates could only be selected by a broadly representative nominating committee."
+                            }
+                        },
+                        {
+                            "id": 8,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "His statement is expected to fuel a pro-democracy movement that is threatening to shut-down Hong Kong's central financial district next July unless the government introduces changes."
+                            }
+                        },
+                        {
+                            "id": 9,
+                            "type": "figure",
+                            "content": {
+                                "image": "image",
+                                "person": "Zhang Xiaoming",
+                                "date": "Friday, September 29th",
+                                "text": "Ruled out open nominations for candidates for 2017, saying it was against the Basic Law."
+                            }
+                        },
+                        {
+                            "id": 10,
+                            "type": "subtitle",
+                            "content": {
+                                "text": "The election in 2017"
+                            }
+                        },
+                        {
+                            "id": 11,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "Will still be the most far-reaching version of democracy on Chinese soil. But analysts say Beijing's hardening stance suggest a continuing conservatism towards significant political reforms under new leader Xi Jinping."
+                            }
+                        },
+                        {
+                            "id": 12,
+                            "type": "aside",
+                            "content": {
+                                "text": "The guarantees over the territory's autonomy and the individual rights and freedoms are enshrined in the Hong Kong"
+                            }
+                        },
+                        {
+                            "id": 13,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "His statement is expected to fuel a pro-democracy movement that is threatening to shut-down Hong Kong's central financial district next July unless the government introduces changes."
+                            }
+                        },
+                        {
+                            "id": 14,
+                            "type": "keywords",
+                            "content": {
+                                "keywords": [
+                                    {
+                                        "text": "Reuters"
+                                    },
+                                    {
+                                        "text": "BBC News"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 15,
+                            "type": "transition",
+                            "content": {
+                                "transitions": [
+                                    {
+                                        "title": "One country, one autocracy",
+                                        "teasing": "is what Hong-Kong getting"
+                                    },
+                                    {
+                                        "title": "One country, two systems",
+                                        "teasing": "Instead of"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "title": "The Umbrella\n Revolution",
+                    "duration": 4,
+                    "image": "image",
+                    "blocks": [
+                        {
+                            "id": 0,
+                            "type": "teasing",
+                            "content": {
+                                "title": "Protesters flooded the streets of Hong Kong blocking major highway and causing key parts of the famously bustling city to grind to a halt."
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "Who’s out there? The protests were organized in part by the Hong Kong Federation of Students, which has since called for an indefinite student strike. Young people are everywhere, but not alone."
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "The Hong Kong Professional Teachers Union has joined them with a general strike, as have some professionals."
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "type": "subtitle",
+                            "content": {
+                                "text": "Who’s out there?",
+                                "alignment": "center"
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "type": "keyfigures",
+                            "content": {
+                                "title": "The protests",
+                                "keys": [
+                                    {
+                                        "data": 80000,
+                                        "label": "participants",
+                                        "context": "Were organized in part by the Hong Kong Federation of Students, which has since called for an indefinite student strike."
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "type": "subtitle",
+                            "content": {
+                                "title": "Where in Hong-Kong ?",
+                                "alignment": "center"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "type": "paragraph",
+                            "content": {
+                                "alignment": "center",
+                                "text": "The pro-democracy protesters have occupied parts of Hong Kong for more than three weeks. Protesters and police have clashed recently after the government attempted to clear the protest sites."
+                            }
+                        },
+                        {
+                            "id": 7,
+                            "type": "image",
+                            "content": {
+                                "image": "image"
+                            }
+                        },
+                        {
+                            "id": 8,
+                            "type": "subtitle",
+                            "content": {
+                                "title": "What do you want?"
+                            }
+                        },
+                        {
+                            "id": 9,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "As tens of thousands of protesters gather for a sixth day, their demand for the right to choose their leaders in fully democratic elections poses the biggest popular challenge to the ruling Communist Party since Chinese president Xi Jinping took power two years ago."
+                            }
+                        },
+                        {
+                            "id": 10,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "He is trying to steer a slowing economy while moving against powerful vested interests in one of the most wide-ranging purges and anti-corruption campaigns since the Communists came to power in 1949."
+                            }
+                        },
+                        {
+                           "id": 11,
+                           "type": "pov",
+                           "content": {
+                               "views": [
+                                   {
+                                       "date": "29th September",
+                                       "author": "Reuters",
+                                       "text": "British Forign Office minister Hugo Swire, called for full universal suffrage."
+                                   },
+                                   {
+                                       "date": "27th September",
+                                       "author": "BBC News",
+                                       "text": "\"Hong Kong's internal affairs will not brook any interference by outside forces.\""
+                                   }
+                               ]
+                           }
+                        },
+                        {
+                            "id": 12,
+                            "type": "paragraph",
+                            "content": {
+                                "text": "Chief Executive Leung Chun-Ying, the embattled head of Hong Kong, said on Sunday that pro-democracy activists have \"almost zero chance\" of winning any concessions from Beijing. Most of the student."
+                            }
+                        },
+                        {
+                            "id": 13,
+                            "type": "interview",
+                            "content": {
+                                "title": "Interview of student",
+                                "person": "Fernando Cheung",
+                                "subject": "Democracy and universal suffrage may be the ultimate form of political",
+                                "thumbnail": "image",
+                                "video": "video"
+                            }
+                        }
+                    ]
+                },
+                {
+                   "id": 2,
+                   "title": "The world\n reacting",
+                   "duration": 7,
+                   "image": "image",
+                   "blocks": [
+                       {
+                           "id": 0,
+                           "type": "teasing",
+                           "content": {
+                               "title": "How is the government reacting? Not well, especially at first. Here’s a video from the ground of protesters."
+                           }
+                       },
+                       {
+                           "id": 1,
+                           "type": "paragraph",
+                           "content": {
+                               "text": "But a hardcore group of, has kept up the pressure on Hong Kong authoritiesChina rules Hong Kong under a \"one country, two systems\" formula that gives the city wide-ranging autonomy and freedoms not enjoyed in mainland China, with universal suffrage an eventual goal."
+                           }
+                       },
+                       {
+                           "id": 2,
+                           "type": "subtitle",
+                           "content": {
+                               "title": "The world reacting",
+                               "alignment": "center"
+                           }
+                       }
+                    ]
+                }
+            ]
+        }
+    ]
+}
