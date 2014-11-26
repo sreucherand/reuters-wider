@@ -55,7 +55,7 @@
 		206C55E81A16022400E2B152 /* CSArchivesHomeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesHomeTransition.h; sourceTree = "<group>"; };
 		206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesHomeTransition.m; sourceTree = "<group>"; };
 		206C55EC1A163B0400E2B152 /* reuters-wider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reuters-wider-Prefix.pch"; sourceTree = "<group>"; };
-		20801A741A235FED00EF38F3 /* Variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variables.h; sourceTree = "<group>"; };
+		20801A741A235FED00EF38F3 /* CSVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVariables.h; sourceTree = "<group>"; };
 		20801A751A23609600EF38F3 /* Leitura-Italic1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic1.otf"; sourceTree = "<group>"; };
 		20801A761A23609600EF38F3 /* Leitura-Italic2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic2.otf"; sourceTree = "<group>"; };
 		20801A771A23609600EF38F3 /* Leitura-NewsRoman1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-NewsRoman1.otf"; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		20801A711A235FBD00EF38F3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				20801A741A235FED00EF38F3 /* Variables.h */,
+				20801A741A235FED00EF38F3 /* CSVariables.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
