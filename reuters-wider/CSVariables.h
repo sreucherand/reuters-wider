@@ -19,7 +19,7 @@
 //UIFont *LeituraNewsRoman1 = [UIFont fontWithName:@"Leitura-NewsRoman1" size:18];
 
 // Fonts
-#define CALIBRE_REG [UIFont fontWithName:@"Calibre-Reg" size:18]
+#define CALIBRE_REG [UIFont fontWithName:@"Calibre-Regular" size:18]
 #define LEITURA_ROMAN_2 [UIFont fontWithName:@"Leitura-Roman2" size:17]
 #define LEITURA_ROMAN_3_34 [UIFont fontWithName:@"Leitura-Roman3" size:34]
 #define LEITURA_ITALIC_1_15 [UIFont fontWithName:@"Leitura-Italic1" size:15]
@@ -35,7 +35,7 @@
 #define CALIBRE_LIGHT_16 [UIFont fontWithName:@"Calibre-Light" size:16]
 
 // Bloc meta
-#define CALIBRE_REG_11 [UIFont fontWithName:@"Calibre-Reg" size: 11]
+#define CALIBRE_REG_11 [UIFont fontWithName:@"Calibre-Regular" size: 11]
 
 // Bloc teasing
 #define LEITURA_ROMAN_3_23 [UIFont fontWithName:@"Leitura-Roman3" size:23]
@@ -67,7 +67,7 @@
 #define CALIBRE_LIGHT_17 [UIFont fontWithName:@"Calibre-Light" size:17]
 
 // Bloc keywords
-#define CALIBRE_REG_15 [UIFont fontWithName:@"Calibre-Reg" size:15]
+#define CALIBRE_REG_15 [UIFont fontWithName:@"Calibre-Regular" size:15]
 
 // Bloc transition
 #define LEITURA_ITALIC_2_38 [UIFont fontWithName:@"Leitura-Italic2" size:38]
@@ -104,6 +104,7 @@
 // ----
 
 // Colors
+#define WIDER_DARK_BLUE_COLOR [UIColor colorWithRed:(0.0f/255.0f) green:(4.0f/255.0f) blue:(130.0f/255.0f) alpha:1.0f]
 #define ISSUE_NR_COLOR [UIColor colorWithRed:(77.0f/255.0f) green:(77.0f/255.0f) blue:(77.0f/255.0f) alpha:1.0f]
 #define BLACK_COLOR [UIColor colorWithRed:(0.0f/255.0f) green:(0.0f/255.0f) blue:(0.0f/255.0f) alpha:1.0f]
 #define WHITE_COLOR [UIColor colorWithRed:(255.0f/255.0f) green:(255.0f/255.0f) blue:(255.0f/255.0f) alpha:1.0f]

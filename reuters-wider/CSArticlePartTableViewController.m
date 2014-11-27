@@ -8,6 +8,7 @@
 
 #import "CSArticlePartTableViewController.h"
 #import "CSTestBlockTableViewCell.h"
+#import "CSHeadingBlockTableViewCell.h"
 
 @interface CSArticlePartTableViewController ()
 
@@ -39,19 +40,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TestBlockCellID"];
     
     if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSTestBlockTableViewCell class]) owner:self options:nil];
-        CSTestBlockTableViewCell *cell = (CSTestBlockTableViewCell *)[nib objectAtIndex:0];
-        if (indexPath.row == 1) {
-            cell.textView.text = @"Lorem ipsum";
-            cell.textView.textAlignment = NSTextAlignmentCenter;
-        }
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSHeadingBlockTableViewCell class]) owner:self options:nil];
+        CSHeadingBlockTableViewCell *cell = (CSHeadingBlockTableViewCell *)[nib objectAtIndex:0];
         
         return cell;
     }
