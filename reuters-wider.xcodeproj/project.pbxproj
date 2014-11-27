@@ -48,6 +48,8 @@
 		20CABEC01A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEBF1A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m */; };
 		EB469E3B1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E3A1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m */; };
 		EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */; };
+		EB469E481A27582E001C7B02 /* CSMetaBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */; };
+		EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,9 @@
 		EB469E391A2733A7001C7B02 /* CSHeadingBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSHeadingBlockTableViewCell.h; path = "reuters-wider/CSHeadingBlockTableViewCell.h"; sourceTree = "<group>"; };
 		EB469E3A1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSHeadingBlockTableViewCell.m; path = "reuters-wider/CSHeadingBlockTableViewCell.m"; sourceTree = "<group>"; };
 		EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSHeadingBlockTableViewCell.xib; path = "reuters-wider/CSHeadingBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB469E461A27582E001C7B02 /* CSMetaBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMetaBlockTableViewCell.h; path = "reuters-wider/CSMetaBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMetaBlockTableViewCell.m; path = "reuters-wider/CSMetaBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSMetaBlockTableViewCell.xib; path = "reuters-wider/CSMetaBlockTableViewCell.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +411,7 @@
 		20CABEAD1A2724EB00462EE4 /* ArticleCells */ = {
 			isa = PBXGroup;
 			children = (
+				EB469E401A2757BE001C7B02 /* MetaBlock */,
 				EB469E381A273390001C7B02 /* HeadingBlock */,
 				20CABEBD1A272EBD00462EE4 /* AbstractArticleViewCell */,
 				20CABEAE1A2724F800462EE4 /* TestBlock */,
@@ -458,6 +464,16 @@
 				EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */,
 			);
 			name = HeadingBlock;
+			sourceTree = "<group>";
+		};
+		EB469E401A2757BE001C7B02 /* MetaBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E461A27582E001C7B02 /* CSMetaBlockTableViewCell.h */,
+				EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */,
+				EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */,
+			);
+			name = MetaBlock;
 			sourceTree = "<group>";
 		};
 		FEE8AF2D9C66F999A4901A4F /* Frameworks */ = {
@@ -565,6 +581,7 @@
 				209060471A10BB50001EC87E /* Main.storyboard in Resources */,
 				20801A881A2360A800EF38F3 /* Calibre-Reg.otf in Resources */,
 				20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */,
+				EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */,
 				20801A861A2360A800EF38F3 /* Archer-XLight.otf in Resources */,
 				2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */,
 				203010381A25ECFC0088FD7C /* articles.json in Resources */,
@@ -619,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB469E481A27582E001C7B02 /* CSMetaBlockTableViewCell.m in Sources */,
 				20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */,
 				201F51261A24D1C900191CB3 /* PRTweenTimingFunctions.m in Sources */,
 				EB469E3B1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m in Sources */,
