@@ -52,6 +52,8 @@
 		EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */; };
 		EB469E4E1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */; };
 		EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */; };
+		EB469E541A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E531A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m */; };
+		EB469E561A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E551A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +147,9 @@
 		EB469E4C1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTeasingBlockTableViewCell.h; path = "reuters-wider/CSTeasingBlockTableViewCell.h"; sourceTree = "<group>"; };
 		EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTeasingBlockTableViewCell.m; path = "reuters-wider/CSTeasingBlockTableViewCell.m"; sourceTree = "<group>"; };
 		EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSTeasingBlockTableViewCell.xib; path = "reuters-wider/CSTeasingBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB469E521A275CBC001C7B02 /* CSParagraphBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSParagraphBlockTableViewCell.h; path = "reuters-wider/CSParagraphBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E531A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSParagraphBlockTableViewCell.m; path = "reuters-wider/CSParagraphBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E551A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSParagraphBlockTableViewCell.xib; path = "reuters-wider/CSParagraphBlockTableViewCell.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +421,7 @@
 		20CABEAD1A2724EB00462EE4 /* ArticleCells */ = {
 			isa = PBXGroup;
 			children = (
+				EB469E511A275CA5001C7B02 /* ParagraphBlock */,
 				EB469E4B1A275A45001C7B02 /* TeasingBlock */,
 				EB469E401A2757BE001C7B02 /* MetaBlock */,
 				EB469E381A273390001C7B02 /* HeadingBlock */,
@@ -490,6 +496,16 @@
 				EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */,
 			);
 			name = TeasingBlock;
+			sourceTree = "<group>";
+		};
+		EB469E511A275CA5001C7B02 /* ParagraphBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E521A275CBC001C7B02 /* CSParagraphBlockTableViewCell.h */,
+				EB469E531A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m */,
+				EB469E551A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib */,
+			);
+			name = ParagraphBlock;
 			sourceTree = "<group>";
 		};
 		FEE8AF2D9C66F999A4901A4F /* Frameworks */ = {
@@ -587,6 +603,7 @@
 			files = (
 				20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */,
 				20801A801A23609600EF38F3 /* Leitura-Roman3.otf in Resources */,
+				EB469E561A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib in Resources */,
 				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
 				EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */,
@@ -661,6 +678,7 @@
 				20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */,
 				EB469E4E1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
+				EB469E541A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m in Sources */,
 				2090603E1A10BB50001EC87E /* main.m in Sources */,
 				203010441A25FE140088FD7C /* CSBlockModel.m in Sources */,
 				20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */,
