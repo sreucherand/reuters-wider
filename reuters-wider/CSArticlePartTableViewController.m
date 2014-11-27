@@ -8,6 +8,8 @@
 
 #import "CSArticlePartTableViewController.h"
 #import "CSHeadingBlockTableViewCell.h"
+#import "CSMetaBlockTableViewCell.h"
+#import "CSParagraphBlockTableViewCell.h"
 
 @interface CSArticlePartTableViewController ()
 
@@ -39,27 +41,47 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 2; // Don't forget add one
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
-    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
     
-//    if ([block.type isEqualToString:@"meta"]) {
-//        
-//    } else {
+    if (!indexPath.row) {
         CSHeadingBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSHeadingBlockCellID"];
         
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSHeadingBlockTableViewCell class]) owner:self options:nil];
             cell = [nib objectAtIndex:0];
             [cell hydrateWithHeadingData:(NSDictionary *)part];
-            [cell sizeToFit];
         }
         
         return cell;
-//    }
+    }
+    
+    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row-1];
+    
+    if ([block.type isEqualToString:@"meta"]) {
+        CSMetaBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSMetaBlockCellID"];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSMetaBlockTableViewCell class]) owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            [cell hydrateWithContentData:(NSDictionary *)block];
+        }
+        
+        return cell;
+    } else {
+        CSParagraphBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSParagraphBlockCellID"];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSParagraphBlockTableViewCell class]) owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            [cell hydrateWithContentData:(NSDictionary *)block];
+        }
+        
+        return cell;
+    }
 }
 
 /*

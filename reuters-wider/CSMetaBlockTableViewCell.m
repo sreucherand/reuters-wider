@@ -26,6 +26,12 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
 }
-*/
+ */
+
+- (void)hydrateWithContentData:(NSDictionary *)data {
+    [super hydrateWithContentData:data];
+    
+    self.metaLabel.text = [[NSString stringWithFormat:@"By %@ - %@", self.content.author, self.content.category] uppercaseString];
+}
 
 @end
