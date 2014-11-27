@@ -52,4 +52,12 @@
     return self.data.articles;
 }
 
+- (NSArray *)getPartsForArticle:(NSInteger)articleIndex {
+    return [[[self getArticles] objectAtIndex:articleIndex] parts];
+}
+
+- (NSArray *)getBlocksForArticle:(NSInteger)articleIndex part:(NSInteger)partIndex {
+    return [[[self getPartsForArticle:articleIndex] objectAtIndex:partIndex] blocks];
+}
+
 @end

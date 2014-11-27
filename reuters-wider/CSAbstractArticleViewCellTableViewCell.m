@@ -8,6 +8,10 @@
 
 #import "CSAbstractArticleViewCellTableViewCell.h"
 
+@interface CSAbstractArticleViewCellTableViewCell ()
+
+@end
+
 @implementation CSAbstractArticleViewCellTableViewCell
 
 - (void)awakeFromNib {
@@ -18,6 +22,12 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)hydrateWithData:(NSDictionary *)data {
+    CSBlockModel *obj = (CSBlockModel *)data;
+    
+    self.data = obj.content;
 }
 
 @end

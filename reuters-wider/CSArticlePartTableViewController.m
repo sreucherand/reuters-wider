@@ -48,10 +48,8 @@
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSTestBlockTableViewCell class]) owner:self options:nil];
         CSTestBlockTableViewCell *cell = (CSTestBlockTableViewCell *)[nib objectAtIndex:0];
-        if (indexPath.row == 1) {
-            cell.textView.text = @"Lorem ipsum";
-            cell.textView.textAlignment = NSTextAlignmentCenter;
-        }
+        
+        [cell hydrateWithData:[[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row]];
         
         return cell;
     }

@@ -19,17 +19,27 @@
 @property (assign, nonatomic) CGFloat delay;
 @property (assign, nonatomic) CGFloat duration;
 
-@property (copy)void (^doStuff)(void);
+@property (copy)void (^completion)(void);
 
 @end
 
 @implementation CSGradientIndicatorView
 
-- (void)awakeFromNib {
-    self.backgroundColor = [UIColor clearColor];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     
-    self.topColor = [UIColor blackColor];
-    self.bottomColor = [UIColor blackColor];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        
+        self.topColor = [UIColor blackColor];
+        self.bottomColor = [UIColor blackColor];
+    }
+    
+    return self;
+}
+
+- (void)awakeFromNib {
+    // Initialization code
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -83,7 +93,7 @@
         self.startTime = CACurrentMediaTime();
         self.startValue = self.progression;
         self.endValue = 1.0;
-        self.doStuff = completion;
+        self.completion = completion;
     }
 }
 
@@ -91,8 +101,8 @@
     CGFloat currentTime = CACurrentMediaTime();
     
     if (currentTime > self.startTime+self.delay+self.duration) {
-        if (self.doStuff != nil) {
-            self.doStuff();
+        if (self.completion != nil) {
+            self.completion();
         }
         
         [self clearAnimation];

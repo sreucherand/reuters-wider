@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSAbstractArticleViewCellTableViewCell.h"
 
-@interface CSTestBlockTableViewCell : UITableViewCell
-
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@interface CSTestBlockTableViewCell : CSAbstractArticleViewCellTableViewCell
 
 @end

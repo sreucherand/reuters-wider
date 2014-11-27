@@ -11,36 +11,27 @@
 
 @interface CSTestBlockTableViewCell ()
 
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientView;
 
 @end
 
 @implementation CSTestBlockTableViewCell
 
-- (instancetype)init {
-    self = [super init];
-    
-    if (self) {
-        NSLog(@"init");
-    }
-    
-    return self;
-}
-
 - (void)awakeFromNib {
     // Initialization code
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.gradientView.topColor = [UIColor redColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)hydrateWithData:(NSDictionary *)data {
+    [super hydrateWithData:data];
+    
+    self.textView.text = self.data.text;
 }
 
 @end

@@ -14,5 +14,7 @@
 + (instancetype)sharedManager;
 
 - (NSArray *)getArticles;
+- (NSArray *)getPartsForArticle:(NSInteger)articleIndex;
+- (NSArray *)getBlocksForArticle:(NSInteger)articleIndex part:(NSInteger)partIndex;
 
 @end
