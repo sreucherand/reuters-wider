@@ -28,10 +28,10 @@
     // Configure the view for the selected state
 }
 
-- (void)hydrateWithData:(NSDictionary *)data {
-    [super hydrateWithData:data];
+- (void)hydrateWithContentData:(NSDictionary *)data {
+    [super hydrateWithHeadingData:data];
     
-    self.textView.text = self.data.text;
+    self.textView.text = self.content.text;
 }
 
 @end

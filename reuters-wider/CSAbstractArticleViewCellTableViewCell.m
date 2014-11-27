@@ -24,10 +24,16 @@
     // Configure the view for the selected state
 }
 
-- (void)hydrateWithData:(NSDictionary *)data {
+- (void)hydrateWithHeadingData:(NSDictionary *)data {
+    CSPartModel *obj = (CSPartModel *)data;
+    
+    self.heading = obj;
+}
+
+- (void)hydrateWithContentData:(NSDictionary *)data {
     CSBlockModel *obj = (CSBlockModel *)data;
     
-    self.data = obj.content;
+    self.content = obj.content;
 }
 
 @end

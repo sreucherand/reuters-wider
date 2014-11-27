@@ -42,7 +42,16 @@
     self.titleLabel.textColor = DARKEST_GREY_COLOR;
     
     self.gradientImageView.topColor = WIDER_DARK_BLUE_COLOR;
+}
+
+- (void)hydrateWithHeadingData:(NSDictionary *)data {
+    [super hydrateWithHeadingData:data];
     
+    self.partNumberLabel.text = [NSString stringWithFormat:@"Part 0%i", self.heading.id+1];
+    self.readDurationLabel.text = [NSString stringWithFormat:@"%i min", self.heading.duration];
+    self.titleLabel.text = self.heading.title;
+    
+    self.articleImage.image = [UIImage imageNamed:self.heading.image];
 }
 
 @end

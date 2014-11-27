@@ -7,7 +7,6 @@
 //
 
 #import "CSArticlePartTableViewController.h"
-#import "CSTestBlockTableViewCell.h"
 #import "CSHeadingBlockTableViewCell.h"
 
 @interface CSArticlePartTableViewController ()
@@ -44,18 +43,23 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TestBlockCellID"];
+    CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
+    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
     
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSHeadingBlockTableViewCell class]) owner:self options:nil];
-        CSHeadingBlockTableViewCell *cell = (CSHeadingBlockTableViewCell *)[nib objectAtIndex:0];
+//    if ([block.type isEqualToString:@"meta"]) {
+//        
+//    } else {
+        CSHeadingBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSHeadingBlockCellID"];
         
-        [cell hydrateWithData:[[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row]];
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSHeadingBlockTableViewCell class]) owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            [cell hydrateWithHeadingData:(NSDictionary *)part];
+            [cell sizeToFit];
+        }
         
         return cell;
-    }
-    
-    return cell;
+//    }
 }
 
 /*

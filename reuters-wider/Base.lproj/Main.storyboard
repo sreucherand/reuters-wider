@@ -159,10 +159,10 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oq-aR-zdM" customClass="CSGradientIndicatorView">
-                                <rect key="frame" x="155" y="263" width="10" height="105"/>
+                                <rect key="frame" x="155" y="268" width="10" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="Omv-ch-w6Y"/>
+                                    <constraint firstAttribute="height" constant="100" id="Omv-ch-w6Y"/>
                                     <constraint firstAttribute="width" constant="10" id="eYo-gV-dQn"/>
                                 </constraints>
                             </view>

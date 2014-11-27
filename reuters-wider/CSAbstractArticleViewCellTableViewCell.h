@@ -10,8 +10,10 @@
 
 @interface CSAbstractArticleViewCellTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) CSBlockContentModel *data;
+@property (strong, nonatomic) CSPartModel *heading;
+@property (strong, nonatomic) CSBlockContentModel *content;
 
-- (void)hydrateWithData:(NSDictionary *)data;
+- (void)hydrateWithHeadingData:(NSDictionary *)data;
+- (void)hydrateWithContentData:(NSDictionary *)data;
 
 @end
