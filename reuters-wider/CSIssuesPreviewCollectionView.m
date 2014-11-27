@@ -43,6 +43,8 @@
     self.transitionViewButtonView = [[UILabel alloc] initWithFrame:CGRectZero];
     
     self.transitionViewButtonView.text = @"Read";
+    self.transitionViewButtonView.textColor = BLUE_COLOR;
+    self.transitionViewButtonView.font = CALIBRE_REG_15;
     self.transitionViewButtonView.textAlignment = NSTextAlignmentCenter;
     
     [self.transitionView addSubview:self.transitionViewImageView];
