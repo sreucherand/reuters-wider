@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -20,8 +20,8 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="WWr-5D-z1Z" secondAttribute="bottom" constant="20" id="K8t-Hr-5pA"/>
                     <constraint firstItem="WWr-5D-z1Z" firstAttribute="leading" secondItem="cgg-NI-9Jc" secondAttribute="leading" constant="20" id="KNS-Ld-4kz"/>
-                    <constraint firstAttribute="bottom" secondItem="WWr-5D-z1Z" secondAttribute="bottom" constant="20" id="fan-LA-WPI"/>
                     <constraint firstItem="WWr-5D-z1Z" firstAttribute="top" secondItem="cgg-NI-9Jc" secondAttribute="top" constant="20" id="tfz-Pm-KbW"/>
                 </constraints>
             </tableViewCellContentView>

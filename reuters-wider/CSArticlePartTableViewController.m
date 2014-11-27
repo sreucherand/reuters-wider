@@ -9,7 +9,9 @@
 #import "CSArticlePartTableViewController.h"
 #import "CSHeadingBlockTableViewCell.h"
 #import "CSMetaBlockTableViewCell.h"
+#import "CSTeasingBlockTableViewCell.h"
 #import "CSParagraphBlockTableViewCell.h"
+#import <PureLayout.h>
 
 @interface CSArticlePartTableViewController ()
 
@@ -25,8 +27,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.tableView.estimatedRowHeight = 100;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +43,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2; // Don't forget add one
+    return 3; // Don't forget add one
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,6 +56,9 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSHeadingBlockTableViewCell class]) owner:self options:nil];
             cell = [nib objectAtIndex:0];
             [cell hydrateWithHeadingData:(NSDictionary *)part];
+            
+            [cell setNeedsUpdateConstraints];
+            [cell updateConstraintsIfNeeded];
         }
         
         return cell;
@@ -68,6 +73,22 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSMetaBlockTableViewCell class]) owner:self options:nil];
             cell = [nib objectAtIndex:0];
             [cell hydrateWithContentData:(NSDictionary *)block];
+            
+            [cell setNeedsUpdateConstraints];
+            [cell updateConstraintsIfNeeded];
+        }
+        
+        return cell;
+    } else if ([block.type isEqualToString:@"teasing"]) {
+        CSTeasingBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSTeasingBlockCellID"];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSTeasingBlockTableViewCell class]) owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            [cell hydrateWithContentData:(NSDictionary *)block];
+            
+            [cell setNeedsUpdateConstraints];
+            [cell updateConstraintsIfNeeded];
         }
         
         return cell;
@@ -78,6 +99,10 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSParagraphBlockTableViewCell class]) owner:self options:nil];
             cell = [nib objectAtIndex:0];
             [cell hydrateWithContentData:(NSDictionary *)block];
+            
+            [cell setNeedsUpdateConstraints];
+            [cell updateConstraintsIfNeeded];
+            
         }
         
         return cell;
