@@ -50,6 +50,8 @@
 		EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */; };
 		EB469E481A27582E001C7B02 /* CSMetaBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */; };
 		EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */; };
+		EB469E4E1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */; };
+		EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,9 @@
 		EB469E461A27582E001C7B02 /* CSMetaBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMetaBlockTableViewCell.h; path = "reuters-wider/CSMetaBlockTableViewCell.h"; sourceTree = "<group>"; };
 		EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMetaBlockTableViewCell.m; path = "reuters-wider/CSMetaBlockTableViewCell.m"; sourceTree = "<group>"; };
 		EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSMetaBlockTableViewCell.xib; path = "reuters-wider/CSMetaBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB469E4C1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTeasingBlockTableViewCell.h; path = "reuters-wider/CSTeasingBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTeasingBlockTableViewCell.m; path = "reuters-wider/CSTeasingBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSTeasingBlockTableViewCell.xib; path = "reuters-wider/CSTeasingBlockTableViewCell.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +416,7 @@
 		20CABEAD1A2724EB00462EE4 /* ArticleCells */ = {
 			isa = PBXGroup;
 			children = (
+				EB469E4B1A275A45001C7B02 /* TeasingBlock */,
 				EB469E401A2757BE001C7B02 /* MetaBlock */,
 				EB469E381A273390001C7B02 /* HeadingBlock */,
 				20CABEBD1A272EBD00462EE4 /* AbstractArticleViewCell */,
@@ -474,6 +480,16 @@
 				EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */,
 			);
 			name = MetaBlock;
+			sourceTree = "<group>";
+		};
+		EB469E4B1A275A45001C7B02 /* TeasingBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E4C1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.h */,
+				EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */,
+				EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */,
+			);
+			name = TeasingBlock;
 			sourceTree = "<group>";
 		};
 		FEE8AF2D9C66F999A4901A4F /* Frameworks */ = {
@@ -574,6 +590,7 @@
 				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
 				EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */,
+				EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */,
 				20801A851A2360A800EF38F3 /* Archer-Thin.otf in Resources */,
 				20801A7E1A23609600EF38F3 /* Leitura-Roman1.otf in Resources */,
 				20801A7F1A23609600EF38F3 /* Leitura-Roman2.otf in Resources */,
@@ -642,6 +659,7 @@
 				EB469E3B1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m in Sources */,
 				208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */,
 				20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */,
+				EB469E4E1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
 				2090603E1A10BB50001EC87E /* main.m in Sources */,
 				203010441A25FE140088FD7C /* CSBlockModel.m in Sources */,
