@@ -48,6 +48,14 @@
 		20CABEC01A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEBF1A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m */; };
 		EB469E3B1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E3A1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m */; };
 		EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */; };
+		EB469E481A27582E001C7B02 /* CSMetaBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */; };
+		EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */; };
+		EB469E4E1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */; };
+		EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */; };
+		EB469E541A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E531A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m */; };
+		EB469E561A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E551A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib */; };
+		EB469E5A1A275F9A001C7B02 /* CSStatementBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E591A275F9A001C7B02 /* CSStatementBlockTableViewCell.m */; };
+		EB469E5C1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E5B1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +143,18 @@
 		EB469E391A2733A7001C7B02 /* CSHeadingBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSHeadingBlockTableViewCell.h; path = "reuters-wider/CSHeadingBlockTableViewCell.h"; sourceTree = "<group>"; };
 		EB469E3A1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSHeadingBlockTableViewCell.m; path = "reuters-wider/CSHeadingBlockTableViewCell.m"; sourceTree = "<group>"; };
 		EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSHeadingBlockTableViewCell.xib; path = "reuters-wider/CSHeadingBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB469E461A27582E001C7B02 /* CSMetaBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMetaBlockTableViewCell.h; path = "reuters-wider/CSMetaBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMetaBlockTableViewCell.m; path = "reuters-wider/CSMetaBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSMetaBlockTableViewCell.xib; path = "reuters-wider/CSMetaBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB469E4C1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTeasingBlockTableViewCell.h; path = "reuters-wider/CSTeasingBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTeasingBlockTableViewCell.m; path = "reuters-wider/CSTeasingBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSTeasingBlockTableViewCell.xib; path = "reuters-wider/CSTeasingBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB469E521A275CBC001C7B02 /* CSParagraphBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSParagraphBlockTableViewCell.h; path = "reuters-wider/CSParagraphBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E531A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSParagraphBlockTableViewCell.m; path = "reuters-wider/CSParagraphBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E551A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSParagraphBlockTableViewCell.xib; path = "reuters-wider/CSParagraphBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB469E581A275F9A001C7B02 /* CSStatementBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSStatementBlockTableViewCell.h; path = "reuters-wider/CSStatementBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E591A275F9A001C7B02 /* CSStatementBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSStatementBlockTableViewCell.m; path = "reuters-wider/CSStatementBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E5B1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSStatementBlockTableViewCell.xib; path = "reuters-wider/CSStatementBlockTableViewCell.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +426,10 @@
 		20CABEAD1A2724EB00462EE4 /* ArticleCells */ = {
 			isa = PBXGroup;
 			children = (
+				EB469E571A275F6E001C7B02 /* StatementBlock */,
+				EB469E511A275CA5001C7B02 /* ParagraphBlock */,
+				EB469E4B1A275A45001C7B02 /* TeasingBlock */,
+				EB469E401A2757BE001C7B02 /* MetaBlock */,
 				EB469E381A273390001C7B02 /* HeadingBlock */,
 				20CABEBD1A272EBD00462EE4 /* AbstractArticleViewCell */,
 				20CABEAE1A2724F800462EE4 /* TestBlock */,
@@ -458,6 +482,46 @@
 				EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */,
 			);
 			name = HeadingBlock;
+			sourceTree = "<group>";
+		};
+		EB469E401A2757BE001C7B02 /* MetaBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E461A27582E001C7B02 /* CSMetaBlockTableViewCell.h */,
+				EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */,
+				EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */,
+			);
+			name = MetaBlock;
+			sourceTree = "<group>";
+		};
+		EB469E4B1A275A45001C7B02 /* TeasingBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E4C1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.h */,
+				EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */,
+				EB469E4F1A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib */,
+			);
+			name = TeasingBlock;
+			sourceTree = "<group>";
+		};
+		EB469E511A275CA5001C7B02 /* ParagraphBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E521A275CBC001C7B02 /* CSParagraphBlockTableViewCell.h */,
+				EB469E531A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m */,
+				EB469E551A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib */,
+			);
+			name = ParagraphBlock;
+			sourceTree = "<group>";
+		};
+		EB469E571A275F6E001C7B02 /* StatementBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E581A275F9A001C7B02 /* CSStatementBlockTableViewCell.h */,
+				EB469E591A275F9A001C7B02 /* CSStatementBlockTableViewCell.m */,
+				EB469E5B1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib */,
+			);
+			name = StatementBlock;
 			sourceTree = "<group>";
 		};
 		FEE8AF2D9C66F999A4901A4F /* Frameworks */ = {
@@ -554,10 +618,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */,
+				EB469E5C1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib in Resources */,
 				20801A801A23609600EF38F3 /* Leitura-Roman3.otf in Resources */,
+				EB469E561A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib in Resources */,
 				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
 				EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */,
+				EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */,
 				20801A851A2360A800EF38F3 /* Archer-Thin.otf in Resources */,
 				20801A7E1A23609600EF38F3 /* Leitura-Roman1.otf in Resources */,
 				20801A7F1A23609600EF38F3 /* Leitura-Roman2.otf in Resources */,
@@ -565,6 +632,7 @@
 				209060471A10BB50001EC87E /* Main.storyboard in Resources */,
 				20801A881A2360A800EF38F3 /* Calibre-Reg.otf in Resources */,
 				20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */,
+				EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */,
 				20801A861A2360A800EF38F3 /* Archer-XLight.otf in Resources */,
 				2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */,
 				203010381A25ECFC0088FD7C /* articles.json in Resources */,
@@ -619,12 +687,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB469E481A27582E001C7B02 /* CSMetaBlockTableViewCell.m in Sources */,
 				20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */,
 				201F51261A24D1C900191CB3 /* PRTweenTimingFunctions.m in Sources */,
 				EB469E3B1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m in Sources */,
 				208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */,
 				20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */,
+				EB469E4E1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
+				EB469E541A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m in Sources */,
 				2090603E1A10BB50001EC87E /* main.m in Sources */,
 				203010441A25FE140088FD7C /* CSBlockModel.m in Sources */,
 				20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */,
@@ -633,6 +704,7 @@
 				20CABEB41A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m in Sources */,
 				2030104E1A2608330088FD7C /* CSArticlesModel.m in Sources */,
 				20801A8C1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m in Sources */,
+				EB469E5A1A275F9A001C7B02 /* CSStatementBlockTableViewCell.m in Sources */,
 				2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */,
 				20CABEA61A27239E00462EE4 /* CSArticlePartTableViewController.m in Sources */,
 				20CABEBB1A27257E00462EE4 /* CSTestBlockTableViewCell.m in Sources */,

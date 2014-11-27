@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSStatementBlockCellID" rowHeight="471" id="RBM-iW-hAt" customClass="CSStatementBlockTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="515" height="471"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RBM-iW-hAt" id="Cpa-ig-Kv7">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GK-s9-A0F" customClass="CSGradientIndicatorView">
+                        <rect key="frame" x="253" y="20" width="10" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="B1v-36-n7V"/>
+                            <constraint firstAttribute="width" constant="10" id="Uy5-bs-nzq"/>
+                        </constraints>
+                    </view>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5d-Oa-bSf">
+                        <rect key="frame" x="60" y="48" width="395" height="402"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="s5d-Oa-bSf" secondAttribute="trailing" constant="60" id="7VA-cc-ph5"/>
+                    <constraint firstAttribute="centerX" secondItem="2GK-s9-A0F" secondAttribute="centerX" id="Hgj-pN-cer"/>
+                    <constraint firstItem="2GK-s9-A0F" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="top" constant="20" id="L7u-pJ-NTE"/>
+                    <constraint firstItem="s5d-Oa-bSf" firstAttribute="leading" secondItem="Cpa-ig-Kv7" secondAttribute="leading" constant="60" id="TrH-We-SPy"/>
+                    <constraint firstItem="s5d-Oa-bSf" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="topMargin" constant="40" id="mbo-l9-QOY"/>
+                    <constraint firstAttribute="bottom" secondItem="s5d-Oa-bSf" secondAttribute="bottom" constant="20" id="rKv-Wr-QAE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="gradientView" destination="2GK-s9-A0F" id="Iv3-ox-5eK"/>
+                <outlet property="statementTextView" destination="s5d-Oa-bSf" id="uDi-bO-nph"/>
+            </connections>
+            <point key="canvasLocation" x="147.5" y="243.5"/>
+        </tableViewCell>
+    </objects>
+</document>
