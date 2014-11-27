@@ -46,6 +46,8 @@
 		20CABEBB1A27257E00462EE4 /* CSTestBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEB91A27257E00462EE4 /* CSTestBlockTableViewCell.m */; };
 		20CABEBC1A27257E00462EE4 /* CSTestBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CABEBA1A27257E00462EE4 /* CSTestBlockTableViewCell.xib */; };
 		20CABEC01A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEBF1A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m */; };
+		EB469E3B1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E3A1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m */; };
+		EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,9 @@
 		20CABEBF1A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSAbstractArticleViewCellTableViewCell.m; path = "reuters-wider/CSAbstractArticleViewCellTableViewCell.m"; sourceTree = "<group>"; };
 		88E1419E8DE38584B52B073B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CF6F3471471999C3208FDAAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EB469E391A2733A7001C7B02 /* CSHeadingBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSHeadingBlockTableViewCell.h; path = "reuters-wider/CSHeadingBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E3A1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSHeadingBlockTableViewCell.m; path = "reuters-wider/CSHeadingBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSHeadingBlockTableViewCell.xib; path = "reuters-wider/CSHeadingBlockTableViewCell.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +406,7 @@
 		20CABEAD1A2724EB00462EE4 /* ArticleCells */ = {
 			isa = PBXGroup;
 			children = (
+				EB469E381A273390001C7B02 /* HeadingBlock */,
 				20CABEBD1A272EBD00462EE4 /* AbstractArticleViewCell */,
 				20CABEAE1A2724F800462EE4 /* TestBlock */,
 			);
@@ -442,6 +448,16 @@
 				88E1419E8DE38584B52B073B /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EB469E381A273390001C7B02 /* HeadingBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E391A2733A7001C7B02 /* CSHeadingBlockTableViewCell.h */,
+				EB469E3A1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m */,
+				EB469E3E1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib */,
+			);
+			name = HeadingBlock;
 			sourceTree = "<group>";
 		};
 		FEE8AF2D9C66F999A4901A4F /* Frameworks */ = {
@@ -541,6 +557,7 @@
 				20801A801A23609600EF38F3 /* Leitura-Roman3.otf in Resources */,
 				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
+				EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */,
 				20801A851A2360A800EF38F3 /* Archer-Thin.otf in Resources */,
 				20801A7E1A23609600EF38F3 /* Leitura-Roman1.otf in Resources */,
 				20801A7F1A23609600EF38F3 /* Leitura-Roman2.otf in Resources */,
@@ -604,6 +621,7 @@
 			files = (
 				20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */,
 				201F51261A24D1C900191CB3 /* PRTweenTimingFunctions.m in Sources */,
+				EB469E3B1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m in Sources */,
 				208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */,
 				20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
