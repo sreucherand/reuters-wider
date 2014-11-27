@@ -80,7 +80,6 @@
     if (translation.y > 0) {
         translation.y = 0;
     }
-    
     if (fabs(translation.y) > 60) {
         translation.y = -60;
     }

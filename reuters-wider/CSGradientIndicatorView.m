@@ -26,6 +26,8 @@
 @implementation CSGradientIndicatorView
 
 - (void)awakeFromNib {
+    self.backgroundColor = [UIColor clearColor];
+    
     self.topColor = [UIColor blackColor];
     self.bottomColor = [UIColor blackColor];
 }
