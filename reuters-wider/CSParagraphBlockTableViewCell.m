@@ -11,6 +11,7 @@
 @interface CSParagraphBlockTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UITextView *paragraphTextView;
+
 @end
 
 @implementation CSParagraphBlockTableViewCell

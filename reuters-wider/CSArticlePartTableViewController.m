@@ -11,13 +11,17 @@
 #import "CSMetaBlockTableViewCell.h"
 #import "CSTeasingBlockTableViewCell.h"
 #import "CSParagraphBlockTableViewCell.h"
-#import <PureLayout.h>
 
-@interface CSArticlePartTableViewController ()
+@interface CSArticlePartTableViewController (){
+    CSMetaBlockTableViewCell *_proto;
+}
+
+@property (strong, nonatomic) NSMutableDictionary *cells;
 
 @end
 
 @implementation CSArticlePartTableViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,8 +31,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.tableView.estimatedRowHeight = 100;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.cells = @{}.mutableCopy;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSMetaBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSMetaBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSTeasingBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSTeasingBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSParagraphBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSParagraphBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSHeadingBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSHeadingBlockCellID"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,70 +52,79 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3; // Don't forget add one
+    return 2; // Don't forget add one
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
-    
-    if (!indexPath.row) {
-        CSHeadingBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSHeadingBlockCellID"];
-        
-        if (cell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSHeadingBlockTableViewCell class]) owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-            [cell hydrateWithHeadingData:(NSDictionary *)part];
-            
-            [cell setNeedsUpdateConstraints];
-            [cell updateConstraintsIfNeeded];
-        }
-        
-        return cell;
-    }
-    
-    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row-1];
+    //CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
+    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
     
     if ([block.type isEqualToString:@"meta"]) {
-        CSMetaBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSMetaBlockCellID"];
+        CSMetaBlockTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSMetaBlockCellID" forIndexPath:indexPath];
         
-        if (cell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSMetaBlockTableViewCell class]) owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-            [cell hydrateWithContentData:(NSDictionary *)block];
-            
-            [cell setNeedsUpdateConstraints];
-            [cell updateConstraintsIfNeeded];
-        }
-        
+        [cell hydrateWithContentData:(NSDictionary *)block];
         return cell;
     } else if ([block.type isEqualToString:@"teasing"]) {
-        CSTeasingBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSTeasingBlockCellID"];
+        CSTeasingBlockTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSTeasingBlockCellID" forIndexPath:indexPath];
         
-        if (cell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSTeasingBlockTableViewCell class]) owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-            [cell hydrateWithContentData:(NSDictionary *)block];
-            
-            [cell setNeedsUpdateConstraints];
-            [cell updateConstraintsIfNeeded];
-        }
+        [cell hydrateWithContentData:(NSDictionary *)block];
         
         return cell;
     } else {
-        CSParagraphBlockTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CSParagraphBlockCellID"];
+        CSParagraphBlockTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSParagraphBlockCellID" forIndexPath:indexPath];
         
-        if (cell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([CSParagraphBlockTableViewCell class]) owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-            [cell hydrateWithContentData:(NSDictionary *)block];
-            
-            [cell setNeedsUpdateConstraints];
-            [cell updateConstraintsIfNeeded];
-            
-        }
+        [cell hydrateWithContentData:(NSDictionary *)block];
         
         return cell;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
+    
+    CSAbstractArticleViewCellTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+    
+    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
+    
+    if ([block.type isEqualToString:@"meta"]) {
+        if (cell == nil) {
+            cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSMetaBlockCellID"];
+            
+            self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
+        }
+    } else if ([block.type isEqualToString:@"teasing"]) {
+        if (cell == nil) {
+            cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSTeasingBlockCellID"];
+            
+            self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
+        }
+    } else { // Paragraph
+        if (cell == nil) {
+            cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSParagraphBlockCellID"];
+            
+            self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
+        }
+    }
+    
+    [cell hydrateWithContentData:(NSDictionary *)block];
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.tableView.bounds));
+    
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+//    NSLog(@"%@", NSStringFromCGSize(size));
+    
+    return size.height+1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
 }
 
 /*

@@ -9,6 +9,7 @@
 #import "CSMetaBlockTableViewCell.h"
 
 @interface CSMetaBlockTableViewCell ()
+
 @property (weak, nonatomic) IBOutlet UILabel *metaLabel;
 
 @end
@@ -16,6 +17,7 @@
 @implementation CSMetaBlockTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.metaLabel.font = CALIBRE_REG_11;
     self.metaLabel.textColor = LIGHT_BLUE_COLOR;
 }

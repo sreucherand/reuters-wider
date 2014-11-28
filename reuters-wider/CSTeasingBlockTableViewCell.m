@@ -9,7 +9,8 @@
 #import "CSTeasingBlockTableViewCell.h"
 
 @interface CSTeasingBlockTableViewCell ()
-@property (weak, nonatomic) IBOutlet UITextView *teasingText;
+
+@property (weak, nonatomic) IBOutlet UILabel *teasingText;
 
 @end
 
@@ -18,8 +19,6 @@
 - (void)awakeFromNib {
     self.teasingText.font = LEITURA_ROMAN_3_23;
     self.teasingText.textColor = DARKEST_GREY_COLOR;
-    
-    [self updateConstraints];
 }
 
 /*
