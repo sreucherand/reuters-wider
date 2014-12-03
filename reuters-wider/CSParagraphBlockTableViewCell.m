@@ -10,15 +10,17 @@
 
 @interface CSParagraphBlockTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UITextView *paragraphTextView;
+@property (weak, nonatomic) IBOutlet CSAttributedLabel *paragraphTextLabel;
 
 @end
 
 @implementation CSParagraphBlockTableViewCell
 
 -(void)awakeFromNib {
-    self.paragraphTextView.font = LEITURA_ROMAN_1_16;
-    self.paragraphTextView.textColor = GREY_COLOR;
+    self.paragraphTextLabel.font = LEITURA_ROMAN_1_16;
+    self.paragraphTextLabel.textColor = GREY_COLOR;
+    self.paragraphTextLabel.lineHeight = 25;
+    self.paragraphTextLabel.delegate = self;
 }
 
 /*
@@ -28,5 +30,15 @@
     // Drawing code
 }
 */
+
+- (void)hydrateWithContentData:(NSDictionary *)data {
+    [super hydrateWithContentData:data];
+    
+    self.paragraphTextLabel.text = self.content.text;
+}
+
+- (void)attributedLabel:(NIAttributedLabel *)attributedLabel didSelectTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
+    NSLog(@"url: %@", result.URL.relativeString);
+}
 
 @end

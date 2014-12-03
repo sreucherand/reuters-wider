@@ -12,7 +12,7 @@
 @interface CSStatementBlockTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientView;
-@property (weak, nonatomic) IBOutlet UITextView *statementTextView;
+@property (weak, nonatomic) IBOutlet CSAttributedLabel *statementLabel;
 
 @end
 
@@ -20,8 +20,10 @@
 
 -(void)awakeFromNib{
     self.gradientView.topColor = LIGHT_BLUE_COLOR;
-    self.statementTextView.font = LEITURA_ITALIC_2_20;
-    self.statementTextView.textColor = BLUE_COLOR;
+    
+    self.statementLabel.font = LEITURA_ITALIC_2_20;
+    self.statementLabel.textColor = BLUE_COLOR;
+    self.statementLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 /*
@@ -31,5 +33,11 @@
     // Drawing code
 }
 */
+
+- (void)hydrateWithContentData:(NSDictionary *)data {
+    [super hydrateWithContentData:data];
+    
+    self.statementLabel.text = self.content.text;
+}
 
 @end

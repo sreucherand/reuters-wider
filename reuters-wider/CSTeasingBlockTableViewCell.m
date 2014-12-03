@@ -10,7 +10,7 @@
 
 @interface CSTeasingBlockTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *teasingText;
+@property (weak, nonatomic) IBOutlet CSAttributedLabel *teasingText;
 
 @end
 
@@ -19,6 +19,7 @@
 - (void)awakeFromNib {
     self.teasingText.font = LEITURA_ROMAN_3_23;
     self.teasingText.textColor = DARKEST_GREY_COLOR;
+    self.teasingText.lineHeight = 30;
 }
 
 /*
@@ -33,8 +34,6 @@
     [super hydrateWithContentData:data];
     
     self.teasingText.text = self.content.text;
-    self.teasingText.font = LEITURA_ROMAN_3_23;
-    self.teasingText.textColor = DARKEST_GREY_COLOR;
 }
 
 @end

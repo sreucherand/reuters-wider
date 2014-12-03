@@ -11,6 +11,7 @@
 #import "CSMetaBlockTableViewCell.h"
 #import "CSTeasingBlockTableViewCell.h"
 #import "CSParagraphBlockTableViewCell.h"
+#import "CSStatementBlockTableViewCell.h"
 
 @interface CSArticlePartTableViewController (){
     CSMetaBlockTableViewCell *_proto;
@@ -37,6 +38,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CSMetaBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSMetaBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSTeasingBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSTeasingBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSParagraphBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSParagraphBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSStatementBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSStatementBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSHeadingBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSHeadingBlockCellID"];
 }
 
@@ -52,79 +54,78 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2; // Don't forget add one
+    return 5+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
-    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
+    CSAbstractArticleViewCellTableViewCell *cell = nil;
     
-    if ([block.type isEqualToString:@"meta"]) {
-        CSMetaBlockTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSMetaBlockCellID" forIndexPath:indexPath];
+    CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
+    
+    if (!indexPath.row) { // If heading
+        cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:@"heading"] forIndexPath:indexPath];
         
-        [cell hydrateWithContentData:(NSDictionary *)block];
-        return cell;
-    } else if ([block.type isEqualToString:@"teasing"]) {
-        CSTeasingBlockTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSTeasingBlockCellID" forIndexPath:indexPath];
-        
-        [cell hydrateWithContentData:(NSDictionary *)block];
-        
-        return cell;
-    } else {
-        CSParagraphBlockTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSParagraphBlockCellID" forIndexPath:indexPath];
-        
-        [cell hydrateWithContentData:(NSDictionary *)block];
+        [cell hydrateWithHeadingData:(NSDictionary *)part];
         
         return cell;
     }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
     
-    CSAbstractArticleViewCellTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row-1];
     
-    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
-    
-    if ([block.type isEqualToString:@"meta"]) {
-        if (cell == nil) {
-            cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSMetaBlockCellID"];
-            
-            self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
-        }
-    } else if ([block.type isEqualToString:@"teasing"]) {
-        if (cell == nil) {
-            cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSTeasingBlockCellID"];
-            
-            self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
-        }
-    } else { // Paragraph
-        if (cell == nil) {
-            cell = [self.tableView dequeueReusableCellWithIdentifier:@"CSParagraphBlockCellID"];
-            
-            self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
-        }
-    }
+    cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
     
     [cell hydrateWithContentData:(NSDictionary *)block];
     
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CSAbstractArticleViewCellTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     
-    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.tableView.bounds));
+    if (cell == nil) {
+        if (!indexPath.row) { // If heading
+            CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
+            
+            cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:@"heading"]];
+            
+            [cell hydrateWithHeadingData:(NSDictionary *)part];
+        } else {
+            CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row-1];
+            
+            cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type]];
+            
+            [cell hydrateWithContentData:(NSDictionary *)block];
+        }
+        
+        self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
+    }
+    
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGFLOAT_MAX);
     
     [cell setNeedsLayout];
-    [cell layoutIfNeeded];
+    //[cell layoutIfNeeded];
     
     CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    
-//    NSLog(@"%@", NSStringFromCGSize(size));
     
     return size.height+1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
+}
+
+#pragma mark - Identifier and block type match
+
+- (NSString *)cellClassForBlockType:(NSString *)type {
+    NSString *class = [NSString stringWithFormat:@"CS%@BlockTableViewCell", [type capitalizedString]];
+    
+    return class;
+}
+
+- (NSString *)cellIdentifierForBlockType:(NSString *)type {
+    NSString *identifier = [NSString stringWithFormat:@"CS%@BlockCellID", [type capitalizedString]];
+    
+    return identifier;
 }
 
 /*

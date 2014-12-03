@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *articleImageHeightConstraint;
 
 @end
 
@@ -42,6 +43,12 @@
     self.titleLabel.textColor = DARKEST_GREY_COLOR;
     
     self.gradientImageView.topColor = WIDER_DARK_BLUE_COLOR;
+}
+
+- (void)setNeedsLayout {
+    [super setNeedsLayout];
+    
+    self.articleImageHeightConstraint.constant = CGRectGetWidth(self.frame);
 }
 
 - (void)hydrateWithHeadingData:(NSDictionary *)data {

@@ -1,19 +1,28 @@
 PODS:
   - ColorUtils (1.1.3)
   - JSONModel (1.0.1)
-  - PureLayout (2.0.2)
+  - NimbusKit-AttributedLabel (1.0.0)
   - UIView-Easing (0.0.1)
 
 DEPENDENCIES:
   - ColorUtils
   - JSONModel
-  - PureLayout
+  - NimbusKit-AttributedLabel (from `git@github.com:sreucherand/attributedlabel.git`)
   - UIView-Easing (~> 0.0.1)
+
+EXTERNAL SOURCES:
+  NimbusKit-AttributedLabel:
+    :git: git@github.com:sreucherand/attributedlabel.git
+
+CHECKOUT OPTIONS:
+  NimbusKit-AttributedLabel:
+    :commit: fabe3989bf55ba3648e0f0680e4da2cbb99dedc4
+    :git: git@github.com:sreucherand/attributedlabel.git
 
 SPEC CHECKSUMS:
   ColorUtils: d99b38d2a7abf81df1698477b19f895576578738
   JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
-  PureLayout: 03fe8d5ab68f5871038b3b7065d28ac880d5f2a0
+  NimbusKit-AttributedLabel: 10146a0e80c57b0e63293aecb4aac0f40e2faf67
   UIView-Easing: 96b6088cfa5dde48970e74101de863d90c81dba1
 
 COCOAPODS: 0.35.0

@@ -36,4 +36,12 @@
     self.content = obj.content;
 }
 
+- (void)attributedLabel:(NIAttributedLabel *)attributedLabel didSelectTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
+    NSLog(@"CSAttributedLabel delegate dispatch");
+}
+
+- (BOOL)attributedLabel:(NIAttributedLabel *)attributedLabel shouldPresentActionSheet:(UIActionSheet *)actionSheet withTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
+    return NO;
+}
+
 @end

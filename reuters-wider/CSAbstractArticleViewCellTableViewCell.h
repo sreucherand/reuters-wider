@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSAbstractArticleViewCellTableViewCell : UITableViewCell
+#import "CSAttributedLabel.h"
+
+@interface CSAbstractArticleViewCellTableViewCell : UITableViewCell <CSAttributedLabelDelegate>
 
 @property (strong, nonatomic) CSPartModel *heading;
 @property (strong, nonatomic) CSBlockContentModel *content;

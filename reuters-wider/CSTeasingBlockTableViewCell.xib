@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSTeasingBlockCellID" rowHeight="70" id="s01-Uw-INc" customClass="CSTeasingBlockTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="426" height="70"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSTeasingBlockCellID" rowHeight="217" id="s01-Uw-INc" customClass="CSTeasingBlockTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="426" height="217"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s01-Uw-INc" id="b39-ma-grL">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teasing" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="406" translatesAutoresizingMaskIntoConstraints="NO" id="3j0-eB-hMM">
-                        <rect key="frame" x="10" y="10" width="406" height="49"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teasing" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="tNR-4H-RXZ" customClass="CSAttributedLabel">
+                        <rect key="frame" x="20" y="0.0" width="386" height="216"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="3j0-eB-hMM" secondAttribute="trailing" constant="10" id="5jK-JE-BnY"/>
-                    <constraint firstItem="3j0-eB-hMM" firstAttribute="top" secondItem="b39-ma-grL" secondAttribute="top" constant="10" id="gDd-Zw-IZd"/>
-                    <constraint firstAttribute="bottom" secondItem="3j0-eB-hMM" secondAttribute="bottom" constant="10" id="h5V-pH-Aiq"/>
-                    <constraint firstItem="3j0-eB-hMM" firstAttribute="leading" secondItem="b39-ma-grL" secondAttribute="leading" constant="10" id="jZC-rC-Y8n"/>
+                    <constraint firstAttribute="trailing" secondItem="tNR-4H-RXZ" secondAttribute="trailing" constant="20" id="Bet-o2-Jiq"/>
+                    <constraint firstAttribute="bottom" secondItem="tNR-4H-RXZ" secondAttribute="bottom" id="TxB-GA-L9S"/>
+                    <constraint firstItem="tNR-4H-RXZ" firstAttribute="leading" secondItem="b39-ma-grL" secondAttribute="leading" constant="20" id="g5f-zk-Vbq"/>
+                    <constraint firstItem="tNR-4H-RXZ" firstAttribute="top" secondItem="b39-ma-grL" secondAttribute="top" id="wVe-UY-rsa"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="teasingText" destination="3j0-eB-hMM" id="jSi-jS-fvD"/>
+                <outlet property="teasingText" destination="tNR-4H-RXZ" id="kPO-EI-LRR"/>
             </connections>
-            <point key="canvasLocation" x="457" y="254"/>
+            <point key="canvasLocation" x="457" y="327.5"/>
         </tableViewCell>
     </objects>
 </document>
