@@ -18,6 +18,12 @@
     // Initialization code
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self.contentView layoutIfNeeded];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -34,14 +40,6 @@
     CSBlockModel *obj = (CSBlockModel *)data;
     
     self.content = obj.content;
-}
-
-- (void)attributedLabel:(NIAttributedLabel *)attributedLabel didSelectTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
-    NSLog(@"CSAttributedLabel delegate dispatch");
-}
-
-- (BOOL)attributedLabel:(NIAttributedLabel *)attributedLabel shouldPresentActionSheet:(UIActionSheet *)actionSheet withTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
-    return NO;
 }
 
 @end

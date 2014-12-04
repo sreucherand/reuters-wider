@@ -10,10 +10,12 @@
 
 @protocol CSAttributedLabelDelegate;
 
-@interface CSAttributedLabel : NIAttributedLabel
+@interface CSAttributedLabel : TTTAttributedLabel
+
+@property (assign, nonatomic) CGFloat lineHeight;
 
 @end
 
-@protocol CSAttributedLabelDelegate <NIAttributedLabelDelegate>
+@protocol CSAttributedLabelDelegate <TTTAttributedLabelDelegate>
 
 @end

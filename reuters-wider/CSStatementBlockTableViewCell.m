@@ -26,6 +26,12 @@
     self.statementLabel.textAlignment = NSTextAlignmentCenter;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.statementLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.statementLabel.frame);
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

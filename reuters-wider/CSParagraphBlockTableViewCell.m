@@ -8,7 +8,7 @@
 
 #import "CSParagraphBlockTableViewCell.h"
 
-@interface CSParagraphBlockTableViewCell ()
+@interface CSParagraphBlockTableViewCell () <CSAttributedLabelDelegate>
 
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *paragraphTextLabel;
 
@@ -21,6 +21,12 @@
     self.paragraphTextLabel.textColor = GREY_COLOR;
     self.paragraphTextLabel.lineHeight = 25;
     self.paragraphTextLabel.delegate = self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.paragraphTextLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.paragraphTextLabel.frame);
 }
 
 /*
@@ -37,8 +43,8 @@
     self.paragraphTextLabel.text = self.content.text;
 }
 
-- (void)attributedLabel:(NIAttributedLabel *)attributedLabel didSelectTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
-    NSLog(@"url: %@", result.URL.relativeString);
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
+    NSLog(@"%@", url.relativeString);
 }
 
 @end

@@ -21,22 +21,25 @@
 - (void)setText:(NSString *)text {
     [super setText:text];
     
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[(.*?)\\]\\((\\S+)(\\s+(\"|\')(.*?)(\"|\'))?\\)" options:NSRegularExpressionCaseInsensitive error:nil];
-    
-    NSArray *results = [regex matchesInString:text options:0 range:NSMakeRange(0, text.length)];
-    
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
     
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[(.*?)\\]\\((\\S+)(\\s+(\"|\')(.*?)(\"|\'))?\\)" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSArray *results = [regex matchesInString:self.text options:0 range:NSMakeRange(0, ((NSString *)self.text).length)];
+    
     for (NSTextCheckingResult *result in results) {
-        NSString *title = [text substringWithRange:[result rangeAtIndex:1]];
-        NSString *url = [text substringWithRange:[result rangeAtIndex:2]];
+        NSString *title = [self.text substringWithRange:[result rangeAtIndex:1]];
+        NSString *url = [self.text substringWithRange:[result rangeAtIndex:2]];
         
         [string replaceCharactersInRange:result.range withString:title];
         
         self.attributedText = [string copy];
         
-        [self addLink:[NSURL URLWithString:url] range:NSMakeRange(result.range.location, [result rangeAtIndex:1].length)];
+        [self addLinkToURL:[NSURL URLWithString:url] withRange:NSMakeRange(result.range.location, [result rangeAtIndex:1].length)];
     }
+}
+
+- (void)setLineHeight:(CGFloat)lineHeight {
+    [self setLineSpacing:lineHeight - self.font.lineHeight];
 }
 
 @end

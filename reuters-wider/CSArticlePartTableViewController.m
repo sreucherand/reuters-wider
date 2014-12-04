@@ -7,15 +7,9 @@
 //
 
 #import "CSArticlePartTableViewController.h"
-#import "CSHeadingBlockTableViewCell.h"
-#import "CSMetaBlockTableViewCell.h"
-#import "CSTeasingBlockTableViewCell.h"
-#import "CSParagraphBlockTableViewCell.h"
-#import "CSStatementBlockTableViewCell.h"
+#import "CSAbstractArticleViewCellTableViewCell.h"
 
-@interface CSArticlePartTableViewController (){
-    CSMetaBlockTableViewCell *_proto;
-}
+@interface CSArticlePartTableViewController ()
 
 @property (strong, nonatomic) NSMutableDictionary *cells;
 
@@ -40,6 +34,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CSParagraphBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSParagraphBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSStatementBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSStatementBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSHeadingBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSHeadingBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSSubtitleBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSSubtitleBlockCellID"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,7 +49,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5+1;
+    return 8+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -100,10 +95,10 @@
         self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
     }
     
-    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGFLOAT_MAX);
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.tableView.bounds));
     
     [cell setNeedsLayout];
-    //[cell layoutIfNeeded];
+    [cell layoutIfNeeded];
     
     CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     

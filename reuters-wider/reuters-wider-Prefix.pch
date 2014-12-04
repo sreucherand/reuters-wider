@@ -28,6 +28,6 @@
 // Pods
 #import <UIView+Easing.h>
 #import <ColorUtils.h>
-#import <NIAttributedLabel.h>
+#import <TTTAttributedLabel.h>
 
 #endif

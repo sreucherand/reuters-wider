@@ -10,7 +10,7 @@
 
 #import "CSAttributedLabel.h"
 
-@interface CSAbstractArticleViewCellTableViewCell : UITableViewCell <CSAttributedLabelDelegate>
+@interface CSAbstractArticleViewCellTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) CSPartModel *heading;
 @property (strong, nonatomic) CSBlockContentModel *content;

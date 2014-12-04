@@ -67,6 +67,24 @@
                             }
                         },
                         {
+                            "id": 5,
+                            "type": "pov",
+                            "content": {
+                                "views": [
+                                    {
+                                        "date": "29th September",
+                                        "author": "Reuters",
+                                        "text": "British Forign Office minister Hugo Swire, called for full universal suffrage."
+                                    },
+                                    {
+                                        "date": "27th September",
+                                        "author": "BBC News",
+                                        "text": "\"Hong Kong's internal affairs will not brook any interference by outside forces.\""
+                                    }
+                                ]
+                            }
+                        },
+                        {
                             "id": 6,
                             "type": "subtitle",
                             "content": {
