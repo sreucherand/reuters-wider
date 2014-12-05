@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="379" id="cAp-A0-m58" customClass="CSFigureBlockTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="379"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cAp-A0-m58" id="GV2-n9-N3l">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8Y-fm-qfv">
+                        <rect key="frame" x="0.0" y="40" width="320" height="318"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-f3-oRx">
+                                <rect key="frame" x="80" y="40" width="160" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="4h1-m6-8Fs"/>
+                                    <constraint firstAttribute="width" constant="160" id="BzJ-Vh-0DP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNr-Bf-zyT">
+                                <rect key="frame" x="142" y="220" width="36" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSF-At-8k4" customClass="CSAttributedLabel">
+                                <rect key="frame" x="40" y="257" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocs-As-inl">
+                                <rect key="frame" x="133" y="129" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZS-3G-L0Y" customClass="CSGradientIndicatorView">
+                                <rect key="frame" x="157" y="164" width="6" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kUD-4U-qcu"/>
+                                    <constraint firstAttribute="width" constant="6" id="qBV-np-PSt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="OZS-3G-L0Y" secondAttribute="centerX" id="4hv-9D-vOi"/>
+                            <constraint firstAttribute="centerX" secondItem="VEO-f3-oRx" secondAttribute="centerX" id="7PB-p0-4Ip"/>
+                            <constraint firstAttribute="centerX" secondItem="ocs-As-inl" secondAttribute="centerX" id="9Ay-Qz-HYk"/>
+                            <constraint firstAttribute="trailing" secondItem="FSF-At-8k4" secondAttribute="trailing" constant="40" id="DCE-Yk-PBt"/>
+                            <constraint firstItem="FSF-At-8k4" firstAttribute="leading" secondItem="A8Y-fm-qfv" secondAttribute="leading" constant="40" id="Ogs-NT-TKl"/>
+                            <constraint firstItem="ocs-As-inl" firstAttribute="bottom" secondItem="VEO-f3-oRx" secondAttribute="bottom" constant="-30" id="Qs5-vR-J1U"/>
+                            <constraint firstItem="uNr-Bf-zyT" firstAttribute="top" secondItem="VEO-f3-oRx" secondAttribute="bottom" constant="40" id="e9D-xo-NQx"/>
+                            <constraint firstAttribute="centerX" secondItem="uNr-Bf-zyT" secondAttribute="centerX" id="jWh-XA-vqj"/>
+                            <constraint firstItem="VEO-f3-oRx" firstAttribute="top" secondItem="A8Y-fm-qfv" secondAttribute="top" constant="40" id="lKO-eW-8cb"/>
+                            <constraint firstItem="FSF-At-8k4" firstAttribute="top" secondItem="uNr-Bf-zyT" secondAttribute="bottom" constant="10" id="mEv-18-FTp"/>
+                            <constraint firstAttribute="bottom" secondItem="FSF-At-8k4" secondAttribute="bottom" constant="40" id="tay-Dw-rBo"/>
+                            <constraint firstItem="VEO-f3-oRx" firstAttribute="bottom" secondItem="OZS-3G-L0Y" secondAttribute="bottom" constant="-34" id="u6L-Jf-jrc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="A8Y-fm-qfv" secondAttribute="bottom" constant="20" id="CCK-gR-urZ"/>
+                    <constraint firstItem="A8Y-fm-qfv" firstAttribute="top" secondItem="GV2-n9-N3l" secondAttribute="top" constant="40" id="FO5-K7-KOY"/>
+                    <constraint firstAttribute="trailing" secondItem="A8Y-fm-qfv" secondAttribute="trailing" id="JHI-ne-84n"/>
+                    <constraint firstItem="A8Y-fm-qfv" firstAttribute="leading" secondItem="GV2-n9-N3l" secondAttribute="leading" id="OAY-zR-V4y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="0.95743302610000003" blue="0.26643150669999999" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="backgroundColorView" destination="A8Y-fm-qfv" id="0dw-4F-nFO"/>
+                <outlet property="dateLabel" destination="uNr-Bf-zyT" id="C4u-9a-zXd"/>
+                <outlet property="descriptionLabel" destination="FSF-At-8k4" id="Dfv-Ea-ov8"/>
+                <outlet property="figureImageView" destination="VEO-f3-oRx" id="HeC-mY-XB6"/>
+                <outlet property="gradientIndicatorView" destination="OZS-3G-L0Y" id="sLR-PM-nUw"/>
+                <outlet property="personLabel" destination="ocs-As-inl" id="kBK-nh-8IW"/>
+            </connections>
+            <point key="canvasLocation" x="270" y="318.5"/>
+        </tableViewCell>
+    </objects>
+</document>

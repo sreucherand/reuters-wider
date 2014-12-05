@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *partNumberLabel;
 @property (weak, nonatomic) IBOutlet UIView *rectanglePartNumberView;
 @property (weak, nonatomic) IBOutlet UILabel *readDurationLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *readDurationCenterAlignmentConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
@@ -59,6 +60,8 @@
     self.titleLabel.text = self.heading.title;
     
     self.articleImage.image = [UIImage imageNamed:self.heading.image];
+    
+    self.readDurationCenterAlignmentConstraint.constant = (24 + [self.readDurationLabel.text sizeWithAttributes:@{NSFontAttributeName: CALIBRE_LIGHT_16}].width)/2 - 24;
 }
 
 @end

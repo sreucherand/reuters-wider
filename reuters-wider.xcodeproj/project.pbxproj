@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		201F51261A24D1C900191CB3 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */; };
 		202B7EEE1A3070F7000E13C7 /* CSSubtitleBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202B7EED1A3070F7000E13C7 /* CSSubtitleBlockTableViewCell.xib */; };
+		202B7EF21A30BA13000E13C7 /* CSFigureBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 202B7EF11A30BA13000E13C7 /* CSFigureBlockTableViewCell.m */; };
+		202B7EF41A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202B7EF31A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib */; };
 		203010381A25ECFC0088FD7C /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 203010371A25ECFC0088FD7C /* articles.json */; };
 		2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030103D1A25FC1E0088FD7C /* CSArticleModel.m */; };
 		203010411A25FD760088FD7C /* CSPartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010401A25FD760088FD7C /* CSPartModel.m */; };
@@ -18,6 +20,8 @@
 		2030104E1A2608330088FD7C /* CSArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030104D1A2608330088FD7C /* CSArticlesModel.m */; };
 		203EFFAF1A1658870085D493 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203EFFAD1A16578E0085D493 /* QuartzCore.framework */; };
 		206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */; };
+		206FD85B1A30CE1700636737 /* CSAsideBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 206FD85A1A30CE1700636737 /* CSAsideBlockTableViewCell.xib */; };
+		206FD85E1A30CE4400636737 /* CSAsideBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FD85D1A30CE4400636737 /* CSAsideBlockTableViewCell.m */; };
 		20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A751A23609600EF38F3 /* Leitura-Italic1.otf */; };
 		20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A761A23609600EF38F3 /* Leitura-Italic2.otf */; };
 		20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20801A771A23609600EF38F3 /* Leitura-NewsRoman1.otf */; };
@@ -77,6 +81,9 @@
 		201F51241A24D1C900191CB3 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTweenTimingFunctions.h; sourceTree = "<group>"; };
 		201F51251A24D1C900191CB3 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTweenTimingFunctions.m; sourceTree = "<group>"; };
 		202B7EED1A3070F7000E13C7 /* CSSubtitleBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSSubtitleBlockTableViewCell.xib; path = "reuters-wider/CSSubtitleBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		202B7EF01A30BA13000E13C7 /* CSFigureBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFigureBlockTableViewCell.h; path = "reuters-wider/CSFigureBlockTableViewCell.h"; sourceTree = "<group>"; };
+		202B7EF11A30BA13000E13C7 /* CSFigureBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSFigureBlockTableViewCell.m; path = "reuters-wider/CSFigureBlockTableViewCell.m"; sourceTree = "<group>"; };
+		202B7EF31A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSFigureBlockTableViewCell.xib; path = "reuters-wider/CSFigureBlockTableViewCell.xib"; sourceTree = "<group>"; };
 		203010371A25ECFC0088FD7C /* articles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
 		2030103C1A25FC1E0088FD7C /* CSArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticleModel.h; sourceTree = "<group>"; };
 		2030103D1A25FC1E0088FD7C /* CSArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticleModel.m; sourceTree = "<group>"; };
@@ -94,6 +101,9 @@
 		206C55E81A16022400E2B152 /* CSArchivesHomeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesHomeTransition.h; sourceTree = "<group>"; };
 		206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesHomeTransition.m; sourceTree = "<group>"; };
 		206C55EC1A163B0400E2B152 /* reuters-wider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reuters-wider-Prefix.pch"; sourceTree = "<group>"; };
+		206FD85A1A30CE1700636737 /* CSAsideBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSAsideBlockTableViewCell.xib; path = "reuters-wider/CSAsideBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		206FD85C1A30CE4400636737 /* CSAsideBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSAsideBlockTableViewCell.h; path = "reuters-wider/CSAsideBlockTableViewCell.h"; sourceTree = "<group>"; };
+		206FD85D1A30CE4400636737 /* CSAsideBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSAsideBlockTableViewCell.m; path = "reuters-wider/CSAsideBlockTableViewCell.m"; sourceTree = "<group>"; };
 		20801A741A235FED00EF38F3 /* CSVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVariables.h; sourceTree = "<group>"; };
 		20801A751A23609600EF38F3 /* Leitura-Italic1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic1.otf"; sourceTree = "<group>"; };
 		20801A761A23609600EF38F3 /* Leitura-Italic2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Italic2.otf"; sourceTree = "<group>"; };
@@ -185,6 +195,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202B7EEF1A30B9EA000E13C7 /* FigureBlock */ = {
+			isa = PBXGroup;
+			children = (
+				202B7EF01A30BA13000E13C7 /* CSFigureBlockTableViewCell.h */,
+				202B7EF11A30BA13000E13C7 /* CSFigureBlockTableViewCell.m */,
+				202B7EF31A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib */,
+			);
+			name = FigureBlock;
+			sourceTree = "<group>";
+		};
 		203010391A25FBB70088FD7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +229,16 @@
 				2030104A1A2605230088FD7C /* CSDataManager.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		206FD8591A30CE0100636737 /* AsideBlock */ = {
+			isa = PBXGroup;
+			children = (
+				206FD85C1A30CE4400636737 /* CSAsideBlockTableViewCell.h */,
+				206FD85D1A30CE4400636737 /* CSAsideBlockTableViewCell.m */,
+				206FD85A1A30CE1700636737 /* CSAsideBlockTableViewCell.xib */,
+			);
+			name = AsideBlock;
 			sourceTree = "<group>";
 		};
 		20801A711A235FBD00EF38F3 /* Utils */ = {
@@ -454,6 +484,8 @@
 		20CABEAD1A2724EB00462EE4 /* ArticleCells */ = {
 			isa = PBXGroup;
 			children = (
+				206FD8591A30CE0100636737 /* AsideBlock */,
+				202B7EEF1A30B9EA000E13C7 /* FigureBlock */,
 				20C0E79C1A2FC4520019C874 /* SubtitleBlock */,
 				EB469E571A275F6E001C7B02 /* StatementBlock */,
 				EB469E511A275CA5001C7B02 /* ParagraphBlock */,
@@ -653,12 +685,14 @@
 				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
 				EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */,
+				202B7EF41A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib in Resources */,
 				EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */,
 				20801A851A2360A800EF38F3 /* Archer-Thin.otf in Resources */,
 				20801A7E1A23609600EF38F3 /* Leitura-Roman1.otf in Resources */,
 				20801A7F1A23609600EF38F3 /* Leitura-Roman2.otf in Resources */,
 				20CABEBC1A27257E00462EE4 /* CSTestBlockTableViewCell.xib in Resources */,
 				209060471A10BB50001EC87E /* Main.storyboard in Resources */,
+				206FD85B1A30CE1700636737 /* CSAsideBlockTableViewCell.xib in Resources */,
 				20801A881A2360A800EF38F3 /* Calibre-Reg.otf in Resources */,
 				20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */,
 				EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */,
@@ -727,6 +761,7 @@
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,
 				EB469E541A275CBC001C7B02 /* CSParagraphBlockTableViewCell.m in Sources */,
 				2090603E1A10BB50001EC87E /* main.m in Sources */,
+				206FD85E1A30CE4400636737 /* CSAsideBlockTableViewCell.m in Sources */,
 				203010441A25FE140088FD7C /* CSBlockModel.m in Sources */,
 				20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */,
 				2030104B1A2605230088FD7C /* CSDataManager.m in Sources */,
@@ -740,6 +775,7 @@
 				2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */,
 				20CABEA61A27239E00462EE4 /* CSArticlePartTableViewController.m in Sources */,
 				20CABEBB1A27257E00462EE4 /* CSTestBlockTableViewCell.m in Sources */,
+				202B7EF21A30BA13000E13C7 /* CSFigureBlockTableViewCell.m in Sources */,
 				203010411A25FD760088FD7C /* CSPartModel.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
 				203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */,
