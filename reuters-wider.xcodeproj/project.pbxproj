@@ -63,6 +63,8 @@
 		EB469E561A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E551A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib */; };
 		EB469E5A1A275F9A001C7B02 /* CSStatementBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E591A275F9A001C7B02 /* CSStatementBlockTableViewCell.m */; };
 		EB469E5C1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E5B1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib */; };
+		EB469E601A2764C9001C7B02 /* CSPOVBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E5F1A2764C9001C7B02 /* CSPOVBlockTableViewCell.m */; };
+		EB469E621A276508001C7B02 /* CSPOVBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E611A276508001C7B02 /* CSPOVBlockTableViewCell.xib */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +175,9 @@
 		EB469E581A275F9A001C7B02 /* CSStatementBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSStatementBlockTableViewCell.h; path = "reuters-wider/CSStatementBlockTableViewCell.h"; sourceTree = "<group>"; };
 		EB469E591A275F9A001C7B02 /* CSStatementBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSStatementBlockTableViewCell.m; path = "reuters-wider/CSStatementBlockTableViewCell.m"; sourceTree = "<group>"; };
 		EB469E5B1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSStatementBlockTableViewCell.xib; path = "reuters-wider/CSStatementBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB469E5E1A2764C9001C7B02 /* CSPOVBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSPOVBlockTableViewCell.h; path = "reuters-wider/CSPOVBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB469E5F1A2764C9001C7B02 /* CSPOVBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSPOVBlockTableViewCell.m; path = "reuters-wider/CSPOVBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EB469E611A276508001C7B02 /* CSPOVBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSPOVBlockTableViewCell.xib; path = "reuters-wider/CSPOVBlockTableViewCell.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,6 +492,7 @@
 				206FD8591A30CE0100636737 /* AsideBlock */,
 				202B7EEF1A30B9EA000E13C7 /* FigureBlock */,
 				20C0E79C1A2FC4520019C874 /* SubtitleBlock */,
+				EB469E5D1A2764AD001C7B02 /* POVBlock */,
 				EB469E571A275F6E001C7B02 /* StatementBlock */,
 				EB469E511A275CA5001C7B02 /* ParagraphBlock */,
 				EB469E4B1A275A45001C7B02 /* TeasingBlock */,
@@ -583,6 +589,16 @@
 				EB469E5B1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib */,
 			);
 			name = StatementBlock;
+			sourceTree = "<group>";
+		};
+		EB469E5D1A2764AD001C7B02 /* POVBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB469E5E1A2764C9001C7B02 /* CSPOVBlockTableViewCell.h */,
+				EB469E5F1A2764C9001C7B02 /* CSPOVBlockTableViewCell.m */,
+				EB469E611A276508001C7B02 /* CSPOVBlockTableViewCell.xib */,
+			);
+			name = POVBlock;
 			sourceTree = "<group>";
 		};
 		FEE8AF2D9C66F999A4901A4F /* Frameworks */ = {
@@ -686,6 +702,7 @@
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
 				EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */,
 				202B7EF41A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib in Resources */,
+				EB469E621A276508001C7B02 /* CSPOVBlockTableViewCell.xib in Resources */,
 				EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */,
 				20801A851A2360A800EF38F3 /* Archer-Thin.otf in Resources */,
 				20801A7E1A23609600EF38F3 /* Leitura-Roman1.otf in Resources */,
@@ -752,6 +769,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB469E481A27582E001C7B02 /* CSMetaBlockTableViewCell.m in Sources */,
+				EB469E601A2764C9001C7B02 /* CSPOVBlockTableViewCell.m in Sources */,
 				20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */,
 				201F51261A24D1C900191CB3 /* PRTweenTimingFunctions.m in Sources */,
 				EB469E3B1A2733A7001C7B02 /* CSHeadingBlockTableViewCell.m in Sources */,
