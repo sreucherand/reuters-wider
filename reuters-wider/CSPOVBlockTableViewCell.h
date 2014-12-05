@@ -8,6 +8,6 @@
 
 #import "CSAbstractArticleViewCellTableViewCell.h"
 
-@interface CSPOVBlockTableViewCell : CSAbstractArticleViewCellTableViewCell
+@interface CSPovBlockTableViewCell : CSAbstractArticleViewCellTableViewCell
 
 @end

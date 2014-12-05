@@ -51,7 +51,7 @@
 #define CALIBRE_LIGHT_14 [UIFont fontWithName:@"Calibre-Light" size:14]
 #define LEITURA_ROMAN_2_23 [UIFont fontWithName:@"Leitura-Roman2" size:23]
 // Bottom part
-#define ARCHER_THIN_38 [UIFont fontWithName:@"Archer-Thin" size: 38]
+#define ARCHER_THIN_38 [UIFont fontWithName:@"ArcherPro-Thin" size:38]
 
 // Bloc subtitle
 #define LEITURA_ROMAN_3_19 [UIFont fontWithName:@"Leitura-Roman3" size:19]
@@ -83,6 +83,9 @@
 
 // Bloc paragraph
 #define GREY_COLOR [UIColor colorWithRed:(67.0f/255.0f) green:(67.0f/255.0f) blue:(67.0f/255.0f) alpha:1.0f]
+
+// Bloc pov
+#define MIDDLE_BLUE_COLOR [UIColor colorWithRed:(83.0f/255.0f) green:(91.0f/255.0f) blue:(168.0f/255.0f) alpha:1.0f]
 
 // Bloc figure
 // BG
