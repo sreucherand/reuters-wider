@@ -86,6 +86,8 @@
 
 // Bloc pov
 #define MIDDLE_BLUE_COLOR [UIColor colorWithRed:(83.0f/255.0f) green:(91.0f/255.0f) blue:(168.0f/255.0f) alpha:1.0f]
+#define TEXT_GRADIENT_BLUE_COLOR [UIColor colorWithRed:(2.0f/255.0f) green:(22.0f/255.0f) blue:(168.0f/255.0f) alpha:1.0f]
+#define TEXT_GRADIENT_ORANGE_COLOR [UIColor colorWithRed:(255.0f/255.0f) green:(92.0f/255.0f) blue:(54/255.0f) alpha:1.0f]
 
 // Bloc figure
 // BG
