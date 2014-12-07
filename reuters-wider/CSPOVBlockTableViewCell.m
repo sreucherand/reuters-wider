@@ -37,13 +37,6 @@
     self.comparedTextLabel.lineHeight = 34;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.mainTextLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.mainTextLabel.frame);
-    self.comparedTextLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.comparedTextLabel.frame);
-}
-
 - (void)setNeedsLayout {
     [super setNeedsLayout];
     

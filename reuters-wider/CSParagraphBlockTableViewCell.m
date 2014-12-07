@@ -23,12 +23,6 @@
     self.paragraphTextLabel.delegate = self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.paragraphTextLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.paragraphTextLabel.frame);
-}
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -39,12 +39,6 @@
     self.gradientIndicatorView.topColor = WIDER_DARK_BLUE_COLOR;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.descriptionLabel.frame);
-}
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

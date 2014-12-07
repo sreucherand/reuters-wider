@@ -21,12 +21,6 @@
     self.asideLabel.textColor = BLUE_COLOR;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.asideLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.asideLabel.frame);
-}
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

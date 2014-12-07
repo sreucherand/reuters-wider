@@ -22,12 +22,6 @@
     self.teasingText.lineHeight = 30;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.teasingText.preferredMaxLayoutWidth = CGRectGetWidth(self.teasingText.frame);
-}
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
