@@ -21,7 +21,7 @@
 - (void)hydrateWidthNumber:(NSInteger)number title:(NSString *)title date:(NSDate *)date {
     // Numero related
     
-    NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Issue %ld", number]];
+    NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Issue %i", (int)number]];
     
     [attributeString addAttribute:NSUnderlineStyleAttributeName
                             value:[NSNumber numberWithInt:1]

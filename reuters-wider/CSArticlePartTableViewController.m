@@ -8,6 +8,7 @@
 
 #import "CSArticlePartTableViewController.h"
 #import "CSAbstractArticleViewCellTableViewCell.h"
+#import "CSArticleTableHeaderView.h"
 
 @interface CSArticlePartTableViewController ()
 
@@ -27,17 +28,26 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.cells = @{}.mutableCopy;
+    self.cells = [[NSMutableDictionary alloc] init];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CSMetaBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSMetaBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSTeasingBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSTeasingBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSParagraphBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSParagraphBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSStatementBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSStatementBlockCellID"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"CSHeadingBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSHeadingBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSSubtitleBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSSubtitleBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSFigureBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSFigureBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSAsideBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSAsideBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSPovBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSPovBlockCellID"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSGlossaryDefinitionTableViewCell" bundle:nil] forCellReuseIdentifier:@"glossaryDefinitionCellID"];
+    
+    CSArticleTableHeaderView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"CSArticleTableHeaderView" owner:self options:nil] lastObject];
+    
+    [headerView hydrateWithHeadingData:[[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0]];
+    
+    headerView.frame = (CGRect){.origin=CGPointZero, .size=[headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
+    
+    self.tableView.tableHeaderView = headerView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,23 +62,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 14+1;
+    return 14;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSAbstractArticleViewCellTableViewCell *cell = nil;
     
-    CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
-    
-    if (!indexPath.row) { // If heading
-        cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:@"heading"] forIndexPath:indexPath];
-        
-        [cell hydrateWithHeadingData:(NSDictionary *)part];
-        
-        return cell;
-    }
-    
-    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row-1];
+    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
     
     cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
     
@@ -80,20 +80,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSAbstractArticleViewCellTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     
+    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
+    
     if (cell == nil) {
-        if (!indexPath.row) { // If heading
-            CSPartModel *part = [[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0];
-            
-            cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:@"heading"]];
-            
-            [cell hydrateWithHeadingData:(NSDictionary *)part];
-        } else {
-            CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row-1];
-            
-            cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type]];
-            
-            [cell hydrateWithContentData:(NSDictionary *)block];
-        }
+        cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type]];
+        
+        [cell hydrateWithContentData:(NSDictionary *)block];
         
         self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
     }

@@ -27,13 +27,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.cells = @{}.mutableCopy;
+    self.cells = [[NSMutableDictionary alloc] init];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CSGlossaryDefinitionTableViewCell" bundle:nil] forCellReuseIdentifier:@"glossaryDefinitionCellID"];
     
     CSGlossaryDefinitionTableViewCell *headerView = [[[NSBundle mainBundle] loadNibNamed:@"CSGlossaryHeaderView" owner:self options:nil] lastObject];
     
-    headerView.frame = CGRectZero;
     headerView.frame = (CGRect){.origin=CGPointZero, .size=[headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
     
     self.tableView.tableHeaderView = headerView;
@@ -48,21 +47,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return [[[CSDataManager sharedManager] getDefinitionsForArticle:2] count];
+    return [[[CSDataManager sharedManager] getSortedDefinitionsForArticle:2] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    NSString *key = [[[[CSDataManager sharedManager] getDefinitionsForArticle:2] allKeys] objectAtIndex:section];
-    
-    return [[[[CSDataManager sharedManager] getDefinitionsForArticle:2] objectForKey:key] count];
+    return [[[CSDataManager sharedManager] getSortedDefinitionsForArticle:2 forKeyIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSGlossaryDefinitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID" forIndexPath:indexPath];
     
-    NSString *key = [[[[CSDataManager sharedManager] getDefinitionsForArticle:2] allKeys] objectAtIndex:indexPath.section];
-    CSDefinitionModel *definition = [[[[CSDataManager sharedManager] getDefinitionsForArticle:2] objectForKey:key] objectAtIndex:indexPath.row];
+    CSDefinitionModel *definition = [[[CSDataManager sharedManager] getSortedDefinitionsForArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     [cell hydrateWithDefinition:definition forIndexPath:indexPath];
     
@@ -72,8 +68,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSGlossaryDefinitionTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     
-    NSString *key = [[[[CSDataManager sharedManager] getDefinitionsForArticle:2] allKeys] objectAtIndex:indexPath.section];
-    CSDefinitionModel *definition = [[[[CSDataManager sharedManager] getDefinitionsForArticle:2] objectForKey:key] objectAtIndex:indexPath.row];
+    CSDefinitionModel *definition = [[[CSDataManager sharedManager] getSortedDefinitionsForArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     if (cell == nil) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID"];
@@ -96,8 +91,6 @@
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
-
-
 
 /*
 // Override to support conditional editing of the table view.

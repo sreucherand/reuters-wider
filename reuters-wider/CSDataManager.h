@@ -16,6 +16,7 @@
 - (NSArray *)getArticles;
 - (NSArray *)getPartsForArticle:(NSInteger)articleIndex;
 - (NSArray *)getBlocksForArticle:(NSInteger)articleIndex part:(NSInteger)partIndex;
-- (NSDictionary *)getDefinitionsForArticle:(NSInteger)articleIndex;
+- (NSDictionary *)getSortedDefinitionsForArticle:(NSInteger)articleIndex;
+- (NSArray *)getSortedDefinitionsForArticle:(NSInteger)articleIndex forKeyIndex:(NSInteger)index;
 
 @end
