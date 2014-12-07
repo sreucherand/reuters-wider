@@ -60,4 +60,26 @@
     return [[[self getPartsForArticle:articleIndex] objectAtIndex:partIndex] blocks];
 }
 
+- (NSDictionary *)getDefinitionsForArticle:(NSInteger)articleIndex {
+    NSArray *sortedDefinitions = [[NSArray alloc] initWithArray:[[[[self getArticles] objectAtIndex:articleIndex] definitions] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSString *first = [[(CSDefinitionModel *)obj1 title] substringWithRange:NSMakeRange(0, 1)];
+        NSString *second = [[(CSDefinitionModel *)obj1 title] substringWithRange:NSMakeRange(0, 1)];
+        
+        return [first compare:second];
+    }]];
+    NSMutableDictionary *results = [[NSMutableDictionary alloc] init];
+    
+    for (CSDefinitionModel *definition in sortedDefinitions) {
+        NSString *letter = [definition.title substringWithRange:NSMakeRange(0, 1)];
+        
+        if (results[letter] == nil) {
+            results[letter] = @[].mutableCopy;
+        }
+        
+        [results[letter] addObject:definition];
+    }
+    
+    return results;
+}
+
 @end

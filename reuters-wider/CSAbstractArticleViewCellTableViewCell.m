@@ -8,10 +8,6 @@
 
 #import "CSAbstractArticleViewCellTableViewCell.h"
 
-@interface CSAbstractArticleViewCellTableViewCell ()
-
-@end
-
 @implementation CSAbstractArticleViewCellTableViewCell
 
 - (void)awakeFromNib {

@@ -71,6 +71,10 @@
 
 // Bloc transition
 #define LEITURA_ITALIC_2_38 [UIFont fontWithName:@"Leitura-Italic2" size:38]
+
+// Glossary
+#define CALIBRE_LIGHT_15 [UIFont fontWithName:@"Calibre-Light" size:15]
+#define LEITURA_ROMAN_4_32 [UIFont fontWithName:@"Leitura-Roman4" size:32]
 // ---- End fonts ----
 
 // ---- Colors ----
@@ -102,6 +106,9 @@
 // Txt
 #define DARK_BLUE_COLOR [UIColor colorWithRed:(27.0f/255.0f) green:(24.0f/255.0f) blue:(98.0f/255.0f) alpha:1.0f]
 
+// Glossary
+#define LIGHT_GREY_COLOR [UIColor colorWithRed:(152.0f/255.0f) green:(152.0f/255.0f) blue:(152.0f/255.0f) alpha:1.0f]
+#define LETTER_BLUE_COLOR [UIColor colorWithRed:(0.0f/255.0f) green:(18.0f/255.0f) blue:(137.0f/255.0f) alpha:1.0f]
 // ---- End colors ----
 
 // ----

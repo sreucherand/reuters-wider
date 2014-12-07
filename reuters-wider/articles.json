@@ -49,7 +49,7 @@
                             "id": 2,
                             "type": "paragraph",
                             "content": {
-                                "text": "Hong Kong returned to [Chinese rule in 1997](/kikicoucou) with the guarantee of wide ranging autonomy and an independent judiciary and media under a One country, Two systems formula."
+                                "text": "Hong Kong returned to [Chinese rule in 1997](/glossary/0) with the guarantee of wide ranging autonomy and an independent judiciary and media under a One country, Two systems formula."
                             }
                         },
                         {
@@ -335,6 +335,23 @@
                            }
                        }
                     ]
+                }
+            ],
+            "definitions": [
+                {
+                    "id": 0,
+                    "title": "Chinese rule in 1997",
+                    "text": "The Basic Law was drafted in accordance with the Sino-British Joint Declaration on the Question of Hong-Kong signed between the Chinese and British governments on 19 December 1984 and went into effect on 1 July 1997."
+                },
+                {
+                    "id": 1,
+                    "title": "Communist party",
+                    "text": "Politically, they are Maoists influenced by Hua Guofeng: They think that the Communist Party is the measure of all things; friends of the Party are worthy of support; enemies of the Party should be opposed at all costs. This hard-line thinking led to the occasional vandalism of Democratic Party political bulletin boards by the indigenous Communists."
+                },
+                {
+                    "id": 2,
+                    "title": "Federation of students",
+                    "text": "Hong Kong Federation of Students is the biggest student organization in Hong Kong. It consists of the student unions of eight tertiary education institutions. With 51,779 members as of March 2006, the purpose of the HKFS is to promote student movements and to enhance students’ engagement in society."
                 }
             ]
         }

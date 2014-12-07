@@ -8,6 +8,7 @@
 
 #import "JSONModel.h"
 #import "CSPartModel.h"
+#import "CSDefinitionModel.h"
 
 @protocol CSArticleModel
 @end
@@ -21,5 +22,6 @@
 @property (strong, nonatomic) NSString *image;
 @property (strong, nonatomic) NSString *color;
 @property (strong, nonatomic) NSArray<CSPartModel, Optional> *parts;
+@property (strong, nonatomic) NSArray<CSDefinitionModel, Optional> *definitions;
 
 @end

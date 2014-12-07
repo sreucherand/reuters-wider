@@ -48,6 +48,13 @@
 		20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BACB7A1A1AA33C00EB78CC /* CSHomeViewController.m */; };
 		20BBDFEA1A2E6B6B00F2A8C4 /* CSAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BBDFE91A2E6B6B00F2A8C4 /* CSAttributedLabel.m */; };
 		20C0E79F1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C0E79E1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m */; };
+		20C176C61A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176C51A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m */; };
+		20C176C91A347F550021C64C /* CSDefinitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176C81A347F550021C64C /* CSDefinitionModel.m */; };
+		20C176CB1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C176CA1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib */; };
+		20C176CD1A348F190021C64C /* Leitura-Roman4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20C176CC1A348F190021C64C /* Leitura-Roman4.otf */; };
+		20C176D31A349D730021C64C /* CSGlossaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176D21A349D730021C64C /* CSGlossaryTableViewController.m */; };
+		20C176E11A34A6E90021C64C /* CSGlossaryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176E01A34A6E90021C64C /* CSGlossaryHeaderView.m */; };
+		20C176E31A34A6FD0021C64C /* CSGlossaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C176E21A34A6FD0021C64C /* CSGlossaryHeaderView.xib */; };
 		20CABEA61A27239E00462EE4 /* CSArticlePartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEA51A27239E00462EE4 /* CSArticlePartTableViewController.m */; };
 		20CABEB41A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEB31A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m */; };
 		20CABEBB1A27257E00462EE4 /* CSTestBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEB91A27257E00462EE4 /* CSTestBlockTableViewCell.m */; };
@@ -148,6 +155,17 @@
 		20BBDFE91A2E6B6B00F2A8C4 /* CSAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSAttributedLabel.m; path = "reuters-wider/CSAttributedLabel.m"; sourceTree = "<group>"; };
 		20C0E79D1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSubtitleBlockTableViewCell.h; path = "reuters-wider/CSSubtitleBlockTableViewCell.h"; sourceTree = "<group>"; };
 		20C0E79E1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSubtitleBlockTableViewCell.m; path = "reuters-wider/CSSubtitleBlockTableViewCell.m"; sourceTree = "<group>"; };
+		20C176C41A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSGlossaryDefinitionTableViewCell.h; path = "reuters-wider/CSGlossaryDefinitionTableViewCell.h"; sourceTree = "<group>"; };
+		20C176C51A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSGlossaryDefinitionTableViewCell.m; path = "reuters-wider/CSGlossaryDefinitionTableViewCell.m"; sourceTree = "<group>"; };
+		20C176C71A347F550021C64C /* CSDefinitionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDefinitionModel.h; sourceTree = "<group>"; };
+		20C176C81A347F550021C64C /* CSDefinitionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSDefinitionModel.m; sourceTree = "<group>"; };
+		20C176CA1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSGlossaryDefinitionTableViewCell.xib; path = "reuters-wider/CSGlossaryDefinitionTableViewCell.xib"; sourceTree = "<group>"; };
+		20C176CC1A348F190021C64C /* Leitura-Roman4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman4.otf"; sourceTree = "<group>"; };
+		20C176D11A349D730021C64C /* CSGlossaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGlossaryTableViewController.h; sourceTree = "<group>"; };
+		20C176D21A349D730021C64C /* CSGlossaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGlossaryTableViewController.m; sourceTree = "<group>"; };
+		20C176DF1A34A6E90021C64C /* CSGlossaryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSGlossaryHeaderView.h; path = "reuters-wider/CSGlossaryHeaderView.h"; sourceTree = "<group>"; };
+		20C176E01A34A6E90021C64C /* CSGlossaryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSGlossaryHeaderView.m; path = "reuters-wider/CSGlossaryHeaderView.m"; sourceTree = "<group>"; };
+		20C176E21A34A6FD0021C64C /* CSGlossaryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSGlossaryHeaderView.xib; path = "reuters-wider/CSGlossaryHeaderView.xib"; sourceTree = "<group>"; };
 		20C34B9B1A23293400B9D856 /* CSEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSEnums.h; sourceTree = "<group>"; };
 		20CABEA41A27239E00462EE4 /* CSArticlePartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticlePartTableViewController.h; sourceTree = "<group>"; };
 		20CABEA51A27239E00462EE4 /* CSArticlePartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticlePartTableViewController.m; sourceTree = "<group>"; };
@@ -223,6 +241,8 @@
 				203010461A26009B0088FD7C /* CSBlockContentModel.m */,
 				2030104C1A2608330088FD7C /* CSArticlesModel.h */,
 				2030104D1A2608330088FD7C /* CSArticlesModel.m */,
+				20C176C71A347F550021C64C /* CSDefinitionModel.h */,
+				20C176C81A347F550021C64C /* CSDefinitionModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -278,6 +298,7 @@
 				20801A781A23609600EF38F3 /* Leitura-Roman1.otf */,
 				20801A791A23609600EF38F3 /* Leitura-Roman2.otf */,
 				20801A7A1A23609600EF38F3 /* Leitura-Roman3.otf */,
+				20C176CC1A348F190021C64C /* Leitura-Roman4.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -294,6 +315,8 @@
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				20C176D41A349F510021C64C /* GlossaryHeaderCell */,
+				20C176C31A347DE60021C64C /* GlossaryDefinitionCell */,
 				20BBDFE71A2E6B4E00F2A8C4 /* AttributedLabel */,
 				20CABEAD1A2724EB00462EE4 /* ArticleCells */,
 				20E37A9A1A26221100CE441B /* IssuesPreviewPicture */,
@@ -308,6 +331,7 @@
 		208C9CF61A10D09B00517B46 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				20C176BF1A347C0E0021C64C /* Glossary */,
 				20CABEA01A27234400462EE4 /* ArticlePart */,
 				20BACB7E1A1AA3A400EB78CC /* Archives */,
 				20BACB7C1A1AA38700EB78CC /* Home */,
@@ -467,6 +491,35 @@
 				20C0E79E1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m */,
 			);
 			name = SubtitleBlock;
+			sourceTree = "<group>";
+		};
+		20C176BF1A347C0E0021C64C /* Glossary */ = {
+			isa = PBXGroup;
+			children = (
+				20C176D11A349D730021C64C /* CSGlossaryTableViewController.h */,
+				20C176D21A349D730021C64C /* CSGlossaryTableViewController.m */,
+			);
+			name = Glossary;
+			sourceTree = "<group>";
+		};
+		20C176C31A347DE60021C64C /* GlossaryDefinitionCell */ = {
+			isa = PBXGroup;
+			children = (
+				20C176C41A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.h */,
+				20C176C51A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m */,
+				20C176CA1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib */,
+			);
+			name = GlossaryDefinitionCell;
+			sourceTree = "<group>";
+		};
+		20C176D41A349F510021C64C /* GlossaryHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				20C176DF1A34A6E90021C64C /* CSGlossaryHeaderView.h */,
+				20C176E01A34A6E90021C64C /* CSGlossaryHeaderView.m */,
+				20C176E21A34A6FD0021C64C /* CSGlossaryHeaderView.xib */,
+			);
+			name = GlossaryHeaderCell;
 			sourceTree = "<group>";
 		};
 		20C34B9A1A23290400B9D856 /* Resources */ = {
@@ -694,6 +747,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C176E31A34A6FD0021C64C /* CSGlossaryHeaderView.xib in Resources */,
 				20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */,
 				EB469E5C1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib in Resources */,
 				20801A801A23609600EF38F3 /* Leitura-Roman3.otf in Resources */,
@@ -701,6 +755,8 @@
 				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
 				EB469E3F1A2733F5001C7B02 /* CSHeadingBlockTableViewCell.xib in Resources */,
+				20C176CD1A348F190021C64C /* Leitura-Roman4.otf in Resources */,
+				20C176CB1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib in Resources */,
 				202B7EF41A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib in Resources */,
 				EB469E621A276508001C7B02 /* CSPovBlockTableViewCell.xib in Resources */,
 				EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */,
@@ -782,6 +838,7 @@
 				206FD85E1A30CE4400636737 /* CSAsideBlockTableViewCell.m in Sources */,
 				203010441A25FE140088FD7C /* CSBlockModel.m in Sources */,
 				20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */,
+				20C176C91A347F550021C64C /* CSDefinitionModel.m in Sources */,
 				2030104B1A2605230088FD7C /* CSDataManager.m in Sources */,
 				20A55B0B1A222C46003B601B /* CSMainNavigationController.m in Sources */,
 				20CABEB41A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m in Sources */,
@@ -794,12 +851,15 @@
 				20CABEA61A27239E00462EE4 /* CSArticlePartTableViewController.m in Sources */,
 				20CABEBB1A27257E00462EE4 /* CSTestBlockTableViewCell.m in Sources */,
 				202B7EF21A30BA13000E13C7 /* CSFigureBlockTableViewCell.m in Sources */,
+				20C176C61A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m in Sources */,
 				203010411A25FD760088FD7C /* CSPartModel.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
 				203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */,
+				20C176E11A34A6E90021C64C /* CSGlossaryHeaderView.m in Sources */,
 				206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */,
 				20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */,
 				20CABEC01A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m in Sources */,
+				20C176D31A349D730021C64C /* CSGlossaryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
