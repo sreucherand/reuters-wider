@@ -38,7 +38,9 @@
 }
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
-    NSLog(@"%@", url.relativeString);
+    if ([self.delegate respondsToSelector:@selector(didSelectLinkWithURL:)]) {
+        [self.delegate performSelector:@selector(didSelectLinkWithURL:) withObject:url];
+    }
 }
 
 @end

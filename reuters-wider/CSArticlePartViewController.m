@@ -1,32 +1,29 @@
 //
-//  CSArticlePartTableViewController.m
+//  CSArticlePartViewController.m
 //  reuters-wider
 //
-//  Created by REUCHERAND Sylvain on 27/11/2014.
+//  Created by Sylvain Reucherand on 07/12/2014.
 //  Copyright (c) 2014 Gobelins. All rights reserved.
 //
 
-#import "CSArticlePartTableViewController.h"
+#import "CSArticlePartViewController.h"
 #import "CSAbstractArticleViewCellTableViewCell.h"
 #import "CSArticleTableHeaderView.h"
 
-@interface CSArticlePartTableViewController ()
+@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, CSAbstractArticleViewCellTableViewCellDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSMutableDictionary *cells;
+@property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
 
 @end
 
-@implementation CSArticlePartTableViewController
-
+@implementation CSArticlePartViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Do any additional setup after loading the view.
     
     self.cells = [[NSMutableDictionary alloc] init];
     
@@ -48,6 +45,10 @@
     headerView.frame = (CGRect){.origin=CGPointZero, .size=[headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
     
     self.tableView.tableHeaderView = headerView;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +72,7 @@
     CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
     
     cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
+    cell.delegate = self;
     
     [cell hydrateWithContentData:(NSDictionary *)block];
     
@@ -118,39 +120,33 @@
     return identifier;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+#pragma mark - Cell delegate
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)didSelectLinkWithURL:(NSURL *)url {
+    [self.tableView setScrollEnabled:NO];
+    [self.tableView setEasingFunction:easeOutExpo forKeyPath:@"frame"];
+    
+    [UIView animateWithDuration:1 animations:^{
+        self.tableView.frame = CGRectOffset(self.tableView.frame, -200, 0);
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self.tableView addGestureRecognizer:self.tapGesture];
+        }
+    }];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
+    [self.tableView removeGestureRecognizer:self.tapGesture];
+    
+    [UIView animateWithDuration:1 animations:^{
+        self.tableView.frame = CGRectOffset(self.tableView.frame, 200, 0);
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self.tableView setScrollEnabled:YES];
+            [self.tableView removeEasingFunctionForKeyPath:@"frame"];
+        }
+    }];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

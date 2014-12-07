@@ -10,10 +10,19 @@
 
 #import "CSAttributedLabel.h"
 
+@protocol CSAbstractArticleViewCellTableViewCellDelegate;
+
 @interface CSAbstractArticleViewCellTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) CSBlockContentModel *content;
+@property (strong, nonatomic) id<CSAbstractArticleViewCellTableViewCellDelegate> delegate;
 
 - (void)hydrateWithContentData:(NSDictionary *)data;
+
+@end
+
+@protocol CSAbstractArticleViewCellTableViewCellDelegate <NSObject>
+
+- (void)didSelectLinkWithURL:(NSURL *)url;
 
 @end
