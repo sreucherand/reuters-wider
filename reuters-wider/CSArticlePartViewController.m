@@ -10,12 +10,12 @@
 #import "CSAbstractArticleViewCellTableViewCell.h"
 #import "CSArticleTableHeaderView.h"
 
-@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, CSAbstractArticleViewCellTableViewCellDelegate>
+@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, CSAbstractArticleViewCellTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSMutableDictionary *cells;
-@property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
 
 @end
 
@@ -48,7 +48,12 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
+    self.tapGestureRecognizer.delegate = self;
+    
+    UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeOnView:)];
+    
+    [self.view addGestureRecognizer:swipeGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,32 +125,58 @@
     return identifier;
 }
 
-#pragma mark - Cell delegate
-
-- (void)didSelectLinkWithURL:(NSURL *)url {
+- (void)openDefinition {
+    [self.tableView addGestureRecognizer:self.tapGestureRecognizer];
+    [self.tableView.layer removeAllAnimations];
     [self.tableView setScrollEnabled:NO];
-    [self.tableView setEasingFunction:easeOutExpo forKeyPath:@"frame"];
     
-    [UIView animateWithDuration:1 animations:^{
-        self.tableView.frame = CGRectOffset(self.tableView.frame, -200, 0);
-    } completion:^(BOOL finished) {
-        if (finished) {
-            [self.tableView addGestureRecognizer:self.tapGesture];
-        }
-    }];
+    [UIView animateWithDuration:1 delay:0 options:(UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState) animations:^{
+        self.tableView.frame = CGRectOffset(self.tableView.frame, -220, 0);
+    } completion:nil];
 }
 
-- (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
-    [self.tableView removeGestureRecognizer:self.tapGesture];
+- (void)closeDefinition {
+    [self.tableView removeGestureRecognizer:self.tapGestureRecognizer];
+    [self.tableView.layer removeAllAnimations];
+    [self.tableView setScrollEnabled:YES];
     
-    [UIView animateWithDuration:1 animations:^{
-        self.tableView.frame = CGRectOffset(self.tableView.frame, 200, 0);
-    } completion:^(BOOL finished) {
-        if (finished) {
-            [self.tableView setScrollEnabled:YES];
-            [self.tableView removeEasingFunctionForKeyPath:@"frame"];
-        }
-    }];
+    [UIView animateWithDuration:1 delay:0 options:(UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState) animations:^{
+        self.tableView.frame = CGRectOffset(self.tableView.frame, 220, 0);
+    } completion:nil];
+}
+
+#pragma mark - Gesture delegate
+
+- (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
+    [self closeDefinition];
+}
+
+- (void)didSwipeOnView:(UISwipeGestureRecognizer *)recognizer {
+    [self closeDefinition];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+#pragma mark - Cell delegate
+
+- (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point {
+    CGFloat location = [point CGPointValue].y - CGRectGetHeight(self.tableView.frame)/2;
+    
+    [self.tableView setEasingFunction:easeOutExpo forKeyPath:@"frame"];
+    
+    if (fabs(self.tableView.contentOffset.y - location) > 80) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.tableView.contentOffset = CGPointMake(0, location);
+        } completion:^(BOOL finished) {
+            if (finished) {
+                [self openDefinition];
+            }
+        }];
+    } else {
+        [self openDefinition];
+    }
 }
 
 /*

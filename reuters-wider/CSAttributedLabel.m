@@ -8,6 +8,13 @@
 
 #import "CSAttributedLabel.h"
 
+@interface CSAttributedLabel ()
+
+@property (strong, nonatomic) UIColor *topGradientColor;
+@property (strong, nonatomic) UIColor *bottomGradientColor;
+
+@end
+
 @implementation CSAttributedLabel
 
 - (void)layoutSubviews {
@@ -58,6 +65,51 @@
 
 - (void)setLineHeight:(CGFloat)lineHeight {
     _lineHeight = lineHeight;
+}
+
+- (void)textColorWithGradienFromColor:(UIColor *)topColor toColor:(UIColor *)bottomColor {
+    self.topGradientColor = topColor;
+    self.bottomGradientColor = bottomColor;
+}
+
+- (UIColor *)colorGradientFromContextValue {
+    CGSize size = self.frame.size;
+    
+    UIGraphicsBeginImageContext(size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    UIGraphicsPushContext(context);
+    
+    CGFloat locations[2];
+    
+    locations[0] = 0;
+    locations[1] = 1;
+    
+    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
+    
+    NSMutableArray *colors = [[NSMutableArray alloc] initWithCapacity:4];
+    
+    [colors addObject:(id)[self.topGradientColor CGColor]];
+    [colors addObject:(id)[self.bottomGradientColor CGColor]];
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
+    
+    CGPoint topCenter = CGPointMake(0, 0);
+    CGPoint bottomCenter = CGPointMake(0, size.height);
+    
+    CGContextDrawLinearGradient(context, gradient, topCenter, bottomCenter, 0);
+    
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(space);
+    
+    UIGraphicsPopContext();
+    
+    UIImage *gradientImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return [UIColor colorWithPatternImage:gradientImage];
 }
 
 @end

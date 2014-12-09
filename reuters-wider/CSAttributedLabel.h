@@ -14,6 +14,8 @@
 
 @property (assign, nonatomic) CGFloat lineHeight;
 
+- (void)textColorWithGradienFromColor:(UIColor *)topColor toColor:(UIColor *)bottomColor;
+
 @end
 
 @protocol CSAttributedLabelDelegate <TTTAttributedLabelDelegate>

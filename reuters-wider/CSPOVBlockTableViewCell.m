@@ -9,6 +9,9 @@
 #import "CSPovBlockTableViewCell.h"
 
 @interface CSPovBlockTableViewCell ()
+{
+    CGSize gradientSize;
+}
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UILabel *mainMetaLabel;
@@ -35,12 +38,7 @@
     
     self.comparedTextLabel.font = ARCHER_THIN_38;
     self.comparedTextLabel.lineHeight = 34;
-}
-
-- (void)setNeedsLayout {
-    [super setNeedsLayout];
-    
-    self.comparedTextLabel.textColor = [UIColor colorWithPatternImage:[self gradient]];
+    [self.comparedTextLabel textColorWithGradienFromColor:TEXT_GRADIENT_BLUE_COLOR toColor:TEXT_GRADIENT_ORANGE_COLOR];
 }
 
 /*
@@ -59,46 +57,6 @@
     
     self.comparedMetaLabel.text = [NSString stringWithFormat:@"By %@", [self.content.views[1] author]];
     self.comparedTextLabel.text = [self.content.views[1] text];
-}
-
-- (UIImage *)gradient {
-    CGSize size = self.comparedTextLabel.frame.size;
-    
-    UIGraphicsBeginImageContext(size);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    UIGraphicsPushContext(context);
-    
-    CGFloat locations[2];
-    
-    locations[0] = 0;
-    locations[1] = 1;
-    
-    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-    
-    NSMutableArray *colors = [[NSMutableArray alloc] initWithCapacity:4];
-    
-    [colors addObject:(id)[TEXT_GRADIENT_BLUE_COLOR CGColor]];
-    [colors addObject:(id)[TEXT_GRADIENT_ORANGE_COLOR CGColor]];
-    
-    CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
-    
-    CGPoint topCenter = CGPointMake(0, 0);
-    CGPoint bottomCenter = CGPointMake(0, size.height);
-    
-    CGContextDrawLinearGradient(context, gradient, topCenter, bottomCenter, 0);
-    
-    CGGradientRelease(gradient);
-    CGColorSpaceRelease(space);
-    
-    UIGraphicsPopContext();
-    
-    UIImage *gradientImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return gradientImage;
 }
 
 @end

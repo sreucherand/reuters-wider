@@ -482,9 +482,9 @@
 		20C0E79C1A2FC4520019C874 /* SubtitleBlock */ = {
 			isa = PBXGroup;
 			children = (
-				202B7EED1A3070F7000E13C7 /* CSSubtitleBlockTableViewCell.xib */,
 				20C0E79D1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.h */,
 				20C0E79E1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m */,
+				202B7EED1A3070F7000E13C7 /* CSSubtitleBlockTableViewCell.xib */,
 			);
 			name = SubtitleBlock;
 			sourceTree = "<group>";

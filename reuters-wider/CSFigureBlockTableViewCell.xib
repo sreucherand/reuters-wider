@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -49,6 +49,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" red="0.60322952880000003" green="0.99630901279999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="OZS-3G-L0Y" secondAttribute="centerX" id="4hv-9D-vOi"/>
                             <constraint firstAttribute="centerX" secondItem="VEO-f3-oRx" secondAttribute="centerX" id="7PB-p0-4Ip"/>
@@ -72,7 +73,6 @@
                     <constraint firstItem="A8Y-fm-qfv" firstAttribute="leading" secondItem="GV2-n9-N3l" secondAttribute="leading" id="OAY-zR-V4y"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="1" green="0.95743302610000003" blue="0.26643150669999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="backgroundColorView" destination="A8Y-fm-qfv" id="0dw-4F-nFO"/>
                 <outlet property="dateLabel" destination="uNr-Bf-zyT" id="C4u-9a-zXd"/>

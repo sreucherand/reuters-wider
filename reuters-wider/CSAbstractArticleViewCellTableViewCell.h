@@ -22,7 +22,8 @@
 @end
 
 @protocol CSAbstractArticleViewCellTableViewCellDelegate <NSObject>
+@optional;
 
-- (void)didSelectLinkWithURL:(NSURL *)url;
+- (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point;
 
 @end
