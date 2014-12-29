@@ -33,7 +33,7 @@
     
     self.issuesPreviewCollectionView.delegate = self;
     self.issuesPreviewCollectionView.dataSource = self;
-    self.issuesPreviewCollectionView.coucou = self;
+    self.issuesPreviewCollectionView.pullPictureDelegate = self;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -72,7 +72,7 @@
     if (indexPath.item % 2 != 0) {
         CSArticleModel *article = [[[CSDataManager sharedManager] getArticles] objectAtIndex:(indexPath.item-1)/2];
         CSIssuesPreviewPictureViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
-        NSLog(@"%@", article.image);
+        
         cell.pictureImageView.image = [UIImage imageNamed:article.image];
         
         return cell;
@@ -133,7 +133,7 @@
             [self.issuesPreviewCollectionView setScrollEnabled:YES];
         }];
     } else {
-        [self performSegueWithIdentifier:@"pushTempID" sender:self];
+        [self performSegueWithIdentifier:@"pushHomeToArticleSegueID" sender:self];
     }
 }
 

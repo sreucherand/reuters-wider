@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CSGradientIndicatorView.h"
+
 @interface CSArticleTableHeaderView : UIView
+
+@property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientIndicatorView;
 
 - (void)hydrateWithHeadingData:(NSDictionary *)data;
 

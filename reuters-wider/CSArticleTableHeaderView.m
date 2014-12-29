@@ -7,7 +7,6 @@
 //
 
 #import "CSArticleTableHeaderView.h"
-#import "CSGradientIndicatorView.h"
 
 @interface CSArticleTableHeaderView ()
 
@@ -16,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *readDurationLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *readDurationCenterAlignmentConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *articleImageHeightConstraint;
 
@@ -36,9 +34,9 @@
     self.titleLabel.font = LEITURA_ROMAN_3_36;
     self.titleLabel.textColor = DARKEST_GREY_COLOR;
     
-    self.gradientImageView.topColor = WIDER_DARK_BLUE_COLOR;
-    
     self.articleImageHeightConstraint.constant = CGRectGetWidth([[UIScreen mainScreen] bounds]);
+    
+    self.gradientIndicatorView.topColor = [UIColor clearColor];
 }
 
 /*

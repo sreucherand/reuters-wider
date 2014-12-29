@@ -26,7 +26,7 @@
 }
 
 - (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
-    if ([identifier isEqualToString:@"UnwindToHomeSegueIdentifier"]) {
+    if ([identifier isEqualToString:@"unwindArchivesToHomeSegueID"]) {
         CSArchivesHomeTransition *segue = [[CSArchivesHomeTransition alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
         return segue;
     }

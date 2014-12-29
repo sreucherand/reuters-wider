@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="h0Q-h7-OcU" customClass="CSInArticleGlossaryDefinition">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egr-SH-zsd" customClass="CSAttributedLabel">
+                    <rect key="frame" x="26" y="0.0" width="251" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYc-Y0-H8b" customClass="CSAttributedLabel">
+                    <rect key="frame" x="26" y="31" width="251" height="46"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oh-84-lnP" customClass="CSGradientIndicatorView">
+                    <rect key="frame" x="0.0" y="0.0" width="4" height="77"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="4" id="hv2-6G-inF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ZYc-Y0-H8b" secondAttribute="trailing" constant="20" id="EOy-yz-Tp0"/>
+                <constraint firstItem="4oh-84-lnP" firstAttribute="top" secondItem="h0Q-h7-OcU" secondAttribute="top" id="HFF-Ya-fs2"/>
+                <constraint firstItem="Egr-SH-zsd" firstAttribute="leading" secondItem="4oh-84-lnP" secondAttribute="trailing" constant="22" id="gjW-FJ-zho"/>
+                <constraint firstAttribute="bottom" secondItem="4oh-84-lnP" secondAttribute="bottom" id="k37-56-BC5"/>
+                <constraint firstItem="Egr-SH-zsd" firstAttribute="top" secondItem="h0Q-h7-OcU" secondAttribute="top" id="kMG-pn-OBq"/>
+                <constraint firstAttribute="trailing" secondItem="Egr-SH-zsd" secondAttribute="trailing" constant="20" id="nWa-kt-TGg"/>
+                <constraint firstItem="Egr-SH-zsd" firstAttribute="leading" secondItem="ZYc-Y0-H8b" secondAttribute="leading" id="uhL-uI-qbQ"/>
+                <constraint firstItem="ZYc-Y0-H8b" firstAttribute="top" secondItem="Egr-SH-zsd" secondAttribute="bottom" constant="10" id="vUU-pm-ZJT"/>
+                <constraint firstAttribute="bottom" secondItem="ZYc-Y0-H8b" secondAttribute="bottom" id="vUn-lo-0YR"/>
+                <constraint firstItem="4oh-84-lnP" firstAttribute="leading" secondItem="h0Q-h7-OcU" secondAttribute="leading" id="yjg-nU-tyg"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="gradientIndicatorView" destination="4oh-84-lnP" id="INs-2v-2lT"/>
+                <outlet property="textDefinitionLabel" destination="ZYc-Y0-H8b" id="ET3-pv-nln"/>
+                <outlet property="titleDefinitionLabel" destination="Egr-SH-zsd" id="KDA-7g-j2a"/>
+            </connections>
+            <point key="canvasLocation" x="958.5" y="137.5"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

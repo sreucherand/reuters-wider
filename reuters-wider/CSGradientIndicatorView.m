@@ -10,16 +10,9 @@
 
 @interface CSGradientIndicatorView ()
 
-@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) PRTweenOperation *operation;
 
 @property (assign, nonatomic) CGFloat progression;
-@property (assign, nonatomic) CGFloat startTime;
-@property (assign, nonatomic) CGFloat startValue;
-@property (assign, nonatomic) CGFloat endValue;
-@property (assign, nonatomic) CGFloat delay;
-@property (assign, nonatomic) CGFloat duration;
-
-@property (copy)void (^completion)(void);
 
 @end
 
@@ -81,43 +74,41 @@
 }
 
 - (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay completion:(void (^)())completion {
-    if (self.timer == nil) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1/6
-                                                      target:self
-                                                    selector:@selector(updateAnimation)
-                                                    userInfo:nil
-                                                     repeats:YES];
-        
-        self.delay = delay;
-        self.duration = duration;
-        self.startTime = CACurrentMediaTime();
-        self.startValue = self.progression;
-        self.endValue = 1.0;
-        self.completion = completion;
-    }
+    [self animateWidthDuration:duration delay:delay timingFunction:PRTweenTimingFunctionLinear completion:completion];
 }
 
-- (void)updateAnimation {
-    CGFloat currentTime = CACurrentMediaTime();
+- (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay timingFunction:(PRTweenTimingFunction)timingFunction completion:(void (^)())completion {
+    [self clearAnimation];
     
-    if (currentTime > self.startTime+self.delay+self.duration) {
-        if (self.completion != nil) {
-            self.completion();
+    self.operation = [[PRTweenOperation alloc] init];
+    
+    self.operation.period = [PRTweenPeriod periodWithStartValue:self.progression endValue:1.0f duration:duration delay:delay];
+    self.operation.target = self;
+    self.operation.timingFunction = timingFunction;
+    self.operation.updateSelector = @selector(update:);
+    self.operation.completeBlock = ^(BOOL finished){
+        if (finished && nil != completion) {
+            completion();
         }
-        
-        [self clearAnimation];
-        
-        return;
-    }
+    };
     
-    self.progression = PRTweenTimingFunctionLinear(currentTime - self.delay - self.startTime, self.startValue, self.endValue - self.startValue, self.duration);
+    [[PRTween sharedInstance] addTweenOperation:self.operation];
+}
+
+- (void)update:(PRTweenPeriod*)period {
+    self.progression = period.tweenedValue;
     
     [self setNeedsDisplay];
 }
 
 - (void)clearAnimation {
-    [self.timer invalidate];
-    self.timer = nil;
+    if (nil == self.operation) {
+        return;
+    }
+    
+    [[PRTween sharedInstance] removeTweenOperation:self.operation];
+    
+    self.operation = nil;
 }
 
 @end

@@ -120,25 +120,19 @@
 
 - (void)returnToHome:(id)sender {
     [self.backButton setSelected:!self.backButton.selected];
-    [self performSegueWithIdentifier:@"UnwindToHomeSegueIdentifier" sender:self];
+    [self performSegueWithIdentifier:@"unwindArchivesToHomeSegueID" sender:self];
 }
 
 #pragma marks - Transitions
 
 - (void)openWith:(void (^)())completion {
-    [self.topView setEasingFunction:easeInOutExpo forKeyPath:@"center"];
-    [self.bottomView setEasingFunction:easeInOutExpo forKeyPath:@"center"];
-    
-    self.topViewLeftConstraint.constant = 0;
-    self.topViewRightConstraint.constant = 0;
-    
-    self.bottomViewLeftConstraint.constant = 0;
-    self.bottomViewRightConstraint.constant = 0;
-    
-    [UIView animateWithDuration:1 animations:^{
-        [self.topView layoutIfNeeded];
-        [self.bottomView layoutIfNeeded];
-    } completion:^(BOOL finished) {
+    [PRTween tween:0 from:CGRectGetWidth(self.view.frame) to:0 duration:1 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
+        self.topViewLeftConstraint.constant = -period.tweenedValue;
+        self.topViewRightConstraint.constant = -period.tweenedValue;
+        
+        self.bottomViewLeftConstraint.constant = period.tweenedValue;
+        self.bottomViewRightConstraint.constant = period.tweenedValue;
+    } completeBlock:^(BOOL finished) {
         if (finished && completion) {
             completion();
         }
@@ -146,22 +140,16 @@
 }
 
 - (void)closeWith:(void (^)())completion {
-    self.topViewLeftConstraint.constant = -CGRectGetWidth(self.view.frame);
-    self.topViewRightConstraint.constant = -CGRectGetWidth(self.view.frame);
-    
-    self.bottomViewLeftConstraint.constant = CGRectGetWidth(self.view.frame);
-    self.bottomViewRightConstraint.constant = CGRectGetWidth(self.view.frame);
-    
-    [UIView animateWithDuration:1 animations:^{
-        [self.topView layoutIfNeeded];
-        [self.bottomView layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        if (finished) {
+    [PRTween tween:0 from:0 to:CGRectGetWidth(self.view.frame) duration:1 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
+        self.topViewLeftConstraint.constant = -period.tweenedValue;
+        self.topViewRightConstraint.constant = -period.tweenedValue;
+        
+        self.bottomViewLeftConstraint.constant = period.tweenedValue;
+        self.bottomViewRightConstraint.constant = period.tweenedValue;
+    } completeBlock:^(BOOL finished) {
+        if (finished && completion) {
             completion();
         }
-        
-        [self.topView removeEasingFunctionForKeyPath:@"center"];
-        [self.bottomView removeEasingFunctionForKeyPath:@"center"];
     }];
 }
 

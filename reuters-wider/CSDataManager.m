@@ -60,6 +60,10 @@
     return [[[self getPartsForArticle:articleIndex] objectAtIndex:partIndex] blocks];
 }
 
+- (CSDefinitionModel *)getDefinitionAtIndex:(NSInteger)definitionIndex forArticleAtIndex:(NSInteger)articleIndex {
+    return [[[[self getArticles] objectAtIndex:articleIndex] definitions] objectAtIndex:definitionIndex];
+}
+
 - (NSDictionary *)getSortedDefinitionsForArticle:(NSInteger)articleIndex {
     NSArray *sortedDefinitions = [[NSArray alloc] initWithArray:[[[[self getArticles] objectAtIndex:articleIndex] definitions] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSString *first = [[(CSDefinitionModel *)obj1 title] substringWithRange:NSMakeRange(0, 1)];

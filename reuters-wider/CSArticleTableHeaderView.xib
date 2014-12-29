@@ -82,7 +82,7 @@
             <connections>
                 <outlet property="articleImage" destination="vYc-iz-C0w" id="QUU-Jk-JD5"/>
                 <outlet property="articleImageHeightConstraint" destination="x86-aT-6B0" id="OD3-QR-4ye"/>
-                <outlet property="gradientImageView" destination="TAO-PL-0DX" id="hNr-H7-azK"/>
+                <outlet property="gradientIndicatorView" destination="TAO-PL-0DX" id="qUP-ba-GGJ"/>
                 <outlet property="partNumberLabel" destination="NLX-sn-9Na" id="mz1-gW-lmh"/>
                 <outlet property="readDurationCenterAlignmentConstraint" destination="7BK-my-pIz" id="9P4-Fc-gFb"/>
                 <outlet property="readDurationLabel" destination="DrQ-Je-Mat" id="wPA-yA-c6p"/>

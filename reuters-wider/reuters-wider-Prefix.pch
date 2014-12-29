@@ -16,7 +16,6 @@
 #import "CSDataManager.h"
 #import "CSEnums.h"
 #import "CSVariables.h"
-#import "PRTweenTimingFunctions.h"
 
 // Models
 #import "CSArticlesModel.h"
@@ -25,9 +24,11 @@
 #import "CSBlockModel.h"
 #import "CSBlockContentModel.h"
 
+// Libs
+#import "PRTween.h"
+
 // Pods
 #import <UIView+Easing.h>
 #import <ColorUtils.h>
-#import <TTTAttributedLabel.h>
 
 #endif

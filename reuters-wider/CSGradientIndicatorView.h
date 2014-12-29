@@ -15,6 +15,7 @@
 
 - (void)interpolateBetweenColor:(UIColor *)topColor andColor:(UIColor *)bottomColor withProgression:(CGFloat)progression;
 - (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay completion:(void(^)())completion;
+- (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay timingFunction:(PRTweenTimingFunction)timingFunction completion:(void(^)())completion;
 - (void)clearAnimation;
 
 @end

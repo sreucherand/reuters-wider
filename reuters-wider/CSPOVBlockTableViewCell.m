@@ -38,7 +38,7 @@
     
     self.comparedTextLabel.font = ARCHER_THIN_38;
     self.comparedTextLabel.lineHeight = 34;
-    [self.comparedTextLabel textColorWithGradienFromColor:TEXT_GRADIENT_BLUE_COLOR toColor:TEXT_GRADIENT_ORANGE_COLOR];
+    //[self.comparedTextLabel textColorWithGradienFromColor:TEXT_GRADIENT_BLUE_COLOR toColor:TEXT_GRADIENT_ORANGE_COLOR];
 }
 
 /*

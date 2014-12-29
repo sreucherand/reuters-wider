@@ -20,6 +20,6 @@
 @interface CSIssuesPreviewCollectionView : UICollectionView
 
 @property (assign, nonatomic) NSInteger currentIndex;
-@property (assign, nonatomic) id <CSIssuesPreviewCollectionViewProtocol> coucou;
+@property (assign, nonatomic) id <CSIssuesPreviewCollectionViewProtocol> pullPictureDelegate;
 
 @end

@@ -30,11 +30,7 @@
 */
 
 - (void)awakeFromNib {
-    self.verticalPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(coucou:)];
-    
-    [self addGestureRecognizer:self.verticalPanGestureRecognizer];
-    
-    self.verticalPanGestureRecognizer.delegate = self;
+    UIPanGestureRecognizer *verticalPanGestureRecognizer;
     
     self.transitionView = [[UIView alloc] initWithFrame:CGRectZero];
     self.transitionView.backgroundColor = [UIColor whiteColor];
@@ -49,6 +45,15 @@
     
     [self.transitionView addSubview:self.transitionViewImageView];
     [self.transitionView addSubview:self.transitionViewButtonView];
+    
+    verticalPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPan:)];
+    verticalPanGestureRecognizer.delegate = self;
+    
+    [self addGestureRecognizer:verticalPanGestureRecognizer];
+    
+    verticalPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPan:)];
+    
+    [self.transitionView addGestureRecognizer:verticalPanGestureRecognizer];
 }
 
 - (void)layoutSubviews {
@@ -74,19 +79,24 @@
 
 #pragma marks - UIPanGestureRecognizer
 
-- (void)coucou:(UIPanGestureRecognizer *)gestureRecognizer {
+- (void)didPan:(UIPanGestureRecognizer *)gestureRecognizer {
     CGPoint translation = [gestureRecognizer translationInView:self];
     
     if (translation.y > 0) {
         translation.y = 0;
     }
+    
+    translation.y *= 0.35f;
+    
     if (fabs(translation.y) > 60) {
         translation.y = -60;
     }
     
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        if ([self.coucou respondsToSelector:@selector(didBeganPullPicture)]) {
-            [self.coucou performSelector:@selector(didBeganPullPicture)];
+        [self.transitionView.layer removeAllAnimations];
+        
+        if ([self.pullPictureDelegate respondsToSelector:@selector(didBeganPullPicture)]) {
+            [self.pullPictureDelegate performSelector:@selector(didBeganPullPicture)];
         }
         
         self.transitionViewImageView.image = [UIImage imageNamed:[[[[CSDataManager sharedManager] getArticles] objectAtIndex:self.currentIndex] image]];
@@ -97,24 +107,32 @@
     if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
         self.transitionView.frame = (CGRect){.origin=CGPointMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame)+translation.y), .size=self.frame.size};
         
-        if ([self.coucou respondsToSelector:@selector(didPullPicture:)]) {
-            [self.coucou performSelector:@selector(didPullPicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/60)]];
+        if ([self.pullPictureDelegate respondsToSelector:@selector(didPullPicture:)]) {
+            [self.pullPictureDelegate performSelector:@selector(didPullPicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/60)]];
         }
     }
     
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        if ([self.coucou respondsToSelector:@selector(didReleasePicture:)]) {
-            [self.coucou performSelector:@selector(didReleasePicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/60)]];
+        if ([self.pullPictureDelegate respondsToSelector:@selector(didReleasePicture:)]) {
+            [self.pullPictureDelegate performSelector:@selector(didReleasePicture:) withObject:[NSNumber numberWithFloat:fabs(translation.y/60)]];
         }
         
         if (fabs(translation.y/60) < 1) {
-            [UIView animateWithDuration:0.25 animations:^{
+            [UIView animateWithDuration:0.25 delay:0 options:(UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState) animations:^{
                 self.transitionView.frame = (CGRect){.origin=CGPointMake(0, CGRectGetHeight(self.superview.frame)-CGRectGetWidth(self.frame)), .size=self.frame.size};
             } completion:^(BOOL finished) {
                 if (finished) {
-                    self.panGestureRecognizer.enabled = YES;
-                    
                     [self.transitionView removeFromSuperview];
+                }
+            }];
+        } else {
+            [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+            
+            [PRTween tween:0 from:CGRectGetMinY(self.transitionView.frame) to:CGRectGetMinY(self.transitionView.frame)-CGRectGetHeight(self.superview.frame) duration:1.4 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
+                self.transitionView.frame = (CGRect){.origin=CGPointMake(self.transitionView.frame.origin.x, period.tweenedValue), .size=self.transitionView.frame.size};
+            } completeBlock:^(BOOL finished) {
+                if (finished) {
+                    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                 }
             }];
         }
@@ -127,6 +145,10 @@
     if ([self.panGestureRecognizer isEqual:gestureRecognizer]) {
         return fabsf(velocity.x) > fabsf(velocity.y) || velocity.y == 0;
     } else {
+        if ([gestureRecognizer locationInView:self].y < CGRectGetHeight(self.frame)-CGRectGetWidth(self.frame)) {
+            return NO;
+        }
+        
         return fabsf(velocity.x) < fabsf(velocity.y);
     }
     

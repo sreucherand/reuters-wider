@@ -8,10 +8,7 @@
 
 #import "CSParagraphBlockTableViewCell.h"
 
-@interface CSParagraphBlockTableViewCell () <UIGestureRecognizerDelegate, CSAttributedLabelDelegate>
-{
-    CGPoint linkPoint;
-}
+@interface CSParagraphBlockTableViewCell () <CSAttributedLabelDelegate>
 
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *paragraphTextLabel;
 
@@ -24,12 +21,6 @@
     self.paragraphTextLabel.textColor = GREY_COLOR;
     self.paragraphTextLabel.lineHeight = 25;
     self.paragraphTextLabel.delegate = self;
-    
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] init];
-    
-    gestureRecognizer.delegate = self;
-    
-    [self.paragraphTextLabel addGestureRecognizer:gestureRecognizer];
 }
 
 /*
@@ -46,23 +37,15 @@
     self.paragraphTextLabel.text = self.content.text;
 }
 
-#pragma mark - Gesture delegate
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    if ([self.paragraphTextLabel containslinkAtPoint:[touch locationInView:self.paragraphTextLabel]]) {
-        linkPoint = [touch locationInView:self.superview]; // Content view
-        
-        return NO;
-    }
-    
-    return YES;
-}
-
 #pragma mark - Attributed label delegate
 
-- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
+- (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point {
+    CGPoint relativePoint = [point CGPointValue];
+    
+    relativePoint.y += self.frame.origin.y;
+    
     if ([self.delegate respondsToSelector:@selector(didSelectLinkWithURL:atPoint:)]) {
-        [self.delegate performSelector:@selector(didSelectLinkWithURL:atPoint:) withObject:url withObject:[NSValue valueWithCGPoint:linkPoint]];
+        [self.delegate performSelector:@selector(didSelectLinkWithURL:atPoint:) withObject:url withObject:[NSValue valueWithCGPoint:relativePoint]];
     }
 }
 

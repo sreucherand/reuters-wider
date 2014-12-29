@@ -7,17 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreText/CoreText.h>
 
 @protocol CSAttributedLabelDelegate;
 
-@interface CSAttributedLabel : TTTAttributedLabel
+@interface CSAttributedLabel : UILabel
+
+@property (weak, nonatomic) id <CSAttributedLabelDelegate>delegate;
 
 @property (assign, nonatomic) CGFloat lineHeight;
 
-- (void)textColorWithGradienFromColor:(UIColor *)topColor toColor:(UIColor *)bottomColor;
+@property (readwrite, nonatomic, copy) NSAttributedString *attributedText;
+
+- (void)addLinkToURL:(NSURL *)url withRange:(NSRange)range;
 
 @end
 
-@protocol CSAttributedLabelDelegate <TTTAttributedLabelDelegate>
+@protocol CSAttributedLabelDelegate <NSObject>
+@optional;
+
+- (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point;
 
 @end

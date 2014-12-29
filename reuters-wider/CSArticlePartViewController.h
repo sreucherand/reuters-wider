@@ -10,4 +10,6 @@
 
 @interface CSArticlePartViewController : UIViewController
 
+- (void)colorizeHeaderGradientIndicator;
+
 @end
