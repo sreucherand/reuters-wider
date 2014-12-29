@@ -87,7 +87,7 @@
     self.operation.timingFunction = timingFunction;
     self.operation.updateSelector = @selector(update:);
     self.operation.completeBlock = ^(BOOL finished){
-        if (finished && nil != completion) {
+        if (finished && completion) {
             completion();
         }
     };

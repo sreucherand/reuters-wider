@@ -2,27 +2,24 @@
     "articles": [
         {
             "id": 0,
-            "title": "Corruption\n in India",
-            "date": "November 2014",
+            "title": "Social impact\n investing",
+            "date": "Mon, 03 Aug 2014 10:07:43 GMT",
             "number": 29,
-            "image": "map-india",
-            "color": "#0e855d"
+            "image": "cover-social-impact-investing"
         },
         {
             "id": 1,
-            "title": "Climate change\n in the Sahel",
-            "date": "November 2014",
+            "title": "Future energy\n in cities",
+            "date": "Tue, 01 Sep 2014 09:11:28 GMT",
             "number": 30,
-            "image": "map-sahel",
-            "color": "#cb9315"
+            "image": "cover-future-energy-in-cities"
         },
         {
             "id": 2,
             "title": "Hong-Kong\n for democracy",
-            "date": "November 2014",
+            "date": "Mon, 05 Oct 2014 08:59:14 GMT",
             "number": 31,
-            "image": "map-hong-kong",
-            "color": "#23348d",
+            "image": "cover-hong-kong-for-democracy",
             "parts": [
                 {
                     "id": 0,

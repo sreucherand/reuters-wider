@@ -21,8 +21,6 @@
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientIndicatorView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraintGradientIndicatorView;
 
-@property (strong, nonatomic) NSMutableArray *colors;
-
 @end
 
 @implementation CSHomeViewController
@@ -37,14 +35,7 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.colors = [[NSMutableArray alloc] init];
-    
-    [self.colors addObject:[UIColor blueColor]];
-    [self.colors addObject:[UIColor yellowColor]];
-    [self.colors addObject:[UIColor redColor]];
-    [self.colors addObject:[UIColor greenColor]];
-    
-    self.gradientIndicatorView.topColor = [UIColor colorWithString:[[[[CSDataManager sharedManager] getArticles] objectAtIndex:0] color]];
+    self.gradientIndicatorView.topColor = BLUE_COLOR;
     
     CSIssuesPreviewFlowLayout *layout = [[CSIssuesPreviewFlowLayout alloc] init];
     
@@ -81,7 +72,7 @@
     CSArticleModel *article = [[[CSDataManager sharedManager] getArticles] objectAtIndex:indexPath.item/2];
     CSIssuesPreviewDescriptionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
     
-    [cell hydrateWidthNumber:article.number title:article.title date:[NSDate dateWithTimeIntervalSince1970:0]];
+    [cell hydrateWidthNumber:article.number title:article.title date:article.formattedDate];
     
     return cell;
 }
@@ -100,12 +91,9 @@
     }];
     
     NSInteger fromIndex = [(NSIndexPath *)[sortedIndexes firstObject] item]/2;
-    NSInteger toIndex = [(NSIndexPath *)[sortedIndexes lastObject] item]/2;
-    
-    NSArray *articles = [[CSDataManager sharedManager] getArticles];
     
     if ([indexes count] == 4) {
-        [self.gradientIndicatorView interpolateBetweenColor:[UIColor colorWithString:[[articles objectAtIndex:fromIndex] color]] andColor:[UIColor colorWithString:[[articles objectAtIndex:toIndex] color]] withProgression:percentage-fromIndex];
+        [self.gradientIndicatorView interpolateBetweenColor:BLUE_COLOR andColor:BLUE_COLOR withProgression:percentage-fromIndex];
     }
 }
 
@@ -123,8 +111,7 @@
 }
 
 - (void)didPullPicture:(NSNumber *)percentage {
-    CSArticleModel *article = [[[CSDataManager sharedManager] getArticles] objectAtIndex:self.issuesPreviewCollectionView.currentIndex];
-    [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:[UIColor colorWithString:article.color] withProgression:1-[percentage floatValue]];
+    [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:1-[percentage floatValue]];
 }
 
 - (void)didReleasePicture:(NSNumber *)percentage {

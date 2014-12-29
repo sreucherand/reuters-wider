@@ -37,7 +37,13 @@
     [self.issuesPreviewHeaderLabel setTextColor:BLACK_COLOR];
     
     // Date issue related
-    NSAttributedString *attributedStringKerned = [[NSAttributedString alloc] initWithString:@"October 2014" attributes:@{NSKernAttributeName : @(0.75f)}];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    
+    [dateFormat setLocale:locale];
+    [dateFormat setDateFormat:@"MMMM yyyy"];
+    
+    NSAttributedString *attributedStringKerned = [[NSAttributedString alloc] initWithString:[dateFormat stringFromDate:date] attributes:@{NSKernAttributeName : @(0.75f)}];
     
     [self.issuesPreviewDateLabel setFont:LEITURA_ITALIC_1_15];
     [self.issuesPreviewDateLabel setTextColor:ISSUE_NR_COLOR];
