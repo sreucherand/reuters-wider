@@ -33,9 +33,12 @@
         self.scrollView.clipsToBounds = NO;
         
         [self addSubview:self.scrollView];
+        
         [self.scrollView addSubview:self.pictureImageView];
         
         self.bottomNavigationControl = [[CSScrollViewNavigationControl alloc] initWithPosition:UINavigationControlPositionBottom];
+        
+        [self.bottomNavigationControl setScrollView:self.scrollView];
         [self.bottomNavigationControl setLabelText:@"Read"];
         [self.bottomNavigationControl addTarget:self action:@selector(scrollViewDidPullForTransition) forControlEvents:UIControlEventValueChanged];
         
@@ -47,12 +50,15 @@
 
 - (void)layoutSubviews {
     self.scrollView.frame = (CGRect){.origin=CGPointZero, .size=self.frame.size};
+    self.scrollView.contentSize = self.frame.size;
+    
     self.pictureImageView.frame = (CGRect){.origin=CGPointZero, .size=self.frame.size};
-    self.bottomNavigationControl.frame = (CGRect){.origin=CGPointMake(0, CGRectGetHeight(self.scrollView.frame)), .size=CGSizeMake(CGRectGetWidth(self.frame), 60)};
+    
+    self.bottomNavigationControl.frame = CGRectMake(0, CGRectGetHeight(self.scrollView.frame), CGRectGetWidth(self.frame), 60);
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    [self.bottomNavigationControl containingScrollViewDidEndDragging:self.scrollView];
+    [self.bottomNavigationControl containingScrollViewDidEndDragging];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -60,7 +66,7 @@
         [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, 0)];
     }
     
-    [self.bottomNavigationControl containingScrollViewDidScroll:self.scrollView];
+    [self.bottomNavigationControl containingScrollViewDidScroll];
     
     if ([self.delegate respondsToSelector:@selector(didPictureScroll:)]) {
         [self.delegate performSelector:@selector(didPictureScroll:) withObject:[NSNumber numberWithFloat:scrollView.contentOffset.y/CGRectGetHeight(self.bottomNavigationControl.frame)]];

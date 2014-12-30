@@ -36,6 +36,26 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView {
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        self.scrollView = scrollView;
+    }
+    
+    return self;
+}
+
+#pragma mark - Setters
+
+- (void)setScrollView:(UIScrollView *)scrollView {
+    _scrollView = scrollView;
+    
+    scrollView.bounces = YES;
+    
+    [self updateFrame];
+}
+
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
     
@@ -52,6 +72,14 @@
     self.pullLabel.frame = (CGRect){.origin=CGPointZero, .size=frame.size};
 }
 
+- (void)updateFrame {
+    if (self.position == UINavigationControlPositionBottom) {
+        self.frame = (CGRect){.origin=CGPointMake(self.frame.origin.x, self.scrollView.contentSize.height), .size=self.frame.size};
+    } else {
+        self.frame = (CGRect){.origin=CGPointMake(self.frame.origin.x, -CGRectGetHeight(self.frame)), .size=self.frame.size};
+    }
+}
+
 #pragma mark - Pull Label
 
 - (void)setLabelText:(NSString *)text {
@@ -60,23 +88,33 @@
 
 #pragma mark - Logic
 
-- (void)containingScrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.position == UINavigationControlPositionBottom && scrollView.contentOffset.y > scrollView.contentSize.height + CGRectGetHeight(self.frame)) {
-        [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, scrollView.contentSize.height + CGRectGetHeight(self.frame))];
-    } else if (scrollView.contentOffset.y < -CGRectGetHeight(self.frame)) {
-        [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, -CGRectGetHeight(self.frame))];
+- (void)containingScrollViewDidScroll {
+    if (nil == self.scrollView) {
+        return;
+    }
+    
+    [self updateFrame];
+    
+    if (self.position == UINavigationControlPositionBottom && self.scrollView.contentOffset.y > self.scrollView.contentSize.height - CGRectGetHeight(self.scrollView.frame) + CGRectGetHeight(self.frame)) {
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentSize.height - CGRectGetHeight(self.scrollView.frame) + CGRectGetHeight(self.frame))];
+    } else if (self.scrollView.contentOffset.y < -CGRectGetHeight(self.frame)) {
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, -CGRectGetHeight(self.frame))];
     }
 }
 
-- (void)containingScrollViewDidEndDragging:(UIScrollView *)scrollView {
-    if (self.position == UINavigationControlPositionBottom && scrollView.contentOffset.y >= scrollView.contentSize.height + CGRectGetHeight(self.frame)) {
-        [scrollView setScrollEnabled:NO];
-        [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, scrollView.contentSize.height + CGRectGetHeight(self.frame)) animated:NO];
+- (void)containingScrollViewDidEndDragging {
+    if (nil == self.scrollView) {
+        return;
+    }
+    
+    if (self.position == UINavigationControlPositionBottom && self.scrollView.contentOffset.y >= self.scrollView.contentSize.height - CGRectGetHeight(self.scrollView.frame) + CGRectGetHeight(self.frame)) {
+        [self.scrollView setScrollEnabled:NO];
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentSize.height - CGRectGetHeight(self.scrollView.frame) + CGRectGetHeight(self.frame)) animated:NO];
         
         [self sendActionsForControlEvents:UIControlEventValueChanged];
-    } else if (scrollView.contentOffset.y <= -CGRectGetHeight(self.frame)) {
-        [scrollView setScrollEnabled:NO];
-        [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, -CGRectGetHeight(self.frame)) animated:NO];
+    } else if (self.position == UINavigationControlPositionTop && self.scrollView.contentOffset.y <= -CGRectGetHeight(self.frame)) {
+        [self.scrollView setScrollEnabled:NO];
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, -CGRectGetHeight(self.frame)) animated:NO];
         
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }

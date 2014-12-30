@@ -10,13 +10,16 @@
 
 @interface CSScrollViewNavigationControl : UIControl
 
+- (instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView;
 - (instancetype)initWithPosition:(UINavigationControlPosition)position;
+
+@property (retain, nonatomic) UIScrollView *scrollView;
 
 @property (assign, nonatomic) UINavigationControlPosition position;
 
 - (void)setLabelText:(NSString *)text;
 
-- (void)containingScrollViewDidScroll:(UIScrollView *)scrollView;
-- (void)containingScrollViewDidEndDragging:(UIScrollView *)scrollView;
+- (void)containingScrollViewDidScroll;
+- (void)containingScrollViewDidEndDragging;
 
 @end

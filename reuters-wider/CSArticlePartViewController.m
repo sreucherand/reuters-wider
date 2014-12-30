@@ -21,6 +21,7 @@
 @property (strong, nonatomic) CSArticleTableHeaderView *headerView;
 @property (strong, nonatomic) CSInArticleGlossaryDefinition *definitionView;
 @property (strong, nonatomic) CSScrollViewNavigationControl *topNavigationControl;
+@property (strong, nonatomic) CSScrollViewNavigationControl *bottomNavigationControl;
 @property (strong, nonatomic) NSMutableDictionary *cells;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
 
@@ -66,12 +67,22 @@
     
     [self.view addGestureRecognizer:swipeGestureRecognizer];
     
-    self.topNavigationControl = [[CSScrollViewNavigationControl alloc] initWithFrame:CGRectMake(0, -60, CGRectGetWidth(self.view.frame), 60)];
+    [self.tableView layoutSubviews];
+    [self.tableView layoutIfNeeded];
+    
+    self.topNavigationControl = [[CSScrollViewNavigationControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60) scrollView:self.tableView];
     
     [self.topNavigationControl setLabelText:@"Home"];
     [self.topNavigationControl addTarget:self action:@selector(scrollViewDidPullForTransition:) forControlEvents:UIControlEventValueChanged];
     
+    self.bottomNavigationControl = [[CSScrollViewNavigationControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60) scrollView:self.tableView];
+    
+    [self.bottomNavigationControl setPosition:UINavigationControlPositionBottom];
+    [self.bottomNavigationControl setLabelText:@"Next"];
+    [self.bottomNavigationControl addTarget:self action:@selector(scrollViewDidPullForTransition:) forControlEvents:UIControlEventValueChanged];
+    
     [self.tableView addSubview:self.topNavigationControl];
+    [self.tableView addSubview:self.bottomNavigationControl];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -188,23 +199,29 @@
 - (void)scrollViewDidPullForTransition:(UIControl *)UIControl {
     if ([self.topNavigationControl isEqual:UIControl]) {
         [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
+    } else {
+        NSLog(@"next");
     }
 }
 
 #pragma mark - Scroll view delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.topNavigationControl containingScrollViewDidScroll:self.tableView];
+    [self.topNavigationControl containingScrollViewDidScroll];
+    [self.bottomNavigationControl containingScrollViewDidScroll];
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {    
-    [self.topNavigationControl containingScrollViewDidEndDragging:self.tableView];
+    [self.topNavigationControl containingScrollViewDidEndDragging];
+    [self.bottomNavigationControl containingScrollViewDidEndDragging];
 }
 
 #pragma mark - Gesture delegate
 
 - (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
     [self closeDefinition];
+    
+    NSLog(@"coucou");
 }
 
 - (void)didSwipeOnView:(UISwipeGestureRecognizer *)recognizer {
