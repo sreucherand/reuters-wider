@@ -8,6 +8,7 @@
 
 #import "CSMainNavigationController.h"
 #import "CSArchivesHomeTransition.h"
+#import "CSArticleHomeTransition.h"
 
 @interface CSMainNavigationController ()
 
@@ -28,6 +29,11 @@
 - (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier {
     if ([identifier isEqualToString:@"unwindArchivesToHomeSegueID"]) {
         CSArchivesHomeTransition *segue = [[CSArchivesHomeTransition alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
+        
+        return segue;
+    } else if ([identifier isEqualToString:@"unwindArticleToHomeSegueID"]) {
+        CSArticleHomeTransition *segue = [[CSArticleHomeTransition alloc] initWithIdentifier:identifier source:fromViewController destination:toViewController];
+        
         return segue;
     }
     

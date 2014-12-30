@@ -38,9 +38,8 @@
     
     // Date issue related
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     
-    [dateFormat setLocale:locale];
+    [dateFormat setLocale:[CSDataManager sharedManager].locale];
     [dateFormat setDateFormat:@"MMMM yyyy"];
     
     NSAttributedString *attributedStringKerned = [[NSAttributedString alloc] initWithString:[dateFormat stringFromDate:date] attributes:@{NSKernAttributeName : @(0.75f)}];

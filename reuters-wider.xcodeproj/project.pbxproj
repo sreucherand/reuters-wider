@@ -50,6 +50,8 @@
 		20B2A7F61A4F6EFE00A9E5A8 /* PRTweenLinearDamping.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2A7F21A4F6EFE00A9E5A8 /* PRTweenLinearDamping.m */; };
 		20B2A7F71A4F6EFE00A9E5A8 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2A7F41A4F6EFE00A9E5A8 /* PRTweenTimingFunctions.m */; };
 		20B2A7FB1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2A7FA1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m */; };
+		20B2A7FF1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2A7FE1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m */; };
+		20B2A8031A521F2300A9E5A8 /* CSArticleHomeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2A8021A521F2300A9E5A8 /* CSArticleHomeTransition.m */; };
 		20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BACB7A1A1AA33C00EB78CC /* CSHomeViewController.m */; };
 		20BBDFEA1A2E6B6B00F2A8C4 /* CSAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BBDFE91A2E6B6B00F2A8C4 /* CSAttributedLabel.m */; };
 		20C0E79F1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C0E79E1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m */; };
@@ -161,6 +163,10 @@
 		20B2A7F41A4F6EFE00A9E5A8 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTweenTimingFunctions.m; sourceTree = "<group>"; };
 		20B2A7F91A50AD5E00A9E5A8 /* CSHomeArticleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeArticleTransition.h; sourceTree = "<group>"; };
 		20B2A7FA1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSHomeArticleTransition.m; sourceTree = "<group>"; };
+		20B2A7FD1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSScrollViewNavigationControl.h; sourceTree = "<group>"; };
+		20B2A7FE1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSScrollViewNavigationControl.m; sourceTree = "<group>"; };
+		20B2A8011A521F2300A9E5A8 /* CSArticleHomeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticleHomeTransition.h; sourceTree = "<group>"; };
+		20B2A8021A521F2300A9E5A8 /* CSArticleHomeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticleHomeTransition.m; sourceTree = "<group>"; };
 		20BACB791A1AA33C00EB78CC /* CSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeViewController.h; sourceTree = "<group>"; };
 		20BACB7A1A1AA33C00EB78CC /* CSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSHomeViewController.m; sourceTree = "<group>"; };
 		20BBDFE81A2E6B6B00F2A8C4 /* CSAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSAttributedLabel.h; path = "reuters-wider/CSAttributedLabel.h"; sourceTree = "<group>"; };
@@ -380,6 +386,7 @@
 		2090603A1A10BB50001EC87E /* reuters-wider */ = {
 			isa = PBXGroup;
 			children = (
+				20B2A7FC1A51BC0500A9E5A8 /* Control */,
 				20B2A7EE1A4F6ED600A9E5A8 /* Libs */,
 				203010481A2604EF0088FD7C /* Data */,
 				203010391A25FBB70088FD7C /* Models */,
@@ -484,8 +491,27 @@
 			children = (
 				20B2A7F91A50AD5E00A9E5A8 /* CSHomeArticleTransition.h */,
 				20B2A7FA1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m */,
+				20B2A8011A521F2300A9E5A8 /* CSArticleHomeTransition.h */,
+				20B2A8021A521F2300A9E5A8 /* CSArticleHomeTransition.m */,
 			);
 			name = HomeArticle;
+			sourceTree = "<group>";
+		};
+		20B2A7FC1A51BC0500A9E5A8 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				20B2A8001A51BC3100A9E5A8 /* NavigationControl */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
+		20B2A8001A51BC3100A9E5A8 /* NavigationControl */ = {
+			isa = PBXGroup;
+			children = (
+				20B2A7FD1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.h */,
+				20B2A7FE1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m */,
+			);
+			name = NavigationControl;
 			sourceTree = "<group>";
 		};
 		20BACB7C1A1AA38700EB78CC /* Home */ = {
@@ -889,7 +915,9 @@
 				203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */,
 				20C176E11A34A6E90021C64C /* CSGlossaryHeaderView.m in Sources */,
 				206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */,
+				20B2A8031A521F2300A9E5A8 /* CSArticleHomeTransition.m in Sources */,
 				20B2A7F71A4F6EFE00A9E5A8 /* PRTweenTimingFunctions.m in Sources */,
+				20B2A7FF1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m in Sources */,
 				202833371A3DE528002DCA1C /* CSInArticleGlossaryDefinition.m in Sources */,
 				20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */,
 				20CABEC01A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m in Sources */,

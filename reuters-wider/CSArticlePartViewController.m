@@ -10,8 +10,9 @@
 #import "CSAbstractArticleViewCellTableViewCell.h"
 #import "CSArticleTableHeaderView.h"
 #import "CSInArticleGlossaryDefinition.h"
+#import "CSScrollViewNavigationControl.h"
 
-@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, CSAbstractArticleViewCellTableViewCellDelegate>
+@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLeftConstraint;
@@ -19,6 +20,7 @@
 
 @property (strong, nonatomic) CSArticleTableHeaderView *headerView;
 @property (strong, nonatomic) CSInArticleGlossaryDefinition *definitionView;
+@property (strong, nonatomic) CSScrollViewNavigationControl *topNavigationControl;
 @property (strong, nonatomic) NSMutableDictionary *cells;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
 
@@ -45,7 +47,6 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CSFigureBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSFigureBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSAsideBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSAsideBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSPovBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSPovBlockCellID"];
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"CSGlossaryDefinitionTableViewCell" bundle:nil] forCellReuseIdentifier:@"glossaryDefinitionCellID"];
     
     self.headerView = [[[NSBundle mainBundle] loadNibNamed:@"CSArticleTableHeaderView" owner:self options:nil] lastObject];
@@ -64,6 +65,13 @@
     UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeOnView:)];
     
     [self.view addGestureRecognizer:swipeGestureRecognizer];
+    
+    self.topNavigationControl = [[CSScrollViewNavigationControl alloc] initWithFrame:CGRectMake(0, -60, CGRectGetWidth(self.view.frame), 60)];
+    
+    [self.topNavigationControl setLabelText:@"Home"];
+    [self.topNavigationControl addTarget:self action:@selector(scrollViewDidPullForTransition:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView addSubview:self.topNavigationControl];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -175,9 +183,22 @@
     } completion:nil];
 }
 
-- (void)colorizeHeaderGradientIndicator {
-    [self.headerView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:0];
-    [self.headerView.gradientIndicatorView animateWidthDuration:1 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut completion:nil];
+#pragma mark - UIControl events
+
+- (void)scrollViewDidPullForTransition:(UIControl *)UIControl {
+    if ([self.topNavigationControl isEqual:UIControl]) {
+        [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
+    }
+}
+
+#pragma mark - Scroll view delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.topNavigationControl containingScrollViewDidScroll:self.tableView];
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {    
+    [self.topNavigationControl containingScrollViewDidEndDragging:self.tableView];
 }
 
 #pragma mark - Gesture delegate
@@ -216,6 +237,33 @@
         [self.definitionView setFrameForPoint:CGPointMake(CGRectGetWidth(self.view.frame)*1.05, [point CGPointValue].y - self.tableView.contentOffset.y)];
         [self openDefinitionWithUrl:url];
     }
+}
+
+#pragma mark - Transition animations
+
+- (void)openWith:(void (^)())completion {
+    [PRTween tween:0 from:CGRectGetMinY(self.view.frame) to:0 duration:1.4 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
+        self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, period.tweenedValue), .size=self.view.frame.size};
+    } completeBlock:^(BOOL finished) {
+        if (finished) {
+            [self.headerView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:0];
+            [self.headerView.gradientIndicatorView animateWidthDuration:1 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut completion:nil];
+            
+            if (completion) {
+                completion();
+            }
+        }
+    }];
+}
+
+- (void)closeWith:(void (^)())completion {
+    [PRTween tween:0 from:0 to:CGRectGetMaxY(self.view.frame) duration:1.4 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
+        self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, period.tweenedValue), .size=self.view.frame.size};
+    } completeBlock:^(BOOL finished) {
+        if (finished && completion) {
+            completion();
+        }
+    }];
 }
 
 /*

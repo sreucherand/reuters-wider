@@ -12,9 +12,8 @@
 
 - (NSDate *)formattedDate {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     
-    [dateFormat setLocale:locale];
+    [dateFormat setLocale:[CSDataManager sharedManager].locale];
     [dateFormat setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
     
     return [dateFormat dateFromString:self.date];

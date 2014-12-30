@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CSIssuesPreviewPictureViewCellDelegate;
+
 @interface CSIssuesPreviewPictureViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;
+@property (strong, nonatomic) UIImageView *pictureImageView;
+
+@property (assign, nonatomic) id <CSIssuesPreviewPictureViewCellDelegate> delegate;
+
+@end
+
+@protocol CSIssuesPreviewPictureViewCellDelegate <NSObject>
+@optional;
+
+- (void)didPictureScroll:(NSNumber *)percentage;
+- (void)didPullPicture:(NSNumber *)percentage;
+- (void)didReleasePicture:(NSNumber *)percentage;
 
 @end

@@ -10,6 +10,7 @@
 
 @interface CSArticlePartViewController : UIViewController
 
-- (void)colorizeHeaderGradientIndicator;
+- (void)openWith:(void(^)())completion;
+- (void)closeWith:(void(^)())completion;
 
 @end

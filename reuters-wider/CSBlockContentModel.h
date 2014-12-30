@@ -32,4 +32,6 @@
 @property (strong, nonatomic) NSArray<CSBlockContentModel> *transitions;
 @property (strong, nonatomic) NSArray<CSBlockContentModel> *keywords;
 
+- (NSDate *)formattedDate;
+
 @end

@@ -51,8 +51,14 @@
     [super hydrateWithContentData:data];
     
     self.personLabel.text = self.content.person;
-    self.dateLabel.text = self.content.date;
     self.descriptionLabel.text = self.content.text;
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    
+    [dateFormat setLocale:[CSDataManager sharedManager].locale];
+    [dateFormat setDateFormat:@"EEEE d LLLL"];
+    
+    self.dateLabel.text = [dateFormat stringFromDate:self.content.formattedDate];
     
     self.figureImageView.image = [UIImage imageNamed:self.content.image];
 }

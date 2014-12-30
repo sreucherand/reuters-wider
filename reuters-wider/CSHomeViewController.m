@@ -8,6 +8,7 @@
 
 #import "CSHomeViewController.h"
 #import "CSHomeArchivesTransition.h"
+#import "CSArticlePartViewController.h"
 #import "CSArchivesHomeTransition.h"
 #import "CSIssuesPreviewCollectionView.h"
 #import "CSIssuesPreviewFlowLayout.h"
@@ -15,7 +16,7 @@
 #import "CSIssuesPreviewDescriptionViewCell.h"
 #import "CSIssuesPreviewPictureViewCell.h"
 
-@interface CSHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CSIssuesPreviewCollectionViewProtocol>
+@interface CSHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CSIssuesPreviewPictureViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet CSIssuesPreviewCollectionView *issuesPreviewCollectionView;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientIndicatorView;
@@ -31,7 +32,6 @@
     
     self.issuesPreviewCollectionView.delegate = self;
     self.issuesPreviewCollectionView.dataSource = self;
-    self.issuesPreviewCollectionView.pullPictureDelegate = self;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -53,7 +53,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-# pragma marks - UICollectionView
+#pragma mark - UICollectionView
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [[[CSDataManager sharedManager] getArticles] count]*2;
@@ -65,6 +65,7 @@
         CSIssuesPreviewPictureViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
         
         cell.pictureImageView.image = [UIImage imageNamed:article.image];
+        cell.delegate = self;
         
         return cell;
     }
@@ -106,31 +107,21 @@
     self.issuesPreviewCollectionView.currentIndex = indexPath.item/2;
 }
 
-- (void)didBeganPullPicture {
-    [self.issuesPreviewCollectionView setScrollEnabled:NO];
-}
-
-- (void)didPullPicture:(NSNumber *)percentage {
+- (void)didPictureScroll:(NSNumber *)percentage {
     [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:1-[percentage floatValue]];
 }
 
 - (void)didReleasePicture:(NSNumber *)percentage {
-    if ([percentage floatValue] < 1) {
-        [self.gradientIndicatorView animateWidthDuration:0.25 delay:0 completion:^{
-            [self.issuesPreviewCollectionView setScrollEnabled:YES];
-        }];
-    } else {
+    if ([percentage floatValue] >= 1) {
         [self performSegueWithIdentifier:@"pushHomeToArticleSegueID" sender:self];
     }
 }
 
-#pragma marks - CSGradientIndicatorView
+#pragma mark - UISegue
 
-- (void)animationDidFinished {
-    [self.issuesPreviewCollectionView setScrollEnabled:YES];
+- (IBAction)unwindFromArticle:(UIStoryboardSegue *)segue {
+    // Close article
 }
-
-# pragma marks - UISegue
 
 - (IBAction)unwindFromArchives:(UIStoryboardSegue *)segue {
     // Close archives
@@ -138,12 +129,16 @@
 
 #pragma mark - Navigation
 
-/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"pushHomeToArticleSegueID"]) {
+        CSArticlePartViewController *destinationViewController = [segue destinationViewController];
+        
+        destinationViewController.view.frame = CGRectOffset(destinationViewController.view.frame, 0, CGRectGetHeight(self.view.frame));
+    }
 }
-*/
 
 @end

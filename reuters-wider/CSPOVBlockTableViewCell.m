@@ -52,7 +52,38 @@
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     
-    self.mainMetaLabel.text = [NSString stringWithFormat:@"%@, by %@", [self.content.views[0] date], [self.content.views[0] author]];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    
+    [dateFormat setLocale:[CSDataManager sharedManager].locale];
+    [dateFormat setDateFormat:@"d'%s' LLLL"];
+    
+    NSDate *formattedDate = [self.content.views[0] formattedDate];
+    NSString *date = [dateFormat stringFromDate:formattedDate];
+    NSInteger day = [[NSCalendar currentCalendar] component:NSCalendarUnitDay fromDate:formattedDate];
+    
+    NSString *suffix = @"th";
+    
+    switch (day) {
+        case 1:
+        case 21:
+        case 31:
+            suffix = @"st";
+            break;
+        case 2:
+        case 22:
+            suffix = @"nd";
+            break;
+        case 3:
+        case 23:
+            suffix = @"rd";
+            break;
+        default:
+            break;
+    }
+    
+    date = [date stringByReplacingOccurrencesOfString:@"%s" withString:suffix];
+    
+    self.mainMetaLabel.text = [NSString stringWithFormat:@"%@, by %@", date, [self.content.views[0] author]];
     self.mainTextLabel.text = [self.content.views[0] text];
     
     self.comparedMetaLabel.text = [NSString stringWithFormat:@"By %@", [self.content.views[1] author]];

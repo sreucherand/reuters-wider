@@ -8,18 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CSIssuesPreviewCollectionViewProtocol <NSObject>
-@required;
-
-- (void)didBeganPullPicture;
-- (void)didPullPicture:(NSNumber *)percentage;
-- (void)didReleasePicture:(NSNumber *)percentage;
-
-@end
-
 @interface CSIssuesPreviewCollectionView : UICollectionView
 
 @property (assign, nonatomic) NSInteger currentIndex;
-@property (assign, nonatomic) id <CSIssuesPreviewCollectionViewProtocol> pullPictureDelegate;
 
 @end

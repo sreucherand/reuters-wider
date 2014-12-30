@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GXQ-V0-tvu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GXQ-V0-tvu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -51,9 +51,11 @@
                         <outlet property="tableView" destination="GXQ-V0-tvu" id="GlZ-6E-CWz"/>
                         <outlet property="tableViewLeftConstraint" destination="rLc-tM-Phd" id="oTu-pe-hnJ"/>
                         <outlet property="tableViewRightConstraint" destination="QT1-Rq-yPL" id="AFf-I6-3Qp"/>
+                        <segue destination="fmr-ju-5D8" kind="unwind" identifier="unwindArticleToHomeSegueID" unwindAction="unwindFromArticle:" id="hZZ-Wx-d1j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1e-qm-xWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fmr-ju-5D8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1503" y="1455"/>
         </scene>
@@ -179,22 +181,8 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UJC-1s-iBO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="UJC-1s-iBO" secondAttribute="bottom" id="FLd-wG-qDm"/>
-                                            <constraint firstAttribute="trailing" secondItem="UJC-1s-iBO" secondAttribute="trailing" id="N6z-ah-RT6"/>
-                                            <constraint firstItem="UJC-1s-iBO" firstAttribute="top" secondItem="KdW-tW-36P" secondAttribute="top" id="Z9e-m6-eyQ"/>
-                                            <constraint firstItem="UJC-1s-iBO" firstAttribute="leading" secondItem="KdW-tW-36P" secondAttribute="leading" id="lNT-KS-0hL"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="pictureImageView" destination="UJC-1s-iBO" id="T6S-zC-Yey"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

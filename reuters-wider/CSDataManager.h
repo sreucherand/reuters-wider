@@ -11,6 +11,8 @@
 
 @interface CSDataManager : NSObject
 
+@property (strong, nonatomic, readonly) NSLocale *locale;
+
 + (instancetype)sharedManager;
 
 - (NSArray *)getArticles;

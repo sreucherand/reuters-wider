@@ -17,3 +17,8 @@ typedef enum {
     UIPanGestureRecognizerOrientationVertical,
     UIPanGestureRecognizerOrientationHorizontal
 } UIPanGestureRecognizerOrientation;
+
+typedef enum {
+    UINavigationControlPositionTop,
+    UINavigationControlPositionBottom
+} UINavigationControlPosition;
