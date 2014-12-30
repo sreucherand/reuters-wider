@@ -54,7 +54,7 @@
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     
-    [dateFormat setLocale:[CSDataManager sharedManager].locale];
+    [dateFormat setLocale:[CSDataManager sharedInstance].locale];
     [dateFormat setDateFormat:@"d'%s' LLLL"];
     
     NSDate *formattedDate = [self.content.views[0] formattedDate];

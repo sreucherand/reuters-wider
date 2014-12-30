@@ -25,7 +25,7 @@
 #import "CSBlockContentModel.h"
 
 // Libs
-#import "PRTween.h"
+#import "CSTween.h"
 
 // Pods
 #import <UIView+Easing.h>

@@ -10,7 +10,7 @@
 
 @interface CSGradientIndicatorView ()
 
-@property (strong, nonatomic) PRTweenOperation *operation;
+@property (strong, nonatomic) CSTweenOperation *operation;
 
 @property (assign, nonatomic) CGFloat progression;
 
@@ -74,29 +74,35 @@
 }
 
 - (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay completion:(void (^)())completion {
-    [self animateWidthDuration:duration delay:delay timingFunction:PRTweenTimingFunctionLinear completion:completion];
+    [self animateWidthDuration:duration delay:delay timingFunction:CSTweenEaseLinear completion:completion];
 }
 
-- (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay timingFunction:(PRTweenTimingFunction)timingFunction completion:(void (^)())completion {
+- (void)animateWidthDuration:(CGFloat)duration delay:(CGFloat)delay timingFunction:(CSTweenTimingFunction)timingFunction completion:(void (^)())completion {
     [self clearAnimation];
     
-    self.operation = [[PRTweenOperation alloc] init];
+    __block CSGradientIndicatorView *this = self;
     
-    self.operation.period = [PRTweenPeriod periodWithStartValue:self.progression endValue:1.0f duration:duration delay:delay];
+    self.operation = [[CSTweenOperation alloc] init];
+    
+    self.operation.startValue = self.progression;
+    self.operation.endValue = 1.0f;
+    self.operation.duration = duration;
     self.operation.target = self;
     self.operation.timingFunction = timingFunction;
     self.operation.updateSelector = @selector(update:);
     self.operation.completeBlock = ^(BOOL finished){
         if (finished && completion) {
             completion();
+            
+            [this clearAnimation];
         }
     };
     
-    [[PRTween sharedInstance] addTweenOperation:self.operation];
+    [[CSTween sharedInstance] addTweenOperation:self.operation];
 }
 
-- (void)update:(PRTweenPeriod*)period {
-    self.progression = period.tweenedValue;
+- (void)update:(CSTweenOperation *)operation {
+    self.progression = operation.value;
     
     [self setNeedsDisplay];
 }
@@ -106,7 +112,7 @@
         return;
     }
     
-    [[PRTween sharedInstance] removeTweenOperation:self.operation];
+    [[CSTween sharedInstance] removeTweenOperation:self.operation];
     
     self.operation = nil;
 }

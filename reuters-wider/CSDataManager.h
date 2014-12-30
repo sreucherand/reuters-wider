@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic, readonly) NSLocale *locale;
 
-+ (instancetype)sharedManager;
++ (instancetype)sharedInstance;
 
 - (NSArray *)getArticles;
 - (NSArray *)getPartsForArticle:(NSInteger)articleIndex;

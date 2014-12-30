@@ -14,21 +14,21 @@
 
 @end
 
+static CSDataManager *instance = nil;
+
 @implementation CSDataManager
 
-+ (instancetype)sharedManager {
-    static CSDataManager *sharedManager = nil;
-    
-    if (!sharedManager) {
-        sharedManager = [[self alloc] initPrivate];
++ (instancetype)sharedInstance {
+    if (!instance) {
+        instance = [[self alloc] initPrivate];
     }
     
-    return sharedManager;
+    return instance;
 }
 
 - (instancetype)init {
     @throw [NSException exceptionWithName:@"Singleton"
-                                   reason:@"Preferred use methode +sharedManager"
+                                   reason:@"Preferred use methode +sharedInstance"
                                  userInfo:nil];
     
     return nil;

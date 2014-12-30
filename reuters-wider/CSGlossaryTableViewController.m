@@ -47,18 +47,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return [[[CSDataManager sharedManager] getSortedDefinitionsForArticle:2] count];
+    return [[[CSDataManager sharedInstance] getSortedDefinitionsForArticle:2] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [[[CSDataManager sharedManager] getSortedDefinitionsForArticle:2 forKeyIndex:section] count];
+    return [[[CSDataManager sharedInstance] getSortedDefinitionsForArticle:2 forKeyIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSGlossaryDefinitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID" forIndexPath:indexPath];
     
-    CSDefinitionModel *definition = [[[CSDataManager sharedManager] getSortedDefinitionsForArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
+    CSDefinitionModel *definition = [[[CSDataManager sharedInstance] getSortedDefinitionsForArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     [cell hydrateWithDefinition:definition forIndexPath:indexPath];
     
@@ -68,7 +68,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSGlossaryDefinitionTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     
-    CSDefinitionModel *definition = [[[CSDataManager sharedManager] getSortedDefinitionsForArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
+    CSDefinitionModel *definition = [[[CSDataManager sharedInstance] getSortedDefinitionsForArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     if (cell == nil) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID"];

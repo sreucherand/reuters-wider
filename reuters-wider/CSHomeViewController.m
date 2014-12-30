@@ -56,12 +56,12 @@
 #pragma mark - UICollectionView
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[[CSDataManager sharedManager] getArticles] count]*2;
+    return [[[CSDataManager sharedInstance] getArticles] count]*2;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.item % 2 != 0) {
-        CSArticleModel *article = [[[CSDataManager sharedManager] getArticles] objectAtIndex:(indexPath.item-1)/2];
+        CSArticleModel *article = [[[CSDataManager sharedInstance] getArticles] objectAtIndex:(indexPath.item-1)/2];
         CSIssuesPreviewPictureViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
         
         cell.pictureImageView.image = [UIImage imageNamed:article.image];
@@ -70,7 +70,7 @@
         return cell;
     }
     
-    CSArticleModel *article = [[[CSDataManager sharedManager] getArticles] objectAtIndex:indexPath.item/2];
+    CSArticleModel *article = [[[CSDataManager sharedInstance] getArticles] objectAtIndex:indexPath.item/2];
     CSIssuesPreviewDescriptionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DescriptionViewCellID" forIndexPath:indexPath];
     
     [cell hydrateWidthNumber:article.number title:article.title date:article.formattedDate];

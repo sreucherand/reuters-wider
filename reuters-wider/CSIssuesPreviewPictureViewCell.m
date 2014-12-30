@@ -92,8 +92,8 @@
     
     [self.scrollView setOpaque:YES];
     
-    [PRTween tween:0 from:startValue to:endValue duration:1.4 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
-        transitionView.frame = (CGRect){.origin=CGPointMake(0, period.tweenedValue), .size=transitionView.frame.size};
+    [CSTween tweenFrom:startValue to:endValue duration:1.4 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+        transitionView.frame = (CGRect){.origin=CGPointMake(0, operation.value), .size=transitionView.frame.size};
     } completeBlock:^(BOOL finished) {
         if (finished) {
             [transitionView removeFromSuperview];

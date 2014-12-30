@@ -51,7 +51,7 @@
     
     self.headerView = [[[NSBundle mainBundle] loadNibNamed:@"CSArticleTableHeaderView" owner:self options:nil] lastObject];
     
-    [self.headerView hydrateWithHeadingData:[[[CSDataManager sharedManager] getPartsForArticle:2] objectAtIndex:0]];
+    [self.headerView hydrateWithHeadingData:[[[CSDataManager sharedInstance] getPartsForArticle:2] objectAtIndex:0]];
     
     self.headerView.frame = (CGRect){.origin=CGPointZero, .size=[self.headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
     
@@ -92,7 +92,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSAbstractArticleViewCellTableViewCell *cell = nil;
     
-    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
+    CSBlockModel *block = [[[CSDataManager sharedInstance] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
     
     cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
     cell.delegate = self;
@@ -105,7 +105,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSAbstractArticleViewCellTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     
-    CSBlockModel *block = [[[CSDataManager sharedManager] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
+    CSBlockModel *block = [[[CSDataManager sharedInstance] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
     
     if (cell == nil) {
         cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type]];
@@ -144,7 +144,7 @@
 }
 
 - (void)openDefinitionWithUrl:(NSURL *)url {
-    CSDefinitionModel *definition = [[CSDataManager sharedManager] getDefinitionAtIndex:[[[url.relativeString componentsSeparatedByString:@"/"] lastObject] integerValue] forArticleAtIndex:2];
+    CSDefinitionModel *definition = [[CSDataManager sharedInstance] getDefinitionAtIndex:[[[url.relativeString componentsSeparatedByString:@"/"] lastObject] integerValue] forArticleAtIndex:2];
     
     [self.definitionView hydrateWithTitle:definition.title andText:definition.text];
     
@@ -156,7 +156,7 @@
     
     [self.definitionView.gradientIndicatorView clearAnimation];
     [self.definitionView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:0];
-    [self.definitionView.gradientIndicatorView animateWidthDuration:0.35 delay:0.35 timingFunction:PRTweenTimingFunctionExpoInOut completion:nil];
+    [self.definitionView.gradientIndicatorView animateWidthDuration:0.35 delay:0.35 timingFunction:CSTweenEaseInOutExpo completion:nil];
     
     self.tableViewLeftConstraint.constant = -CGRectGetWidth(self.view.frame)*0.65;
     self.tableViewRightConstraint.constant = CGRectGetWidth(self.view.frame)*0.65;
@@ -242,12 +242,12 @@
 #pragma mark - Transition animations
 
 - (void)openWith:(void (^)())completion {
-    [PRTween tween:0 from:CGRectGetMinY(self.view.frame) to:0 duration:1.4 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
-        self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, period.tweenedValue), .size=self.view.frame.size};
+    [CSTween tweenFrom:CGRectGetMinY(self.view.frame) to:0 duration:1.4 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+        self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, operation.value), .size=self.view.frame.size};
     } completeBlock:^(BOOL finished) {
         if (finished) {
             [self.headerView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:0];
-            [self.headerView.gradientIndicatorView animateWidthDuration:1 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut completion:nil];
+            [self.headerView.gradientIndicatorView animateWidthDuration:1 delay:0 timingFunction:CSTweenEaseInOutExpo completion:nil];
             
             if (completion) {
                 completion();
@@ -257,8 +257,8 @@
 }
 
 - (void)closeWith:(void (^)())completion {
-    [PRTween tween:0 from:0 to:CGRectGetMaxY(self.view.frame) duration:1.4 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
-        self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, period.tweenedValue), .size=self.view.frame.size};
+    [CSTween tweenFrom:0 to:CGRectGetMaxY(self.view.frame) duration:1.4 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+        self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, operation.value), .size=self.view.frame.size};
     } completeBlock:^(BOOL finished) {
         if (finished && completion) {
             completion();

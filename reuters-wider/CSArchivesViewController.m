@@ -126,12 +126,12 @@
 #pragma marks - Transitions
 
 - (void)openWith:(void (^)())completion {
-    [PRTween tween:0 from:CGRectGetWidth(self.view.frame) to:0 duration:1 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
-        self.topViewLeftConstraint.constant = -period.tweenedValue;
-        self.topViewRightConstraint.constant = -period.tweenedValue;
+    [CSTween tweenFrom:CGRectGetWidth(self.view.frame) to:0 duration:1 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+        self.topViewLeftConstraint.constant = -operation.value;
+        self.topViewRightConstraint.constant = -operation.value;
         
-        self.bottomViewLeftConstraint.constant = period.tweenedValue;
-        self.bottomViewRightConstraint.constant = period.tweenedValue;
+        self.bottomViewLeftConstraint.constant = operation.value;
+        self.bottomViewRightConstraint.constant = operation.value;
     } completeBlock:^(BOOL finished) {
         if (finished && completion) {
             completion();
@@ -140,12 +140,12 @@
 }
 
 - (void)closeWith:(void (^)())completion {
-    [PRTween tween:0 from:0 to:CGRectGetWidth(self.view.frame) duration:1 delay:0 timingFunction:PRTweenTimingFunctionExpoInOut updateBlock:^(PRTweenPeriod *period) {
-        self.topViewLeftConstraint.constant = -period.tweenedValue;
-        self.topViewRightConstraint.constant = -period.tweenedValue;
+    [CSTween tweenFrom:0 to:CGRectGetWidth(self.view.frame) duration:1 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+        self.topViewLeftConstraint.constant = -operation.value;
+        self.topViewRightConstraint.constant = -operation.value;
         
-        self.bottomViewLeftConstraint.constant = period.tweenedValue;
-        self.bottomViewRightConstraint.constant = period.tweenedValue;
+        self.bottomViewLeftConstraint.constant = operation.value;
+        self.bottomViewRightConstraint.constant = operation.value;
     } completeBlock:^(BOOL finished) {
         if (finished && completion) {
             completion();
