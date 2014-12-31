@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 Gobelins. All rights reserved.
 //
 
-#import "CSDataManager.h"
+#import "CSArticleData.h"
 
-@interface CSDataManager ()
+@interface CSArticleData ()
 
 @property (strong, nonatomic) CSArticlesModel *data;
 
 @end
 
-static CSDataManager *instance = nil;
+static CSArticleData *instance = nil;
 
-@implementation CSDataManager
+@implementation CSArticleData
 
 + (instancetype)sharedInstance {
     if (!instance) {
@@ -54,15 +54,15 @@ static CSDataManager *instance = nil;
     return self.data.articles;
 }
 
-- (NSArray *)getBlocksForArticle:(NSInteger)articleIndex {
+- (NSArray *)getBlocksOfArticle:(NSInteger)articleIndex {
     return [[[self getArticles] objectAtIndex:articleIndex] blocks];
 }
 
-- (CSDefinitionModel *)getDefinitionAtIndex:(NSInteger)definitionIndex forArticleAtIndex:(NSInteger)articleIndex {
+- (CSDefinitionModel *)getDefinitionAtIndex:(NSInteger)definitionIndex ofArticle:(NSInteger)articleIndex {
     return [[[[self getArticles] objectAtIndex:articleIndex] definitions] objectAtIndex:definitionIndex];
 }
 
-- (NSDictionary *)getSortedDefinitionsForArticle:(NSInteger)articleIndex {
+- (NSDictionary *)getSortedDefinitionsOfArticle:(NSInteger)articleIndex {
     NSArray *sortedDefinitions = [[NSArray alloc] initWithArray:[[[[self getArticles] objectAtIndex:articleIndex] definitions] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSString *first = [[(CSDefinitionModel *)obj1 title] substringWithRange:NSMakeRange(0, 1)];
         NSString *second = [[(CSDefinitionModel *)obj1 title] substringWithRange:NSMakeRange(0, 1)];
@@ -84,8 +84,8 @@ static CSDataManager *instance = nil;
     return results;
 }
 
-- (NSArray *)getSortedDefinitionsForArticle:(NSInteger)articleIndex forKeyIndex:(NSInteger)index {
-    NSDictionary *definitions = [self getSortedDefinitionsForArticle:articleIndex];
+- (NSArray *)getSortedDefinitionsOfArticle:(NSInteger)articleIndex forKeyIndex:(NSInteger)index {
+    NSDictionary *definitions = [self getSortedDefinitionsOfArticle:articleIndex];
     NSArray *keys = [[NSArray alloc] initWithArray:[[definitions allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSString *first = (NSString *)obj1;
         NSString *second = (NSString *)obj2;
@@ -94,6 +94,51 @@ static CSDataManager *instance = nil;
     }]];
     
     return [definitions objectForKey:[keys objectAtIndex:index]];
+}
+
+#pragma mark - Synchronize
+
+- (NSDictionary *)getSynchronizedArticles {
+    NSDictionary *articles = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"articles"];
+    
+    if (nil != articles) {
+        return articles;
+    }
+    
+    return [NSDictionary dictionary];
+}
+
+- (NSDictionary *)getSynchronizedArticle:(NSInteger)articleIndex {
+    NSDictionary *articles = [self getSynchronizedArticles];
+    id article = [articles objectForKey:[NSString stringWithFormat:@"%i", (int)articleIndex]];
+    
+    if ([article isKindOfClass:[NSDictionary class]]) {
+        return (NSDictionary *)article;
+    }
+    
+    return [NSDictionary dictionary];
+}
+
+- (CGFloat)getProgressionOfArticle:(NSInteger)articleIndex {
+    NSDictionary *article = [self getSynchronizedArticle:articleIndex];
+    id progression = [article objectForKey:@"progression"];
+    
+    if ([progression isKindOfClass:[NSNumber class]]) {
+        return [((NSNumber *)progression) floatValue];
+    }
+    
+    return 0.0f;
+}
+
+- (void)saveProgression:(CGFloat)percentage ofArticle:(NSInteger)articleIndex {
+    NSMutableDictionary *articles = [NSMutableDictionary dictionaryWithDictionary:[self getSynchronizedArticles]];
+    NSMutableDictionary *article = [NSMutableDictionary dictionaryWithDictionary:[self getSynchronizedArticle:articleIndex]];
+    
+    [article setValue:[NSNumber numberWithFloat:percentage] forKey:@"progression"];
+    [articles setValue:article forKey:[NSString stringWithFormat:@"%i", (int)articleIndex]];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:articles] forKey:@"articles"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

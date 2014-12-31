@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLeftConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewRightConstraint;
 
+@property (assign, nonatomic) CGFloat progression;
+
 @property (strong, nonatomic) CSInArticleGlossaryDefinition *definitionView;
 @property (strong, nonatomic) CSScrollViewNavigationControl *topNavigationControl;
 @property (strong, nonatomic) CSStickyMenu *stickyMenu;
@@ -65,9 +67,6 @@
     
     [self.view addGestureRecognizer:swipeGestureRecognizer];
     
-    [self.tableView layoutSubviews];
-    [self.tableView layoutIfNeeded];
-    
     self.topNavigationControl = [[CSScrollViewNavigationControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60) scrollView:self.tableView];
     
     [self.topNavigationControl setLabelText:@"Home"];
@@ -82,6 +81,10 @@
     self.stickyMenu.delegate = self;
     
     [self.view addSubview:self.stickyMenu];
+    
+    self.progression = [[CSArticleData sharedInstance] getProgressionOfArticle:2];
+    
+    [self.tableView setContentOffset:CGPointMake(0, self.progression * (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame)) / 100) animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,7 +105,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSAbstractArticleViewCellTableViewCell *cell = nil;
     
-    CSBlockModel *block = [[[CSDataManager sharedInstance] getBlocksForArticle:2] objectAtIndex:indexPath.row];
+    CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
     
     cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
     cell.delegate = self;
@@ -113,20 +116,21 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CSAbstractArticleViewCellTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+    NSString *key = [NSString stringWithFormat:@"%i", (int)indexPath.row];
     
-    CSBlockModel *block = [[[CSDataManager sharedInstance] getBlocksForArticle:2] objectAtIndex:indexPath.row];
+    CSAbstractArticleViewCellTableViewCell *cell = [self.cells objectForKey:key];
+    CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
     
     if ([block.type isEqualToString:@"part"]) {
         return CGRectGetHeight(self.view.frame);
     }
     
-    if (cell == nil) {
+    if (nil == cell) {
         cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type]];
         
         [cell hydrateWithContentData:(NSDictionary *)block];
         
-        self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
+        [self.cells setValue:cell forKey:key];
     }
     
     cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.tableView.bounds));
@@ -136,11 +140,7 @@
     
     CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     
-    return size.height+1;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
+    return size.height + 1;
 }
 
 #pragma mark - Identifier and block type match
@@ -158,7 +158,7 @@
 }
 
 - (void)openDefinitionWithUrl:(NSURL *)url {
-    CSDefinitionModel *definition = [[CSDataManager sharedInstance] getDefinitionAtIndex:[[[url.relativeString componentsSeparatedByString:@"/"] lastObject] integerValue] forArticleAtIndex:2];
+    CSDefinitionModel *definition = [[CSArticleData sharedInstance] getDefinitionAtIndex:[[[url.relativeString componentsSeparatedByString:@"/"] lastObject] integerValue] ofArticle:2];
     
     [self.definitionView hydrateWithTitle:definition.title andText:definition.text];
     
@@ -200,7 +200,7 @@
 
 - (void)scrollViewDidPullForTransition:(UIControl *)UIControl {
     if ([self.topNavigationControl isEqual:UIControl]) {
-        [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
+        [self unwindToHome];
     }
 }
 
@@ -287,12 +287,22 @@
 #pragma mark - StickyMenu delegate
 
 - (void)titleButtonDidPress {
+    [self unwindToHome];
+}
+
+#pragma mark - Navigation
+
+- (void)unwindToHome {
+    CGFloat percentage = self.tableView.contentOffset.y * 100 / (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame));
+    
+    if (percentage > self.progression) {
+        [[CSArticleData sharedInstance] saveProgression:percentage ofArticle:2];
+    }
+    
     [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
 }
 
 /*
-#pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

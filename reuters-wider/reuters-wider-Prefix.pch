@@ -13,7 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 // Classes
-#import "CSDataManager.h"
+#import "CSArticleData.h"
 #import "CSEnums.h"
 #import "CSLocales.h"
 #import "CSVariables.h"

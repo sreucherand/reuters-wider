@@ -38,6 +38,8 @@
 - (void)setScrollView:(UIScrollView *)scrollView {
     _scrollView = scrollView;
     
+    [_scrollView layoutIfNeeded];
+    
     self.frame = CGRectMake(0, -CGRectGetHeight(self.frame), CGRectGetWidth(scrollView.frame), CGRectGetHeight(self.frame));
 }
 

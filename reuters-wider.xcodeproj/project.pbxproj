@@ -18,7 +18,7 @@
 		2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030103D1A25FC1E0088FD7C /* CSArticleModel.m */; };
 		203010441A25FE140088FD7C /* CSBlockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010431A25FE140088FD7C /* CSBlockModel.m */; };
 		203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010461A26009B0088FD7C /* CSBlockContentModel.m */; };
-		2030104B1A2605230088FD7C /* CSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030104A1A2605230088FD7C /* CSDataManager.m */; };
+		2030104B1A2605230088FD7C /* CSArticleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030104A1A2605230088FD7C /* CSArticleData.m */; };
 		2030104E1A2608330088FD7C /* CSArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030104D1A2608330088FD7C /* CSArticlesModel.m */; };
 		203EFFAF1A1658870085D493 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203EFFAD1A16578E0085D493 /* QuartzCore.framework */; };
 		206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */; };
@@ -118,8 +118,8 @@
 		203010431A25FE140088FD7C /* CSBlockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBlockModel.m; sourceTree = "<group>"; };
 		203010451A26009B0088FD7C /* CSBlockContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBlockContentModel.h; sourceTree = "<group>"; };
 		203010461A26009B0088FD7C /* CSBlockContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBlockContentModel.m; sourceTree = "<group>"; };
-		203010491A2605230088FD7C /* CSDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDataManager.h; sourceTree = "<group>"; };
-		2030104A1A2605230088FD7C /* CSDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSDataManager.m; sourceTree = "<group>"; };
+		203010491A2605230088FD7C /* CSArticleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticleData.h; sourceTree = "<group>"; };
+		2030104A1A2605230088FD7C /* CSArticleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticleData.m; sourceTree = "<group>"; };
 		2030104C1A2608330088FD7C /* CSArticlesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticlesModel.h; sourceTree = "<group>"; };
 		2030104D1A2608330088FD7C /* CSArticlesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticlesModel.m; sourceTree = "<group>"; };
 		203EFFAD1A16578E0085D493 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -294,8 +294,8 @@
 		203010481A2604EF0088FD7C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				203010491A2605230088FD7C /* CSDataManager.h */,
-				2030104A1A2605230088FD7C /* CSDataManager.m */,
+				203010491A2605230088FD7C /* CSArticleData.h */,
+				2030104A1A2605230088FD7C /* CSArticleData.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -974,7 +974,7 @@
 				208B5F591A53793A003D4718 /* CSKeywordsBlockTableViewCell.m in Sources */,
 				20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */,
 				20C176C91A347F550021C64C /* CSDefinitionModel.m in Sources */,
-				2030104B1A2605230088FD7C /* CSDataManager.m in Sources */,
+				2030104B1A2605230088FD7C /* CSArticleData.m in Sources */,
 				208B5F6D1A538154003D4718 /* CSImageBlockTableViewCell.m in Sources */,
 				20A55B0B1A222C46003B601B /* CSMainNavigationController.m in Sources */,
 				20CABEB41A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m in Sources */,

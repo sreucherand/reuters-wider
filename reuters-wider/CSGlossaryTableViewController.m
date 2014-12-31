@@ -47,18 +47,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return [[[CSDataManager sharedInstance] getSortedDefinitionsForArticle:2] count];
+    return [[[CSArticleData sharedInstance] getSortedDefinitionsOfArticle:2] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [[[CSDataManager sharedInstance] getSortedDefinitionsForArticle:2 forKeyIndex:section] count];
+    return [[[CSArticleData sharedInstance] getSortedDefinitionsOfArticle:2 forKeyIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSGlossaryDefinitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID" forIndexPath:indexPath];
     
-    CSDefinitionModel *definition = [[[CSDataManager sharedInstance] getSortedDefinitionsForArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
+    CSDefinitionModel *definition = [[[CSArticleData sharedInstance] getSortedDefinitionsOfArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     [cell hydrateWithDefinition:definition forIndexPath:indexPath];
     
@@ -66,16 +66,17 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CSGlossaryDefinitionTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+    NSString *key = [NSString stringWithFormat:@"%i", (int)indexPath.row];
     
-    CSDefinitionModel *definition = [[[CSDataManager sharedInstance] getSortedDefinitionsForArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
+    CSGlossaryDefinitionTableViewCell *cell = [self.cells objectForKey:key];
+    CSDefinitionModel *definition = [[[CSArticleData sharedInstance] getSortedDefinitionsOfArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     if (cell == nil) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID"];
         
         [cell hydrateWithDefinition:definition forIndexPath:indexPath];
         
-        self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]] = cell;
+        [self.cells setValue:cell forKey:key];
     }
     
     cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.tableView.bounds));
@@ -85,7 +86,7 @@
     
     CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     
-    return size.height+1;
+    return size.height + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
