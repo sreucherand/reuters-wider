@@ -20,7 +20,6 @@
 // Models
 #import "CSArticlesModel.h"
 #import "CSArticleModel.h"
-#import "CSPartModel.h"
 #import "CSBlockModel.h"
 #import "CSBlockContentModel.h"
 

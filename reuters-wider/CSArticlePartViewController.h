@@ -10,6 +10,8 @@
 
 @interface CSArticlePartViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 - (void)openWith:(void(^)())completion;
 - (void)closeWith:(void(^)())completion;
 

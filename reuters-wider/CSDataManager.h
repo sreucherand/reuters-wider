@@ -16,8 +16,7 @@
 + (instancetype)sharedInstance;
 
 - (NSArray *)getArticles;
-- (NSArray *)getPartsForArticle:(NSInteger)articleIndex;
-- (NSArray *)getBlocksForArticle:(NSInteger)articleIndex part:(NSInteger)partIndex;
+- (NSArray *)getBlocksForArticle:(NSInteger)articleIndex;
 - (CSDefinitionModel *)getDefinitionAtIndex:(NSInteger)definitionIndex forArticleAtIndex:(NSInteger)articleIndex;
 - (NSDictionary *)getSortedDefinitionsForArticle:(NSInteger)articleIndex;
 - (NSArray *)getSortedDefinitionsForArticle:(NSInteger)articleIndex forKeyIndex:(NSInteger)index;

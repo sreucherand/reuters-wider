@@ -16,7 +16,6 @@
 		202B7EF41A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202B7EF31A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib */; };
 		203010381A25ECFC0088FD7C /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 203010371A25ECFC0088FD7C /* articles.json */; };
 		2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030103D1A25FC1E0088FD7C /* CSArticleModel.m */; };
-		203010411A25FD760088FD7C /* CSPartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010401A25FD760088FD7C /* CSPartModel.m */; };
 		203010441A25FE140088FD7C /* CSBlockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010431A25FE140088FD7C /* CSBlockModel.m */; };
 		203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 203010461A26009B0088FD7C /* CSBlockContentModel.m */; };
 		2030104B1A2605230088FD7C /* CSDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030104A1A2605230088FD7C /* CSDataManager.m */; };
@@ -38,6 +37,8 @@
 		20801A8C1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20801A8B1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m */; };
 		20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20801A8E1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m */; };
 		20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20801A911A237F3E00EF38F3 /* CSGradientIndicatorView.m */; };
+		208B5F521A5343FA003D4718 /* CSStickyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B5F511A5343FA003D4718 /* CSStickyMenu.m */; };
+		208B5F541A534822003D4718 /* CSStickyMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B5F531A534822003D4718 /* CSStickyMenu.xib */; };
 		208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D041A10EFD000517B46 /* CSArchivesViewController.m */; };
 		208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D081A10F15E00517B46 /* CSHomeArchivesTransition.m */; };
 		2090603E1A10BB50001EC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2090603D1A10BB50001EC87E /* main.m */; };
@@ -61,8 +62,8 @@
 		20C176D31A349D730021C64C /* CSGlossaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176D21A349D730021C64C /* CSGlossaryTableViewController.m */; };
 		20C176E11A34A6E90021C64C /* CSGlossaryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176E01A34A6E90021C64C /* CSGlossaryHeaderView.m */; };
 		20C176E31A34A6FD0021C64C /* CSGlossaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C176E21A34A6FD0021C64C /* CSGlossaryHeaderView.xib */; };
-		20C176E71A34DCAE0021C64C /* CSArticleTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176E61A34DCAE0021C64C /* CSArticleTableHeaderView.m */; };
-		20C176EB1A34E1180021C64C /* CSArticleTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C176EA1A34E1180021C64C /* CSArticleTableHeaderView.xib */; };
+		20C176E71A34DCAE0021C64C /* CSPartBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176E61A34DCAE0021C64C /* CSPartBlockTableViewCell.m */; };
+		20C176EB1A34E1180021C64C /* CSPartBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C176EA1A34E1180021C64C /* CSPartBlockTableViewCell.xib */; };
 		20C176EE1A3506690021C64C /* CSArticlePartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176ED1A3506690021C64C /* CSArticlePartViewController.m */; };
 		20CABEB41A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEB31A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m */; };
 		20CABEC01A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEBF1A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m */; };
@@ -105,8 +106,6 @@
 		203010371A25ECFC0088FD7C /* articles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
 		2030103C1A25FC1E0088FD7C /* CSArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticleModel.h; sourceTree = "<group>"; };
 		2030103D1A25FC1E0088FD7C /* CSArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticleModel.m; sourceTree = "<group>"; };
-		2030103F1A25FD760088FD7C /* CSPartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPartModel.h; sourceTree = "<group>"; };
-		203010401A25FD760088FD7C /* CSPartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPartModel.m; sourceTree = "<group>"; };
 		203010421A25FE140088FD7C /* CSBlockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBlockModel.h; sourceTree = "<group>"; };
 		203010431A25FE140088FD7C /* CSBlockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBlockModel.m; sourceTree = "<group>"; };
 		203010451A26009B0088FD7C /* CSBlockContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBlockContentModel.h; sourceTree = "<group>"; };
@@ -139,6 +138,9 @@
 		20801A8E1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSIssuesPreviewCollectionView.m; path = "reuters-wider/CSIssuesPreviewCollectionView.m"; sourceTree = "<group>"; };
 		20801A901A237F3E00EF38F3 /* CSGradientIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSGradientIndicatorView.h; path = "reuters-wider/CSGradientIndicatorView.h"; sourceTree = "<group>"; };
 		20801A911A237F3E00EF38F3 /* CSGradientIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSGradientIndicatorView.m; path = "reuters-wider/CSGradientIndicatorView.m"; sourceTree = "<group>"; };
+		208B5F501A5343FA003D4718 /* CSStickyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSStickyMenu.h; path = "reuters-wider/CSStickyMenu.h"; sourceTree = "<group>"; };
+		208B5F511A5343FA003D4718 /* CSStickyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSStickyMenu.m; path = "reuters-wider/CSStickyMenu.m"; sourceTree = "<group>"; };
+		208B5F531A534822003D4718 /* CSStickyMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSStickyMenu.xib; path = "reuters-wider/CSStickyMenu.xib"; sourceTree = "<group>"; };
 		208C9D031A10EFD000517B46 /* CSArchivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesViewController.h; sourceTree = "<group>"; };
 		208C9D041A10EFD000517B46 /* CSArchivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesViewController.m; sourceTree = "<group>"; };
 		208C9D071A10F15E00517B46 /* CSHomeArchivesTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeArchivesTransition.h; sourceTree = "<group>"; };
@@ -181,9 +183,9 @@
 		20C176DF1A34A6E90021C64C /* CSGlossaryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSGlossaryHeaderView.h; path = "reuters-wider/CSGlossaryHeaderView.h"; sourceTree = "<group>"; };
 		20C176E01A34A6E90021C64C /* CSGlossaryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSGlossaryHeaderView.m; path = "reuters-wider/CSGlossaryHeaderView.m"; sourceTree = "<group>"; };
 		20C176E21A34A6FD0021C64C /* CSGlossaryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSGlossaryHeaderView.xib; path = "reuters-wider/CSGlossaryHeaderView.xib"; sourceTree = "<group>"; };
-		20C176E51A34DCAE0021C64C /* CSArticleTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSArticleTableHeaderView.h; path = "reuters-wider/CSArticleTableHeaderView.h"; sourceTree = "<group>"; };
-		20C176E61A34DCAE0021C64C /* CSArticleTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSArticleTableHeaderView.m; path = "reuters-wider/CSArticleTableHeaderView.m"; sourceTree = "<group>"; };
-		20C176EA1A34E1180021C64C /* CSArticleTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSArticleTableHeaderView.xib; path = "reuters-wider/CSArticleTableHeaderView.xib"; sourceTree = "<group>"; };
+		20C176E51A34DCAE0021C64C /* CSPartBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSPartBlockTableViewCell.h; path = "reuters-wider/CSPartBlockTableViewCell.h"; sourceTree = "<group>"; };
+		20C176E61A34DCAE0021C64C /* CSPartBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSPartBlockTableViewCell.m; path = "reuters-wider/CSPartBlockTableViewCell.m"; sourceTree = "<group>"; };
+		20C176EA1A34E1180021C64C /* CSPartBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSPartBlockTableViewCell.xib; path = "reuters-wider/CSPartBlockTableViewCell.xib"; sourceTree = "<group>"; };
 		20C176EC1A3506690021C64C /* CSArticlePartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticlePartViewController.h; sourceTree = "<group>"; };
 		20C176ED1A3506690021C64C /* CSArticlePartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticlePartViewController.m; sourceTree = "<group>"; };
 		20C34B9B1A23293400B9D856 /* CSEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSEnums.h; sourceTree = "<group>"; };
@@ -256,8 +258,6 @@
 			children = (
 				2030103C1A25FC1E0088FD7C /* CSArticleModel.h */,
 				2030103D1A25FC1E0088FD7C /* CSArticleModel.m */,
-				2030103F1A25FD760088FD7C /* CSPartModel.h */,
-				203010401A25FD760088FD7C /* CSPartModel.m */,
 				203010421A25FE140088FD7C /* CSBlockModel.h */,
 				203010431A25FE140088FD7C /* CSBlockModel.m */,
 				203010451A26009B0088FD7C /* CSBlockContentModel.h */,
@@ -333,11 +333,21 @@
 			name = IssuesDescription;
 			sourceTree = "<group>";
 		};
+		208B5F4F1A5343A9003D4718 /* StickyMenu */ = {
+			isa = PBXGroup;
+			children = (
+				208B5F501A5343FA003D4718 /* CSStickyMenu.h */,
+				208B5F511A5343FA003D4718 /* CSStickyMenu.m */,
+				208B5F531A534822003D4718 /* CSStickyMenu.xib */,
+			);
+			name = StickyMenu;
+			sourceTree = "<group>";
+		};
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				208B5F4F1A5343A9003D4718 /* StickyMenu */,
 				20B2A7E51A4F61A900A9E5A8 /* InArticleGlossaryDefinition */,
-				20C176E41A34DC830021C64C /* ArticleHeaderCell */,
 				20C176D41A349F510021C64C /* GlossaryHeaderCell */,
 				20C176C31A347DE60021C64C /* GlossaryDefinitionCell */,
 				20BBDFE71A2E6B4E00F2A8C4 /* AttributedLabel */,
@@ -586,14 +596,14 @@
 			name = GlossaryHeaderCell;
 			sourceTree = "<group>";
 		};
-		20C176E41A34DC830021C64C /* ArticleHeaderCell */ = {
+		20C176E41A34DC830021C64C /* PartBlock */ = {
 			isa = PBXGroup;
 			children = (
-				20C176E51A34DCAE0021C64C /* CSArticleTableHeaderView.h */,
-				20C176E61A34DCAE0021C64C /* CSArticleTableHeaderView.m */,
-				20C176EA1A34E1180021C64C /* CSArticleTableHeaderView.xib */,
+				20C176E51A34DCAE0021C64C /* CSPartBlockTableViewCell.h */,
+				20C176E61A34DCAE0021C64C /* CSPartBlockTableViewCell.m */,
+				20C176EA1A34E1180021C64C /* CSPartBlockTableViewCell.xib */,
 			);
-			name = ArticleHeaderCell;
+			name = PartBlock;
 			sourceTree = "<group>";
 		};
 		20C34B9A1A23290400B9D856 /* Resources */ = {
@@ -616,6 +626,7 @@
 		20CABEAD1A2724EB00462EE4 /* ArticleCells */ = {
 			isa = PBXGroup;
 			children = (
+				20C176E41A34DC830021C64C /* PartBlock */,
 				206FD8591A30CE0100636737 /* AsideBlock */,
 				202B7EEF1A30B9EA000E13C7 /* FigureBlock */,
 				20C0E79C1A2FC4520019C874 /* SubtitleBlock */,
@@ -802,6 +813,7 @@
 				20C176E31A34A6FD0021C64C /* CSGlossaryHeaderView.xib in Resources */,
 				20801A7B1A23609600EF38F3 /* Leitura-Italic1.otf in Resources */,
 				202833391A3DE728002DCA1C /* CSInArticleGlossaryDefinition.xib in Resources */,
+				208B5F541A534822003D4718 /* CSStickyMenu.xib in Resources */,
 				EB469E5C1A275FAB001C7B02 /* CSStatementBlockTableViewCell.xib in Resources */,
 				20801A801A23609600EF38F3 /* Leitura-Roman3.otf in Resources */,
 				EB469E561A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib in Resources */,
@@ -818,7 +830,7 @@
 				209060471A10BB50001EC87E /* Main.storyboard in Resources */,
 				206FD85B1A30CE1700636737 /* CSAsideBlockTableViewCell.xib in Resources */,
 				20801A881A2360A800EF38F3 /* Calibre-Reg.otf in Resources */,
-				20C176EB1A34E1180021C64C /* CSArticleTableHeaderView.xib in Resources */,
+				20C176EB1A34E1180021C64C /* CSPartBlockTableViewCell.xib in Resources */,
 				20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */,
 				EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */,
 				20801A861A2360A800EF38F3 /* Archer-XLight.otf in Resources */,
@@ -898,12 +910,11 @@
 				20801A8C1A23640200EF38F3 /* CSIssuesPreviewDescriptionViewCell.m in Sources */,
 				20C0E79F1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m in Sources */,
 				EB469E5A1A275F9A001C7B02 /* CSStatementBlockTableViewCell.m in Sources */,
-				20C176E71A34DCAE0021C64C /* CSArticleTableHeaderView.m in Sources */,
+				20C176E71A34DCAE0021C64C /* CSPartBlockTableViewCell.m in Sources */,
 				20B2A7FB1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m in Sources */,
 				2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */,
 				202B7EF21A30BA13000E13C7 /* CSFigureBlockTableViewCell.m in Sources */,
 				20C176C61A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m in Sources */,
-				203010411A25FD760088FD7C /* CSPartModel.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
 				203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */,
 				20C176E11A34A6E90021C64C /* CSGlossaryHeaderView.m in Sources */,
@@ -911,6 +922,7 @@
 				20B2A8031A521F2300A9E5A8 /* CSArticleHomeTransition.m in Sources */,
 				20B2A7FF1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m in Sources */,
 				202833371A3DE528002DCA1C /* CSInArticleGlossaryDefinition.m in Sources */,
+				208B5F521A5343FA003D4718 /* CSStickyMenu.m in Sources */,
 				2027E9761A530A14007B5E92 /* CSTween.m in Sources */,
 				20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */,
 				2027E9771A530A14007B5E92 /* CSTweenTimingFunctions.m in Sources */,

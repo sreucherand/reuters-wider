@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 Gobelins. All rights reserved.
 //
 
-#import "CSArticleTableHeaderView.h"
+#import "CSPartBlockTableViewCell.h"
 
-@interface CSArticleTableHeaderView ()
+@interface CSPartBlockTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *partNumberLabel;
 @property (weak, nonatomic) IBOutlet UIView *rectanglePartNumberView;
 @property (weak, nonatomic) IBOutlet UILabel *readDurationLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *readDurationCenterAlignmentConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelCenterVerticalAlignmentConstraint;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *articleImageHeightConstraint;
 
 @end
 
-@implementation CSArticleTableHeaderView
+@implementation CSPartBlockTableViewCell
 
 - (void)awakeFromNib {
     self.partNumberLabel.font = CALIBRE_REG;
@@ -33,10 +33,9 @@
     
     self.titleLabel.font = LEITURA_ROMAN_3_36;
     self.titleLabel.textColor = DARKEST_GREY_COLOR;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
     
-    self.articleImageHeightConstraint.constant = CGRectGetWidth([[UIScreen mainScreen] bounds]);
-    
-    self.gradientIndicatorView.topColor = [UIColor clearColor];
+    self.gradientIndicatorView.topColor = BLUE_COLOR;
 }
 
 /*
@@ -47,14 +46,14 @@
 }
 */
 
-- (void)hydrateWithHeadingData:(NSDictionary *)data {
-    CSPartModel *part = (CSPartModel *)data;
+- (void)hydrateWithContentData:(NSDictionary *)data {
+    [super hydrateWithContentData:data];
     
-    self.partNumberLabel.text = [NSString stringWithFormat:@"Part 0%i", part.id+1];
-    self.readDurationLabel.text = [NSString stringWithFormat:@"%i min", part.duration];
-    self.titleLabel.text = part.title;
+    self.partNumberLabel.text = [NSString stringWithFormat:@"Part 0%i", self.content.part];
+    self.readDurationLabel.text = [NSString stringWithFormat:@"%i min", self.content.duration];
+    self.titleLabel.text = self.content.title;
     
-    self.articleImage.image = [UIImage imageNamed:part.image];
+    self.articleImage.image = [UIImage imageNamed:self.content.image];
     
     self.readDurationCenterAlignmentConstraint.constant = (24 + [self.readDurationLabel.text sizeWithAttributes:@{NSFontAttributeName: CALIBRE_LIGHT_16}].width)/2 - 24;
 }

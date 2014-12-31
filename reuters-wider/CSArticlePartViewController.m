@@ -8,20 +8,19 @@
 
 #import "CSArticlePartViewController.h"
 #import "CSAbstractArticleViewCellTableViewCell.h"
-#import "CSArticleTableHeaderView.h"
+#import "CSPartBlockTableViewCell.h"
 #import "CSInArticleGlossaryDefinition.h"
 #import "CSScrollViewNavigationControl.h"
+#import "CSStickyMenu.h"
 
-@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate>
+@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLeftConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewRightConstraint;
 
-@property (strong, nonatomic) CSArticleTableHeaderView *headerView;
 @property (strong, nonatomic) CSInArticleGlossaryDefinition *definitionView;
 @property (strong, nonatomic) CSScrollViewNavigationControl *topNavigationControl;
-@property (strong, nonatomic) CSScrollViewNavigationControl *bottomNavigationControl;
+@property (strong, nonatomic) CSStickyMenu *stickyMenu;
 @property (strong, nonatomic) NSMutableDictionary *cells;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
 
@@ -40,6 +39,7 @@
     
     self.cells = [[NSMutableDictionary alloc] init];
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSPartBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSPartBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSMetaBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSMetaBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSTeasingBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSTeasingBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSParagraphBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSParagraphBlockCellID"];
@@ -48,20 +48,14 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CSFigureBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSFigureBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSAsideBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSAsideBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSPovBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSPovBlockCellID"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"CSGlossaryDefinitionTableViewCell" bundle:nil] forCellReuseIdentifier:@"glossaryDefinitionCellID"];
     
-    self.headerView = [[[NSBundle mainBundle] loadNibNamed:@"CSArticleTableHeaderView" owner:self options:nil] lastObject];
-    
-    [self.headerView hydrateWithHeadingData:[[[CSDataManager sharedInstance] getPartsForArticle:2] objectAtIndex:0]];
-    
-    self.headerView.frame = (CGRect){.origin=CGPointZero, .size=[self.headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
-    
-    self.tableView.tableHeaderView = self.headerView;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
     self.tapGestureRecognizer.delegate = self;
+    
+    [self.view addGestureRecognizer:self.tapGestureRecognizer];
     
     UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeOnView:)];
     
@@ -75,14 +69,15 @@
     [self.topNavigationControl setLabelText:@"Home"];
     [self.topNavigationControl addTarget:self action:@selector(scrollViewDidPullForTransition:) forControlEvents:UIControlEventValueChanged];
     
-    self.bottomNavigationControl = [[CSScrollViewNavigationControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60) scrollView:self.tableView];
-    
-    [self.bottomNavigationControl setPosition:UINavigationControlPositionBottom];
-    [self.bottomNavigationControl setLabelText:@"Next"];
-    [self.bottomNavigationControl addTarget:self action:@selector(scrollViewDidPullForTransition:) forControlEvents:UIControlEventValueChanged];
-    
     [self.tableView addSubview:self.topNavigationControl];
-    [self.tableView addSubview:self.bottomNavigationControl];
+    
+    self.stickyMenu = [[[NSBundle mainBundle] loadNibNamed:@"CSStickyMenu" owner:self options:nil] lastObject];
+    
+    [self.stickyMenu.titleButton setTitle:@"Home" forState:UIControlStateNormal];
+    self.stickyMenu.scrollView = self.tableView;
+    self.stickyMenu.delegate = self;
+    
+    [self.view addSubview:self.stickyMenu];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,13 +92,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 14;
+    return 15;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSAbstractArticleViewCellTableViewCell *cell = nil;
     
-    CSBlockModel *block = [[[CSDataManager sharedInstance] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
+    CSBlockModel *block = [[[CSDataManager sharedInstance] getBlocksForArticle:2] objectAtIndex:indexPath.row];
     
     cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
     cell.delegate = self;
@@ -116,7 +111,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSAbstractArticleViewCellTableViewCell *cell = self.cells[[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
     
-    CSBlockModel *block = [[[CSDataManager sharedInstance] getBlocksForArticle:2 part:0] objectAtIndex:indexPath.row];
+    CSBlockModel *block = [[[CSDataManager sharedInstance] getBlocksForArticle:2] objectAtIndex:indexPath.row];
+    
+    if ([block.type isEqualToString:@"part"]) {
+        return CGRectGetHeight(self.view.frame);
+    }
     
     if (cell == nil) {
         cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type]];
@@ -159,7 +158,6 @@
     
     [self.definitionView hydrateWithTitle:definition.title andText:definition.text];
     
-    [self.tableView addGestureRecognizer:self.tapGestureRecognizer];
     [self.tableView.layer removeAllAnimations];
     [self.tableView setScrollEnabled:NO];
     
@@ -199,29 +197,31 @@
 - (void)scrollViewDidPullForTransition:(UIControl *)UIControl {
     if ([self.topNavigationControl isEqual:UIControl]) {
         [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
-    } else {
-        NSLog(@"next");
     }
 }
 
 #pragma mark - Scroll view delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y >= scrollView.contentSize.height - CGRectGetHeight(scrollView.frame)) {
+        [scrollView setContentOffset:CGPointMake(CGRectGetMinX(scrollView.frame), scrollView.contentSize.height - CGRectGetHeight(scrollView.frame))];
+    }
+    
     [self.topNavigationControl containingScrollViewDidScroll];
-    [self.bottomNavigationControl containingScrollViewDidScroll];
+    
+    [self.stickyMenu containingScrollViewDidScroll];
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {    
     [self.topNavigationControl containingScrollViewDidEndDragging];
-    [self.bottomNavigationControl containingScrollViewDidEndDragging];
 }
 
 #pragma mark - Gesture delegate
 
 - (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
-    [self closeDefinition];
+    //[self closeDefinition];
     
-    NSLog(@"coucou");
+    [self.stickyMenu open];
 }
 
 - (void)didSwipeOnView:(UISwipeGestureRecognizer *)recognizer {
@@ -263,9 +263,6 @@
         self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, operation.value), .size=self.view.frame.size};
     } completeBlock:^(BOOL finished) {
         if (finished) {
-            [self.headerView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:0];
-            [self.headerView.gradientIndicatorView animateWidthDuration:1 delay:0 timingFunction:CSTweenEaseInOutExpo completion:nil];
-            
             if (completion) {
                 completion();
             }
@@ -281,6 +278,12 @@
             completion();
         }
     }];
+}
+
+#pragma mark - StickyMenu delegate
+
+- (void)titleButtonDidPress {
+    [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
 }
 
 /*

@@ -6,14 +6,11 @@
 //  Copyright (c) 2014 Gobelins. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+#import "CSAbstractArticleViewCellTableViewCell.h"
 #import "CSGradientIndicatorView.h"
 
-@interface CSArticleTableHeaderView : UIView
+@interface CSPartBlockTableViewCell : CSAbstractArticleViewCellTableViewCell
 
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientIndicatorView;
-
-- (void)hydrateWithHeadingData:(NSDictionary *)data;
 
 @end

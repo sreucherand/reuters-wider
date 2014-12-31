@@ -14,6 +14,8 @@
 @interface CSBlockContentModel : JSONModel
 
 @property (assign, nonatomic) int data;
+@property (assign, nonatomic) int part;
+@property (assign, nonatomic) int duration;
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *category;
 @property (strong, nonatomic) NSString *date;
