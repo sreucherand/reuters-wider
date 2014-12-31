@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSKeyfiguresBlockCellID" rowHeight="90" id="VdX-Eg-GDA" customClass="CSKeyfiguresBlockTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VdX-Eg-GDA" id="dBG-fa-vc1">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDE-kE-W75">
+                        <rect key="frame" x="144" y="30" width="33" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZDE-kE-W75" firstAttribute="top" secondItem="dBG-fa-vc1" secondAttribute="top" constant="30" id="0DS-8b-DGp"/>
+                    <constraint firstAttribute="bottom" secondItem="ZDE-kE-W75" secondAttribute="bottom" constant="30" id="PGz-v4-a3B"/>
+                    <constraint firstAttribute="centerX" secondItem="ZDE-kE-W75" secondAttribute="centerX" id="Rtd-ay-wje"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleText" destination="ZDE-kE-W75" id="Q4P-bX-XnY"/>
+            </connections>
+            <point key="canvasLocation" x="221" y="282"/>
+        </tableViewCell>
+    </objects>
+</document>

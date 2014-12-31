@@ -48,6 +48,10 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CSFigureBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSFigureBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSAsideBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSAsideBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSPovBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSPovBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSKeywordsBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSKeywordsBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSTransitionBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSTransitionBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSKeyfiguresBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSKeyfiguresBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSImageBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSImageBlockCellID"];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -92,7 +96,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 15;
+    return 31;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

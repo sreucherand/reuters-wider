@@ -55,7 +55,7 @@
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     
-    [dateFormat setLocale:[CSDataManager sharedInstance].locale];
+    [dateFormat setLocale:EN_LOCALE];
     [dateFormat setDateFormat:@"EEEE d LLLL"];
     
     self.dateLabel.text = [dateFormat stringFromDate:self.content.formattedDate];

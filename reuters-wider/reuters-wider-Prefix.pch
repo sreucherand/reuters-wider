@@ -15,6 +15,7 @@
 // Classes
 #import "CSDataManager.h"
 #import "CSEnums.h"
+#import "CSLocales.h"
 #import "CSVariables.h"
 
 // Models

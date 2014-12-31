@@ -48,12 +48,6 @@ static CSDataManager *instance = nil;
     return self;
 }
 
-#pragma mark - Global
-
-- (NSLocale *)locale {
-    return [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
-}
-
 #pragma mark - Articles
 
 - (NSArray *)getArticles {
