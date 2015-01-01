@@ -47,6 +47,7 @@
 		208B5F671A537BD0003D4718 /* CSKeyfiguresBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B5F661A537BD0003D4718 /* CSKeyfiguresBlockTableViewCell.xib */; };
 		208B5F6A1A538144003D4718 /* CSImageBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B5F691A538144003D4718 /* CSImageBlockTableViewCell.xib */; };
 		208B5F6D1A538154003D4718 /* CSImageBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B5F6C1A538154003D4718 /* CSImageBlockTableViewCell.m */; };
+		208B5FAC1A55E7D8003D4718 /* CSArticleSummaryTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B5FAB1A55E7D8003D4718 /* CSArticleSummaryTransition.m */; };
 		208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D041A10EFD000517B46 /* CSArchivesViewController.m */; };
 		208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D081A10F15E00517B46 /* CSHomeArchivesTransition.m */; };
 		2090603E1A10BB50001EC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2090603D1A10BB50001EC87E /* main.m */; };
@@ -162,6 +163,8 @@
 		208B5F6B1A538154003D4718 /* CSImageBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSImageBlockTableViewCell.h; path = "reuters-wider/CSImageBlockTableViewCell.h"; sourceTree = "<group>"; };
 		208B5F6C1A538154003D4718 /* CSImageBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSImageBlockTableViewCell.m; path = "reuters-wider/CSImageBlockTableViewCell.m"; sourceTree = "<group>"; };
 		208B5F6F1A53847B003D4718 /* CSLocales.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSLocales.h; sourceTree = "<group>"; };
+		208B5FAA1A55E7D8003D4718 /* CSArticleSummaryTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticleSummaryTransition.h; sourceTree = "<group>"; };
+		208B5FAB1A55E7D8003D4718 /* CSArticleSummaryTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticleSummaryTransition.m; sourceTree = "<group>"; };
 		208C9D031A10EFD000517B46 /* CSArchivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesViewController.h; sourceTree = "<group>"; };
 		208C9D041A10EFD000517B46 /* CSArchivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesViewController.m; sourceTree = "<group>"; };
 		208C9D071A10F15E00517B46 /* CSHomeArchivesTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeArchivesTransition.h; sourceTree = "<group>"; };
@@ -405,6 +408,23 @@
 			name = ImageBlock;
 			sourceTree = "<group>";
 		};
+		208B5FA81A55E772003D4718 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				208B5FA91A55E77B003D4718 /* ArticleSummary */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		208B5FA91A55E77B003D4718 /* ArticleSummary */ = {
+			isa = PBXGroup;
+			children = (
+				208B5FAA1A55E7D8003D4718 /* CSArticleSummaryTransition.h */,
+				208B5FAB1A55E7D8003D4718 /* CSArticleSummaryTransition.m */,
+			);
+			name = ArticleSummary;
+			sourceTree = "<group>";
+		};
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +486,7 @@
 		2090603A1A10BB50001EC87E /* reuters-wider */ = {
 			isa = PBXGroup;
 			children = (
+				208B5FA81A55E772003D4718 /* Transitions */,
 				2027E9711A530A00007B5E92 /* Tween */,
 				203010481A2604EF0088FD7C /* Data */,
 				203010391A25FBB70088FD7C /* Models */,
@@ -962,6 +983,7 @@
 				EB469E601A2764C9001C7B02 /* CSPovBlockTableViewCell.m in Sources */,
 				20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */,
 				208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */,
+				208B5FAC1A55E7D8003D4718 /* CSArticleSummaryTransition.m in Sources */,
 				20801A8F1A237F2E00EF38F3 /* CSIssuesPreviewCollectionView.m in Sources */,
 				EB469E4E1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m in Sources */,
 				209060411A10BB50001EC87E /* AppDelegate.m in Sources */,

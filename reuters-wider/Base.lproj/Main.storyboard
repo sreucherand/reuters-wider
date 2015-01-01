@@ -52,6 +52,7 @@
                         <outlet property="tableViewLeftConstraint" destination="rLc-tM-Phd" id="oTu-pe-hnJ"/>
                         <outlet property="tableViewRightConstraint" destination="QT1-Rq-yPL" id="AFf-I6-3Qp"/>
                         <segue destination="fmr-ju-5D8" kind="unwind" identifier="unwindArticleToHomeSegueID" unwindAction="unwindFromArticle:" id="hZZ-Wx-d1j"/>
+                        <segue destination="i4H-h2-Fsq" kind="modal" identifier="presentHomeToGlossarySegueID" id="eP9-Ta-402"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1e-qm-xWy" userLabel="First Responder" sceneMemberID="firstResponder"/>

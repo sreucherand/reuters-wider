@@ -12,6 +12,7 @@
 #import "CSInArticleGlossaryDefinition.h"
 #import "CSScrollViewNavigationControl.h"
 #import "CSStickyMenu.h"
+#import "CSArticleSummaryTransition.h"
 
 @interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate>
 
@@ -20,6 +21,7 @@
 
 @property (assign, nonatomic) CGFloat progression;
 
+@property (strong, nonatomic) CSArticleSummaryTransition *transition;
 @property (strong, nonatomic) CSInArticleGlossaryDefinition *definitionView;
 @property (strong, nonatomic) CSScrollViewNavigationControl *topNavigationControl;
 @property (strong, nonatomic) CSStickyMenu *stickyMenu;
@@ -33,6 +35,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the
+    
+    self.transition = [[CSArticleSummaryTransition alloc] init];
+    self.transition.sourceViewController = self;
     
     self.definitionView = [[[NSBundle mainBundle] loadNibNamed:@"CSInArticleGlossaryDefinition" owner:self options:nil] lastObject];
     self.definitionView.frame = (CGRect){.origin=self.definitionView.frame.origin, .size=CGSizeMake(CGRectGetWidth(self.view.frame)*0.55, self.definitionView.frame.size.height)};
@@ -302,12 +307,15 @@
     [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
 }
 
-/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UIViewController *destinationViewController = segue.destinationViewController;
+    
+    self.transition.destinationViewController = destinationViewController;
+    
+    destinationViewController.transitioningDelegate = self.transition;
 }
-*/
 
 @end
