@@ -7,6 +7,7 @@
 //
 
 #import "CSSummaryGlossaryTransition.h"
+#import "CSGlossaryTableViewController.h"
 #import "CSSummaryViewController.h"
 
 @implementation CSSummaryGlossaryTransition
@@ -21,44 +22,36 @@
     [((CSSummaryViewController *)self.sourceViewController).glossaryToggleView addGestureRecognizer:gestureRecognizer];
 }
 
-- (void)setDestinationViewController:(UIViewController *)destinationViewController {
-    [super setDestinationViewController:destinationViewController];
-    
-    UIScreenEdgePanGestureRecognizer *gestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(didTopPan:)];
-    
-    gestureRecognizer.edges = UIRectEdgeTop;
-    
-    [self.destinationViewController.view addGestureRecognizer:gestureRecognizer];
-}
-
 #pragma marks - Gesture handler
 
 - (void)didBottomPan:(UIPanGestureRecognizer *)recognizer {
     CGPoint velocity = [recognizer velocityInView:recognizer.view];
-    CGPoint translation = [recognizer translationInView:nil];
-    CGFloat offset = fabs(translation.y/CGRectGetHeight(self.sourceViewController.view.frame)*0.25);
     
     velocity.y *= -1;
     
-    [self performTransitionFromGestureRecognizer:recognizer offset:offset velocity:velocity];
+    [self performTransitionFromGestureRecognizer:recognizer velocity:velocity];
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self.sourceViewController performSegueWithIdentifier:@"presentSummaryToGlossarySegueID" sender:nil];
     }
 }
 
-- (void)didTopPan:(UIScreenEdgePanGestureRecognizer *)recognizer {
-    CGPoint translation = [recognizer translationInView:recognizer.view];
-    CGFloat offset = fabs(translation.y/CGRectGetHeight(recognizer.view.bounds)*0.25);
-    
-    [self performTransitionFromGestureRecognizer:recognizer offset:offset velocity:[recognizer velocityInView:recognizer.view]];
+- (void)didTopPan:(UIPanGestureRecognizer *)recognizer {
+    [self performTransitionFromGestureRecognizer:recognizer velocity:[recognizer velocityInView:recognizer.view]];
 
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self.sourceViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
-- (void)performTransitionFromGestureRecognizer:(UIPanGestureRecognizer *)recognizer offset:(CGFloat)offset velocity:(CGPoint)velocity {
+- (void)didTopTap:(UIPanGestureRecognizer *)recognizer {
+    [self.sourceViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)performTransitionFromGestureRecognizer:(UIPanGestureRecognizer *)recognizer velocity:(CGPoint)velocity {
+    CGPoint translation = [recognizer translationInView:nil];
+    CGFloat offset = fabs(translation.y/CGRectGetHeight(self.sourceViewController.view.frame)*0.25);
+    
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
             _interactive = YES;

@@ -9,10 +9,12 @@
 #import "CSGlossaryTableViewController.h"
 #import "CSGlossaryHeaderView.h"
 #import "CSGlossaryDefinitionTableViewCell.h"
+#import "CSSummaryGlossaryTransition.h"
 
-@interface CSGlossaryTableViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface CSGlossaryTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *backButtonAreaView;
 
 @property (strong, nonatomic) NSMutableDictionary *cells;
 
@@ -27,14 +29,21 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CSGlossaryDefinitionTableViewCell" bundle:nil] forCellReuseIdentifier:@"glossaryDefinitionCellID"];
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    UIView *headerView = self.tableView.tableHeaderView;
     
-    CSGlossaryDefinitionTableViewCell *headerView = [[[NSBundle mainBundle] loadNibNamed:@"CSGlossaryHeaderView" owner:self options:nil] lastObject];
+    [headerView setNeedsLayout];
+    [headerView layoutIfNeeded];
     
-    headerView.bounds = (CGRect){.origin=CGPointZero, .size=[headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
+    headerView.frame = (CGRect){.origin=CGPointZero, .size=[headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
     
     self.tableView.tableHeaderView = headerView;
+    
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanOnBackButtonArea:)];
+    
+    UITapGestureRecognizer *tapGestureRecognizez = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnBackButtonArea:)];
+    
+    [self.backButtonAreaView addGestureRecognizer:panGestureRecognizer];
+    [self.backButtonAreaView addGestureRecognizer:tapGestureRecognizez];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,6 +99,20 @@
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
+}
+
+#pragma mark - Gestures
+
+- (void)didPanOnBackButtonArea:(UIPanGestureRecognizer *)recognizer {
+    if ([self.transitioningDelegate isKindOfClass:[CSSummaryGlossaryTransition class]]) {
+        [((CSSummaryGlossaryTransition *)self.transitioningDelegate) didTopPan:recognizer];
+    }
+}
+
+- (void)didTapOnBackButtonArea:(UITapGestureRecognizer *)recognizer {
+    if ([self.transitioningDelegate isKindOfClass:[CSSummaryGlossaryTransition class]]) {
+        [((CSSummaryGlossaryTransition *)self.transitioningDelegate) didTopTap:recognizer];
+    }
 }
 
 /*
