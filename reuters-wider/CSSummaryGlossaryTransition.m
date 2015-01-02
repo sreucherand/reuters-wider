@@ -12,19 +12,9 @@
 
 @implementation CSSummaryGlossaryTransition
 
-#pragma mark - Setters
-
-- (void)setSourceViewController:(UIViewController *)sourceViewController {
-    [super setSourceViewController:sourceViewController];
-    
-    UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didBottomPan:)];
-    
-    [((CSSummaryViewController *)self.sourceViewController).glossaryToggleView addGestureRecognizer:gestureRecognizer];
-}
-
 #pragma marks - Gesture handler
 
-- (void)didBottomPan:(UIPanGestureRecognizer *)recognizer {
+- (void)didPanFromSourceViewControllerTransition:(UIPanGestureRecognizer *)recognizer {
     CGPoint velocity = [recognizer velocityInView:recognizer.view];
     
     velocity.y *= -1;
@@ -36,21 +26,25 @@
     }
 }
 
-- (void)didTopPan:(UIPanGestureRecognizer *)recognizer {
-    [self performTransitionFromGestureRecognizer:recognizer velocity:[recognizer velocityInView:recognizer.view]];
+- (void)didTapFromSourceViewControllerTransition:(UITapGestureRecognizer *)recognizer {
+    [self.sourceViewController performSegueWithIdentifier:@"presentSummaryToGlossarySegueID" sender:self];
+}
+
+- (void)didPanFromDestinationViewControllerTransition:(UIPanGestureRecognizer *)recognizer {
+    [self performTransitionFromGestureRecognizer:recognizer velocity:[recognizer velocityInView:nil]];
 
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self.sourceViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
-- (void)didTopTap:(UIPanGestureRecognizer *)recognizer {
+- (void)didTapFromDestinationViewControllerTransition:(UITapGestureRecognizer *)recognizer {
     [self.sourceViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)performTransitionFromGestureRecognizer:(UIPanGestureRecognizer *)recognizer velocity:(CGPoint)velocity {
     CGPoint translation = [recognizer translationInView:nil];
-    CGFloat offset = fabs(translation.y/CGRectGetHeight(self.sourceViewController.view.frame)*0.25);
+    CGFloat offset = fabs(translation.y/CGRectGetHeight(self.sourceViewController.view.frame)*0.75);
     
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
@@ -76,7 +70,7 @@
 #pragma mark - Transitioning delegate
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 1;
+    return 0.5;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
@@ -93,7 +87,7 @@
         [[transitionContext containerView] insertSubview:destinationViewController.view belowSubview:sourceViewController.view];
     }
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.5 options:UIViewAnimationOptionTransitionNone animations:^{
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         if (_presenting) {
             destinationViewController.view.transform = CGAffineTransformIdentity;
         } else {

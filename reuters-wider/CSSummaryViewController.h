@@ -10,6 +10,4 @@
 
 @interface CSSummaryViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIView *glossaryToggleView;
-
 @end

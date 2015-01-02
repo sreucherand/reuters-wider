@@ -12,7 +12,10 @@
 
 @interface CSSummaryGlossaryTransition : CSAbstractInteractiveTransition
 
-- (void)didTopPan:(UIPanGestureRecognizer *)recognizer;
-- (void)didTopTap:(UITapGestureRecognizer *)recognizer;
+- (void)didPanFromSourceViewControllerTransition:(UIPanGestureRecognizer *)recognizer;
+- (void)didTapFromSourceViewControllerTransition:(UITapGestureRecognizer *)recognizer;
+
+- (void)didPanFromDestinationViewControllerTransition:(UIPanGestureRecognizer *)recognizer;
+- (void)didTapFromDestinationViewControllerTransition:(UITapGestureRecognizer *)recognizer;
 
 @end

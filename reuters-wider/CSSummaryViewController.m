@@ -11,6 +11,8 @@
 
 @interface CSSummaryViewController ()
 
+@property (strong, nonatomic) IBOutlet UIView *glossaryToggleView;
+
 @property (strong, nonatomic) CSSummaryGlossaryTransition *transition;
 
 @end
@@ -23,14 +25,25 @@
     self.transition = [[CSSummaryGlossaryTransition alloc] init];
     self.transition.sourceViewController = self;
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnGlossaryToggleBottomView:)];
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanOnGlossaryToggleBottomView:)];
     
-    [self.glossaryToggleView addGestureRecognizer:tapGesture];
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnGlossaryToggleBottomView:)];
+    
+    [self.glossaryToggleView addGestureRecognizer:tapGestureRecognizer];
+    [self.glossaryToggleView addGestureRecognizer:panGestureRecognizer];
+}
+
+#pragma mark - Gesture
+
+- (void)didPanOnGlossaryToggleBottomView:(UIPanGestureRecognizer *)recognizer {
+    [self.transition didPanFromSourceViewControllerTransition:recognizer];
 }
 
 - (void)didTapOnGlossaryToggleBottomView:(UITapGestureRecognizer *)recognizer {
-    [self performSegueWithIdentifier:@"presentSummaryToGlossarySegueID" sender:self];
+    [self.transition didTapFromSourceViewControllerTransition:recognizer];
 }
+
+#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIViewController *destinationViewController = segue.destinationViewController;

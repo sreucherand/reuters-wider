@@ -105,13 +105,13 @@
 
 - (void)didPanOnBackButtonArea:(UIPanGestureRecognizer *)recognizer {
     if ([self.transitioningDelegate isKindOfClass:[CSSummaryGlossaryTransition class]]) {
-        [((CSSummaryGlossaryTransition *)self.transitioningDelegate) didTopPan:recognizer];
+        [((CSSummaryGlossaryTransition *)self.transitioningDelegate) didPanFromDestinationViewControllerTransition:recognizer];
     }
 }
 
 - (void)didTapOnBackButtonArea:(UITapGestureRecognizer *)recognizer {
     if ([self.transitioningDelegate isKindOfClass:[CSSummaryGlossaryTransition class]]) {
-        [((CSSummaryGlossaryTransition *)self.transitioningDelegate) didTopTap:recognizer];
+        [((CSSummaryGlossaryTransition *)self.transitioningDelegate) didTapFromDestinationViewControllerTransition:recognizer];
     }
 }
 
