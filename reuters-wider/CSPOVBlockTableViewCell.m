@@ -38,7 +38,6 @@
     
     self.comparedTextLabel.font = ARCHER_THIN_38;
     self.comparedTextLabel.lineHeight = 34;
-    //[self.comparedTextLabel textColorWithGradienFromColor:TEXT_GRADIENT_BLUE_COLOR toColor:TEXT_GRADIENT_ORANGE_COLOR];
 }
 
 /*
@@ -88,6 +87,46 @@
     
     self.comparedMetaLabel.text = [NSString stringWithFormat:@"By %@", [self.content.views[1] author]];
     self.comparedTextLabel.text = [self.content.views[1] text];
+    
+    [self.comparedTextLabel setNeedsLayout];
+    [self.comparedTextLabel layoutIfNeeded];
+    
+    self.comparedTextLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedTextLabel.bounds topColor:TEXT_GRADIENT_BLUE_COLOR bottomColor:TEXT_GRADIENT_ORANGE_COLOR]];
+}
+
+- (UIImage *)imageGradient:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor {
+    CGSize size = rect.size;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(size.width, size.height));
+    
+    CGFloat locations[2];
+    
+    locations[0] = 0;
+    locations[1] = 1;
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
+    
+    UIGraphicsPushContext(context);
+    
+    NSMutableArray *colors = [[NSMutableArray alloc] initWithCapacity:2];
+    
+    [colors addObject:(id)[topColor CGColor]];
+    [colors addObject:(id)[bottomColor CGColor]];
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
+    
+    CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, size.height), 0);
+    
+    CGColorSpaceRelease(space);
+    
+    UIGraphicsPopContext();
+    
+    UIImage *gradientImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return  gradientImage;
 }
 
 @end
