@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSGlossaryTableViewController : UITableViewController
+@interface CSGlossaryTableViewController : UIViewController
 
 @end

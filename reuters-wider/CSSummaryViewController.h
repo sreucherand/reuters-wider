@@ -1,5 +1,5 @@
 //
-//  CSArticleSummaryTransition.h
+//  CSSummaryViewController.h
 //  reuters-wider
 //
 //  Created by Sylvain Reucherand on 01/01/2015.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CSAbstractInteractiveTransition.h"
+@interface CSSummaryViewController : UIViewController
 
-@interface CSArticleSummaryTransition : CSAbstractInteractiveTransition
+@property (strong, nonatomic) IBOutlet UIView *glossaryToggleView;
 
 @end

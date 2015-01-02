@@ -8,29 +8,12 @@
 
 #import "CSArticleSummaryTransition.h"
 
-@interface CSArticleSummaryTransition () {
-    BOOL _interactive;
-    BOOL _presenting;
-}
-
-@end
-
 @implementation CSArticleSummaryTransition
-
-- (instancetype)init {
-    self = [super init];
-    
-    if (self) {
-        _interactive = NO;
-    }
-    
-    return self;
-}
 
 #pragma mark - Setters
 
 - (void)setSourceViewController:(UIViewController *)sourceViewController {
-    _sourceViewController = sourceViewController;
+    [super setSourceViewController:sourceViewController];
     
     UIScreenEdgePanGestureRecognizer *gestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(didRightPan:)];
     
@@ -40,7 +23,7 @@
 }
 
 - (void)setDestinationViewController:(UIViewController *)destinationViewController {
-    _destinationViewController = destinationViewController;
+    [super setDestinationViewController:destinationViewController];
     
     UIScreenEdgePanGestureRecognizer *gestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(didLeftPan:)];
     
@@ -67,13 +50,13 @@
     [self performTransitionFromGestureRecognizer:recognizer velocity:[recognizer velocityInView:recognizer.view]];
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        [self.sourceViewController performSegueWithIdentifier:@"presentHomeToGlossarySegueID" sender:self];
+        [self.sourceViewController performSegueWithIdentifier:@"presentArticleToSummarySegueID" sender:self];
     }
 }
 
 - (void)performTransitionFromGestureRecognizer:(UIScreenEdgePanGestureRecognizer *)recognizer velocity:(CGPoint)velocity {
     CGPoint translation = [recognizer translationInView:recognizer.view];
-    CGFloat offset =  fabs(translation.x/CGRectGetWidth(recognizer.view.bounds)*0.75);
+    CGFloat offset = fabs(translation.x/CGRectGetWidth(recognizer.view.bounds)*0.75);
     
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
@@ -99,7 +82,7 @@
 #pragma mark - Transitioning delegate
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 1.0f;
+    return 1;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
@@ -127,26 +110,6 @@
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    _presenting = YES;
-    
-    return self;
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    _presenting = NO;
-    
-    return self;
-}
-
-- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return _interactive ? self : nil;
-}
-
-- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return _interactive ? self : nil;
 }
 
 @end

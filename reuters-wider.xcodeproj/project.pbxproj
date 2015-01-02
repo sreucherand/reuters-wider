@@ -48,6 +48,9 @@
 		208B5F6A1A538144003D4718 /* CSImageBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B5F691A538144003D4718 /* CSImageBlockTableViewCell.xib */; };
 		208B5F6D1A538154003D4718 /* CSImageBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B5F6C1A538154003D4718 /* CSImageBlockTableViewCell.m */; };
 		208B5FAC1A55E7D8003D4718 /* CSArticleSummaryTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B5FAB1A55E7D8003D4718 /* CSArticleSummaryTransition.m */; };
+		208B5FB21A55F894003D4718 /* CSSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B5FB11A55F894003D4718 /* CSSummaryViewController.m */; };
+		208B5FB61A55FB35003D4718 /* CSSummaryGlossaryTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B5FB51A55FB35003D4718 /* CSSummaryGlossaryTransition.m */; };
+		208B5FB91A55FBA4003D4718 /* CSAbstractInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B5FB81A55FBA4003D4718 /* CSAbstractInteractiveTransition.m */; };
 		208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D041A10EFD000517B46 /* CSArchivesViewController.m */; };
 		208C9D091A10F15E00517B46 /* CSHomeArchivesTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C9D081A10F15E00517B46 /* CSHomeArchivesTransition.m */; };
 		2090603E1A10BB50001EC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2090603D1A10BB50001EC87E /* main.m */; };
@@ -165,6 +168,12 @@
 		208B5F6F1A53847B003D4718 /* CSLocales.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSLocales.h; sourceTree = "<group>"; };
 		208B5FAA1A55E7D8003D4718 /* CSArticleSummaryTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArticleSummaryTransition.h; sourceTree = "<group>"; };
 		208B5FAB1A55E7D8003D4718 /* CSArticleSummaryTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArticleSummaryTransition.m; sourceTree = "<group>"; };
+		208B5FB01A55F894003D4718 /* CSSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSummaryViewController.h; sourceTree = "<group>"; };
+		208B5FB11A55F894003D4718 /* CSSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSummaryViewController.m; sourceTree = "<group>"; };
+		208B5FB41A55FB35003D4718 /* CSSummaryGlossaryTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSummaryGlossaryTransition.h; sourceTree = "<group>"; };
+		208B5FB51A55FB35003D4718 /* CSSummaryGlossaryTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSummaryGlossaryTransition.m; sourceTree = "<group>"; };
+		208B5FB71A55FBA4003D4718 /* CSAbstractInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAbstractInteractiveTransition.h; sourceTree = "<group>"; };
+		208B5FB81A55FBA4003D4718 /* CSAbstractInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAbstractInteractiveTransition.m; sourceTree = "<group>"; };
 		208C9D031A10EFD000517B46 /* CSArchivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesViewController.h; sourceTree = "<group>"; };
 		208C9D041A10EFD000517B46 /* CSArchivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesViewController.m; sourceTree = "<group>"; };
 		208C9D071A10F15E00517B46 /* CSHomeArchivesTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeArchivesTransition.h; sourceTree = "<group>"; };
@@ -411,7 +420,10 @@
 		208B5FA81A55E772003D4718 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				208B5FB31A55FAFE003D4718 /* SummaryGlossary */,
 				208B5FA91A55E77B003D4718 /* ArticleSummary */,
+				208B5FB71A55FBA4003D4718 /* CSAbstractInteractiveTransition.h */,
+				208B5FB81A55FBA4003D4718 /* CSAbstractInteractiveTransition.m */,
 			);
 			name = Transitions;
 			sourceTree = "<group>";
@@ -423,6 +435,24 @@
 				208B5FAB1A55E7D8003D4718 /* CSArticleSummaryTransition.m */,
 			);
 			name = ArticleSummary;
+			sourceTree = "<group>";
+		};
+		208B5FAF1A55F85F003D4718 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				208B5FB01A55F894003D4718 /* CSSummaryViewController.h */,
+				208B5FB11A55F894003D4718 /* CSSummaryViewController.m */,
+			);
+			name = Summary;
+			sourceTree = "<group>";
+		};
+		208B5FB31A55FAFE003D4718 /* SummaryGlossary */ = {
+			isa = PBXGroup;
+			children = (
+				208B5FB41A55FB35003D4718 /* CSSummaryGlossaryTransition.h */,
+				208B5FB51A55FB35003D4718 /* CSSummaryGlossaryTransition.m */,
+			);
+			name = SummaryGlossary;
 			sourceTree = "<group>";
 		};
 		208C9CF51A10C62E00517B46 /* Views */ = {
@@ -446,6 +476,7 @@
 		208C9CF61A10D09B00517B46 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				208B5FAF1A55F85F003D4718 /* Summary */,
 				20C176BF1A347C0E0021C64C /* Glossary */,
 				20CABEA01A27234400462EE4 /* ArticlePart */,
 				20BACB7E1A1AA3A400EB78CC /* Archives */,
@@ -1008,17 +1039,20 @@
 				20C176E71A34DCAE0021C64C /* CSPartBlockTableViewCell.m in Sources */,
 				20B2A7FB1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m in Sources */,
 				2030103E1A25FC1E0088FD7C /* CSArticleModel.m in Sources */,
+				208B5FB91A55FBA4003D4718 /* CSAbstractInteractiveTransition.m in Sources */,
 				202B7EF21A30BA13000E13C7 /* CSFigureBlockTableViewCell.m in Sources */,
 				20C176C61A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
 				203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */,
 				20C176E11A34A6E90021C64C /* CSGlossaryHeaderView.m in Sources */,
 				206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */,
+				208B5FB21A55F894003D4718 /* CSSummaryViewController.m in Sources */,
 				20B2A8031A521F2300A9E5A8 /* CSArticleHomeTransition.m in Sources */,
 				20B2A7FF1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m in Sources */,
 				202833371A3DE528002DCA1C /* CSInArticleGlossaryDefinition.m in Sources */,
 				208B5F521A5343FA003D4718 /* CSStickyMenu.m in Sources */,
 				2027E9761A530A14007B5E92 /* CSTween.m in Sources */,
+				208B5FB61A55FB35003D4718 /* CSSummaryGlossaryTransition.m in Sources */,
 				20801A921A237F3E00EF38F3 /* CSGradientIndicatorView.m in Sources */,
 				2027E9771A530A14007B5E92 /* CSTweenTimingFunctions.m in Sources */,
 				20CABEC01A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m in Sources */,

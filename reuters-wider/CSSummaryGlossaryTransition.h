@@ -1,5 +1,5 @@
 //
-//  CSArticleSummaryTransition.h
+//  CSSummaryGlossaryTransition.h
 //  reuters-wider
 //
 //  Created by Sylvain Reucherand on 01/01/2015.
@@ -10,6 +10,6 @@
 
 #import "CSAbstractInteractiveTransition.h"
 
-@interface CSArticleSummaryTransition : CSAbstractInteractiveTransition
+@interface CSSummaryGlossaryTransition : CSAbstractInteractiveTransition
 
 @end
