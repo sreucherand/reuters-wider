@@ -10,4 +10,6 @@
 
 @interface CSSummaryViewController : UIViewController
 
+- (UIImage *)glossaryToggleViewRenderImage;
+
 @end

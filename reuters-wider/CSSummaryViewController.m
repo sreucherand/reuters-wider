@@ -12,6 +12,8 @@
 @interface CSSummaryViewController ()
 
 @property (strong, nonatomic) IBOutlet UIView *glossaryToggleView;
+@property (weak, nonatomic) IBOutlet UILabel *glossaryToggleViewLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *glossaryToggleViewLabelConstraint;
 
 @property (strong, nonatomic) CSSummaryGlossaryTransition *transition;
 
@@ -25,12 +27,45 @@
     self.transition = [[CSSummaryGlossaryTransition alloc] init];
     self.transition.sourceViewController = self;
     
+    self.glossaryToggleView.backgroundColor = WHITE_COLOR;
+    
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanOnGlossaryToggleBottomView:)];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnGlossaryToggleBottomView:)];
     
     [self.glossaryToggleView addGestureRecognizer:tapGestureRecognizer];
     [self.glossaryToggleView addGestureRecognizer:panGestureRecognizer];
+    
+    self.glossaryToggleViewLabel.font = CALIBRE_LIGHT_17;
+    self.glossaryToggleViewLabel.textColor = DARK_GREY_TOGGLE_COLOR;
+    
+    CALayer *topBorder = [CALayer layer];
+    
+    topBorder.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 1);
+    topBorder.backgroundColor = LIGHT_GREY_BORDER_COLOR.CGColor;
+    
+    [self.glossaryToggleView.layer addSublayer:topBorder];
+    
+    [self.glossaryToggleViewLabel setNeedsLayout];
+    [self.glossaryToggleViewLabel layoutIfNeeded];
+    
+    self.glossaryToggleViewLabelConstraint.constant =(CGRectGetWidth(self.glossaryToggleViewLabel.frame) + 27)/2;
+}
+
+#pragma mark - Specific methods
+
+- (UIImage *)glossaryToggleViewRenderImage {
+    UIGraphicsBeginImageContextWithOptions(self.glossaryToggleView.frame.size, YES, 0.0f);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    [self.glossaryToggleView.layer renderInContext:context];
+    
+    UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return snapshot;
 }
 
 #pragma mark - Gesture

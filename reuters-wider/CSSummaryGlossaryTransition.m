@@ -7,7 +7,6 @@
 //
 
 #import "CSSummaryGlossaryTransition.h"
-#import "CSGlossaryTableViewController.h"
 #import "CSSummaryViewController.h"
 
 @implementation CSSummaryGlossaryTransition
@@ -79,10 +78,17 @@
     
     CGRect frame = [transitionContext initialFrameForViewController:sourceViewController];
     
+    UIImage *image = [((CSSummaryViewController *)self.sourceViewController) glossaryToggleViewRenderImage];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), image.size.height)];
+    
+    imageView.image = image;
+    
     if (_presenting) {
         destinationViewController.view.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(frame));
+        imageView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(frame)-image.size.height);
         
         [[transitionContext containerView] addSubview:destinationViewController.view];
+        [[transitionContext containerView] addSubview:imageView];
     } else {
         [[transitionContext containerView] insertSubview:destinationViewController.view belowSubview:sourceViewController.view];
     }
@@ -90,10 +96,13 @@
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         if (_presenting) {
             destinationViewController.view.transform = CGAffineTransformIdentity;
+            imageView.transform = CGAffineTransformMakeTranslation(0, -image.size.height);
         } else {
             sourceViewController.view.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(frame));
         }
     } completion:^(BOOL finished) {
+        [imageView removeFromSuperview];
+        
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
 }

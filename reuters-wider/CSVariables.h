@@ -99,6 +99,10 @@
 #define LIGHT_BLUE_TEXT [UIColor colorWithRed:(114.0f/255.0f) green:(126.0f/255.0f) blue:(204.0f/255.0f) alpha:1.0f]
 #define LIGHT_GREY_COLOR [UIColor colorWithRed:(152.0f/255.0f) green:(152.0f/255.0f) blue:(152.0f/255.0f) alpha:1.0f]
 #define LETTER_BLUE_COLOR [UIColor colorWithRed:(0.0f/255.0f) green:(18.0f/255.0f) blue:(137.0f/255.0f) alpha:1.0f]
+
+// Summary
+#define DARK_GREY_TOGGLE_COLOR [UIColor colorWithRed:(39.0f/255.0f) green:(39.0f/255.0f) blue:(39.0f/255.0f) alpha:1.0f]
+#define LIGHT_GREY_BORDER_COLOR [UIColor colorWithRed:(229.0f/255.0f) green:(229.0f/255.0f) blue:(229.0f/255.0f) alpha:1.0f]
 // ---- End colors ----
 
 // ----

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lU6-TA-Oov">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Article Part View Controller-->
@@ -84,9 +85,27 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QR-d8-UK3">
                                 <rect key="frame" x="0.0" y="498" width="320" height="70"/>
-                                <color key="backgroundColor" red="1" green="0.95743302610000003" blue="0.26643150669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glossary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvl-KI-m6F">
+                                        <rect key="frame" x="160" y="27" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-top" translatesAutoresizingMaskIntoConstraints="NO" id="Pun-uE-d4K">
+                                        <rect key="frame" x="242" y="27" width="13" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="63q-eE-Ujw"/>
+                                            <constraint firstAttribute="width" constant="13" id="JFs-zP-miu"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="bvl-KI-m6F" secondAttribute="leading" id="5cF-EK-ytb"/>
+                                    <constraint firstItem="Pun-uE-d4K" firstAttribute="leading" secondItem="bvl-KI-m6F" secondAttribute="trailing" constant="14" id="U5w-Kt-RLs"/>
                                     <constraint firstAttribute="height" constant="70" id="XqV-SB-Qfy"/>
+                                    <constraint firstItem="bvl-KI-m6F" firstAttribute="centerY" secondItem="Pun-uE-d4K" secondAttribute="centerY" constant="2" id="si6-iL-LSP"/>
+                                    <constraint firstAttribute="centerY" secondItem="bvl-KI-m6F" secondAttribute="centerY" constant="-2" id="w5t-bf-mHT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -99,6 +118,8 @@
                     </view>
                     <connections>
                         <outlet property="glossaryToggleView" destination="9QR-d8-UK3" id="w3l-mZ-vyb"/>
+                        <outlet property="glossaryToggleViewLabel" destination="bvl-KI-m6F" id="Fgq-lv-egn"/>
+                        <outlet property="glossaryToggleViewLabelConstraint" destination="5cF-EK-ytb" id="3ew-1A-Oqh"/>
                         <segue destination="3s7-lG-DzJ" kind="modal" identifier="presentSummaryToGlossarySegueID" id="gqk-hd-OVB"/>
                     </connections>
                 </viewController>
@@ -344,6 +365,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow-top" width="13" height="18"/>
         <image name="glossary" width="21" height="26"/>
         <image name="iconClose" width="15" height="8"/>
         <image name="iconGlass" width="23" height="23"/>
