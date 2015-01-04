@@ -101,8 +101,11 @@
 #define LETTER_BLUE_COLOR [UIColor colorWithRed:(0.0f/255.0f) green:(18.0f/255.0f) blue:(137.0f/255.0f) alpha:1.0f]
 
 // Summary
+#define BLUE_PROGRESSION_BAR_COLOR [UIColor colorWithRed:(105.0f/255.0f) green:(106.0f/255.0f) blue:(173.0f/255.0f) alpha:1.0f]
+#define FLASH_BLUE_PART_NUMBER_COLOR [UIColor colorWithRed:(4.0f/255.0f) green:(4.0f/255.0f) blue:(192.0f/255.0f) alpha:1.0f]
 #define DARK_GREY_TOGGLE_COLOR [UIColor colorWithRed:(39.0f/255.0f) green:(39.0f/255.0f) blue:(39.0f/255.0f) alpha:1.0f]
 #define LIGHT_GREY_BORDER_COLOR [UIColor colorWithRed:(229.0f/255.0f) green:(229.0f/255.0f) blue:(229.0f/255.0f) alpha:1.0f]
+#define ULTRA_LIGHT_GREY_SUBTITLE_COLOR [UIColor colorWithRed:(175.0f/255.0f) green:(175.0f/255.0f) blue:(175.0f/255.0f) alpha:1.0f]
 // ---- End colors ----
 
 // ----

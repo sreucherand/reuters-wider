@@ -58,6 +58,14 @@ static CSArticleData *instance = nil;
     return [[[self getArticles] objectAtIndex:articleIndex] blocks];
 }
 
+- (NSArray *)getPartsOfArticle:(NSInteger)articleIndex {
+    return [[[self getArticles] objectAtIndex:articleIndex] parts];
+}
+
+- (CSPartModel *)getPart:(NSInteger)partIndex ofArticle:(NSInteger)articleIndex {
+    return [[self getPartsOfArticle:articleIndex] objectAtIndex:partIndex];
+}
+
 - (CSDefinitionModel *)getDefinitionAtIndex:(NSInteger)definitionIndex ofArticle:(NSInteger)articleIndex {
     return [[[[self getArticles] objectAtIndex:articleIndex] definitions] objectAtIndex:definitionIndex];
 }

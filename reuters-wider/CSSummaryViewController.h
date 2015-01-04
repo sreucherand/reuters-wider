@@ -10,6 +10,8 @@
 
 @interface CSSummaryViewController : UIViewController
 
+@property (assign, nonatomic) CGFloat progression;
+
 - (UIImage *)glossaryToggleViewRenderImage;
 
 @end

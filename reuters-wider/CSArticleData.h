@@ -17,6 +17,8 @@
 
 - (NSArray *)getArticles;
 - (NSArray *)getBlocksOfArticle:(NSInteger)articleIndex;
+- (NSArray *)getPartsOfArticle:(NSInteger)articleIndex;
+- (CSPartModel *)getPart:(NSInteger)partIndex ofArticle:(NSInteger)articleIndex;
 - (CSDefinitionModel *)getDefinitionAtIndex:(NSInteger)definitionIndex ofArticle:(NSInteger)articleIndex;
 - (NSDictionary *)getSortedDefinitionsOfArticle:(NSInteger)articleIndex;
 - (NSArray *)getSortedDefinitionsOfArticle:(NSInteger)articleIndex forKeyIndex:(NSInteger)index;

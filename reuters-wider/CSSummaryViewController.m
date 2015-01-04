@@ -8,12 +8,19 @@
 
 #import "CSSummaryViewController.h"
 #import "CSSummaryGlossaryTransition.h"
+#import "CSSummaryEntryTableViewCell.h"
 
-@interface CSSummaryViewController ()
+@interface CSSummaryViewController () <UITableViewDelegate, UITableViewDataSource, CSSummaryEntryTableViewCellDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *tableViewHeaderTitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *tableViewHeaderImageView;
 @property (strong, nonatomic) IBOutlet UIView *glossaryToggleView;
 @property (weak, nonatomic) IBOutlet UILabel *glossaryToggleViewLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *glossaryToggleViewLabelConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *mainRenderImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainRenderImageViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *progressionBarView;
 
 @property (strong, nonatomic) CSSummaryGlossaryTransition *transition;
 
@@ -50,9 +57,105 @@
     [self.glossaryToggleViewLabel layoutIfNeeded];
     
     self.glossaryToggleViewLabelConstraint.constant =(CGRectGetWidth(self.glossaryToggleViewLabel.frame) + 27)/2;
+    
+    UIView *headerView = self.tableView.tableHeaderView;
+    
+    [headerView setNeedsLayout];
+    [headerView layoutIfNeeded];
+    
+    headerView.frame = (CGRect){.origin=CGPointZero, .size=[headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
+    
+    self.tableView.tableHeaderView = headerView;
+    
+    [self.tableView setNeedsLayout];
+    [self.tableView layoutIfNeeded];
+    
+    self.tableViewHeaderTitleLabel.font = LEITURA_ROMAN_2_23;
+    
+    [self switchTableViewIntoDarkMode];
+    
+    self.mainRenderImageView.image = [self tableViewRenderImage];
+    
+    [self switchTableViewIntoLightMode];
+    
+    self.progressionBarView.backgroundColor = BLUE_PROGRESSION_BAR_COLOR;
+}
+
+#pragma mark - Table view datasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[[CSArticleData sharedInstance] getPartsOfArticle:2] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CSSummaryEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"summaryEntryCellID" forIndexPath:indexPath];
+    CSPartModel *part = [[CSArticleData sharedInstance] getPart:indexPath.row ofArticle:2];
+    
+    cell.partNumberLabel.text = [NSString stringWithFormat:@"0%i", (int)indexPath.row+1];
+    cell.partTitleLabel.text = part.title;
+    cell.partSubtitleLabel.text = part.subtitle;
+    cell.delegate = self;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.tableView.tableHeaderView.frame) - CGRectGetHeight(self.glossaryToggleView.frame))/[[[CSArticleData sharedInstance] getPartsOfArticle:2] count];
+}
+
+#pragma mark - Table view cell delegate
+
+- (void)didTapOnSummaryEntryCell:(NSIndexPath *)indexPath {
+    
+}
+
+#pragma mark - Setters
+
+- (void)setProgression:(CGFloat)progression {
+    _progression = progression;
+    
+    self.mainRenderImageViewHeightConstraint.constant = CGRectGetHeight(self.view.frame) * progression;
 }
 
 #pragma mark - Specific methods
+
+- (void)switchTableViewIntoDarkMode {
+    self.tableView.backgroundColor = BLUE_COLOR;
+    self.tableViewHeaderTitleLabel.textColor = WHITE_COLOR;
+    self.tableViewHeaderImageView.image = [UIImage imageNamed:@"summary-white"];
+    
+    [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[CSSummaryEntryTableViewCell class]]) {
+            [((CSSummaryEntryTableViewCell *)obj) switchTableViewCellIntoDarkMode];
+        }
+    }];
+}
+
+- (void)switchTableViewIntoLightMode {
+    self.tableView.backgroundColor = WHITE_COLOR;
+    self.tableViewHeaderTitleLabel.textColor = BLACK_COLOR;
+    self.tableViewHeaderImageView.image = [UIImage imageNamed:@"summary"];
+    
+    [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[CSSummaryEntryTableViewCell class]]) {
+            [((CSSummaryEntryTableViewCell *)obj) switchTableViewCellIntoLightMode];
+        }
+    }];
+}
+
+- (UIImage *)tableViewRenderImage {
+    UIGraphicsBeginImageContextWithOptions(self.tableView.frame.size, YES, 0.0f);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    [self.tableView.layer renderInContext:context];
+    
+    UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return snapshot;
+}
 
 - (UIImage *)glossaryToggleViewRenderImage {
     UIGraphicsBeginImageContextWithOptions(self.glossaryToggleView.frame.size, YES, 0.0f);

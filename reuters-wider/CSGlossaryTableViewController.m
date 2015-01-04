@@ -7,13 +7,13 @@
 //
 
 #import "CSGlossaryTableViewController.h"
-#import "CSGlossaryHeaderView.h"
 #import "CSGlossaryDefinitionTableViewCell.h"
 #import "CSSummaryGlossaryTransition.h"
 
-@interface CSGlossaryTableViewController ()
+@interface CSGlossaryTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *tableViewHeaderTitleLabel;
 @property (weak, nonatomic) IBOutlet UIView *backButtonAreaView;
 
 @property (strong, nonatomic) NSMutableDictionary *cells;
@@ -44,6 +44,8 @@
     
     [self.backButtonAreaView addGestureRecognizer:panGestureRecognizer];
     [self.backButtonAreaView addGestureRecognizer:tapGestureRecognizez];
+    
+    self.tableViewHeaderTitleLabel.font = LEITURA_ROMAN_2_23;
 }
 
 - (void)didReceiveMemoryWarning {

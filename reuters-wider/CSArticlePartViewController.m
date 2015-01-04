@@ -13,6 +13,7 @@
 #import "CSScrollViewNavigationControl.h"
 #import "CSStickyMenu.h"
 #import "CSArticleSummaryTransition.h"
+#import "CSSummaryViewController.h"
 
 @interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate>
 
@@ -89,12 +90,20 @@
     
     self.progression = [[CSArticleData sharedInstance] getProgressionOfArticle:2];
     
-    [self.tableView setContentOffset:CGPointMake(0, self.progression * (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame)) / 100) animated:NO];
+    [self.tableView setContentOffset:CGPointMake(0, self.progression * (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame))) animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Setters
+
+- (void)setProgression:(CGFloat)progression {
+    if (progression > _progression) {
+        _progression = progression;
+    }
 }
 
 #pragma mark - Table view data source
@@ -219,9 +228,13 @@
     [self.topNavigationControl containingScrollViewDidScroll];
     
     [self.stickyMenu containingScrollViewDidScroll];
+    
+    if (self.tableView.contentOffset.y >= 0) {
+        self.progression = self.tableView.contentOffset.y/(self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame));
+    }
 }
 
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {    
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
     [self.topNavigationControl containingScrollViewDidEndDragging];
 }
 
@@ -298,11 +311,7 @@
 #pragma mark - Navigation
 
 - (void)unwindToHome {
-    CGFloat percentage = self.tableView.contentOffset.y * 100 / (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame));
-    
-    if (percentage > self.progression) {
-        [[CSArticleData sharedInstance] saveProgression:percentage ofArticle:2];
-    }
+    [[CSArticleData sharedInstance] saveProgression:self.progression ofArticle:2];
     
     [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
 }
@@ -311,11 +320,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    UIViewController *destinationViewController = segue.destinationViewController;
-    
-    self.transition.destinationViewController = destinationViewController;
-    
-    destinationViewController.transitioningDelegate = self.transition;
+    if ([segue.destinationViewController isKindOfClass:[CSSummaryViewController class]]) {
+        CSSummaryViewController *destinationViewController = segue.destinationViewController;
+        
+        self.transition.destinationViewController = destinationViewController;
+        
+        destinationViewController.transitioningDelegate = self.transition;
+        destinationViewController.progression = self.progression;
+    }
 }
 
 @end

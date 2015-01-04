@@ -62,6 +62,22 @@
     CGColorSpaceRelease(space);
 }
 
+#pragma mark - Setters
+
+- (void)setTopColor:(UIColor *)topColor {
+    _topColor = topColor;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setBottomColor:(UIColor *)bottomColor {
+    _bottomColor = bottomColor;
+    
+    [self setNeedsDisplay];
+}
+
+#pragma mark - Specific methos
+
 - (void)interpolateBetweenColor:(UIColor *)topColor andColor:(UIColor *)bottomColor withProgression:(CGFloat)progression {
     if (![self.topColor isEqual:topColor] || ![self.bottomColor isEqual:bottomColor]) {
         self.topColor = topColor;

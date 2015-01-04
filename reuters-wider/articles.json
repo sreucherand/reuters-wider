@@ -339,6 +339,28 @@
                     }
                 }
             ],
+            "parts": [
+                {
+                    "id": 0,
+                    "title": "Why such an indignation ?",
+                    "subtitle": "The political challenge of Hong-Kong"
+                },
+                {
+                    "id": 1,
+                    "title": "The umbrella revolution",
+                    "subtitle": "Young generation in streets"
+                },
+                {
+                    "id": 2,
+                    "title": "The world reacting",
+                    "subtitle": "Hong-Kong supported by the world"
+                },
+                {
+                    "id": 3,
+                    "title": "China mainland don’t care",
+                    "subtitle": "China not ready for democracy ?"
+                }
+            ],
             "definitions": [
                 {
                     "id": 0,

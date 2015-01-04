@@ -23,6 +23,8 @@
 #import "CSArticleModel.h"
 #import "CSBlockModel.h"
 #import "CSBlockContentModel.h"
+#import "CSPartModel.h"
+#import "CSDefinitionModel.h"
 
 // Libs
 #import "CSTween.h"
