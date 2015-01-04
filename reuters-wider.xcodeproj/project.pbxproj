@@ -71,7 +71,6 @@
 		20C0E79F1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C0E79E1A2FC4890019C874 /* CSSubtitleBlockTableViewCell.m */; };
 		20C176C61A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176C51A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m */; };
 		20C176C91A347F550021C64C /* CSDefinitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176C81A347F550021C64C /* CSDefinitionModel.m */; };
-		20C176CB1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C176CA1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib */; };
 		20C176CD1A348F190021C64C /* Leitura-Roman4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20C176CC1A348F190021C64C /* Leitura-Roman4.otf */; };
 		20C176D31A349D730021C64C /* CSGlossaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176D21A349D730021C64C /* CSGlossaryTableViewController.m */; };
 		20C176E71A34DCAE0021C64C /* CSPartBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176E61A34DCAE0021C64C /* CSPartBlockTableViewCell.m */; };
@@ -213,7 +212,6 @@
 		20C176C51A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSGlossaryDefinitionTableViewCell.m; path = "reuters-wider/CSGlossaryDefinitionTableViewCell.m"; sourceTree = "<group>"; };
 		20C176C71A347F550021C64C /* CSDefinitionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDefinitionModel.h; sourceTree = "<group>"; };
 		20C176C81A347F550021C64C /* CSDefinitionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSDefinitionModel.m; sourceTree = "<group>"; };
-		20C176CA1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSGlossaryDefinitionTableViewCell.xib; path = "reuters-wider/CSGlossaryDefinitionTableViewCell.xib"; sourceTree = "<group>"; };
 		20C176CC1A348F190021C64C /* Leitura-Roman4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman4.otf"; sourceTree = "<group>"; };
 		20C176D11A349D730021C64C /* CSGlossaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGlossaryTableViewController.h; sourceTree = "<group>"; };
 		20C176D21A349D730021C64C /* CSGlossaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGlossaryTableViewController.m; sourceTree = "<group>"; };
@@ -707,7 +705,6 @@
 			children = (
 				20C176C41A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.h */,
 				20C176C51A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m */,
-				20C176CA1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib */,
 			);
 			name = GlossaryDefinitionCell;
 			sourceTree = "<group>";
@@ -940,7 +937,6 @@
 				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
 				20C176CD1A348F190021C64C /* Leitura-Roman4.otf in Resources */,
-				20C176CB1A34892F0021C64C /* CSGlossaryDefinitionTableViewCell.xib in Resources */,
 				208B5F5B1A537950003D4718 /* CSKeywordsBlockTableViewCell.xib in Resources */,
 				202B7EF41A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib in Resources */,
 				EB469E621A276508001C7B02 /* CSPovBlockTableViewCell.xib in Resources */,

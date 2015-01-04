@@ -14,16 +14,9 @@
     // Initialization code
 }
 
-- (void)setBounds:(CGRect)bounds {
-    [super setBounds:bounds];
-    
-    self.contentView.frame = bounds;
-}
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self.contentView updateConstraintsIfNeeded];
     [self.contentView layoutIfNeeded];
 }
 

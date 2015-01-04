@@ -130,24 +130,26 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *key = [NSString stringWithFormat:@"%i", (int)indexPath.row];
-    
-    CSAbstractArticleViewCellTableViewCell *cell = [self.cells objectForKey:key];
     CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
+    NSString *identifier = [self cellIdentifierForBlockType:block.type];
+    CSAbstractArticleViewCellTableViewCell *cell = [self.cells objectForKey:identifier];
     
     if ([block.type isEqualToString:@"part"]) {
         return CGRectGetHeight(self.view.frame);
     }
     
     if (nil == cell) {
-        cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type]];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
         
-        [cell hydrateWithContentData:(NSDictionary *)block];
-        
-        [self.cells setValue:cell forKey:key];
+        [self.cells setObject:cell forKey:identifier];
     }
     
-    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.tableView.bounds));
+    [cell hydrateWithContentData:(NSDictionary *)block];
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(cell.bounds));
     
     [cell setNeedsLayout];
     [cell layoutIfNeeded];

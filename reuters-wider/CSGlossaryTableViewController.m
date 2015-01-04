@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tableViewHeaderTitleLabel;
 @property (weak, nonatomic) IBOutlet UIView *backButtonAreaView;
 
-@property (strong, nonatomic) NSMutableDictionary *cells;
+@property (strong, nonatomic) CSGlossaryDefinitionTableViewCell *cell;
 
 @end
 
@@ -24,10 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.cells = [[NSMutableDictionary alloc] init];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:@"CSGlossaryDefinitionTableViewCell" bundle:nil] forCellReuseIdentifier:@"glossaryDefinitionCellID"];
     
     UIView *headerView = self.tableView.tableHeaderView;
     
@@ -66,30 +62,34 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CSGlossaryDefinitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID" forIndexPath:indexPath];
+    CSGlossaryDefinitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID"];
     
     CSDefinitionModel *definition = [[[CSArticleData sharedInstance] getSortedDefinitionsOfArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     [cell hydrateWithDefinition:definition forIndexPath:indexPath];
     
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *key = [NSString stringWithFormat:@"%i", (int)indexPath.row];
-    
-    CSGlossaryDefinitionTableViewCell *cell = [self.cells objectForKey:key];
+    CSGlossaryDefinitionTableViewCell *cell = self.cell;
     CSDefinitionModel *definition = [[[CSArticleData sharedInstance] getSortedDefinitionsOfArticle:2 forKeyIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     if (cell == nil) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"glossaryDefinitionCellID"];
         
-        [cell hydrateWithDefinition:definition forIndexPath:indexPath];
-        
-        [self.cells setValue:cell forKey:key];
+        self.cell = cell;
     }
     
-    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.tableView.bounds));
+    [cell hydrateWithDefinition:definition forIndexPath:indexPath];
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(cell.bounds));
     
     [cell setNeedsLayout];
     [cell layoutIfNeeded];

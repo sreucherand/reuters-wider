@@ -23,6 +23,12 @@
     self.definitionLabel.lineHeight = 20;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self.contentView layoutIfNeeded];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
