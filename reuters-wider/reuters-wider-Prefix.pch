@@ -31,6 +31,5 @@
 
 // Pods
 #import <UIView+Easing.h>
-#import <ColorUtils.h>
 
 #endif

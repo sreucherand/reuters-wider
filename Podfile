@@ -3,4 +3,3 @@ platform :ios, '8.0'
 
 pod "UIView-Easing", "~> 0.0.1"
 pod 'JSONModel'
-pod 'ColorUtils'

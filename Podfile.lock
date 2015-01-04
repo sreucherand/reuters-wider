@@ -1,15 +1,12 @@
 PODS:
-  - ColorUtils (1.1.3)
   - JSONModel (1.0.1)
   - UIView-Easing (0.0.1)
 
 DEPENDENCIES:
-  - ColorUtils
   - JSONModel
   - UIView-Easing (~> 0.0.1)
 
 SPEC CHECKSUMS:
-  ColorUtils: d99b38d2a7abf81df1698477b19f895576578738
   JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
   UIView-Easing: 96b6088cfa5dde48970e74101de863d90c81dba1
 
