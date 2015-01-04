@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @protocol CSIssuesPreviewPictureViewCellDelegate;
 
 @interface CSIssuesPreviewPictureViewCell : UICollectionViewCell
 
-@property (strong, nonatomic) UIImageView *pictureImageView;
+@property (strong, nonatomic) AVPlayer *motionMoviePlayer;
+@property (strong, nonatomic) NSURL *motionVideoURL;
+@property (strong, nonatomic) UIImageView *placeholderImageView;
 
 @property (assign, nonatomic) id <CSIssuesPreviewPictureViewCellDelegate> delegate;
 

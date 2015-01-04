@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vu2-C9-zf2" customClass="CSProgressionBarView">
+                                <rect key="frame" x="312" y="0.0" width="8" height="568"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="ETI-TV-D6K"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GXQ-V0-tvu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,11 +32,15 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="GXQ-V0-tvu" secondAttribute="bottom" id="Oee-jO-XLq"/>
                             <constraint firstAttribute="trailing" secondItem="GXQ-V0-tvu" secondAttribute="trailing" id="QT1-Rq-yPL"/>
+                            <constraint firstAttribute="trailing" secondItem="Vu2-C9-zf2" secondAttribute="trailing" id="acd-ua-8md"/>
                             <constraint firstItem="GXQ-V0-tvu" firstAttribute="top" secondItem="9WF-Z5-bGr" secondAttribute="top" id="jIn-sq-qou"/>
                             <constraint firstItem="GXQ-V0-tvu" firstAttribute="leading" secondItem="9WF-Z5-bGr" secondAttribute="leading" id="rLc-tM-Phd"/>
+                            <constraint firstItem="Vu2-C9-zf2" firstAttribute="height" secondItem="GXQ-V0-tvu" secondAttribute="height" id="uGV-Hc-6QA"/>
+                            <constraint firstItem="Vu2-C9-zf2" firstAttribute="top" secondItem="GXQ-V0-tvu" secondAttribute="top" id="xSf-Hj-g6I"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressionBarView" destination="Vu2-C9-zf2" id="ZVk-ea-xrj"/>
                         <outlet property="tableView" destination="GXQ-V0-tvu" id="GlZ-6E-CWz"/>
                         <outlet property="tableViewLeftConstraint" destination="rLc-tM-Phd" id="oTu-pe-hnJ"/>
                         <outlet property="tableViewRightConstraint" destination="QT1-Rq-yPL" id="AFf-I6-3Qp"/>

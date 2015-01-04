@@ -91,7 +91,6 @@
                     <constraint firstItem="se2-5J-WFd" firstAttribute="leading" secondItem="J4E-Je-j4o" secondAttribute="leading" id="qyu-cG-cep"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.96116879111842102" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="comparedMetaLabel" destination="XHB-PP-bCU" id="vVn-87-jgw"/>
                 <outlet property="comparedTextLabel" destination="ITE-no-59Z" id="PE2-f8-9XI"/>

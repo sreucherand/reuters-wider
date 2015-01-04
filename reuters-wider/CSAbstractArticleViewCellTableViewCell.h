@@ -14,6 +14,8 @@
 
 @interface CSAbstractArticleViewCellTableViewCell : UITableViewCell
 
+@property (assign, nonatomic) CGFloat marginRight;
+
 @property (strong, nonatomic) CSBlockContentModel *content;
 @property (strong, nonatomic) id<CSAbstractArticleViewCellTableViewCellDelegate> delegate;
 

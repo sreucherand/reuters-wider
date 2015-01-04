@@ -22,6 +22,16 @@
 
 @implementation CSPartBlockTableViewCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        self.marginRight = 0;
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     self.partNumberLabel.font = CALIBRE_REG;
     self.partNumberLabel.textColor = BLUE_COLOR;

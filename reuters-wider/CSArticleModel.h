@@ -20,7 +20,7 @@
 @property (assign, nonatomic) int number;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *date;
-@property (strong, nonatomic) NSString *image;
+@property (strong, nonatomic) NSString *media;
 @property (strong, nonatomic) NSArray<CSBlockModel, Optional> *blocks;
 @property (strong, nonatomic) NSArray<CSPartModel, Optional> *parts;
 @property (strong, nonatomic) NSArray<CSDefinitionModel, Optional> *definitions;

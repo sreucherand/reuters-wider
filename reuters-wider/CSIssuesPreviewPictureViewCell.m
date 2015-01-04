@@ -12,6 +12,7 @@
 @interface CSIssuesPreviewPictureViewCell () <UIScrollViewDelegate>
 
 @property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) AVPlayerLayer *motionMoviePlayerLayer;
 @property (strong, nonatomic) CSScrollViewNavigationControl *bottomNavigationControl;
 
 @end
@@ -25,7 +26,10 @@
         self.clipsToBounds = NO;
         
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
-        self.pictureImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        self.placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        
+        self.motionMoviePlayer = [[AVPlayer alloc] init];
+        self.motionMoviePlayerLayer = [AVPlayerLayer playerLayerWithPlayer:self.motionMoviePlayer];
         
         self.scrollView.backgroundColor = WHITE_COLOR;
         self.scrollView.alwaysBounceVertical = YES;
@@ -34,7 +38,8 @@
         
         [self addSubview:self.scrollView];
         
-        [self.scrollView addSubview:self.pictureImageView];
+        [self.scrollView addSubview:self.placeholderImageView];
+        [self.scrollView.layer addSublayer:self.motionMoviePlayerLayer];
         
         self.bottomNavigationControl = [[CSScrollViewNavigationControl alloc] initWithPosition:UINavigationControlPositionBottom];
         
@@ -52,10 +57,26 @@
     self.scrollView.frame = (CGRect){.origin=CGPointZero, .size=self.frame.size};
     self.scrollView.contentSize = self.frame.size;
     
-    self.pictureImageView.frame = (CGRect){.origin=CGPointZero, .size=self.frame.size};
+    self.placeholderImageView.frame = (CGRect){.origin=CGPointZero, .size=self.frame.size};
+    
+    self.motionMoviePlayerLayer.frame = (CGRect){.origin=CGPointZero, .size=self.frame.size};
     
     self.bottomNavigationControl.frame = CGRectMake(0, CGRectGetHeight(self.scrollView.frame), CGRectGetWidth(self.frame), 60);
 }
+
+#pragma mark - Setters
+
+- (void)setMotionVideoURL:(NSURL *)motionVideoURL {
+    if (![_motionVideoURL isEqual:motionVideoURL]) {
+        _motionVideoURL = motionVideoURL;
+        
+        AVPlayerItem *motionMoviePlayerItem = [AVPlayerItem playerItemWithURL:_motionVideoURL];
+        
+        [self.motionMoviePlayer replaceCurrentItemWithPlayerItem:motionMoviePlayerItem];
+    }
+}
+
+#pragma mark - Scroll view delegate
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
     [self.bottomNavigationControl containingScrollViewDidEndDragging];
@@ -80,11 +101,28 @@
     
     CGRect rect = (CGRect){.origin=CGPointZero, .size=CGSizeMake(CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame) + CGRectGetHeight(self.bottomNavigationControl.frame))};
     
+    [self.motionMoviePlayer pause];
+    
     UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0.0f);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     [self.scrollView.layer renderInContext:context];
+    
+    AVURLAsset *asset = [AVAsset assetWithURL:self.motionVideoURL];
+    AVAssetImageGenerator *generator = [AVAssetImageGenerator assetImageGeneratorWithAsset:asset];
+    
+    [generator setAppliesPreferredTrackTransform:YES];
+    [generator setRequestedTimeToleranceBefore:kCMTimeZero];
+    [generator setRequestedTimeToleranceAfter:kCMTimeZero];
+    
+    CGImageRef image = [generator copyCGImageAtTime:self.motionMoviePlayer.currentTime actualTime:NULL error:NULL];
+    
+    CGContextTranslateCTM(context, 0, CGRectGetHeight(self.motionMoviePlayerLayer.frame));
+    CGContextScaleCTM(context, 1, -1);
+    CGContextDrawImage(context, self.motionMoviePlayerLayer.frame, image);
+    
+    CGImageRelease(image);
     
     UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -106,6 +144,8 @@
             
             [self.scrollView setScrollEnabled:YES];
             [self.scrollView setOpaque:NO];
+            
+            [self.motionMoviePlayer seekToTime:kCMTimeZero];
         }
     }];
     

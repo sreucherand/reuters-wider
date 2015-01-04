@@ -5,21 +5,21 @@
             "title": "Social impact\n investing",
             "date": "Mon, 03 Aug 2014 10:07:43 GMT",
             "number": 29,
-            "image": "cover-social-impact-investing"
+            "media": "cover-social-impact-investing"
         },
         {
             "id": 1,
             "title": "Future energy\n in cities",
             "date": "Tue, 01 Sep 2014 09:11:28 GMT",
             "number": 30,
-            "image": "cover-future-energy-in-cities"
+            "media": "cover-future-energy-in-cities"
         },
         {
             "id": 2,
             "title": "Hong-Kong\n for democracy",
             "date": "Mon, 05 Oct 2014 08:59:14 GMT",
             "number": 31,
-            "image": "cover-hong-kong-for-democracy",
+            "media": "cover-hong-kong-for-democracy",
             "blocks": [
                 {
                     "id": 0,

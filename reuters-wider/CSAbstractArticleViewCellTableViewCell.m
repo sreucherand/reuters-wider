@@ -10,6 +10,16 @@
 
 @implementation CSAbstractArticleViewCellTableViewCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        _marginRight = 8;
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -18,6 +28,12 @@
     [super layoutSubviews];
     
     [self.contentView layoutIfNeeded];
+}
+
+- (void)setFrame:(CGRect)frame {
+    frame.size.width -= self.marginRight;
+    
+    [super setFrame:frame];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

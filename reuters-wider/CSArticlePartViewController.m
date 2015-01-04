@@ -14,11 +14,13 @@
 #import "CSStickyMenu.h"
 #import "CSArticleSummaryTransition.h"
 #import "CSSummaryViewController.h"
+#import "CSProgressionBarView.h"
 
 @interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLeftConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewRightConstraint;
+@property (weak, nonatomic) IBOutlet CSProgressionBarView *progressionBarView;
 
 @property (assign, nonatomic) CGFloat progression;
 
@@ -37,11 +39,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the
     
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
     self.transition = [[CSArticleSummaryTransition alloc] init];
     self.transition.sourceViewController = self;
     
     self.definitionView = [[[NSBundle mainBundle] loadNibNamed:@"CSInArticleGlossaryDefinition" owner:self options:nil] lastObject];
     self.definitionView.frame = (CGRect){.origin=self.definitionView.frame.origin, .size=CGSizeMake(CGRectGetWidth(self.view.frame)*0.55, self.definitionView.frame.size.height)};
+    self.definitionView.hidden = YES;
     
     [self.view insertSubview:self.definitionView belowSubview:self.tableView];
     
@@ -74,6 +79,8 @@
     [self.view addGestureRecognizer:swipeGestureRecognizer];
     
     self.topNavigationControl = [[CSScrollViewNavigationControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60) scrollView:self.tableView];
+    
+    self.topNavigationControl.backgroundColor = WHITE_COLOR;
     
     [self.topNavigationControl setLabelText:@"Home"];
     [self.topNavigationControl addTarget:self action:@selector(scrollViewDidPullForTransition:) forControlEvents:UIControlEventValueChanged];
@@ -149,7 +156,7 @@
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
     
-    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(cell.bounds));
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds) - cell.marginRight, CGRectGetHeight(cell.bounds));
     
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
@@ -157,6 +164,14 @@
     CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     
     return size.height + 1;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
+    
+    if (![block.type isEqualToString:@"part"]) {
+        cell.backgroundColor = [UIColor clearColor];
+    }
 }
 
 #pragma mark - Identifier and block type match
@@ -233,6 +248,7 @@
     
     if (self.tableView.contentOffset.y >= 0) {
         self.progression = self.tableView.contentOffset.y/(self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame));
+        self.progressionBarView.progression = self.progression;
     }
 }
 

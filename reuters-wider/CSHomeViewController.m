@@ -48,6 +48,16 @@
     self.bottomConstraintGradientIndicatorView.constant = CGRectGetWidth(self.view.frame)-CGRectGetHeight(self.gradientIndicatorView.frame)+25;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [[self.issuesPreviewCollectionView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[CSIssuesPreviewPictureViewCell class]]) {
+            [((CSIssuesPreviewPictureViewCell *)obj).motionMoviePlayer play];
+        }
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -64,7 +74,9 @@
         CSArticleModel *article = [[[CSArticleData sharedInstance] getArticles] objectAtIndex:(indexPath.item-1)/2];
         CSIssuesPreviewPictureViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PictureViewCellID" forIndexPath:indexPath];
         
-        cell.pictureImageView.image = [UIImage imageNamed:article.image];
+        cell.placeholderImageView.image = [UIImage imageNamed:article.media];
+        cell.motionVideoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:article.media ofType:@"mp4"]];
+        [cell.motionMoviePlayer seekToTime:kCMTimeZero];
         cell.delegate = self;
         
         return cell;
@@ -105,6 +117,12 @@
     NSIndexPath *indexPath = [self.issuesPreviewCollectionView indexPathForItemAtPoint:point];
     
     self.issuesPreviewCollectionView.currentIndex = indexPath.item/2;
+    
+    [[self.issuesPreviewCollectionView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[CSIssuesPreviewPictureViewCell class]]) {
+            [((CSIssuesPreviewPictureViewCell *)obj).motionMoviePlayer play];
+        }
+    }];
 }
 
 - (void)didPictureScroll:(NSNumber *)percentage {
