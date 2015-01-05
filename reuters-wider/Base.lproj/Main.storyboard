@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lU6-TA-Oov">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lU6-TA-Oov">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -428,19 +428,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjd-C9-5Lw">
-                                <rect key="frame" x="260" y="30" width="50" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="1yV-DO-0J6"/>
-                                    <constraint firstAttribute="height" constant="40" id="5D6-T6-ARb"/>
-                                </constraints>
-                                <state key="normal" image="iconGlass">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="lj2-AV-3ps" kind="custom" customClass="CSHomeArchivesTransition" id="RIb-zx-bVg"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zke-aA-vSS" customClass="CSIssuesPreviewCollectionView">
                                 <rect key="frame" x="0.0" y="70" width="320" height="498"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -513,15 +500,40 @@
                                     <constraint firstAttribute="width" constant="10" id="eYo-gV-dQn"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUV-pE-96x">
+                                <rect key="frame" x="16" y="30" width="50" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3t9-Qe-BXY"/>
+                                    <constraint firstAttribute="width" constant="50" id="PVT-1j-8df"/>
+                                </constraints>
+                                <state key="normal" image="logoMain">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjd-C9-5Lw">
+                                <rect key="frame" x="260" y="30" width="50" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="1yV-DO-0J6"/>
+                                    <constraint firstAttribute="height" constant="40" id="5D6-T6-ARb"/>
+                                </constraints>
+                                <state key="normal" image="iconGlass">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lj2-AV-3ps" kind="custom" customClass="CSHomeArchivesTransition" id="RIb-zx-bVg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rUV-pE-96x" firstAttribute="leading" secondItem="ngP-JW-tpr" secondAttribute="leading" constant="10" id="9yK-2a-MAG"/>
                             <constraint firstAttribute="trailing" secondItem="Zke-aA-vSS" secondAttribute="trailing" id="AZ4-s0-KoS"/>
                             <constraint firstItem="Zke-aA-vSS" firstAttribute="top" secondItem="sjd-C9-5Lw" secondAttribute="bottom" id="C3J-OR-rDC"/>
                             <constraint firstItem="Zke-aA-vSS" firstAttribute="leading" secondItem="ngP-JW-tpr" secondAttribute="leading" id="CWE-4l-Yfp"/>
                             <constraint firstAttribute="trailing" secondItem="sjd-C9-5Lw" secondAttribute="trailing" constant="10" id="OQw-4z-4ZJ"/>
                             <constraint firstAttribute="bottom" secondItem="Zke-aA-vSS" secondAttribute="bottom" id="SwD-fz-bYf"/>
                             <constraint firstAttribute="centerX" secondItem="4Oq-aR-zdM" secondAttribute="centerX" id="kwN-we-5F4"/>
+                            <constraint firstItem="rUV-pE-96x" firstAttribute="top" secondItem="J5p-bA-cIf" secondAttribute="bottom" constant="10" id="qv5-ij-zJJ"/>
                             <constraint firstItem="Zke-aA-vSS" firstAttribute="bottom" secondItem="4Oq-aR-zdM" secondAttribute="bottom" constant="200" id="sTY-n9-8fm"/>
                             <constraint firstItem="sjd-C9-5Lw" firstAttribute="top" secondItem="J5p-bA-cIf" secondAttribute="bottom" constant="10" id="uSS-UE-ejf"/>
                         </constraints>
@@ -544,6 +556,7 @@
         <image name="glossary" width="21" height="26"/>
         <image name="iconClose" width="15" height="8"/>
         <image name="iconGlass" width="23" height="23"/>
+        <image name="logoMain" width="30" height="30"/>
         <image name="summary" width="24" height="18"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
