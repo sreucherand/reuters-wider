@@ -31,8 +31,6 @@
     
     self.titleButton.titleLabel.font = CALIBRE_REG_15;
     self.titleButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    
-    [self.titleButton addTarget:self action:@selector(titleButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView {
@@ -107,9 +105,17 @@
     }
 }
 
-- (void)titleButtonDidPress {
+#pragma mark - Events
+
+- (IBAction)titleButtonDidPress:(id)sender {
     if ([self.delegate respondsToSelector:@selector(titleButtonDidPress)]) {
         [self.delegate performSelector:@selector(titleButtonDidPress)];
+    }
+}
+
+- (IBAction)backToTopButtonDidPress:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(backToTopButtonDidPress)]) {
+        [self.delegate performSelector:@selector(backToTopButtonDidPress)];
     }
 }
 

@@ -27,5 +27,6 @@
 @optional;
 
 - (void)titleButtonDidPress;
+- (void)backToTopButtonDidPress;
 
 @end
