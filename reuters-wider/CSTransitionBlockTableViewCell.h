@@ -7,6 +7,7 @@
 //
 
 #import "CSAbstractArticleViewCellTableViewCell.h"
+#import "CSGradientIndicatorView.h"
 
 @interface CSTransitionBlockTableViewCell : CSAbstractArticleViewCellTableViewCell
 
