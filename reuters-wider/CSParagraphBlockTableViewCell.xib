@@ -6,14 +6,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSParagraphBlockCellID" rowHeight="266" id="fwa-m6-0LY" customClass="CSParagraphBlockTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="359" height="266"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSParagraphBlockCellID" rowHeight="120" id="fwa-m6-0LY" customClass="CSParagraphBlockTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fwa-m6-0LY" id="S5w-q8-2V9">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paragraph" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvT-U0-j6x" customClass="CSAttributedLabel">
-                        <rect key="frame" x="20" y="0.0" width="319" height="265"/>
+                        <rect key="frame" x="20" y="0.0" width="319" height="119"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
             <connections>
                 <outlet property="paragraphTextLabel" destination="jvT-U0-j6x" id="CSt-4V-UMM"/>
             </connections>
-            <point key="canvasLocation" x="163.5" y="322"/>
+            <point key="canvasLocation" x="163.5" y="249"/>
         </tableViewCell>
     </objects>
 </document>

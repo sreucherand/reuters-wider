@@ -159,14 +159,6 @@
     return size.height + 1;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
-    
-    if (![block.type isEqualToString:@"part"]) {
-        cell.backgroundColor = [UIColor clearColor];
-    }
-}
-
 #pragma mark - Identifier and block type match
 
 - (NSString *)cellClassForBlockType:(NSString *)type {

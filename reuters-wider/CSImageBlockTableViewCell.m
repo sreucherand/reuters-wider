@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientIndicatorView;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *articleImageHeightConstraint;
 
 @end
 
@@ -33,9 +34,13 @@
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     
-    self.articleImageView.image = [UIImage imageNamed:self.content.image];
+    UIImage *image = [UIImage imageNamed:self.content.image];
     
-    [self.articleImageView sizeToFit];
+    CGFloat ratio = image.size.height/image.size.width;
+    
+    self.articleImageView.image = image;
+    self.articleImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.articleImageHeightConstraint.constant = CGRectGetWidth(self.frame)*ratio;
 }
 
 @end

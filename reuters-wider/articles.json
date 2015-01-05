@@ -247,14 +247,14 @@
                     "id": 25,
                     "type": "image",
                     "content": {
-                        "image": "cover-future-energy-in-cities"
+                        "image": "protest-area"
                     }
                 },
                 {
                     "id": 26,
                     "type": "subtitle",
                     "content": {
-                        "title": "What do you want?"
+                        "text": "What do you want?"
                     }
                 },
                 {
