@@ -11,14 +11,11 @@
 
 @interface CSInterviewBlockTableViewCell()
 
-
-
 @property (weak, nonatomic) IBOutlet UIView *interviewViewBackground;
 @property (weak, nonatomic) IBOutlet UILabel *interviewTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *interviewedNameLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *keyphraseLabel;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientView;
-
 
 @end
 
@@ -26,13 +23,18 @@
 
 - (void)awakeFromNib {
     self.interviewViewBackground.backgroundColor = BLUE_GREY_COLOR;
+    
     self.interviewTitleLabel.font = LEITURA_ROMAN_3_19;
     self.interviewTitleLabel.textColor = DARK_GREY_TOGGLE_COLOR;
+    
     self.interviewedNameLabel.font = CALIBRE_REG_15;
     self.interviewedNameLabel.textColor = LIGHT_BLUE_COLOR;
+    
     self.gradientView.topColor = LIGHT_BLUE_COLOR;
+    
     self.keyphraseLabel.font = LEITURA_ROMAN_1_19;
     self.keyphraseLabel.textColor = DARK_GREY_TOGGLE_COLOR;
+    self.keyphraseLabel.lineHeight = 25;
 }
 
 /*

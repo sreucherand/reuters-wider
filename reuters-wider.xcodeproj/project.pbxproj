@@ -823,9 +823,9 @@
 		EB3B871D1A5AD1C400DB58AD /* InterviewBlock */ = {
 			isa = PBXGroup;
 			children = (
-				EB3B871E1A5AD1E000DB58AD /* CSInterviewBlockTableViewCell.xib */,
 				EB3B87201A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.h */,
 				EB3B87211A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.m */,
+				EB3B871E1A5AD1E000DB58AD /* CSInterviewBlockTableViewCell.xib */,
 			);
 			name = InterviewBlock;
 			sourceTree = "<group>";
