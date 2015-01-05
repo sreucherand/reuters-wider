@@ -15,7 +15,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hg-gd-Mk6" userLabel="Top part">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlc-0v-GrJ" userLabel="Top part subtitle">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlc-0v-GrJ" userLabel="Top part subtitle">
                                 <rect key="frame" x="45" y="202" width="230" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="90" id="nQO-rA-mys"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="230-1P-zpf" userLabel="Top part title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="230-1P-zpf" userLabel="Top part title">
                                 <rect key="frame" x="45" y="171" width="230" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -37,12 +37,10 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="230-1P-zpf" firstAttribute="leading" secondItem="6hg-gd-Mk6" secondAttribute="leading" constant="45" id="8fx-eV-ws7"/>
                             <constraint firstItem="zlc-0v-GrJ" firstAttribute="top" secondItem="230-1P-zpf" secondAttribute="bottom" constant="10" id="CRu-pl-nwr"/>
                             <constraint firstAttribute="centerX" secondItem="IgH-cz-Z4X" secondAttribute="centerX" id="JGg-fv-g5x"/>
                             <constraint firstAttribute="bottom" secondItem="IgH-cz-Z4X" secondAttribute="bottom" id="YVq-Ad-y28"/>
                             <constraint firstItem="zlc-0v-GrJ" firstAttribute="width" secondItem="230-1P-zpf" secondAttribute="width" id="i4m-ZU-PVN"/>
-                            <constraint firstAttribute="trailing" secondItem="230-1P-zpf" secondAttribute="trailing" constant="45" id="kya-bn-Prz"/>
                             <constraint firstItem="zlc-0v-GrJ" firstAttribute="leading" secondItem="230-1P-zpf" secondAttribute="leading" id="lMt-dV-Zld"/>
                             <constraint firstAttribute="centerY" secondItem="230-1P-zpf" secondAttribute="centerY" constant="45" id="pYg-7e-eBJ"/>
                         </constraints>
@@ -58,13 +56,13 @@
                                     <constraint firstAttribute="height" constant="90" id="JEr-Cl-Jqe"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wir-Lq-Goc" userLabel="Bottom part title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wir-Lq-Goc" userLabel="Bottom part title">
                                 <rect key="frame" x="45" y="261" width="230" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-Tm-hIF" userLabel="Bottom part subtitle">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-Tm-hIF" userLabel="Bottom part subtitle">
                                 <rect key="frame" x="45" y="230" width="230" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -74,10 +72,8 @@
                         <constraints>
                             <constraint firstItem="wir-Lq-Goc" firstAttribute="leading" secondItem="39Y-Tm-hIF" secondAttribute="leading" id="4B0-ee-dtH"/>
                             <constraint firstAttribute="centerY" secondItem="wir-Lq-Goc" secondAttribute="centerY" constant="-45" id="7Kk-qX-fl3"/>
-                            <constraint firstAttribute="trailing" secondItem="wir-Lq-Goc" secondAttribute="trailing" constant="45" id="Aac-yz-fCB"/>
                             <constraint firstItem="wir-Lq-Goc" firstAttribute="width" secondItem="39Y-Tm-hIF" secondAttribute="width" id="C8e-EP-fCj"/>
                             <constraint firstItem="wir-Lq-Goc" firstAttribute="top" secondItem="39Y-Tm-hIF" secondAttribute="bottom" constant="10" id="SXq-1g-dQH"/>
-                            <constraint firstItem="wir-Lq-Goc" firstAttribute="leading" secondItem="1Bs-L9-KkG" secondAttribute="leading" constant="45" id="kL9-jd-PVR"/>
                             <constraint firstItem="BEP-xY-vhF" firstAttribute="top" secondItem="1Bs-L9-KkG" secondAttribute="top" id="kks-bF-eML"/>
                             <constraint firstAttribute="centerX" secondItem="BEP-xY-vhF" secondAttribute="centerX" id="z7f-t3-Z5c"/>
                         </constraints>
