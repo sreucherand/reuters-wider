@@ -1,32 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSTransitionBlockCellID" id="40q-a1-mNW" customClass="CSTransitionBlockTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSTransitionBlockCellID" rowHeight="905" id="40q-a1-mNW" customClass="CSTransitionBlockTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="905"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="40q-a1-mNW" id="6Tn-HO-x6H">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transition" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icm-nN-x9x">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hg-gd-Mk6" userLabel="Top part">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlc-0v-GrJ" userLabel="Top part subtitle">
+                                <rect key="frame" x="50" y="247" width="220" height="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgH-cz-Z4X" customClass="CSGradientIndicatorView">
+                                <rect key="frame" x="155" y="362" width="10" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="LQd-sd-oTd"/>
+                                    <constraint firstAttribute="height" constant="90" id="nQO-rA-mys"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="230-1P-zpf" userLabel="Top part title">
+                                <rect key="frame" x="50" y="216" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="230-1P-zpf" firstAttribute="leading" secondItem="6hg-gd-Mk6" secondAttribute="leading" constant="50" id="8fx-eV-ws7"/>
+                            <constraint firstItem="zlc-0v-GrJ" firstAttribute="top" secondItem="230-1P-zpf" secondAttribute="bottom" constant="10" id="CRu-pl-nwr"/>
+                            <constraint firstAttribute="centerX" secondItem="IgH-cz-Z4X" secondAttribute="centerX" id="JGg-fv-g5x"/>
+                            <constraint firstAttribute="bottom" secondItem="IgH-cz-Z4X" secondAttribute="bottom" id="YVq-Ad-y28"/>
+                            <constraint firstItem="zlc-0v-GrJ" firstAttribute="width" secondItem="230-1P-zpf" secondAttribute="width" id="i4m-ZU-PVN"/>
+                            <constraint firstAttribute="trailing" secondItem="230-1P-zpf" secondAttribute="trailing" constant="50" id="kya-bn-Prz"/>
+                            <constraint firstItem="zlc-0v-GrJ" firstAttribute="leading" secondItem="230-1P-zpf" secondAttribute="leading" id="lMt-dV-Zld"/>
+                            <constraint firstAttribute="centerY" secondItem="230-1P-zpf" secondAttribute="centerY" id="pYg-7e-eBJ"/>
+                            <constraint firstItem="IgH-cz-Z4X" firstAttribute="top" secondItem="zlc-0v-GrJ" secondAttribute="bottom" constant="40" id="zev-bP-JuP"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bs-L9-KkG" userLabel="Bottom part">
+                        <rect key="frame" x="0.0" y="452" width="320" height="452"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEP-xY-vhF" customClass="CSGradientIndicatorView">
+                                <rect key="frame" x="155" y="0.0" width="10" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="1Ha-ua-dRF"/>
+                                    <constraint firstAttribute="height" constant="90" id="JEr-Cl-Jqe"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-Tm-hIF" userLabel="Bottom part subtitle">
+                                <rect key="frame" x="50" y="130" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wir-Lq-Goc" userLabel="Bottom part title">
+                                <rect key="frame" x="50" y="216" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wir-Lq-Goc" firstAttribute="leading" secondItem="39Y-Tm-hIF" secondAttribute="leading" id="4B0-ee-dtH"/>
+                            <constraint firstAttribute="centerY" secondItem="wir-Lq-Goc" secondAttribute="centerY" id="7Kk-qX-fl3"/>
+                            <constraint firstAttribute="trailing" secondItem="wir-Lq-Goc" secondAttribute="trailing" constant="50" id="Aac-yz-fCB"/>
+                            <constraint firstItem="wir-Lq-Goc" firstAttribute="width" secondItem="39Y-Tm-hIF" secondAttribute="width" id="C8e-EP-fCj"/>
+                            <constraint firstItem="39Y-Tm-hIF" firstAttribute="top" secondItem="BEP-xY-vhF" secondAttribute="bottom" constant="40" id="dLd-Yw-bmv"/>
+                            <constraint firstItem="wir-Lq-Goc" firstAttribute="leading" secondItem="1Bs-L9-KkG" secondAttribute="leading" constant="50" id="kL9-jd-PVR"/>
+                            <constraint firstItem="BEP-xY-vhF" firstAttribute="top" secondItem="1Bs-L9-KkG" secondAttribute="top" id="kks-bF-eML"/>
+                            <constraint firstAttribute="centerX" secondItem="BEP-xY-vhF" secondAttribute="centerX" id="z7f-t3-Z5c"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Icm-nN-x9x" secondAttribute="trailing" id="6zY-he-ahw"/>
-                    <constraint firstAttribute="bottom" secondItem="Icm-nN-x9x" secondAttribute="bottom" id="LfG-y9-Iax"/>
-                    <constraint firstItem="Icm-nN-x9x" firstAttribute="leading" secondItem="6Tn-HO-x6H" secondAttribute="leading" id="lQc-VQ-YHD"/>
-                    <constraint firstItem="Icm-nN-x9x" firstAttribute="top" secondItem="6Tn-HO-x6H" secondAttribute="top" id="vuY-4A-FbL"/>
+                    <constraint firstItem="1Bs-L9-KkG" firstAttribute="top" secondItem="6hg-gd-Mk6" secondAttribute="bottom" id="BpT-ln-5TA"/>
+                    <constraint firstItem="6hg-gd-Mk6" firstAttribute="top" secondItem="6Tn-HO-x6H" secondAttribute="top" id="JIi-7e-RIV"/>
+                    <constraint firstAttribute="bottom" secondItem="1Bs-L9-KkG" secondAttribute="bottom" id="byh-lT-s6U"/>
+                    <constraint firstAttribute="trailing" secondItem="6hg-gd-Mk6" secondAttribute="trailing" id="dO7-at-R3h"/>
+                    <constraint firstItem="6hg-gd-Mk6" firstAttribute="leading" secondItem="6Tn-HO-x6H" secondAttribute="leading" id="mHs-Bc-Y23"/>
+                    <constraint firstAttribute="trailing" secondItem="1Bs-L9-KkG" secondAttribute="trailing" id="oUS-qu-5bS"/>
+                    <constraint firstItem="1Bs-L9-KkG" firstAttribute="height" secondItem="6hg-gd-Mk6" secondAttribute="height" id="wxC-ZC-1sJ"/>
+                    <constraint firstItem="1Bs-L9-KkG" firstAttribute="leading" secondItem="6Tn-HO-x6H" secondAttribute="leading" id="yEE-s7-WoV"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="261" y="286"/>
+            <point key="canvasLocation" x="336" y="713.5"/>
         </tableViewCell>
     </objects>
 </document>
