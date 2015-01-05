@@ -64,6 +64,10 @@
 #define CALIBRE_REG_14 [UIFont fontWithName:@"Calibre-Regular" size:14]
 #define CALIBRE_LIGHT_15 [UIFont fontWithName:@"Calibre-Light" size:15]
 #define LEITURA_ROMAN_4_32 [UIFont fontWithName:@"Leitura-Roman4" size:32]
+
+// Bloc interview
+#define LEITURA_ROMAN_1_19 [UIFont fontWithName:@"Leitura-Roman1" size:19]
+
 // ---- End fonts ----
 
 // ---- Colors ----

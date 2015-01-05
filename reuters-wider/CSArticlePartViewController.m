@@ -65,6 +65,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CSTransitionBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSTransitionBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSKeyfiguresBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSKeyfiguresBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSImageBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSImageBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSInterviewBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSInterviewBlockCellID"];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -120,7 +121,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 31;
+    return 36;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -141,7 +142,7 @@
     NSString *identifier = [self cellIdentifierForBlockType:block.type];
     CSAbstractArticleViewCellTableViewCell *cell = [self.cells objectForKey:identifier];
     
-    if ([block.type isEqualToString:@"part"]) {
+    if ([block.type isEqualToString:@"part"] || [block.type isEqualToString:@"transition"]) {
         return CGRectGetHeight(self.view.frame);
     }
     

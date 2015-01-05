@@ -311,6 +311,7 @@
                     "id": 32,
                     "type": "part",
                     "content": {
+                        "part": 3,
                         "title": "The world\n reacting",
                         "duration": 7,
                         "image": "image"
@@ -320,7 +321,7 @@
                     "id": 33,
                     "type": "teasing",
                     "content": {
-                        "title": "How is the government reacting? Not well, especially at first. Here’s a video from the ground of protesters."
+                        "text": "How is the government reacting? Not well, especially at first. Here’s a video from the ground of protesters."
                     }
                 },
                 {

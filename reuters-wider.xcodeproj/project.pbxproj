@@ -82,6 +82,8 @@
 		20C176EE1A3506690021C64C /* CSArticlePartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C176ED1A3506690021C64C /* CSArticlePartViewController.m */; };
 		20CABEB41A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEB31A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m */; };
 		20CABEC01A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CABEBF1A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m */; };
+		EB3B871F1A5AD1E000DB58AD /* CSInterviewBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3B871E1A5AD1E000DB58AD /* CSInterviewBlockTableViewCell.xib */; };
+		EB3B87221A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3B87211A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.m */; };
 		EB469E481A27582E001C7B02 /* CSMetaBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */; };
 		EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */; };
 		EB469E4E1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB469E4D1A275A5F001C7B02 /* CSTeasingBlockTableViewCell.m */; };
@@ -236,6 +238,9 @@
 		20CABEBF1A272ED700462EE4 /* CSAbstractArticleViewCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSAbstractArticleViewCellTableViewCell.m; path = "reuters-wider/CSAbstractArticleViewCellTableViewCell.m"; sourceTree = "<group>"; };
 		88E1419E8DE38584B52B073B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CF6F3471471999C3208FDAAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EB3B871E1A5AD1E000DB58AD /* CSInterviewBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSInterviewBlockTableViewCell.xib; path = "reuters-wider/CSInterviewBlockTableViewCell.xib"; sourceTree = "<group>"; };
+		EB3B87201A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSInterviewBlockTableViewCell.h; path = "reuters-wider/CSInterviewBlockTableViewCell.h"; sourceTree = "<group>"; };
+		EB3B87211A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSInterviewBlockTableViewCell.m; path = "reuters-wider/CSInterviewBlockTableViewCell.m"; sourceTree = "<group>"; };
 		EB469E461A27582E001C7B02 /* CSMetaBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMetaBlockTableViewCell.h; path = "reuters-wider/CSMetaBlockTableViewCell.h"; sourceTree = "<group>"; };
 		EB469E471A27582E001C7B02 /* CSMetaBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMetaBlockTableViewCell.m; path = "reuters-wider/CSMetaBlockTableViewCell.m"; sourceTree = "<group>"; };
 		EB469E491A275841001C7B02 /* CSMetaBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSMetaBlockTableViewCell.xib; path = "reuters-wider/CSMetaBlockTableViewCell.xib"; sourceTree = "<group>"; };
@@ -769,6 +774,7 @@
 		20CABEAD1A2724EB00462EE4 /* ArticleCells */ = {
 			isa = PBXGroup;
 			children = (
+				EB3B871D1A5AD1C400DB58AD /* InterviewBlock */,
 				208B5F681A538128003D4718 /* ImageBlock */,
 				208B5F621A537B86003D4718 /* KeyfiguresBlock */,
 				208B5F5C1A537963003D4718 /* TransitionBlock */,
@@ -812,6 +818,16 @@
 				88E1419E8DE38584B52B073B /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EB3B871D1A5AD1C400DB58AD /* InterviewBlock */ = {
+			isa = PBXGroup;
+			children = (
+				EB3B871E1A5AD1E000DB58AD /* CSInterviewBlockTableViewCell.xib */,
+				EB3B87201A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.h */,
+				EB3B87211A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.m */,
+			);
+			name = InterviewBlock;
 			sourceTree = "<group>";
 		};
 		EB469E401A2757BE001C7B02 /* MetaBlock */ = {
@@ -968,6 +984,7 @@
 				EB469E561A275CD1001C7B02 /* CSParagraphBlockTableViewCell.xib in Resources */,
 				208B5F671A537BD0003D4718 /* CSKeyfiguresBlockTableViewCell.xib in Resources */,
 				20801A7C1A23609600EF38F3 /* Leitura-Italic2.otf in Resources */,
+				EB3B871F1A5AD1E000DB58AD /* CSInterviewBlockTableViewCell.xib in Resources */,
 				20801A871A2360A800EF38F3 /* Calibre-Light.otf in Resources */,
 				20C176CD1A348F190021C64C /* Leitura-Roman4.otf in Resources */,
 				208B5F5B1A537950003D4718 /* CSKeywordsBlockTableViewCell.xib in Resources */,
@@ -1082,6 +1099,7 @@
 				20B2A7FF1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m in Sources */,
 				209CF30C1A59AD8700A8A954 /* CSProgressionBarView.m in Sources */,
 				202833371A3DE528002DCA1C /* CSInArticleGlossaryDefinition.m in Sources */,
+				EB3B87221A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.m in Sources */,
 				208B5F521A5343FA003D4718 /* CSStickyMenu.m in Sources */,
 				2027E9761A530A14007B5E92 /* CSTween.m in Sources */,
 				208B5FB61A55FB35003D4718 /* CSSummaryGlossaryTransition.m in Sources */,
