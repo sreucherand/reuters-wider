@@ -299,12 +299,16 @@
 #pragma mark - Transition animations
 
 - (void)openWith:(void (^)())completion {
+    self.view.userInteractionEnabled = NO;
+    
     [CSTween tweenFrom:CGRectGetMinY(self.view.frame) to:0 duration:1.4 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
         self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, operation.value), .size=self.view.frame.size};
     } completeBlock:^(BOOL finished) {
         if (finished) {
             if (completion) {
                 completion();
+                
+                self.view.userInteractionEnabled = YES;
             }
         }
     }];

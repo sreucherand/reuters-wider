@@ -116,7 +116,9 @@
     [generator setRequestedTimeToleranceBefore:kCMTimeZero];
     [generator setRequestedTimeToleranceAfter:kCMTimeZero];
     
-    CGImageRef image = [generator copyCGImageAtTime:self.motionMoviePlayer.currentTime actualTime:NULL error:NULL];
+    CMTime time = CMTimeMake(MAX(CMTimeGetSeconds(self.motionMoviePlayer.currentTime), CMTimeGetSeconds([asset duration])), 1.0f);
+    
+    CGImageRef image = [generator copyCGImageAtTime:time actualTime:NULL error:NULL];
     
     CGContextTranslateCTM(context, 0, CGRectGetHeight(self.motionMoviePlayerLayer.frame));
     CGContextScaleCTM(context, 1, -1);
