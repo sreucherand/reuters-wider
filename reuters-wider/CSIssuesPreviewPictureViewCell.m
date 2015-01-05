@@ -116,7 +116,7 @@
     [generator setRequestedTimeToleranceBefore:kCMTimeZero];
     [generator setRequestedTimeToleranceAfter:kCMTimeZero];
     
-    CMTime time = CMTimeMake(MAX(CMTimeGetSeconds(self.motionMoviePlayer.currentTime), CMTimeGetSeconds([asset duration])), 1.0f);
+    CMTime time = CMTimeGetSeconds(self.motionMoviePlayer.currentTime) > CMTimeGetSeconds([asset duration]) ? [asset duration] : self.motionMoviePlayer.currentTime;
     
     CGImageRef image = [generator copyCGImageAtTime:time actualTime:NULL error:NULL];
     
