@@ -126,6 +126,8 @@
 #pragma marks - Transitions
 
 - (void)openWith:(void (^)())completion {
+    self.view.userInteractionEnabled = NO;
+    
     [CSTween tweenFrom:CGRectGetWidth(self.view.frame) to:0 duration:1 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
         self.topViewLeftConstraint.constant = -operation.value;
         self.topViewRightConstraint.constant = -operation.value;
@@ -135,6 +137,8 @@
     } completeBlock:^(BOOL finished) {
         if (finished && completion) {
             completion();
+            
+            self.view.userInteractionEnabled = YES;
         }
     }];
 }
