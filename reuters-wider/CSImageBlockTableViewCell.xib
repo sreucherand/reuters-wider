@@ -13,24 +13,35 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ob9-rZ-Pkv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                        <rect key="frame" x="0.0" y="25" width="320" height="94"/>
                         <constraints>
                             <constraint firstAttribute="height" priority="999" constant="80" id="Thi-GB-gWp"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSN-Bd-Fu5" customClass="CSGradientIndicatorView">
+                        <rect key="frame" x="157" y="0.0" width="6" height="40"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="uaH-P4-Hil"/>
+                            <constraint firstAttribute="width" constant="6" id="zSL-gB-Aa0"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="ob9-rZ-Pkv" secondAttribute="bottom" id="75s-FC-OC9"/>
                     <constraint firstItem="ob9-rZ-Pkv" firstAttribute="leading" secondItem="Vsz-Ve-2gj" secondAttribute="leading" id="82X-Mc-lPE"/>
-                    <constraint firstItem="ob9-rZ-Pkv" firstAttribute="top" secondItem="Vsz-Ve-2gj" secondAttribute="top" id="8ff-2o-Ye6"/>
+                    <constraint firstItem="ob9-rZ-Pkv" firstAttribute="top" secondItem="oSN-Bd-Fu5" secondAttribute="top" constant="25" id="b8C-eH-ygq"/>
                     <constraint firstAttribute="trailing" secondItem="ob9-rZ-Pkv" secondAttribute="trailing" id="nWU-VV-NCZ"/>
+                    <constraint firstAttribute="centerX" secondItem="oSN-Bd-Fu5" secondAttribute="centerX" id="uJk-UT-urj"/>
+                    <constraint firstItem="oSN-Bd-Fu5" firstAttribute="top" secondItem="Vsz-Ve-2gj" secondAttribute="top" id="zIN-3v-t2E"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="articleImageHeightConstraint" destination="Thi-GB-gWp" id="w5H-aZ-tn1"/>
                 <outlet property="articleImageView" destination="ob9-rZ-Pkv" id="gFd-hX-lYu"/>
+                <outlet property="gradientIndicatorView" destination="oSN-Bd-Fu5" id="B3D-4Y-CUg"/>
             </connections>
-            <point key="canvasLocation" x="235" y="275"/>
+            <point key="canvasLocation" x="235" y="274"/>
         </tableViewCell>
     </objects>
 </document>

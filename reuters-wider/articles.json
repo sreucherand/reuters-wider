@@ -26,9 +26,9 @@
                     "type": "part",
                     "content": {
                         "part": 1,
-                        "title": "Hong-Kong\n for democracy",
+                        "title": "Why such an\n indignation ?",
                         "duration": 4,
-                        "image": "hong-kong-for-democracy-part-01"
+                        "image": "01-part_why-such-an-indignation"
                     }
                 },
                 {
@@ -78,7 +78,6 @@
                                 "text": "British Forign Office minister Hugo Swire, called for full universal suffrage."
                             },
                             {
-                                "date": "Sun, 27 Sep 2014 20:17:59 GMT",
                                 "author": "BBC News",
                                 "text": "“Hong Kong's internal affairs will not brook any interference by outside forces.”"
                             }
@@ -181,7 +180,7 @@
                         "part": 2,
                         "title": "The Umbrella\n Revolution",
                         "duration": 4,
-                        "image": "image"
+                        "image": "02-part_the-umbrella-revolution"
                     }
                 },
                 {
@@ -277,14 +276,13 @@
                     "content": {
                         "views": [
                             {
-                                "date": "Tue, 29 Sep 2014 16:48:03 GMT",
+                                "date": "Wed, 30 Sep 2014 11:37:54 GMT",
                                 "author": "Reuters",
-                                "text": "British Forign Office minister Hugo Swire, called for full universal suffrage."
+                                "text": "In the Admiralty district reads, “My parents are crying for me. I am crying for the future.”"
                             },
                             {
-                                "date": "Sun, 27 Sep 2014 15:27:39 GMT",
                                 "author": "BBC News",
-                                "text": "\"Hong Kong's internal affairs will not brook any interference by outside forces.\""
+                                "text": "“If you want to protest, that is your business. Everyone has their views. But don't involve us.”"
                             }
                         ]
                     }
@@ -314,7 +312,7 @@
                         "part": 3,
                         "title": "The world\n reacting",
                         "duration": 7,
-                        "image": "image"
+                        "image": "03-part_the-world-reacting"
                     }
                 },
                 {
@@ -328,15 +326,42 @@
                     "id": 34,
                     "type": "paragraph",
                     "content": {
-                        "text": "But a hardcore group of, has kept up the pressure on Hong Kong authoritiesChina rules Hong Kong under a \"one country, two systems\" formula that gives the city wide-ranging autonomy and freedoms not enjoyed in mainland China, with universal suffrage an eventual goal."
+                        "text": "International awareness of the movement is increasing, and the movement itself is taking shape in a more structured manner. Rallies in support of the protests have occurred in the all world."
                     }
                 },
                 {
                     "id": 35,
+                    "type": "paragraph",
+                    "content": {
+                        "text": "Here’s a video from the ground of protesters being teargassed, in attacks that look familiar from Ferguson and helped stoke outrage among citizens:"
+                    }
+                },
+                {
+                    "id": 36,
+                    "type": "paragraph",
+                    "content": {
+                        "text": "The use of pepper spray has been equally alarming, and is reminiscent of previous Occupy protests in the U.S."
+                    }
+                },
+                {
+                    "id": 38,
                     "type": "subtitle",
                     "content": {
-                        "title": "The world reacting",
-                        "alignment": "center"
+                        "text": "Oppressed by chinese politicians"
+                    }
+                },
+                {
+                    "id": 39,
+                    "type": "paragraph",
+                    "content": {
+                        "text": "Hong Kong has canceled its annual fireworks celebration of China’s National Day on October 1st, indicating that this thing may continue for the foreseeable future."
+                    }
+                },
+                {
+                    "id": 40,
+                    "type": "paragraph",
+                    "content": {
+                        "text": "But a hardcore groupe of demonstrators, has kept up the pressure on Hong Kong authoritiers. China rules that gives the city wide-raging autonomy and freedoms not enjoyed in mainland China, with universal suffrage an eventual goal."
                     }
                 }
             ],
