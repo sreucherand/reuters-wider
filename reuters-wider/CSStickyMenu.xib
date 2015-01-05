@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -21,23 +21,31 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-95-WEM">
-                    <rect key="frame" x="172" y="12" width="30" height="40"/>
+                    <rect key="frame" x="163" y="12" width="49" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="968-5T-VPz"/>
                     </constraints>
+                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                     <state key="normal" title="Title">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="titleButtonDidPress:" destination="5Xv-bg-um6" eventType="touchUpInside" id="uT5-D1-kfR"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oue-e1-enw">
-                    <rect key="frame" x="20" y="24" width="16" height="16"/>
+                    <rect key="frame" x="8" y="12" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="7Nn-se-kKT"/>
-                        <constraint firstAttribute="width" constant="16" id="xFg-Nh-ChV"/>
+                        <constraint firstAttribute="height" constant="40" id="7Nn-se-kKT"/>
+                        <constraint firstAttribute="width" constant="40" id="xFg-Nh-ChV"/>
                     </constraints>
+                    <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                     <state key="normal" image="arrow-top">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="backToTopButtonDidPress:" destination="5Xv-bg-um6" eventType="touchUpInside" id="z8L-7J-NMz"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,8 +54,8 @@
                 <constraint firstAttribute="centerY" secondItem="Oue-e1-enw" secondAttribute="centerY" id="4oa-Xh-5z0"/>
                 <constraint firstAttribute="trailing" secondItem="5Fu-h6-QdZ" secondAttribute="trailing" constant="20" id="8Nm-6F-lXu"/>
                 <constraint firstAttribute="centerY" secondItem="DVy-95-WEM" secondAttribute="centerY" id="9eo-k2-VlS"/>
-                <constraint firstItem="Oue-e1-enw" firstAttribute="leading" secondItem="5Xv-bg-um6" secondAttribute="leading" constant="20" id="OjT-pd-2in"/>
-                <constraint firstAttribute="centerX" secondItem="DVy-95-WEM" secondAttribute="centerX" constant="0.5" id="f7W-Hh-WJB"/>
+                <constraint firstItem="Oue-e1-enw" firstAttribute="leading" secondItem="5Xv-bg-um6" secondAttribute="leading" constant="8" id="OjT-pd-2in"/>
+                <constraint firstAttribute="centerX" secondItem="DVy-95-WEM" secondAttribute="centerX" id="f7W-Hh-WJB"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

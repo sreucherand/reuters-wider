@@ -3,7 +3,7 @@
 //  reuters-wider
 //
 //  Created by Sylvain Reucherand on 07/12/2014.
-//  Copyright (c) 2014 Gobelins. All rights reserved.
+//  Copyright (c) 2014 Gobelins. All rights reserved.,
 //
 
 #import "CSArticlePartViewController.h"
@@ -311,6 +311,10 @@
 
 - (void)titleButtonDidPress {
     [self unwindToHome];
+}
+
+- (void)backToTopButtonDidPress {
+    [self.tableView setContentOffset:CGPointMake(self.tableView.contentOffset.x, 0) animated:YES];
 }
 
 #pragma mark - Navigation
