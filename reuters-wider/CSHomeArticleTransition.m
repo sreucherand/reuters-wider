@@ -15,10 +15,16 @@
     UIViewController *homeVC = self.sourceViewController;
     CSArticlePartViewController *articleVC = self.destinationViewController;
     
+    homeVC.view.userInteractionEnabled = NO;
+    articleVC.view.userInteractionEnabled = NO;
+    
     [homeVC.view addSubview:articleVC.view];
     
     [articleVC openWith:^{
         [homeVC.navigationController pushViewController:articleVC animated:NO];
+        
+        homeVC.view.userInteractionEnabled = YES;
+        articleVC.view.userInteractionEnabled = YES;
     }];
 }
 

@@ -15,10 +15,16 @@
     UIViewController *homeVC = self.sourceViewController;
     CSArchivesViewController *archivesVC = self.destinationViewController;
     
+    homeVC.view.userInteractionEnabled = NO;
+    archivesVC.view.userInteractionEnabled = NO;
+    
     [homeVC.view addSubview:archivesVC.view];
     
     [archivesVC openWith:^{
         [homeVC presentViewController:archivesVC animated:NO completion:nil];
+        
+        homeVC.view.userInteractionEnabled = YES;
+        archivesVC.view.userInteractionEnabled = YES;
     }];
 }
 

@@ -106,14 +106,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Setters
-
-- (void)setProgression:(CGFloat)progression {
-    if (progression > _progression) {
-        _progression = progression;
-    }
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -238,11 +230,7 @@
 
 #pragma mark - Scroll view delegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y >= scrollView.contentSize.height - CGRectGetHeight(scrollView.frame)) {
-        [scrollView setContentOffset:CGPointMake(CGRectGetMinX(scrollView.frame), scrollView.contentSize.height - CGRectGetHeight(scrollView.frame))];
-    }
-    
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {    
     [self.topNavigationControl containingScrollViewDidScroll];
     
     [self.stickyMenu containingScrollViewDidScroll];
@@ -316,6 +304,8 @@
 }
 
 - (void)closeWith:(void (^)())completion {
+    self.view.userInteractionEnabled = NO;
+    
     [CSTween tweenFrom:0 to:CGRectGetMaxY(self.view.frame) duration:1.4 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
         self.view.frame = (CGRect){.origin=CGPointMake(self.view.frame.origin.x, operation.value), .size=self.view.frame.size};
     } completeBlock:^(BOOL finished) {
