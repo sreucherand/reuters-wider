@@ -22,7 +22,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statement" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8O-0W-CCh" customClass="CSAttributedLabel">
-                        <rect key="frame" x="40" y="48" width="435" height="228"/>
+                        <rect key="frame" x="40" y="8" width="435" height="288"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -31,10 +31,10 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="y8O-0W-CCh" secondAttribute="trailing" constant="40" id="2wt-Fi-IAw"/>
                     <constraint firstAttribute="centerX" secondItem="2GK-s9-A0F" secondAttribute="centerX" id="Hgj-pN-cer"/>
-                    <constraint firstItem="y8O-0W-CCh" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="topMargin" constant="40" id="K5M-Pz-5nm"/>
+                    <constraint firstItem="y8O-0W-CCh" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="topMargin" id="K5M-Pz-5nm"/>
                     <constraint firstItem="2GK-s9-A0F" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="top" constant="20" id="L7u-pJ-NTE"/>
                     <constraint firstItem="y8O-0W-CCh" firstAttribute="leading" secondItem="Cpa-ig-Kv7" secondAttribute="leading" constant="40" id="MeF-EY-qfm"/>
-                    <constraint firstAttribute="bottom" secondItem="y8O-0W-CCh" secondAttribute="bottom" constant="20" id="kVU-7I-M5y"/>
+                    <constraint firstAttribute="bottom" secondItem="y8O-0W-CCh" secondAttribute="bottom" id="kVU-7I-M5y"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

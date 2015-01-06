@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -13,7 +13,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aside" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWe-eD-0SP" customClass="CSAttributedLabel">
-                        <rect key="frame" x="60" y="20" width="287" height="155"/>
+                        <rect key="frame" x="60" y="0.0" width="287" height="195"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -21,9 +21,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="AWe-eD-0SP" secondAttribute="trailing" constant="20" id="1ae-i1-Yo5"/>
-                    <constraint firstAttribute="bottom" secondItem="AWe-eD-0SP" secondAttribute="bottom" constant="20" id="7E3-HE-Ikj"/>
+                    <constraint firstAttribute="bottom" secondItem="AWe-eD-0SP" secondAttribute="bottom" id="7E3-HE-Ikj"/>
                     <constraint firstItem="AWe-eD-0SP" firstAttribute="leading" secondItem="Zc8-s6-j7M" secondAttribute="leading" constant="60" id="aLe-TB-ayl"/>
-                    <constraint firstItem="AWe-eD-0SP" firstAttribute="top" secondItem="Zc8-s6-j7M" secondAttribute="top" constant="20" id="fV4-AM-8Pc"/>
+                    <constraint firstItem="AWe-eD-0SP" firstAttribute="top" secondItem="Zc8-s6-j7M" secondAttribute="top" id="fV4-AM-8Pc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
