@@ -32,6 +32,7 @@
 @property (strong, nonatomic) NSString *thumbnail;
 @property (strong, nonatomic) NSArray<CSBlockContentModel> *views;
 @property (strong, nonatomic) NSArray<CSBlockContentModel> *transitions;
+@property (strong, nonatomic) NSArray<CSBlockContentModel> *keys;
 @property (strong, nonatomic) NSArray<CSBlockContentModel> *keywords;
 
 - (NSDate *)formattedDate;

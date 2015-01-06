@@ -42,11 +42,11 @@
 #pragma mark - Modes
 
 - (void)switchTableViewCellIntoLightMode {
-    self.partNumberLabel.textColor = FLASH_BLUE_PART_NUMBER_COLOR;
-    self.partTitleLabel.textColor = DARK_GREY_TOGGLE_COLOR;
-    self.partSubtitleLabel.textColor = ULTRA_LIGHT_GREY_SUBTITLE_COLOR;
+    self.partNumberLabel.textColor = DARK_BLUE;
+    self.partTitleLabel.textColor = DARK_GREY;
+    self.partSubtitleLabel.textColor = LIGHT_GREY;
     
-    self.gradientIndicatorView.topColor = BLUE_COLOR;
+    self.gradientIndicatorView.topColor = DARK_BLUE;
 }
 
 - (void)switchTableViewCellIntoDarkMode {

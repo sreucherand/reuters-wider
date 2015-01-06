@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *tableViewHeaderTitleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *tableViewHeaderImageView;
+@property (weak, nonatomic) IBOutlet UIView *tableViewHeaderDashView;
 @property (strong, nonatomic) IBOutlet UIView *glossaryToggleView;
 @property (weak, nonatomic) IBOutlet UILabel *glossaryToggleViewLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *glossaryToggleViewLabelConstraint;
@@ -44,12 +45,12 @@
     [self.glossaryToggleView addGestureRecognizer:panGestureRecognizer];
     
     self.glossaryToggleViewLabel.font = CALIBRE_LIGHT_17;
-    self.glossaryToggleViewLabel.textColor = DARK_GREY_TOGGLE_COLOR;
+    self.glossaryToggleViewLabel.textColor = DARK_GREY;
     
     CALayer *topBorder = [CALayer layer];
     
     topBorder.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 1);
-    topBorder.backgroundColor = LIGHT_GREY_BORDER_COLOR.CGColor;
+    topBorder.backgroundColor = LIGHT_DIMMED_GREY.CGColor;
     
     [self.glossaryToggleView.layer addSublayer:topBorder];
     
@@ -70,6 +71,8 @@
     [self.tableView setNeedsLayout];
     [self.tableView layoutIfNeeded];
     
+    self.tableViewHeaderDashView.backgroundColor = LIGHT_GREY;
+    
     self.tableViewHeaderTitleLabel.font = LEITURA_ROMAN_2_23;
     
     [self switchTableViewIntoDarkMode];
@@ -78,7 +81,7 @@
     
     [self switchTableViewIntoLightMode];
     
-    self.progressionBarView.backgroundColor = BLUE_PROGRESSION_BAR_COLOR;
+    self.progressionBarView.backgroundColor = SECOND_PURPLE;
 }
 
 #pragma mark - Table view datasource
@@ -120,7 +123,7 @@
 #pragma mark - Specific methods
 
 - (void)switchTableViewIntoDarkMode {
-    self.tableView.backgroundColor = BLUE_COLOR;
+    self.tableView.backgroundColor = FIRST_PURPLE;
     self.tableViewHeaderTitleLabel.textColor = WHITE_COLOR;
     self.tableViewHeaderImageView.image = [UIImage imageNamed:@"summary-white"];
     

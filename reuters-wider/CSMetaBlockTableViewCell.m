@@ -19,7 +19,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.metaLabel.font = CALIBRE_REG_11;
-    self.metaLabel.textColor = LIGHT_BLUE_COLOR;
+    self.metaLabel.textColor = FIRST_PURPLE;
 }
 
 /*

@@ -32,23 +32,27 @@
 
 - (void)awakeFromNib {
     // Top part related
-    self.topPartView.backgroundColor = LIGHT_BLUE_BG;
-    self.titleTopPart.font = LEITURA_ITALIC_2_38;
-    self.titleTopPart.textColor = DARK_BLUE_COLOR;
-    self.subtitleTopPart.font = CALIBRE_LIGHT_16;
-    self.subtitleTopPart.textColor = DARK_BLUE_COLOR;
-    self.topPartGradient.topColor = WIDER_DARK_BLUE_COLOR;
+    self.topPartView.backgroundColor = THIRD_PURPLE;
     
+    self.titleTopPart.font = LEITURA_ITALIC_2_38;
+    self.titleTopPart.textColor = DARK_BLUE;
+    
+    self.subtitleTopPart.font = CALIBRE_LIGHT_16;
+    self.subtitleTopPart.textColor = DARK_BLUE;
+    
+    self.topPartGradient.topColor = DARK_BLUE;
     
     // Bottom part related
-    self.bottomPartView.backgroundColor = BLUE_COLOR;
+    self.bottomPartView.backgroundColor = FIRST_PURPLE;
+    
     self.titleBottomPart.font = LEITURA_ITALIC_2_38;
     self.titleBottomPart.textColor = WHITE_COLOR;
+    
     self.subtitleBottomPart.font = CALIBRE_LIGHT_16;
     self.subtitleBottomPart.textColor = WHITE_COLOR;
     
     self.bottomPartGradient.topColor = WHITE_COLOR;
-    
+    self.bottomPartGradient.direction = CSDirectionBottom;
 }
 
 - (void)hydrateWithContentData:(NSDictionary *)data {

@@ -57,9 +57,15 @@
     
     CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
     
+    if (self.direction == CSDirectionBottom) {
+        CGContextRotateCTM(context, M_PI);
+        CGContextTranslateCTM(context, 0, -CGRectGetHeight(self.bounds));
+    }
+    
     CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, CGRectGetHeight(self.bounds)), 0);
     
     CGColorSpaceRelease(space);
+    CGGradientRelease(gradient);
 }
 
 #pragma mark - Setters

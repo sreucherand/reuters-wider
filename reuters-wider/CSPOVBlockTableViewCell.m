@@ -24,20 +24,20 @@
 @implementation CSPovBlockTableViewCell
 
 - (void)awakeFromNib {
-    self.mainView.backgroundColor = MIDDLE_BLUE_COLOR;
+    self.mainView.backgroundColor = FIRST_PURPLE;
     
     self.mainMetaLabel.font = CALIBRE_LIGHT_14;
-    self.mainMetaLabel.textColor = WHITE_COLOR;
+    self.mainMetaLabel.textColor = WHITE_DIMMED_COLOR;
     
     self.mainTextLabel.font = LEITURA_ROMAN_2_23;
     self.mainTextLabel.textColor = WHITE_COLOR;
     self.mainTextLabel.lineHeight = 28;
     
     self.comparedMetaLabel.font = CALIBRE_LIGHT_14;
-    self.comparedMetaLabel.textColor = BLUE_COLOR;
+    self.comparedMetaLabel.textColor = FIRST_PURPLE;
     
     self.comparedTextLabel.font = ARCHER_THIN_38;
-    self.comparedTextLabel.lineHeight = 34;
+    self.comparedTextLabel.lineHeight = 38;
 }
 
 /*
@@ -91,7 +91,7 @@
     [self.comparedTextLabel setNeedsLayout];
     [self.comparedTextLabel layoutIfNeeded];
     
-    self.comparedTextLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedTextLabel.bounds topColor:TEXT_GRADIENT_BLUE_COLOR bottomColor:TEXT_GRADIENT_ORANGE_COLOR]];
+    self.comparedTextLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedTextLabel.bounds topColor:FIRST_PURPLE bottomColor:RED_ORANGE]];
 }
 
 - (UIImage *)imageGradient:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor {

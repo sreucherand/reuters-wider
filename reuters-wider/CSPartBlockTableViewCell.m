@@ -34,18 +34,18 @@
 
 - (void)awakeFromNib {
     self.partNumberLabel.font = CALIBRE_REG;
-    self.partNumberLabel.textColor = BLUE_COLOR;
+    self.partNumberLabel.textColor = FIRST_PURPLE;
     
-    self.rectanglePartNumberView.backgroundColor = BLUE_COLOR;
+    self.rectanglePartNumberView.backgroundColor = FIRST_PURPLE;
     
     self.readDurationLabel.font = CALIBRE_LIGHT_16;
-    self.readDurationLabel.textColor = BLUE_COLOR;
+    self.readDurationLabel.textColor = FIRST_PURPLE;
     
     self.titleLabel.font = LEITURA_ROMAN_3_36;
-    self.titleLabel.textColor = DARKEST_GREY_COLOR;
+    self.titleLabel.textColor = BLACK_COLOR;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     
-    self.gradientIndicatorView.topColor = BLUE_COLOR;
+    self.gradientIndicatorView.topColor = DARK_BLUE;
 }
 
 /*

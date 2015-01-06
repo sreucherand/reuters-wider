@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +13,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FR9-GQ-g3c">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="421"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="381"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LI-xq-dIO">
                                 <rect key="frame" x="139" y="35" width="42" height="21"/>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8RX-hz-x6m">
-                                <rect key="frame" x="0.0" y="225" width="320" height="196"/>
+                                <rect key="frame" x="0.0" y="225" width="320" height="156"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,7 +62,7 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="FR9-GQ-g3c" secondAttribute="bottom" id="Bng-Nd-4oM"/>
+                    <constraint firstAttribute="bottom" secondItem="FR9-GQ-g3c" secondAttribute="bottom" constant="40" id="Bng-Nd-4oM"/>
                     <constraint firstAttribute="trailing" secondItem="FR9-GQ-g3c" secondAttribute="trailing" id="GLg-0X-AO7"/>
                     <constraint firstItem="FR9-GQ-g3c" firstAttribute="leading" secondItem="j8H-86-Tyg" secondAttribute="leading" id="V41-0O-2wG"/>
                     <constraint firstItem="FR9-GQ-g3c" firstAttribute="top" secondItem="j8H-86-Tyg" secondAttribute="top" id="sWL-I7-d7J"/>

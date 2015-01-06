@@ -18,7 +18,7 @@
 
 - (void)awakeFromNib {
     self.teasingText.font = LEITURA_ROMAN_3_23;
-    self.teasingText.textColor = DARKEST_GREY_COLOR;
+    self.teasingText.textColor = DARK_GREY;
     self.teasingText.lineHeight = 30;
 }
 

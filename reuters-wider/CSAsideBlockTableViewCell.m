@@ -18,7 +18,8 @@
 
 - (void)awakeFromNib {
     self.asideLabel.font = CALIBRE_LIGHT_17;
-    self.asideLabel.textColor = BLUE_COLOR;
+    self.asideLabel.textColor = FIRST_PURPLE;
+    self.asideLabel.lineHeight = 22;
 }
 
 /*

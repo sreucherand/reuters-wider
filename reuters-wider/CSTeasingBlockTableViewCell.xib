@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +13,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teasing" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNR-4H-RXZ" customClass="CSAttributedLabel">
-                        <rect key="frame" x="20" y="0.0" width="386" height="216"/>
+                        <rect key="frame" x="20" y="30" width="386" height="166"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -21,9 +21,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="tNR-4H-RXZ" secondAttribute="trailing" constant="20" id="Bet-o2-Jiq"/>
-                    <constraint firstAttribute="bottom" secondItem="tNR-4H-RXZ" secondAttribute="bottom" id="TxB-GA-L9S"/>
+                    <constraint firstAttribute="bottom" secondItem="tNR-4H-RXZ" secondAttribute="bottom" constant="20" id="TxB-GA-L9S"/>
                     <constraint firstItem="tNR-4H-RXZ" firstAttribute="leading" secondItem="b39-ma-grL" secondAttribute="leading" constant="20" id="g5f-zk-Vbq"/>
-                    <constraint firstItem="tNR-4H-RXZ" firstAttribute="top" secondItem="b39-ma-grL" secondAttribute="top" id="wVe-UY-rsa"/>
+                    <constraint firstItem="tNR-4H-RXZ" firstAttribute="top" secondItem="b39-ma-grL" secondAttribute="top" constant="30" id="wVe-UY-rsa"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

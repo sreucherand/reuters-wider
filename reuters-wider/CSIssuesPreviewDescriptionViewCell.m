@@ -28,7 +28,7 @@
                             range:(NSRange){0,[attributeString length]}];
     
     [self.issuesPreviewNumeroLabel setFont:LEITURA_ROMAN_2];
-    [self.issuesPreviewNumeroLabel setTextColor:ISSUE_NR_COLOR];
+    [self.issuesPreviewNumeroLabel setTextColor:DARK_GREY];
     [self.issuesPreviewNumeroLabel setAttributedText:attributeString];
     
     // Heading related
@@ -45,7 +45,7 @@
     NSAttributedString *attributedStringKerned = [[NSAttributedString alloc] initWithString:[dateFormat stringFromDate:date] attributes:@{NSKernAttributeName : @(0.75f)}];
     
     [self.issuesPreviewDateLabel setFont:LEITURA_ITALIC_1_15];
-    [self.issuesPreviewDateLabel setTextColor:ISSUE_NR_COLOR];
+    [self.issuesPreviewDateLabel setTextColor:DARK_GREY];
     [self.issuesPreviewDateLabel setAttributedText:attributedStringKerned];
 }
 

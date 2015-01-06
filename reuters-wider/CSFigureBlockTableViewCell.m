@@ -24,19 +24,19 @@
 @implementation CSFigureBlockTableViewCell
 
 - (void)awakeFromNib {
-    self.backgroundColorView.backgroundColor = BLUE_GREY_COLOR;
+    self.backgroundColorView.backgroundColor = FIRST_DIMMED_PURPLE;
     
     self.personLabel.font = LEITURA_ROMAN_2_32;
-    self.personLabel.textColor = DARKEST_GREY_COLOR;
+    self.personLabel.textColor = DARK_GREY;
     
     self.dateLabel.font = LEITURA_ROMAN_3_16;
-    self.dateLabel.textColor = DARKEST_GREY_COLOR;
+    self.dateLabel.textColor = DARK_GREY;
     
     self.descriptionLabel.font = LEITURA_ROMAN_1_16;
-    self.descriptionLabel.textColor = COOL_GREY_COLOR;
+    self.descriptionLabel.textColor = DARK_GREY;
     self.descriptionLabel.lineHeight = 25;
     
-    self.gradientIndicatorView.topColor = WIDER_DARK_BLUE_COLOR;
+    self.gradientIndicatorView.topColor = DARK_BLUE;
 }
 
 /*
