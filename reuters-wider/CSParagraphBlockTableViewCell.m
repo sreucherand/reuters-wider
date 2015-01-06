@@ -35,6 +35,16 @@
     [super hydrateWithContentData:data];
     
     self.paragraphTextLabel.text = self.content.text;
+    
+    if ([self.content.alignment isEqualToString:@"center"]) {
+        self.paragraphTextLabel.textAlignment = NSTextAlignmentCenter;
+    }
+}
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    self.paragraphTextLabel.textAlignment = NSTextAlignmentLeft;
 }
 
 #pragma mark - Attributed label delegate
