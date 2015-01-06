@@ -921,9 +921,9 @@
 		EB9BC7FC1A5C2FFC00A7BFA7 /* ImplicationBlock */ = {
 			isa = PBXGroup;
 			children = (
-				EB9BC7FD1A5C301B00A7BFA7 /* CSImplicationBlockTableViewCell.xib */,
 				EB9BC7FF1A5C303900A7BFA7 /* CSImplicationBlockTableViewCell.h */,
 				EB9BC8001A5C303900A7BFA7 /* CSImplicationBlockTableViewCell.m */,
+				EB9BC7FD1A5C301B00A7BFA7 /* CSImplicationBlockTableViewCell.xib */,
 			);
 			name = ImplicationBlock;
 			sourceTree = "<group>";
