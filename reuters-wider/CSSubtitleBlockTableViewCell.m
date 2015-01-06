@@ -39,6 +39,16 @@
     [super hydrateWithContentData:data];
     
     self.subtitleLabel.text = self.content.text;
+    
+    if ([self.content.alignment isEqualToString:@"center"]) {
+        self.subtitleLabel.textAlignment = NSTextAlignmentCenter;
+    }
+}
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    self.subtitleLabel.textAlignment = NSTextAlignmentLeft;
 }
 
 @end
