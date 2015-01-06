@@ -219,11 +219,19 @@
                         "title": "The protests",
                         "keys": [
                             {
-                                "data": 80000,
-                                "label": "participants",
-                                "context": "Were organized in part by the Hong Kong Federation of Students, which has since called for an indefinite student strike."
+                                "data": 65,
+                                "label": "injuries"
                             }
-                        ]
+                            {
+                                "data": 80000,
+                                "label": "participants"
+                            },
+                            {
+                                "data": 89,
+                                "label": "arrestations"
+                            }
+                        ],
+                        "context": "Were organized in part by the Hong Kong Federation of Students, which has since called for an indefinite student strike."
                     }
                 },
                 {
