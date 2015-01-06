@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -13,10 +13,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1SP-Eg-iYM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="583"/>
+                        <rect key="frame" x="0.0" y="10" width="320" height="533"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ye9-w2-Oy0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="583"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="533"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAU-mr-Hgq">
                                 <rect key="frame" x="144" y="35" width="33" height="21"/>
@@ -33,7 +33,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C81-mc-iv4" customClass="CSGradientIndicatorView">
-                                <rect key="frame" x="157" y="533" width="6" height="50"/>
+                                <rect key="frame" x="157" y="483" width="6" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="6" id="8yb-2C-x7r"/>
@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiV-Tk-1D9">
-                                <rect key="frame" x="133" y="322" width="55" height="151"/>
+                                <rect key="frame" x="133" y="322" width="55" height="101"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -92,9 +92,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="1SP-Eg-iYM" secondAttribute="trailing" id="4Id-nb-Dgx"/>
-                    <constraint firstItem="1SP-Eg-iYM" firstAttribute="top" secondItem="Bmn-8R-Nkd" secondAttribute="top" id="D2x-df-Aip"/>
+                    <constraint firstItem="1SP-Eg-iYM" firstAttribute="top" secondItem="Bmn-8R-Nkd" secondAttribute="top" constant="10" id="D2x-df-Aip"/>
                     <constraint firstItem="1SP-Eg-iYM" firstAttribute="leading" secondItem="Bmn-8R-Nkd" secondAttribute="leading" id="UcY-GB-Ax8"/>
-                    <constraint firstAttribute="bottom" secondItem="1SP-Eg-iYM" secondAttribute="bottom" id="UkQ-Mm-Xsi"/>
+                    <constraint firstAttribute="bottom" secondItem="1SP-Eg-iYM" secondAttribute="bottom" constant="40" id="UkQ-Mm-Xsi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

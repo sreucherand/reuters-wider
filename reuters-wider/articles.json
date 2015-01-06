@@ -187,7 +187,7 @@
                     "id": 18,
                     "type": "paragraph",
                     "content": {
-                        "text": "Who’s out there? The protests were organized in part by the Hong Kong Federation of Students, which has since called for an indefinite student strike. Young people are everywhere, but not alone.\n\nThe Hong Kong Professional Teachers Union has joined them with a general strike, as have some professionals."
+                        "text": "Who’s out there? The protests were organized in part by the Hong Kong [Federation of Students](/glossary/2), which has since called for an indefinite student strike. Young people are everywhere, but not alone.\n\nThe Hong Kong Professional Teachers Union has joined them with a general strike, as have some professionals."
                     }
                 },
                 {
@@ -254,7 +254,7 @@
                     "id": 25,
                     "type": "paragraph",
                     "content": {
-                        "text": "As tens of thousands of protesters gather for a sixth day, their demand for the right to choose their leaders in fully democratic elections poses the biggest popular challenge to the ruling Communist Party since Chinese president Xi Jinping took power two years ago.\n\nHe is trying to steer a slowing economy while moving against powerful vested interests in one of the most wide-ranging purges and anti-corruption campaigns since the Communists came to power in 1949."
+                        "text": "As tens of thousands of protesters gather for a sixth day, their demand for the right to choose their leaders in fully democratic elections poses the biggest popular challenge to the ruling [Communist Party](/glossary/1) since Chinese president Xi Jinping took power two years ago.\n\nHe is trying to steer a slowing economy while moving against powerful vested interests in one of the most wide-ranging purges and anti-corruption campaigns since the Communists came to power in 1949."
                     }
                 },
                 {
@@ -287,8 +287,8 @@
                     "content": {
                         "title": "Interview of student",
                         "person": "Fernando Cheung",
-                        "subject": "Democracy and universal\nsuffrage may be the ultimate\nform of political",
-                        "thumbnail": "image",
+                        "subject": "Democracy and universal suffrage may be the ultimate form of political",
+                        "thumbnail": "fernando-cheung",
                         "video": "video"
                     }
                 },
@@ -313,7 +313,17 @@
                     "id": 31,
                     "type": "paragraph",
                     "content": {
-                        "text": "International awareness of the movement is increasing, and the movement itself is taking shape in a more structured manner. Rallies in support of the protests have occurred in the all world.\n\nHere’s a video from the ground of protesters being teargassed, in attacks that look familiar from Ferguson and helped stoke outrage among citizens:\n\nThe use of pepper spray has been equally alarming, and is reminiscent of previous Occupy protests in the U.S."
+                        "text": "International awareness of the movement is increasing, and the movement itself is taking shape in a more structured manner. Rallies in support of the protests have occurred in the all world.\n\nHere’s a video from the ground of protesters being teargassed, in attacks that look familiar from [Ferguson](/glossary/3) and helped stoke outrage among citizens:\n\nThe use of pepper spray has been equally alarming, and is reminiscent of previous Occupy protests in the U.S."
+                    }
+                },
+                {
+                    "id": 28,
+                    "type": "interview",
+                    "content": {
+                        "title": "Reaction of Tony Yip",
+                        "person": "23, research at a science museum",
+                        "subject": "“I think the police have betrayed us, They are using violence against ordinary citizens.”",
+                        "thumbnail": "tony-yip"
                     }
                 },
                 {
@@ -331,6 +341,52 @@
                     }
                 },
                 {
+                    "id": 32,
+                    "type": "subtitle",
+                    "content": {
+                        "text": "Supporting by the world"
+                    }
+                },
+                {
+                    "id": 33,
+                    "type": "paragraph",
+                    "content": {
+                        "text": "Some chinese protesters have taken to using the “hands up, don’t shoot” imagery of the Michael Brown demonstrations in Ferguson. It’s still a powerful image on the other side of the world.\n\nProtesters in Ferguson have sent a message back:"
+                    }
+                },
+                {
+                    "id": 12,
+                    "type": "aside",
+                    "content": {
+                        "text": "Heater, a #Ferguson protester, wearing a sign that says “Stay strong #Hongkong.”"
+                    }
+                },
+                {
+                    "id": 33,
+                    "type": "paragraph",
+                    "content": {
+                        "text": "The movement was supported by many occidental politicians."
+                    }
+                },
+                {
+                    "id": 9,
+                    "type": "figure",
+                    "content": {
+                        "image": "david-cameron",
+                        "person": "David Cameron",
+                        "title": "British Prime Minister",
+                        "text": "I am deeply concerned about what is happening and I hope this issue can be resolved"
+                    }
+                },
+                {
+                    "id": 32,
+                    "type": "subtitle",
+                    "content": {
+                        "text": "Your country is reacting",
+                        "alignment": "center"
+                    }
+                },
+                {
                     "id": 34,
                     "type": "implication",
                     "content": {
@@ -338,6 +394,20 @@
                         "quote": "The covenant is not a measure for Hong Kong’s political reform",
                         "source": "The French government",
                         "image": "image"
+                    }
+                },
+                {
+                    "id": 32,
+                    "type": "subtitle",
+                    "content": {
+                        "text": "“Democratic radical” for China"
+                    }
+                },
+                {
+                    "id": 33,
+                    "type": "paragraph",
+                    "content": {
+                        "text": "The Chinese Communist Party claimed that the upheavels in Hong Kong were instigated by democratic radicals who had sought support frome “anti-China forces” in Britain and the United States.\n\nIt called them a “gang of people whose hearts belong to colonial rule and who are besotted with Western democracy”."
                     }
                 }
             ],

@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundColorView;
 
 @property (weak, nonatomic) IBOutlet UILabel *personLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *figureImageView;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientIndicatorView;
@@ -29,8 +29,8 @@
     self.personLabel.font = LEITURA_ROMAN_2_32;
     self.personLabel.textColor = DARK_GREY;
     
-    self.dateLabel.font = LEITURA_ROMAN_3_16;
-    self.dateLabel.textColor = DARK_GREY;
+    self.subtitleLabel.font = LEITURA_ROMAN_3_16;
+    self.subtitleLabel.textColor = DARK_GREY;
     
     self.descriptionLabel.font = LEITURA_ROMAN_1_16;
     self.descriptionLabel.textColor = DARK_GREY;
@@ -53,14 +53,18 @@
     self.personLabel.text = self.content.person;
     self.descriptionLabel.text = self.content.text;
     
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    
-    [dateFormat setLocale:EN_LOCALE];
-    [dateFormat setDateFormat:@"EEEE d LLLL"];
-    
-    self.dateLabel.text = [dateFormat stringFromDate:self.content.formattedDate];
-    
     self.figureImageView.image = [UIImage imageNamed:self.content.image];
+    
+    if (self.content.date) {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        
+        [dateFormat setLocale:EN_LOCALE];
+        [dateFormat setDateFormat:@"EEEE d LLLL"];
+        
+        self.subtitleLabel.text = [dateFormat stringFromDate:self.content.formattedDate];
+    } else {
+        self.subtitleLabel.text = self.content.title;
+    }
 }
 
 @end

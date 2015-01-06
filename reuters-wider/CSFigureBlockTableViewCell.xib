@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -22,8 +22,8 @@
                                     <constraint firstAttribute="width" constant="160" id="BzJ-Vh-0DP"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNr-Bf-zyT">
-                                <rect key="frame" x="142" y="220" width="36" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNr-Bf-zyT">
+                                <rect key="frame" x="131" y="220" width="59" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.60322952880000003" green="0.99630901279999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="OZS-3G-L0Y" secondAttribute="centerX" id="4hv-9D-vOi"/>
                             <constraint firstAttribute="centerX" secondItem="VEO-f3-oRx" secondAttribute="centerX" id="7PB-p0-4Ip"/>
@@ -75,11 +74,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundColorView" destination="A8Y-fm-qfv" id="0dw-4F-nFO"/>
-                <outlet property="dateLabel" destination="uNr-Bf-zyT" id="C4u-9a-zXd"/>
                 <outlet property="descriptionLabel" destination="FSF-At-8k4" id="Dfv-Ea-ov8"/>
                 <outlet property="figureImageView" destination="VEO-f3-oRx" id="HeC-mY-XB6"/>
                 <outlet property="gradientIndicatorView" destination="OZS-3G-L0Y" id="sLR-PM-nUw"/>
                 <outlet property="personLabel" destination="ocs-As-inl" id="kBK-nh-8IW"/>
+                <outlet property="subtitleLabel" destination="uNr-Bf-zyT" id="QGG-em-861"/>
             </connections>
             <point key="canvasLocation" x="270" y="318.5"/>
         </tableViewCell>

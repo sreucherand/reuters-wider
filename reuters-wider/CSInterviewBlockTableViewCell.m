@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *interviewedNameLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *keyphraseLabel;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *backgroundImageViewHeightConstrint;
 
 @end
 
@@ -51,6 +53,14 @@
     self.interviewTitleLabel.text = self.content.title;
     self.interviewedNameLabel.text = self.content.person;
     self.keyphraseLabel.text = self.content.subject;
+    
+    UIImage *image = [UIImage imageNamed:self.content.thumbnail];
+    
+    CGFloat ratio = image.size.height/image.size.width;
+    
+    self.backgroundImageView.image = image;
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.backgroundImageViewHeightConstrint.constant = CGRectGetWidth(self.frame)*ratio;
 }
 
 @end
