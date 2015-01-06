@@ -94,6 +94,13 @@
     self.stickyMenu.scrollView = self.tableView;
     self.stickyMenu.delegate = self;
     
+    CALayer *bottomBorder = [CALayer layer];
+    
+    bottomBorder.frame = CGRectMake(0, CGRectGetHeight(self.stickyMenu.frame) - 1, CGRectGetWidth(self.stickyMenu.frame), 1);
+    bottomBorder.backgroundColor = LIGHT_DIMMED_GREY.CGColor;
+    
+    [self.stickyMenu.layer addSublayer:bottomBorder];
+    
     [self.view addSubview:self.stickyMenu];
     
     self.progression = [[CSArticleData sharedInstance] getProgressionOfArticle:2];
@@ -184,7 +191,7 @@
     [self.definitionView.layer removeAllAnimations];
     
     [self.definitionView.gradientIndicatorView clearAnimation];
-    [self.definitionView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:0];
+    [self.definitionView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:DARK_BLUE withProgression:0];
     [self.definitionView.gradientIndicatorView animateWidthDuration:0.35 delay:0.35 timingFunction:CSTweenEaseInOutExpo completion:nil];
     
     self.tableViewLeftConstraint.constant = -CGRectGetWidth(self.view.frame)*0.65;

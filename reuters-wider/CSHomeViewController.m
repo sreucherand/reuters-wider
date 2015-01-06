@@ -35,7 +35,7 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.gradientIndicatorView.topColor = BLUE_COLOR;
+    self.gradientIndicatorView.topColor = DARK_BLUE;
     
     CSIssuesPreviewFlowLayout *layout = [[CSIssuesPreviewFlowLayout alloc] init];
     
@@ -106,7 +106,7 @@
     NSInteger fromIndex = [(NSIndexPath *)[sortedIndexes firstObject] item]/2;
     
     if ([indexes count] == 4) {
-        [self.gradientIndicatorView interpolateBetweenColor:BLUE_COLOR andColor:BLUE_COLOR withProgression:percentage-fromIndex];
+        [self.gradientIndicatorView interpolateBetweenColor:DARK_BLUE andColor:DARK_BLUE withProgression:percentage-fromIndex];
     }
 }
 
@@ -126,7 +126,7 @@
 }
 
 - (void)didPictureScroll:(NSNumber *)percentage {
-    [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:BLUE_COLOR withProgression:1-[percentage floatValue]];
+    [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:DARK_BLUE withProgression:1-[percentage floatValue]];
 }
 
 - (void)didReleasePicture:(NSNumber *)percentage {

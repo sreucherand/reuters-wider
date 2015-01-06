@@ -22,18 +22,18 @@
 @implementation CSInterviewBlockTableViewCell
 
 - (void)awakeFromNib {
-    self.interviewViewBackground.backgroundColor = BLUE_GREY_COLOR;
+    self.interviewViewBackground.backgroundColor = FIRST_DIMMED_PURPLE;
     
     self.interviewTitleLabel.font = LEITURA_ROMAN_3_19;
-    self.interviewTitleLabel.textColor = DARK_GREY_TOGGLE_COLOR;
+    self.interviewTitleLabel.textColor = DARK_GREY;
     
     self.interviewedNameLabel.font = CALIBRE_REG_15;
-    self.interviewedNameLabel.textColor = LIGHT_BLUE_COLOR;
+    self.interviewedNameLabel.textColor = FIRST_PURPLE;
     
-    self.gradientView.topColor = LIGHT_BLUE_COLOR;
+    self.gradientView.topColor = DARK_BLUE;
     
     self.keyphraseLabel.font = LEITURA_ROMAN_1_19;
-    self.keyphraseLabel.textColor = DARK_GREY_TOGGLE_COLOR;
+    self.keyphraseLabel.textColor = DARK_GREY;
     self.keyphraseLabel.lineHeight = 25;
 }
 

@@ -31,7 +31,7 @@
 }
 
 - (void)setup {
-    self.backgroundColor = BLUE_PROGRESSION_BAR_COLOR;
+    self.backgroundColor = SECOND_PURPLE;
 }
 
 #pragma mark - Setters
@@ -48,7 +48,7 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetFillColorWithColor(context, BLUE_COLOR.CGColor);
+    CGContextSetFillColorWithColor(context, FIRST_PURPLE.CGColor);
     CGContextFillRect(context, CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)*self.progression));
 }
 

@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     self.valueLabel.font = CALIBRE_MEDIUM_60;
-    self.valueLabel.textColor = LIGHT_BLUE_COLOR;
+    self.valueLabel.textColor = WHITE_DIMMED_COLOR;
     
     self.labelLabel.font = LEITURA_ROMAN_1_17;
     self.labelLabel.textColor = WHITE_COLOR;

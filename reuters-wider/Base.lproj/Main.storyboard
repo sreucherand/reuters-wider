@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lU6-TA-Oov">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lU6-TA-Oov">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -134,7 +134,6 @@
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udb-AU-FUC">
                                             <rect key="frame" x="130" y="120" width="60" height="2"/>
-                                            <color key="backgroundColor" red="1" green="0.42691832839999999" blue="0.36034991589999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="2" id="dX6-pC-YyH"/>
                                                 <constraint firstAttribute="width" constant="60" id="v0H-80-Lpt"/>
@@ -165,10 +164,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-PN-VEW" customClass="CSGradientIndicatorView">
-                                                    <rect key="frame" x="57" y="0.0" width="3" height="48"/>
+                                                    <rect key="frame" x="54" y="0.0" width="6" height="48"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="3" id="pmt-0B-QSE"/>
+                                                        <constraint firstAttribute="width" constant="6" id="pmt-0B-QSE"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="134-iF-MYs">
@@ -250,6 +249,7 @@
                         <outlet property="mainRenderImageViewHeightConstraint" destination="afZ-pq-4xS" id="MRX-et-939"/>
                         <outlet property="progressionBarView" destination="Lbm-6f-giy" id="l6U-HO-YTi"/>
                         <outlet property="tableView" destination="1IE-Gl-w4G" id="79b-wb-Tax"/>
+                        <outlet property="tableViewHeaderDashView" destination="Udb-AU-FUC" id="psi-Ta-DoC"/>
                         <outlet property="tableViewHeaderImageView" destination="uLW-5P-Hjy" id="Xf2-of-k6w"/>
                         <outlet property="tableViewHeaderTitleLabel" destination="wpy-Gc-AoD" id="ALD-Tg-Tm3"/>
                         <segue destination="3s7-lG-DzJ" kind="modal" identifier="presentSummaryToGlossarySegueID" id="gqk-hd-OVB"/>
@@ -293,7 +293,6 @@
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFh-jM-I7q">
                                             <rect key="frame" x="130" y="120" width="60" height="2"/>
-                                            <color key="backgroundColor" red="1" green="0.59461541669999995" blue="0.50131451299999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="732-oV-pt5"/>
                                                 <constraint firstAttribute="height" constant="2" id="GoZ-QZ-YAJ"/>
@@ -393,6 +392,7 @@
                     <connections>
                         <outlet property="backButtonAreaView" destination="k4W-Wn-qZJ" id="hbt-oO-DVG"/>
                         <outlet property="tableView" destination="lJY-wB-fiC" id="i11-4A-4ki"/>
+                        <outlet property="tableViewHeaderDashView" destination="FFh-jM-I7q" id="0dR-Tx-uzd"/>
                         <outlet property="tableViewHeaderTitleLabel" destination="aMB-UU-SRy" id="926-P9-rOP"/>
                     </connections>
                 </viewController>
@@ -493,15 +493,15 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oq-aR-zdM" customClass="CSGradientIndicatorView">
-                                <rect key="frame" x="155" y="268" width="10" height="100"/>
+                                <rect key="frame" x="154" y="268" width="12" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Omv-ch-w6Y"/>
-                                    <constraint firstAttribute="width" constant="10" id="eYo-gV-dQn"/>
+                                    <constraint firstAttribute="width" constant="12" id="eYo-gV-dQn"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUV-pE-96x">
-                                <rect key="frame" x="16" y="30" width="50" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUV-pE-96x">
+                                <rect key="frame" x="10" y="30" width="50" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3t9-Qe-BXY"/>
                                     <constraint firstAttribute="width" constant="50" id="PVT-1j-8df"/>

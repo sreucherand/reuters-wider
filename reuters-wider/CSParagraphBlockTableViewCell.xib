@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +13,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paragraph" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvT-U0-j6x" customClass="CSAttributedLabel">
-                        <rect key="frame" x="20" y="0.0" width="319" height="119"/>
+                        <rect key="frame" x="20" y="0.0" width="319" height="79"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -23,7 +23,7 @@
                     <constraint firstAttribute="trailing" secondItem="jvT-U0-j6x" secondAttribute="trailing" constant="20" id="5d7-EP-S7Y"/>
                     <constraint firstItem="jvT-U0-j6x" firstAttribute="top" secondItem="S5w-q8-2V9" secondAttribute="top" id="JBu-Wh-HxA"/>
                     <constraint firstItem="jvT-U0-j6x" firstAttribute="leading" secondItem="S5w-q8-2V9" secondAttribute="leading" constant="20" id="Oyg-GD-BUN"/>
-                    <constraint firstAttribute="bottom" secondItem="jvT-U0-j6x" secondAttribute="bottom" id="Yfu-Sb-OQX"/>
+                    <constraint firstAttribute="bottom" secondItem="jvT-U0-j6x" secondAttribute="bottom" constant="40" id="Yfu-Sb-OQX"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

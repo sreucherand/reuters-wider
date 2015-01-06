@@ -62,7 +62,7 @@
     if (self.pullLabel == nil) {
         self.pullLabel = [[UILabel alloc] init];
         
-        self.pullLabel.textColor = BLUE_COLOR;
+        self.pullLabel.textColor = FIRST_PURPLE;
         self.pullLabel.font = CALIBRE_REG_15;
         self.pullLabel.textAlignment = NSTextAlignmentCenter;
         

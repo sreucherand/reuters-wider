@@ -18,7 +18,7 @@
 
 -(void)awakeFromNib {
     self.paragraphTextLabel.font = LEITURA_ROMAN_1_16;
-    self.paragraphTextLabel.textColor = GREY_COLOR;
+    self.paragraphTextLabel.textColor = DARK_GREY;
     self.paragraphTextLabel.lineHeight = 25;
     self.paragraphTextLabel.delegate = self;
 }

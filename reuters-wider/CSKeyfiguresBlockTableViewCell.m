@@ -29,21 +29,23 @@
 @implementation CSKeyfiguresBlockTableViewCell
 
 - (void)awakeFromNib {
-    self.backgroundColor = BLUE_COLOR;
+    self.backgroundColor = FIRST_PURPLE;
+    
+    self.containerScrollView.clipsToBounds = YES;
     
     self.titleTextLabel.font = CALIBRE_REG_15;
     self.titleTextLabel.textColor = WHITE_COLOR;
     
     self.contextLabel.font = CALIBRE_REG_15;
-    self.contextLabel.textColor = LIGHT_BLUE_COLOR;
+    self.contextLabel.textColor = WHITE_DIMMED_COLOR;
     self.contextLabel.lineHeight = 20;
     
-    self.topGradientIndicatorView.topColor = LIGHT_BLUE_COLOR;
+    self.topGradientIndicatorView.topColor = WHITE_DIMMED_COLOR;
     
-    self.middleGradientIndicatorView.topColor = LIGHT_BLUE_COLOR;
+    self.middleGradientIndicatorView.topColor = WHITE_DIMMED_COLOR;
     self.middleGradientIndicatorView.direction = CSDirectionBottom;
     
-    self.bottomGradientIndicatorView.topColor = LIGHT_BLUE_COLOR;
+    self.bottomGradientIndicatorView.topColor = WHITE_DIMMED_COLOR;
 }
 
 /*

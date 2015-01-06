@@ -2,21 +2,21 @@
     "articles": [
         {
             "id": 0,
-            "title": "Social impact\n investing",
+            "title": "Social impact\ninvesting",
             "date": "Mon, 03 Aug 2014 10:07:43 GMT",
             "number": 29,
             "media": "cover-social-impact-investing"
         },
         {
             "id": 1,
-            "title": "Future energy\n in cities",
+            "title": "Future energy\nin cities",
             "date": "Tue, 01 Sep 2014 09:11:28 GMT",
             "number": 30,
             "media": "cover-future-energy-in-cities"
         },
         {
             "id": 2,
-            "title": "Hong-Kong\n for democracy",
+            "title": "Hong-Kong\nfor democracy",
             "date": "Mon, 05 Oct 2014 08:59:14 GMT",
             "number": 31,
             "media": "cover-hong-kong-for-democracy",
@@ -26,7 +26,7 @@
                     "type": "part",
                     "content": {
                         "part": 1,
-                        "title": "Why such an\n indignation ?",
+                        "title": "Why such an\nindignation ?",
                         "duration": 4,
                         "image": "01-part_why-such-an-indignation"
                     }
@@ -95,14 +95,7 @@
                     "id": 8,
                     "type": "paragraph",
                     "content": {
-                        "text": "Instead, Zhang said candidates could only be selected by a broadly representative nominating committee."
-                    }
-                },
-                {
-                    "id": 9,
-                    "type": "paragraph",
-                    "content": {
-                        "text": "His statement is expected to fuel a pro-democracy movement that is threatening to shut-down Hong Kong's central financial district next July unless the government introduces changes."
+                        "text": "Instead, Zhang said candidates could only be selected by a broadly representative nominating committee.\n\nHis statement is expected to fuel a pro-democracy movement that is threatening to shut-down Hong Kong's central financial district next July unless the government introduces changes."
                     }
                 },
                 {
@@ -178,7 +171,7 @@
                     "type": "part",
                     "content": {
                         "part": 2,
-                        "title": "The Umbrella\n Revolution",
+                        "title": "The Umbrella\nRevolution",
                         "duration": 4,
                         "image": "02-part_the-umbrella-revolution"
                     }
@@ -194,14 +187,7 @@
                     "id": 19,
                     "type": "paragraph",
                     "content": {
-                        "text": "Who’s out there? The protests were organized in part by the Hong Kong Federation of Students, which has since called for an indefinite student strike. Young people are everywhere, but not alone."
-                    }
-                },
-                {
-                    "id": 20,
-                    "type": "paragraph",
-                    "content": {
-                        "text": "The Hong Kong Professional Teachers Union has joined them with a general strike, as have some professionals."
+                        "text": "Who’s out there? The protests were organized in part by the Hong Kong Federation of Students, which has since called for an indefinite student strike. Young people are everywhere, but not alone.\n\nThe Hong Kong Professional Teachers Union has joined them with a general strike, as have some professionals."
                     }
                 },
                 {
@@ -231,7 +217,7 @@
                                 "label": "arrestations"
                             }
                         ],
-                        "context": "Were organized in part by the Hong Kong\n Federation of Students, which has since\n called for an indefinite student strike."
+                        "context": "Were organized in part by the Hong Kong\nFederation of Students, which has since\ncalled for an indefinite student strike."
                     }
                 },
                 {
@@ -268,14 +254,7 @@
                     "id": 27,
                     "type": "paragraph",
                     "content": {
-                        "text": "As tens of thousands of protesters gather for a sixth day, their demand for the right to choose their leaders in fully democratic elections poses the biggest popular challenge to the ruling Communist Party since Chinese president Xi Jinping took power two years ago."
-                    }
-                },
-                {
-                    "id": 28,
-                    "type": "paragraph",
-                    "content": {
-                        "text": "He is trying to steer a slowing economy while moving against powerful vested interests in one of the most wide-ranging purges and anti-corruption campaigns since the Communists came to power in 1949."
+                        "text": "As tens of thousands of protesters gather for a sixth day, their demand for the right to choose their leaders in fully democratic elections poses the biggest popular challenge to the ruling Communist Party since Chinese president Xi Jinping took power two years ago.\n\nHe is trying to steer a slowing economy while moving against powerful vested interests in one of the most wide-ranging purges and anti-corruption campaigns since the Communists came to power in 1949."
                     }
                 },
                 {
@@ -308,7 +287,7 @@
                     "content": {
                         "title": "Interview of student",
                         "person": "Fernando Cheung",
-                        "subject": "Democracy and universal\n suffrage may be the ultimate\n form of political",
+                        "subject": "Democracy and universal\nsuffrage may be the ultimate\nform of political",
                         "thumbnail": "image",
                         "video": "video"
                     }
@@ -318,7 +297,7 @@
                     "type": "part",
                     "content": {
                         "part": 3,
-                        "title": "The world\n reacting",
+                        "title": "The world\nreacting",
                         "duration": 7,
                         "image": "03-part_the-world-reacting"
                     }
@@ -334,21 +313,7 @@
                     "id": 34,
                     "type": "paragraph",
                     "content": {
-                        "text": "International awareness of the movement is increasing, and the movement itself is taking shape in a more structured manner. Rallies in support of the protests have occurred in the all world."
-                    }
-                },
-                {
-                    "id": 35,
-                    "type": "paragraph",
-                    "content": {
-                        "text": "Here’s a video from the ground of protesters being teargassed, in attacks that look familiar from Ferguson and helped stoke outrage among citizens:"
-                    }
-                },
-                {
-                    "id": 36,
-                    "type": "paragraph",
-                    "content": {
-                        "text": "The use of pepper spray has been equally alarming, and is reminiscent of previous Occupy protests in the U.S."
+                        "text": "International awareness of the movement is increasing, and the movement itself is taking shape in a more structured manner. Rallies in support of the protests have occurred in the all world.\n\nHere’s a video from the ground of protesters being teargassed, in attacks that look familiar from Ferguson and helped stoke outrage among citizens:\n\nThe use of pepper spray has been equally alarming, and is reminiscent of previous Occupy protests in the U.S."
                     }
                 },
                 {
@@ -362,14 +327,7 @@
                     "id": 39,
                     "type": "paragraph",
                     "content": {
-                        "text": "Hong Kong has canceled its annual fireworks celebration of China’s National Day on October 1st, indicating that this thing may continue for the foreseeable future."
-                    }
-                },
-                {
-                    "id": 40,
-                    "type": "paragraph",
-                    "content": {
-                        "text": "But a hardcore groupe of demonstrators, has kept up the pressure on Hong Kong authoritiers. China rules that gives the city wide-raging autonomy and freedoms not enjoyed in mainland China, with universal suffrage an eventual goal."
+                        "text": "Hong Kong has canceled its annual fireworks celebration of China’s National Day on October 1st, indicating that this thing may continue for the foreseeable future.\n\nBut a hardcore groupe of demonstrators, has kept up the pressure on Hong Kong authoritiers. China rules that gives the city wide-raging autonomy and freedoms not enjoyed in mainland China, with universal suffrage an eventual goal."
                     }
                 }
             ],

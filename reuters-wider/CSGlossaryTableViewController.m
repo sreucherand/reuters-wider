@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *tableViewHeaderTitleLabel;
+@property (weak, nonatomic) IBOutlet UIView *tableViewHeaderDashView;
 @property (weak, nonatomic) IBOutlet UIView *backButtonAreaView;
 
 @property (strong, nonatomic) CSGlossaryDefinitionTableViewCell *cell;
@@ -42,6 +43,8 @@
     [self.backButtonAreaView addGestureRecognizer:tapGestureRecognizez];
     
     self.tableViewHeaderTitleLabel.font = LEITURA_ROMAN_2_23;
+    
+    self.tableViewHeaderDashView.backgroundColor = LIGHT_GREY;
 }
 
 - (void)didReceiveMemoryWarning {

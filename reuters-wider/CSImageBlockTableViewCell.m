@@ -20,7 +20,7 @@
 @implementation CSImageBlockTableViewCell
 
 - (void)awakeFromNib {
-    self.gradientIndicatorView.topColor = BLUE_COLOR;
+    self.gradientIndicatorView.topColor = DARK_BLUE;
 }
 
 /*

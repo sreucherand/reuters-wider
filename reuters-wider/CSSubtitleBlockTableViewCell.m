@@ -18,7 +18,7 @@
 
 - (void)awakeFromNib {
     self.subtitleLabel.font = LEITURA_ROMAN_3_19;
-    self.subtitleLabel.textColor = DARKEST_GREY_COLOR;
+    self.subtitleLabel.textColor = DARK_GREY;
 }
 
 - (void)layoutSubviews {

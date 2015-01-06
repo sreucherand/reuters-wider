@@ -27,7 +27,7 @@
     
     self.backgroundColor = WHITE_COLOR;
     
-    [self.titleButton setTitleColor:BLUE_COLOR forState:UIControlStateNormal];
+    [self.titleButton setTitleColor:FIRST_PURPLE forState:UIControlStateNormal];
     
     self.titleButton.titleLabel.font = CALIBRE_REG_15;
     self.titleButton.titleLabel.textAlignment = NSTextAlignmentCenter;

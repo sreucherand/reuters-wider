@@ -19,10 +19,10 @@
 @implementation CSStatementBlockTableViewCell
 
 -(void)awakeFromNib{
-    self.gradientView.topColor = LIGHT_BLUE_COLOR;
+    self.gradientView.topColor = DARK_BLUE;
     
     self.statementLabel.font = LEITURA_ITALIC_2_20;
-    self.statementLabel.textColor = BLUE_COLOR;
+    self.statementLabel.textColor = FIRST_PURPLE;
     self.statementLabel.textAlignment = NSTextAlignmentCenter;
 }
 
