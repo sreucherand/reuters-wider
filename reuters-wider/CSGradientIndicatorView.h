@@ -10,6 +10,7 @@
 
 @interface CSGradientIndicatorView : UIView
 
+@property (assign, nonatomic) CSDirection direction;
 @property (strong, nonatomic) UIColor *topColor;
 @property (strong, nonatomic) UIColor *bottomColor;
 

@@ -61,6 +61,7 @@
 #define LEITURA_ITALIC_2_38 [UIFont fontWithName:@"Leitura-Italic2" size:38]
 
 // Glossary
+#define CALIBRE_MEDIUM_60 [UIFont fontWithName:@"Calibre-Medium" size:60]
 #define CALIBRE_REG_14 [UIFont fontWithName:@"Calibre-Regular" size:14]
 #define CALIBRE_LIGHT_15 [UIFont fontWithName:@"Calibre-Light" size:15]
 #define LEITURA_ROMAN_4_32 [UIFont fontWithName:@"Leitura-Roman4" size:32]

@@ -223,7 +223,7 @@
                                 "label": "injuries"
                             },
                             {
-                                "data": 80000,
+                                "data": 800000,
                                 "label": "participants"
                             },
                             {
@@ -231,7 +231,7 @@
                                 "label": "arrestations"
                             }
                         ],
-                        "context": "Were organized in part by the Hong Kong Federation of Students, which has since called for an indefinite student strike."
+                        "context": "Were organized in part by the Hong Kong\n Federation of Students, which has since\n called for an indefinite student strike."
                     }
                 },
                 {

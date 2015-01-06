@@ -59,6 +59,10 @@
 		209060491A10BB50001EC87E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209060481A10BB50001EC87E /* Images.xcassets */; };
 		2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2090604A1A10BB51001EC87E /* LaunchScreen.xib */; };
 		209060581A10BB51001EC87E /* reuters_widerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 209060571A10BB51001EC87E /* reuters_widerTests.m */; };
+		20965A951A5BF63A008DDCA6 /* CSPagingScrollViewContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20965A941A5BF63A008DDCA6 /* CSPagingScrollViewContainerView.m */; };
+		20965A991A5C191A008DDCA6 /* CSKeyfigureKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20965A981A5C191A008DDCA6 /* CSKeyfigureKeyView.m */; };
+		20965A9B1A5C193C008DDCA6 /* CSKeyfigureKeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20965A9A1A5C193C008DDCA6 /* CSKeyfigureKeyView.xib */; };
+		20965A9D1A5C1DF1008DDCA6 /* Calibre-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20965A9C1A5C1DF1008DDCA6 /* Calibre-Medium.otf */; };
 		209CF3051A58394200A8A954 /* CSSummaryEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 209CF3041A58394200A8A954 /* CSSummaryEntryTableViewCell.m */; };
 		209CF3081A583AD500A8A954 /* CSPartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 209CF3071A583AD500A8A954 /* CSPartModel.m */; };
 		209CF30C1A59AD8700A8A954 /* CSProgressionBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 209CF30B1A59AD8700A8A954 /* CSProgressionBarView.m */; };
@@ -194,6 +198,12 @@
 		209060511A10BB51001EC87E /* reuters-widerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "reuters-widerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		209060561A10BB51001EC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209060571A10BB51001EC87E /* reuters_widerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reuters_widerTests.m; sourceTree = "<group>"; };
+		20965A931A5BF63A008DDCA6 /* CSPagingScrollViewContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSPagingScrollViewContainerView.h; path = "reuters-wider/CSPagingScrollViewContainerView.h"; sourceTree = "<group>"; };
+		20965A941A5BF63A008DDCA6 /* CSPagingScrollViewContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSPagingScrollViewContainerView.m; path = "reuters-wider/CSPagingScrollViewContainerView.m"; sourceTree = "<group>"; };
+		20965A971A5C191A008DDCA6 /* CSKeyfigureKeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSKeyfigureKeyView.h; path = "reuters-wider/CSKeyfigureKeyView.h"; sourceTree = "<group>"; };
+		20965A981A5C191A008DDCA6 /* CSKeyfigureKeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSKeyfigureKeyView.m; path = "reuters-wider/CSKeyfigureKeyView.m"; sourceTree = "<group>"; };
+		20965A9A1A5C193C008DDCA6 /* CSKeyfigureKeyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSKeyfigureKeyView.xib; path = "reuters-wider/CSKeyfigureKeyView.xib"; sourceTree = "<group>"; };
+		20965A9C1A5C1DF1008DDCA6 /* Calibre-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibre-Medium.otf"; sourceTree = "<group>"; };
 		209CF3031A58394200A8A954 /* CSSummaryEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSummaryEntryTableViewCell.h; path = "reuters-wider/CSSummaryEntryTableViewCell.h"; sourceTree = "<group>"; };
 		209CF3041A58394200A8A954 /* CSSummaryEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSummaryEntryTableViewCell.m; path = "reuters-wider/CSSummaryEntryTableViewCell.m"; sourceTree = "<group>"; };
 		209CF3061A583AD500A8A954 /* CSPartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPartModel.h; sourceTree = "<group>"; };
@@ -362,6 +372,7 @@
 				20801A821A2360A800EF38F3 /* Archer-XLight.otf */,
 				20801A831A2360A800EF38F3 /* Calibre-Light.otf */,
 				20801A841A2360A800EF38F3 /* Calibre-Reg.otf */,
+				20965A9C1A5C1DF1008DDCA6 /* Calibre-Medium.otf */,
 				20801A751A23609600EF38F3 /* Leitura-Italic1.otf */,
 				20801A761A23609600EF38F3 /* Leitura-Italic2.otf */,
 				20801A771A23609600EF38F3 /* Leitura-NewsRoman1.otf */,
@@ -415,6 +426,7 @@
 		208B5F621A537B86003D4718 /* KeyfiguresBlock */ = {
 			isa = PBXGroup;
 			children = (
+				20965A961A5C18F8008DDCA6 /* KeyfigureKeyView */,
 				208B5F631A537BBB003D4718 /* CSKeyfiguresBlockTableViewCell.h */,
 				208B5F641A537BBB003D4718 /* CSKeyfiguresBlockTableViewCell.m */,
 				208B5F661A537BD0003D4718 /* CSKeyfiguresBlockTableViewCell.xib */,
@@ -473,6 +485,7 @@
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				20965A9E1A5C32B5008DDCA6 /* PagingScrollViewContainerView */,
 				209CF3091A59AD7200A8A954 /* ProgressionBar */,
 				209CF3021A58392000A8A954 /* SummaryEntryCell */,
 				208B5F4F1A5343A9003D4718 /* StickyMenu */,
@@ -582,6 +595,25 @@
 				209060561A10BB51001EC87E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20965A961A5C18F8008DDCA6 /* KeyfigureKeyView */ = {
+			isa = PBXGroup;
+			children = (
+				20965A971A5C191A008DDCA6 /* CSKeyfigureKeyView.h */,
+				20965A981A5C191A008DDCA6 /* CSKeyfigureKeyView.m */,
+				20965A9A1A5C193C008DDCA6 /* CSKeyfigureKeyView.xib */,
+			);
+			name = KeyfigureKeyView;
+			sourceTree = "<group>";
+		};
+		20965A9E1A5C32B5008DDCA6 /* PagingScrollViewContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				20965A931A5BF63A008DDCA6 /* CSPagingScrollViewContainerView.h */,
+				20965A941A5BF63A008DDCA6 /* CSPagingScrollViewContainerView.m */,
+			);
+			name = PagingScrollViewContainerView;
 			sourceTree = "<group>";
 		};
 		209CF3021A58392000A8A954 /* SummaryEntryCell */ = {
@@ -1002,9 +1034,11 @@
 				20C176EB1A34E1180021C64C /* CSPartBlockTableViewCell.xib in Resources */,
 				20801A7D1A23609600EF38F3 /* Leitura-NewsRoman1.otf in Resources */,
 				EB469E4A1A275841001C7B02 /* CSMetaBlockTableViewCell.xib in Resources */,
+				20965A9D1A5C1DF1008DDCA6 /* Calibre-Medium.otf in Resources */,
 				20801A861A2360A800EF38F3 /* Archer-XLight.otf in Resources */,
 				2090604C1A10BB51001EC87E /* LaunchScreen.xib in Resources */,
 				203010381A25ECFC0088FD7C /* articles.json in Resources */,
+				20965A9B1A5C193C008DDCA6 /* CSKeyfigureKeyView.xib in Resources */,
 				202B7EEE1A3070F7000E13C7 /* CSSubtitleBlockTableViewCell.xib in Resources */,
 				209060491A10BB50001EC87E /* Images.xcassets in Resources */,
 			);
@@ -1079,6 +1113,7 @@
 				2030104B1A2605230088FD7C /* CSArticleData.m in Sources */,
 				208B5F6D1A538154003D4718 /* CSImageBlockTableViewCell.m in Sources */,
 				20A55B0B1A222C46003B601B /* CSMainNavigationController.m in Sources */,
+				20965A991A5C191A008DDCA6 /* CSKeyfigureKeyView.m in Sources */,
 				20CABEB41A27253A00462EE4 /* CSIssuesPreviewPictureViewCell.m in Sources */,
 				2030104E1A2608330088FD7C /* CSArticlesModel.m in Sources */,
 				20BBDFEA1A2E6B6B00F2A8C4 /* CSAttributedLabel.m in Sources */,
@@ -1093,6 +1128,7 @@
 				20C176C61A347E0E0021C64C /* CSGlossaryDefinitionTableViewCell.m in Sources */,
 				208C9D051A10EFD000517B46 /* CSArchivesViewController.m in Sources */,
 				203010471A26009B0088FD7C /* CSBlockContentModel.m in Sources */,
+				20965A951A5BF63A008DDCA6 /* CSPagingScrollViewContainerView.m in Sources */,
 				206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */,
 				208B5FB21A55F894003D4718 /* CSSummaryViewController.m in Sources */,
 				20B2A8031A521F2300A9E5A8 /* CSArticleHomeTransition.m in Sources */,

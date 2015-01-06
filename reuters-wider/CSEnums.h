@@ -22,3 +22,10 @@ typedef enum {
     UINavigationControlPositionTop,
     UINavigationControlPositionBottom
 } UINavigationControlPosition;
+
+typedef enum {
+    CSDirectionTop,
+    CSDirectionLeft,
+    CSDirectionBottom,
+    CSDirectionRight
+} CSDirection;
