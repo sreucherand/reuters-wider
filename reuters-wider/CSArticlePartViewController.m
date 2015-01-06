@@ -66,6 +66,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CSKeyfiguresBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSKeyfiguresBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSImageBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSImageBlockCellID"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CSInterviewBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSInterviewBlockCellID"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CSImplicationBlockTableViewCell" bundle:nil] forCellReuseIdentifier:@"CSImplicationBlockCellID"];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

@@ -371,6 +371,15 @@
                     "content": {
                         "text": "But a hardcore groupe of demonstrators, has kept up the pressure on Hong Kong authoritiers. China rules that gives the city wide-raging autonomy and freedoms not enjoyed in mainland China, with universal suffrage an eventual goal."
                     }
+                },
+                {
+                    "id": 41,
+                    "type": "implication",
+                    "content": {
+                        "title": "Paris reacting",
+                        "quote": "The covenant is not a measure for Hong Kong's political reform",
+                        "source": "The French government"
+                    }
                 }
             ],
             "parts": [
