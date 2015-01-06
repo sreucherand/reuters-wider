@@ -30,6 +30,9 @@
 @property (strong, nonatomic) NSString *image;
 @property (strong, nonatomic) NSString *video;
 @property (strong, nonatomic) NSString *thumbnail;
+@property (strong, nonatomic) NSString *city;
+@property (strong, nonatomic) NSString *quote;
+@property (strong, nonatomic) NSString *source;
 @property (strong, nonatomic) NSArray<CSBlockContentModel> *views;
 @property (strong, nonatomic) NSArray<CSBlockContentModel> *transitions;
 @property (strong, nonatomic) NSArray<CSBlockContentModel> *keys;

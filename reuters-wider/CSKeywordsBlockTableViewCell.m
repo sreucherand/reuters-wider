@@ -30,7 +30,7 @@
     CALayer *topBorder = [CALayer layer];
     
     topBorder.frame = CGRectMake(20, 0, (CGRectGetWidth(self.mainSuperView.frame) - 50), 1);
-    topBorder.backgroundColor = LIGHT_GREY_BORDER_COLOR.CGColor;
+    topBorder.backgroundColor = LIGHT_DIMMED_GREY.CGColor;
     
     [self.mainSuperView.layer addSublayer:topBorder];
 }
@@ -57,7 +57,7 @@
         keywordLabel.attributedText = stringWithIcon;
         keywordLabel.clipsToBounds=YES;
         keywordLabel.font = CALIBRE_REG_15;
-        keywordLabel.textColor = BLUE_COLOR;
+        keywordLabel.textColor = FIRST_PURPLE;
         
         [self.mainView addSubview: keywordLabel];
         
