@@ -51,7 +51,7 @@
         NSAttributedString *currentKeywordText = [[NSMutableAttributedString alloc] initWithString:[self.content.keywords[i] text]];
         [stringWithIcon appendAttributedString:currentKeywordText];
         
-        CGRect labelRect = CGRectMake (fullSize, 0, 80, CGRectGetHeight(self.mainView.frame));  // location of label in the window
+        CGRect labelRect = CGRectMake (fullSize, 0, 80, CGRectGetHeight(self.mainView.frame));
         UILabel *keywordLabel = [[UILabel alloc] initWithFrame: labelRect];
         
         keywordLabel.attributedText = stringWithIcon;
