@@ -10,8 +10,8 @@
 
 @interface CSKeyfiguresBlockTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *titleText;
-
+@property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contextLabel;
 
 @end
 
@@ -20,8 +20,11 @@
 - (void)awakeFromNib {
     self.backgroundColor = BLUE_COLOR;
     
-    self.titleText.font = CALIBRE_REG_15;
-    self.titleText.textColor = WHITE_COLOR;
+    self.titleTextLabel.font = CALIBRE_REG_15;
+    self.titleTextLabel.textColor = WHITE_COLOR;
+    
+    self.contextLabel.font = CALIBRE_REG_15;
+    self.contextLabel.textColor = LIGHT_BLUE_COLOR;
 }
 
 /*
@@ -35,7 +38,9 @@
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     
-    self.titleText.text = self.content.title;
+    self.titleTextLabel.text = self.content.title;
+    
+    self.contextLabel.text = self.content.context;
 }
 
 @end
