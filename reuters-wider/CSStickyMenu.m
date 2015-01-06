@@ -70,7 +70,15 @@
     }
 }
 
-- (void)containingScrollViewDidScroll {
+- (void)toggle {
+    if (visible) {
+        [self close];
+    } else {
+        [self open];
+    }
+}
+
+- (void)close {
     if (visible) {
         visible = NO;
         

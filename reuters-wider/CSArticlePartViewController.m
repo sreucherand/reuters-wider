@@ -233,7 +233,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {    
     [self.topNavigationControl containingScrollViewDidScroll];
     
-    [self.stickyMenu containingScrollViewDidScroll];
+    [self.stickyMenu close];
     
     if (self.tableView.contentOffset.y >= 0) {
         self.progression = self.tableView.contentOffset.y/(self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame));
@@ -250,7 +250,7 @@
 - (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
     //[self closeDefinition];
     
-    [self.stickyMenu open];
+    [self.stickyMenu toggle];
 }
 
 - (void)didSwipeOnView:(UISwipeGestureRecognizer *)recognizer {

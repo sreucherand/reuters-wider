@@ -19,7 +19,8 @@
 @property (assign, nonatomic) id <CSStickyMenuDelegate> delegate;
 
 - (void)open;
-- (void)containingScrollViewDidScroll;
+- (void)close;
+- (void)toggle;
 
 @end
 
