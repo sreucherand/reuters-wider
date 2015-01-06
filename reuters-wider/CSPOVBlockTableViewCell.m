@@ -119,6 +119,7 @@
     CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, size.height), 0);
     
     CGColorSpaceRelease(space);
+    CGGradientRelease(gradient);
     
     UIGraphicsPopContext();
     
