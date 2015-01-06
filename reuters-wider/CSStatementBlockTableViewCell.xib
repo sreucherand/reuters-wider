@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,7 +13,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GK-s9-A0F" customClass="CSGradientIndicatorView">
-                        <rect key="frame" x="253" y="20" width="10" height="30"/>
+                        <rect key="frame" x="253" y="0.0" width="10" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="B1v-36-n7V"/>
@@ -22,7 +21,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statement" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8O-0W-CCh" customClass="CSAttributedLabel">
-                        <rect key="frame" x="40" y="8" width="435" height="288"/>
+                        <rect key="frame" x="40" y="25" width="435" height="271"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -31,9 +30,9 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="y8O-0W-CCh" secondAttribute="trailing" constant="40" id="2wt-Fi-IAw"/>
                     <constraint firstAttribute="centerX" secondItem="2GK-s9-A0F" secondAttribute="centerX" id="Hgj-pN-cer"/>
-                    <constraint firstItem="y8O-0W-CCh" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="topMargin" id="K5M-Pz-5nm"/>
-                    <constraint firstItem="2GK-s9-A0F" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="top" constant="20" id="L7u-pJ-NTE"/>
+                    <constraint firstItem="2GK-s9-A0F" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="top" id="L7u-pJ-NTE"/>
                     <constraint firstItem="y8O-0W-CCh" firstAttribute="leading" secondItem="Cpa-ig-Kv7" secondAttribute="leading" constant="40" id="MeF-EY-qfm"/>
+                    <constraint firstItem="y8O-0W-CCh" firstAttribute="top" secondItem="2GK-s9-A0F" secondAttribute="bottom" constant="-5" id="di9-k9-d9V"/>
                     <constraint firstAttribute="bottom" secondItem="y8O-0W-CCh" secondAttribute="bottom" id="kVU-7I-M5y"/>
                 </constraints>
             </tableViewCellContentView>
