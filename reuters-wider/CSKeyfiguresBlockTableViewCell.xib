@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -13,86 +13,97 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VdX-Eg-GDA" id="dBG-fa-vc1">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDE-kE-W75">
-                        <rect key="frame" x="144" y="30" width="33" height="113"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Context" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm0-l2-3Og" customClass="CSAttributedLabel">
-                        <rect key="frame" x="40" y="518" width="240" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBe-65-gan" customClass="CSPagingScrollViewContainerView">
-                        <rect key="frame" x="0.0" y="293" width="320" height="75"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwp-ZF-fYC">
+                        <rect key="frame" x="0.0" y="10" width="320" height="529"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8b-IO-vYp">
-                                <rect key="frame" x="80" y="0.0" width="160" height="75"/>
-                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDE-kE-W75">
+                                <rect key="frame" x="144" y="30" width="33" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Context" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm0-l2-3Og" customClass="CSAttributedLabel">
+                                <rect key="frame" x="130" y="466" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBe-65-gan" customClass="CSPagingScrollViewContainerView">
+                                <rect key="frame" x="0.0" y="241" width="320" height="75"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8b-IO-vYp">
+                                        <rect key="frame" x="80" y="0.0" width="160" height="75"/>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="e8b-IO-vYp" secondAttribute="centerX" id="9Am-W4-7q7"/>
+                                    <constraint firstItem="e8b-IO-vYp" firstAttribute="height" secondItem="lBe-65-gan" secondAttribute="height" id="KgN-hV-ydv"/>
+                                    <constraint firstAttribute="centerY" secondItem="e8b-IO-vYp" secondAttribute="centerY" id="fOV-cb-1KF"/>
+                                    <constraint firstItem="e8b-IO-vYp" firstAttribute="width" secondItem="lBe-65-gan" secondAttribute="width" multiplier="0.5" id="fg1-9A-G5M"/>
+                                    <constraint firstAttribute="height" priority="999" constant="75" id="vkr-Cl-arb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXF-Jb-bPy" customClass="CSGradientIndicatorView">
+                                <rect key="frame" x="157" y="116" width="6" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="6" id="tMz-5q-rpb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-kF-aGB" customClass="CSGradientIndicatorView">
+                                <rect key="frame" x="157" y="341" width="6" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="6" id="LdA-Ne-UPS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WnH-0I-rmN" customClass="CSGradientIndicatorView">
+                                <rect key="frame" x="157" y="507" width="6" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3dj-lK-rnh"/>
+                                    <constraint firstAttribute="width" constant="6" id="PjA-de-APe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="e8b-IO-vYp" secondAttribute="centerX" id="1gm-2t-UW1"/>
-                            <constraint firstItem="e8b-IO-vYp" firstAttribute="height" secondItem="lBe-65-gan" secondAttribute="height" id="KgN-hV-ydv"/>
-                            <constraint firstAttribute="centerY" secondItem="e8b-IO-vYp" secondAttribute="centerY" id="fOV-cb-1KF"/>
-                            <constraint firstItem="e8b-IO-vYp" firstAttribute="width" secondItem="lBe-65-gan" secondAttribute="width" multiplier="0.5" id="fg1-9A-G5M"/>
-                            <constraint firstAttribute="height" priority="999" constant="75" id="vkr-Cl-arb"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoi-Qh-9hZ" customClass="CSGradientIndicatorView">
-                        <rect key="frame" x="157" y="557" width="6" height="20"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="1fb-S4-x51"/>
-                            <constraint firstAttribute="width" constant="6" id="f1U-15-ROJ"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXF-Jb-bPy" customClass="CSGradientIndicatorView">
-                        <rect key="frame" x="157" y="168" width="6" height="100"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="6" id="tMz-5q-rpb"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-kF-aGB" customClass="CSGradientIndicatorView">
-                        <rect key="frame" x="157" y="393" width="6" height="100"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="6" id="LdA-Ne-UPS"/>
+                            <constraint firstItem="lBe-65-gan" firstAttribute="top" secondItem="ZDE-kE-W75" secondAttribute="bottom" constant="150" id="2p6-hD-ouq"/>
+                            <constraint firstAttribute="centerX" secondItem="hm0-l2-3Og" secondAttribute="centerX" id="3Yv-ob-1ji"/>
+                            <constraint firstAttribute="centerX" secondItem="ZDE-kE-W75" secondAttribute="centerX" id="4fI-Lr-lid"/>
+                            <constraint firstAttribute="trailing" secondItem="lBe-65-gan" secondAttribute="trailing" id="9qA-u2-4lw"/>
+                            <constraint firstItem="KuA-kF-aGB" firstAttribute="top" secondItem="lBe-65-gan" secondAttribute="bottom" constant="25" id="B4C-sw-pQ2"/>
+                            <constraint firstItem="hm0-l2-3Og" firstAttribute="top" secondItem="lBe-65-gan" secondAttribute="bottom" constant="150" id="ClV-1V-KPd"/>
+                            <constraint firstItem="ZDE-kE-W75" firstAttribute="top" secondItem="lwp-ZF-fYC" secondAttribute="top" constant="30" id="EXI-Vz-iiR"/>
+                            <constraint firstAttribute="bottom" secondItem="WnH-0I-rmN" secondAttribute="bottom" constant="2" id="EnV-NW-uei"/>
+                            <constraint firstAttribute="centerX" secondItem="KuA-kF-aGB" secondAttribute="centerX" id="Ha2-xL-P0d"/>
+                            <constraint firstItem="UXF-Jb-bPy" firstAttribute="top" secondItem="ZDE-kE-W75" secondAttribute="bottom" constant="25" id="Ib8-B8-EC0"/>
+                            <constraint firstAttribute="centerX" secondItem="UXF-Jb-bPy" secondAttribute="centerX" id="RPU-FT-Rdt"/>
+                            <constraint firstItem="WnH-0I-rmN" firstAttribute="top" secondItem="hm0-l2-3Og" secondAttribute="bottom" constant="20" id="WUb-2g-hmv"/>
+                            <constraint firstItem="hm0-l2-3Og" firstAttribute="top" secondItem="KuA-kF-aGB" secondAttribute="bottom" constant="25" id="aZN-fc-Hn6"/>
+                            <constraint firstItem="lBe-65-gan" firstAttribute="top" secondItem="UXF-Jb-bPy" secondAttribute="bottom" constant="25" id="acL-8J-gLT"/>
+                            <constraint firstAttribute="centerX" secondItem="WnH-0I-rmN" secondAttribute="centerX" id="dzd-xY-Vuh"/>
+                            <constraint firstItem="lBe-65-gan" firstAttribute="leading" secondItem="lwp-ZF-fYC" secondAttribute="leading" id="iqE-R9-3lW"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ZDE-kE-W75" firstAttribute="top" secondItem="dBG-fa-vc1" secondAttribute="top" constant="30" id="0DS-8b-DGp"/>
-                    <constraint firstItem="hm0-l2-3Og" firstAttribute="top" secondItem="KuA-kF-aGB" secondAttribute="bottom" constant="25" id="2PG-pg-ezd"/>
-                    <constraint firstAttribute="trailing" secondItem="lBe-65-gan" secondAttribute="trailing" id="CEE-RV-gbR"/>
-                    <constraint firstAttribute="centerX" secondItem="KuA-kF-aGB" secondAttribute="centerX" id="DEx-bS-3RS"/>
-                    <constraint firstItem="lBe-65-gan" firstAttribute="leading" secondItem="dBG-fa-vc1" secondAttribute="leading" id="Dha-Eg-tqO"/>
-                    <constraint firstAttribute="centerX" secondItem="UXF-Jb-bPy" secondAttribute="centerX" id="EVQ-UD-zsx"/>
-                    <constraint firstItem="UXF-Jb-bPy" firstAttribute="top" secondItem="ZDE-kE-W75" secondAttribute="bottom" constant="25" id="IFG-Ev-xkB"/>
-                    <constraint firstItem="lBe-65-gan" firstAttribute="top" secondItem="UXF-Jb-bPy" secondAttribute="bottom" constant="25" id="NwZ-90-KUS"/>
-                    <constraint firstItem="KuA-kF-aGB" firstAttribute="top" secondItem="lBe-65-gan" secondAttribute="bottom" constant="25" id="Q1o-me-cDd"/>
-                    <constraint firstAttribute="centerX" secondItem="ZDE-kE-W75" secondAttribute="centerX" id="Rtd-ay-wje"/>
-                    <constraint firstItem="lBe-65-gan" firstAttribute="top" secondItem="ZDE-kE-W75" secondAttribute="bottom" constant="150" id="TYe-db-1eW"/>
-                    <constraint firstItem="hm0-l2-3Og" firstAttribute="leading" secondItem="dBG-fa-vc1" secondAttribute="leading" constant="40" id="dgm-me-Pid"/>
-                    <constraint firstAttribute="centerX" secondItem="eoi-Qh-9hZ" secondAttribute="centerX" id="eh0-Em-TaK"/>
-                    <constraint firstAttribute="bottom" secondItem="eoi-Qh-9hZ" secondAttribute="bottom" constant="2" id="etK-3f-VPl"/>
-                    <constraint firstItem="hm0-l2-3Og" firstAttribute="top" secondItem="lBe-65-gan" secondAttribute="bottom" constant="150" id="ggD-ZT-JzV"/>
-                    <constraint firstAttribute="trailing" secondItem="hm0-l2-3Og" secondAttribute="trailing" constant="40" id="qzE-cS-04S"/>
-                    <constraint firstAttribute="bottom" secondItem="hm0-l2-3Og" secondAttribute="bottom" constant="40" id="t6C-Co-cTh"/>
+                    <constraint firstItem="lwp-ZF-fYC" firstAttribute="leading" secondItem="dBG-fa-vc1" secondAttribute="leading" id="7ZZ-lD-B5E"/>
+                    <constraint firstItem="lwp-ZF-fYC" firstAttribute="top" secondItem="dBG-fa-vc1" secondAttribute="top" constant="10" id="joe-xT-5uD"/>
+                    <constraint firstAttribute="trailing" secondItem="lwp-ZF-fYC" secondAttribute="trailing" id="uUT-Pv-kDg"/>
+                    <constraint firstAttribute="bottom" secondItem="lwp-ZF-fYC" secondAttribute="bottom" constant="40" id="wiz-lI-3XR"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="bottomGradientIndicatorView" destination="eoi-Qh-9hZ" id="lft-6y-z38"/>
+                <outlet property="bottomGradientIndicatorView" destination="WnH-0I-rmN" id="Eue-IB-Zss"/>
                 <outlet property="containerScrollView" destination="lBe-65-gan" id="BPP-uY-Kgn"/>
                 <outlet property="contextLabel" destination="hm0-l2-3Og" id="C6U-Qi-gu6"/>
+                <outlet property="mainContainerView" destination="lwp-ZF-fYC" id="H8t-P5-zao"/>
                 <outlet property="middleGradientIndicatorView" destination="KuA-kF-aGB" id="ld5-Ms-sjd"/>
                 <outlet property="scrollView" destination="e8b-IO-vYp" id="b8P-np-ceK"/>
                 <outlet property="titleTextLabel" destination="ZDE-kE-W75" id="87B-Bi-7tv"/>
                 <outlet property="topGradientIndicatorView" destination="UXF-Jb-bPy" id="pXJ-W2-e1D"/>
             </connections>
-            <point key="canvasLocation" x="221" y="519"/>
+            <point key="canvasLocation" x="221" y="510"/>
         </tableViewCell>
     </objects>
 </document>

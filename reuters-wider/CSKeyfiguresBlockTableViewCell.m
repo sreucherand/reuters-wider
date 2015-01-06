@@ -13,6 +13,8 @@
 
 @interface CSKeyfiguresBlockTableViewCell () <UIScrollViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *mainContainerView;
+
 @property (weak, nonatomic) IBOutlet CSPagingScrollViewContainerView *containerScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *titleTextLabel;
@@ -29,7 +31,7 @@
 @implementation CSKeyfiguresBlockTableViewCell
 
 - (void)awakeFromNib {
-    self.backgroundColor = FIRST_PURPLE;
+    self.mainContainerView.backgroundColor = FIRST_PURPLE;
     
     self.containerScrollView.clipsToBounds = YES;
     
