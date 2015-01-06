@@ -97,7 +97,10 @@
 - (UIImage *)imageGradient:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor {
     CGSize size = rect.size;
     
-    UIGraphicsBeginImageContext(CGSizeMake(size.width, size.height));
+    size.width = fmax(size.width, 20);
+    size.height = fmax(size.height, 20);
+    
+    UIGraphicsBeginImageContext(size);
     
     CGFloat locations[2];
     
