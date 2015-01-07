@@ -46,11 +46,28 @@
     [self.issuesPreviewCollectionView setCollectionViewLayout:layout];
     
     self.bottomConstraintGradientIndicatorView.constant = CGRectGetWidth(self.view.frame)-CGRectGetHeight(self.gradientIndicatorView.frame)+25;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self playCurrentBackgroundVideo];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Specific methods
+
+- (void)playCurrentBackgroundVideo {
     [[self.issuesPreviewCollectionView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if ([obj isKindOfClass:[CSIssuesPreviewPictureViewCell class]]) {
             [((CSIssuesPreviewPictureViewCell *)obj).motionMoviePlayer play];
@@ -58,9 +75,8 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)appDidBecomeActive:(NSNotification *)notification {
+    [self playCurrentBackgroundVideo];
 }
 
 #pragma mark - UICollectionView
@@ -118,11 +134,7 @@
     
     self.issuesPreviewCollectionView.currentIndex = indexPath.item/2;
     
-    [[self.issuesPreviewCollectionView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if ([obj isKindOfClass:[CSIssuesPreviewPictureViewCell class]]) {
-            [((CSIssuesPreviewPictureViewCell *)obj).motionMoviePlayer play];
-        }
-    }];
+    [self playCurrentBackgroundVideo];
 }
 
 - (void)didPictureScroll:(NSNumber *)percentage {

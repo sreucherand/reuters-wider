@@ -11,9 +11,9 @@
 @interface CSTransitionBlockTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIView *topPartView;
 @property (weak, nonatomic) IBOutlet UILabel *titleTopPart;
-@property (weak, nonatomic) IBOutlet UILabel *subtitleTopPart;
+@property (weak, nonatomic) IBOutlet CSAttributedLabel *subtitleTopPart;
 @property (weak, nonatomic) IBOutlet UIView *bottomPartView;
-@property (weak, nonatomic) IBOutlet UILabel *subtitleBottomPart;
+@property (weak, nonatomic) IBOutlet CSAttributedLabel *subtitleBottomPart;
 @property (weak, nonatomic) IBOutlet UILabel *titleBottomPart;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *topPartGradient;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *bottomPartGradient;
@@ -39,6 +39,7 @@
     
     self.subtitleTopPart.font = CALIBRE_LIGHT_16;
     self.subtitleTopPart.textColor = DARK_BLUE;
+    self.subtitleTopPart.lineHeight = 18;
     
     self.topPartGradient.topColor = DARK_BLUE;
     
@@ -50,6 +51,7 @@
     
     self.subtitleBottomPart.font = CALIBRE_LIGHT_16;
     self.subtitleBottomPart.textColor = WHITE_COLOR;
+    self.subtitleBottomPart.lineHeight = 18;
     
     self.bottomPartGradient.topColor = WHITE_COLOR;
     self.bottomPartGradient.direction = CSDirectionBottom;

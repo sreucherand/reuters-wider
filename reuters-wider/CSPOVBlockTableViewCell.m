@@ -80,12 +80,14 @@
             break;
     }
     
-    date = [date stringByReplacingOccurrencesOfString:@"%s" withString:suffix];
-    
-    self.mainMetaLabel.text = [NSString stringWithFormat:@"%@, by %@", date, [self.content.views[0] author]];
+    self.mainMetaLabel.text = [NSString stringWithFormat:@"%@, by %@", [date stringByReplacingOccurrencesOfString:@"%s" withString:suffix], [self.content.views[0] author]];
     self.mainTextLabel.text = [self.content.views[0] text];
     
-    self.comparedMetaLabel.text = [NSString stringWithFormat:@"By %@", [self.content.views[1] author]];
+    formattedDate = [self.content.views[1] formattedDate];
+    date = [dateFormat stringFromDate:formattedDate];
+    day = [[NSCalendar currentCalendar] component:NSCalendarUnitDay fromDate:formattedDate];
+    
+    self.comparedMetaLabel.text = [NSString stringWithFormat:@"%@, by %@", [date stringByReplacingOccurrencesOfString:@"%s" withString:suffix], [self.content.views[1] author]];
     self.comparedTextLabel.text = [self.content.views[1] text];
     
     [self.comparedTextLabel setNeedsLayout];
