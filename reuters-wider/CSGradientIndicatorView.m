@@ -62,7 +62,7 @@
         CGContextTranslateCTM(context, 0, -CGRectGetHeight(self.bounds));
     }
     
-    CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, CGRectGetHeight(self.bounds)), 0);
+    CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, CGRectGetHeight(rect)), 0);
     
     CGColorSpaceRelease(space);
     CGGradientRelease(gradient);

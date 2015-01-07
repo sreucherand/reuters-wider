@@ -100,6 +100,8 @@
 		EB469E621A276508001C7B02 /* CSPovBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB469E611A276508001C7B02 /* CSPovBlockTableViewCell.xib */; };
 		EB9BC7FE1A5C301B00A7BFA7 /* CSImplicationBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9BC7FD1A5C301B00A7BFA7 /* CSImplicationBlockTableViewCell.xib */; };
 		EB9BC8011A5C303900A7BFA7 /* CSImplicationBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9BC8001A5C303900A7BFA7 /* CSImplicationBlockTableViewCell.m */; };
+		EBA936921A5D34B400689F5E /* CSNightModeLayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA936911A5D34B400689F5E /* CSNightModeLayer.xib */; };
+		EBA936951A5D34CC00689F5E /* CSNightModeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA936941A5D34CC00689F5E /* CSNightModeLayer.m */; };
 		F76C03B76B2A679466431906 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE9C5460100CC02C50B3172 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -271,6 +273,9 @@
 		EB9BC7FD1A5C301B00A7BFA7 /* CSImplicationBlockTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSImplicationBlockTableViewCell.xib; path = "reuters-wider/CSImplicationBlockTableViewCell.xib"; sourceTree = "<group>"; };
 		EB9BC7FF1A5C303900A7BFA7 /* CSImplicationBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSImplicationBlockTableViewCell.h; path = "reuters-wider/CSImplicationBlockTableViewCell.h"; sourceTree = "<group>"; };
 		EB9BC8001A5C303900A7BFA7 /* CSImplicationBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSImplicationBlockTableViewCell.m; path = "reuters-wider/CSImplicationBlockTableViewCell.m"; sourceTree = "<group>"; };
+		EBA936911A5D34B400689F5E /* CSNightModeLayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CSNightModeLayer.xib; path = "reuters-wider/CSNightModeLayer.xib"; sourceTree = "<group>"; };
+		EBA936931A5D34CC00689F5E /* CSNightModeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSNightModeLayer.h; path = "reuters-wider/CSNightModeLayer.h"; sourceTree = "<group>"; };
+		EBA936941A5D34CC00689F5E /* CSNightModeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSNightModeLayer.m; path = "reuters-wider/CSNightModeLayer.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,6 +495,7 @@
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EBA936901A5D348D00689F5E /* NightModeLayer */,
 				20965A9E1A5C32B5008DDCA6 /* PagingScrollViewContainerView */,
 				209CF3091A59AD7200A8A954 /* ProgressionBar */,
 				209CF3021A58392000A8A954 /* SummaryEntryCell */,
@@ -928,6 +934,16 @@
 			name = ImplicationBlock;
 			sourceTree = "<group>";
 		};
+		EBA936901A5D348D00689F5E /* NightModeLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EBA936911A5D34B400689F5E /* CSNightModeLayer.xib */,
+				EBA936931A5D34CC00689F5E /* CSNightModeLayer.h */,
+				EBA936941A5D34CC00689F5E /* CSNightModeLayer.m */,
+			);
+			name = NightModeLayer;
+			sourceTree = "<group>";
+		};
 		FEE8AF2D9C66F999A4901A4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1038,6 +1054,7 @@
 				20C176CD1A348F190021C64C /* Leitura-Roman4.otf in Resources */,
 				208B5F5B1A537950003D4718 /* CSKeywordsBlockTableViewCell.xib in Resources */,
 				202B7EF41A30BA2C000E13C7 /* CSFigureBlockTableViewCell.xib in Resources */,
+				EBA936921A5D34B400689F5E /* CSNightModeLayer.xib in Resources */,
 				EB469E621A276508001C7B02 /* CSPovBlockTableViewCell.xib in Resources */,
 				208B5F5E1A537974003D4718 /* CSTransitionBlockTableViewCell.xib in Resources */,
 				EB469E501A275A70001C7B02 /* CSTeasingBlockTableViewCell.xib in Resources */,
@@ -1125,6 +1142,7 @@
 				206FD85E1A30CE4400636737 /* CSAsideBlockTableViewCell.m in Sources */,
 				EB9BC8011A5C303900A7BFA7 /* CSImplicationBlockTableViewCell.m in Sources */,
 				203010441A25FE140088FD7C /* CSBlockModel.m in Sources */,
+				EBA936951A5D34CC00689F5E /* CSNightModeLayer.m in Sources */,
 				208B5F591A53793A003D4718 /* CSKeywordsBlockTableViewCell.m in Sources */,
 				20BACB7B1A1AA33C00EB78CC /* CSHomeViewController.m in Sources */,
 				20C176C91A347F550021C64C /* CSDefinitionModel.m in Sources */,

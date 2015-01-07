@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="xwB-tF-JZi" customClass="CSNightModeLayer">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-3c-oHG" userLabel="Night mode">
+                    <rect key="frame" x="154" y="45" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-rL-9Vn" userLabel="Moon icon">
+                    <rect key="frame" x="149" y="145" width="52" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="Qw3-0J-Wc4"/>
+                        <constraint firstAttribute="width" constant="52" id="voy-RS-hW7"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDl-TT-nh9" userLabel="Ok button">
+                    <rect key="frame" x="152" y="242" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UY2-B4-4QR" customClass="CSGradientIndicatorView">
+                    <rect key="frame" x="172" y="282" width="6" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="faB-Zq-O2t"/>
+                        <constraint firstAttribute="width" constant="6" id="hWC-hG-x5w"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcX-t6-xAi" userLabel="Dark environment phrase">
+                    <rect key="frame" x="35" y="89" width="281" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="dcX-t6-xAi" firstAttribute="top" secondItem="6s3-3c-oHG" secondAttribute="bottom" constant="23" id="1XW-oX-70w"/>
+                <constraint firstAttribute="centerX" secondItem="6s3-3c-oHG" secondAttribute="centerX" constant="0.5" id="8oc-sa-iBQ"/>
+                <constraint firstItem="dcX-t6-xAi" firstAttribute="leading" secondItem="xwB-tF-JZi" secondAttribute="leading" constant="35" id="BMP-6S-USC"/>
+                <constraint firstItem="UY2-B4-4QR" firstAttribute="top" secondItem="DDl-TT-nh9" secondAttribute="bottom" constant="10" id="He6-JZ-dlC"/>
+                <constraint firstItem="DDl-TT-nh9" firstAttribute="top" secondItem="uWO-rL-9Vn" secondAttribute="bottom" constant="45" id="cTJ-44-Qs7"/>
+                <constraint firstItem="uWO-rL-9Vn" firstAttribute="top" secondItem="dcX-t6-xAi" secondAttribute="bottom" constant="35" id="d6j-2v-NMH"/>
+                <constraint firstAttribute="centerX" secondItem="uWO-rL-9Vn" secondAttribute="centerX" constant="0.5" id="gly-nG-DJ8"/>
+                <constraint firstItem="6s3-3c-oHG" firstAttribute="top" secondItem="xwB-tF-JZi" secondAttribute="top" constant="45" id="imf-Ie-hcm"/>
+                <constraint firstAttribute="centerX" secondItem="DDl-TT-nh9" secondAttribute="centerX" constant="0.5" id="qUc-HZ-uee"/>
+                <constraint firstAttribute="trailing" secondItem="dcX-t6-xAi" secondAttribute="trailing" constant="35" id="rKi-Na-yPj"/>
+                <constraint firstAttribute="centerX" secondItem="UY2-B4-4QR" secondAttribute="centerX" constant="0.5" id="vSB-l7-GgV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dismissButton" destination="DDl-TT-nh9" id="ocw-5D-3YW"/>
+                <outlet property="gradientIndicatorView" destination="UY2-B4-4QR" id="0Uo-cY-Vlz"/>
+                <outlet property="moonIconImageView" destination="uWO-rL-9Vn" id="3yw-3r-pxz"/>
+                <outlet property="nightModeLabel" destination="6s3-3c-oHG" id="0h8-Am-bXR"/>
+                <outlet property="teasingLabel" destination="dcX-t6-xAi" id="k8U-fu-zj2"/>
+            </connections>
+            <point key="canvasLocation" x="490.5" y="298"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
