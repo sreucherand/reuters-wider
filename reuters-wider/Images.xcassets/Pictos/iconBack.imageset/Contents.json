@@ -3,17 +3,16 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "iconBack.png"
+      "filename" : "iconFleche.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "iconBack@2x.png"
+      "filename" : "iconFleche@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "iconBack@3x.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "clock.png"
+      "filename" : "iconHorloge.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "clock@2x.png"
+      "filename" : "iconHorloge@2x.png"
     },
     {
       "idiom" : "universal",
