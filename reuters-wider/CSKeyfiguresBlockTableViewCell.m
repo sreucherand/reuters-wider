@@ -35,10 +35,10 @@
     
     self.containerScrollView.clipsToBounds = YES;
     
-    self.titleTextLabel.font = CALIBRE_REG_15;
+    self.titleTextLabel.font = CALIBRE_LIGHT_16;
     self.titleTextLabel.textColor = WHITE_COLOR;
     
-    self.contextLabel.font = CALIBRE_REG_15;
+    self.contextLabel.font = CALIBRE_LIGHT_16;
     self.contextLabel.textColor = WHITE_DIMMED_COLOR;
     self.contextLabel.lineHeight = 20;
     

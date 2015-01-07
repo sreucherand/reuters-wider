@@ -33,7 +33,7 @@
 }
 
 - (void)awakeFromNib {
-    self.partNumberLabel.font = CALIBRE_REG;
+    self.partNumberLabel.font = CALIBRE_REGULAR_21;
     self.partNumberLabel.textColor = FIRST_PURPLE;
     
     self.rectanglePartNumberView.backgroundColor = FIRST_PURPLE;
@@ -41,7 +41,7 @@
     self.readDurationLabel.font = CALIBRE_LIGHT_16;
     self.readDurationLabel.textColor = FIRST_PURPLE;
     
-    self.titleLabel.font = LEITURA_ROMAN_3_36;
+    self.titleLabel.font = LEITURA_ROMAN_3_35;
     self.titleLabel.textColor = BLACK_COLOR;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     

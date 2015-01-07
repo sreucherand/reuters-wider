@@ -27,13 +27,13 @@
                             value:[NSNumber numberWithInt:1]
                             range:(NSRange){0,[attributeString length]}];
     
-    [self.issuesPreviewNumeroLabel setFont:LEITURA_ROMAN_2];
+    [self.issuesPreviewNumeroLabel setFont:LEITURA_ROMAN_3_19];
     [self.issuesPreviewNumeroLabel setTextColor:DARK_GREY];
     [self.issuesPreviewNumeroLabel setAttributedText:attributeString];
     
     // Heading related
     [self.issuesPreviewHeaderLabel setText:title];
-    [self.issuesPreviewHeaderLabel setFont:LEITURA_ROMAN_3_34];
+    [self.issuesPreviewHeaderLabel setFont:LEITURA_ROMAN_3_35];
     [self.issuesPreviewHeaderLabel setTextColor:BLACK_COLOR];
     
     // Date issue related

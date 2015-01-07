@@ -29,7 +29,7 @@
     self.personLabel.font = LEITURA_ROMAN_2_32;
     self.personLabel.textColor = DARK_GREY;
     
-    self.subtitleLabel.font = LEITURA_ROMAN_3_16;
+    self.subtitleLabel.font = LEITURA_ROMAN_3_19;
     self.subtitleLabel.textColor = DARK_GREY;
     
     self.descriptionLabel.font = LEITURA_ROMAN_1_16;

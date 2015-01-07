@@ -14,7 +14,7 @@
     self.valueLabel.font = CALIBRE_MEDIUM_60;
     self.valueLabel.textColor = WHITE_DIMMED_COLOR;
     
-    self.labelLabel.font = LEITURA_ROMAN_1_17;
+    self.labelLabel.font = LEITURA_ROMAN_1_16;
     self.labelLabel.textColor = WHITE_COLOR;
 }
 

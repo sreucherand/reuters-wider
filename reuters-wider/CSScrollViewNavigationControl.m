@@ -63,7 +63,7 @@
         self.pullLabel = [[UILabel alloc] init];
         
         self.pullLabel.textColor = FIRST_PURPLE;
-        self.pullLabel.font = CALIBRE_REG_15;
+        self.pullLabel.font = CALIBRE_LIGHT_16;
         self.pullLabel.textAlignment = NSTextAlignmentCenter;
         
         [self addSubview:self.pullLabel];

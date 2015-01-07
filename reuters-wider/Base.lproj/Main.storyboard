@@ -158,13 +158,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuX-hx-r2y">
-                                                    <rect key="frame" x="27" y="0.0" width="13" height="21"/>
+                                                    <rect key="frame" x="25" y="0.0" width="13" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-PN-VEW" customClass="CSGradientIndicatorView">
-                                                    <rect key="frame" x="54" y="0.0" width="6" height="48"/>
+                                                    <rect key="frame" x="50" y="0.0" width="6" height="48"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="6" id="pmt-0B-QSE"/>
@@ -187,13 +187,13 @@
                                                 <constraint firstItem="134-iF-MYs" firstAttribute="leading" secondItem="Ydr-7C-oTc" secondAttribute="leading" constant="70" id="1Ll-6H-M61"/>
                                                 <constraint firstAttribute="trailing" secondItem="EoV-NV-jEs" secondAttribute="trailing" constant="25" id="7oI-za-jOU"/>
                                                 <constraint firstItem="134-iF-MYs" firstAttribute="top" secondItem="Ydr-7C-oTc" secondAttribute="top" id="HGW-Fk-YOc"/>
-                                                <constraint firstItem="wuX-hx-r2y" firstAttribute="trailing" secondItem="JL5-PN-VEW" secondAttribute="trailing" constant="-20" id="Hck-UV-YEQ"/>
+                                                <constraint firstItem="JL5-PN-VEW" firstAttribute="leading" secondItem="wuX-hx-r2y" secondAttribute="trailing" constant="12" id="Hck-UV-YEQ"/>
                                                 <constraint firstItem="JL5-PN-VEW" firstAttribute="top" secondItem="Ydr-7C-oTc" secondAttribute="top" id="Qpk-5C-2QV"/>
                                                 <constraint firstItem="EoV-NV-jEs" firstAttribute="top" secondItem="134-iF-MYs" secondAttribute="bottom" constant="10" id="WCl-6d-yTC"/>
                                                 <constraint firstItem="134-iF-MYs" firstAttribute="leading" secondItem="EoV-NV-jEs" secondAttribute="leading" id="WY0-DT-EI6"/>
                                                 <constraint firstAttribute="trailing" secondItem="134-iF-MYs" secondAttribute="trailing" constant="25" id="h4E-Ss-GpE"/>
                                                 <constraint firstItem="wuX-hx-r2y" firstAttribute="top" secondItem="Ydr-7C-oTc" secondAttribute="top" id="l3C-kY-dAY"/>
-                                                <constraint firstItem="134-iF-MYs" firstAttribute="leading" secondItem="JL5-PN-VEW" secondAttribute="trailing" constant="10" id="lHh-md-ksi"/>
+                                                <constraint firstItem="134-iF-MYs" firstAttribute="leading" secondItem="JL5-PN-VEW" secondAttribute="trailing" constant="14" id="lHh-md-ksi"/>
                                                 <constraint firstItem="JL5-PN-VEW" firstAttribute="bottom" secondItem="EoV-NV-jEs" secondAttribute="bottom" constant="-4" id="zNz-gZ-TLJ"/>
                                             </constraints>
                                         </tableViewCellContentView>

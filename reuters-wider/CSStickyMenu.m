@@ -29,7 +29,7 @@
     
     [self.titleButton setTitleColor:FIRST_PURPLE forState:UIControlStateNormal];
     
-    self.titleButton.titleLabel.font = CALIBRE_REG_15;
+    self.titleButton.titleLabel.font = CALIBRE_LIGHT_16;
     self.titleButton.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 

@@ -34,7 +34,7 @@
     // Top part related
     self.topPartView.backgroundColor = THIRD_PURPLE;
     
-    self.titleTopPart.font = LEITURA_ITALIC_2_38;
+    self.titleTopPart.font = LEITURA_ITALIC_3_35;
     self.titleTopPart.textColor = DARK_BLUE;
     
     self.subtitleTopPart.font = CALIBRE_LIGHT_16;
@@ -46,7 +46,7 @@
     // Bottom part related
     self.bottomPartView.backgroundColor = FIRST_PURPLE;
     
-    self.titleBottomPart.font = LEITURA_ITALIC_2_38;
+    self.titleBottomPart.font = LEITURA_ITALIC_3_35;
     self.titleBottomPart.textColor = WHITE_COLOR;
     
     self.subtitleBottomPart.font = CALIBRE_LIGHT_16;
@@ -57,6 +57,14 @@
     self.bottomPartGradient.direction = CSDirectionBottom;
 }
 
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     
@@ -66,13 +74,5 @@
     self.titleBottomPart.text = [self.content.transitions[1] title];
     self.subtitleBottomPart.text = [self.content.transitions[1] teasing];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
