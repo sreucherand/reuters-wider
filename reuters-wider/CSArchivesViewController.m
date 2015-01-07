@@ -110,8 +110,7 @@
     
     self.backButton = [[UIButton alloc] init];
     [self.backButton addTarget:self action:@selector(returnToHome:) forControlEvents:UIControlEventTouchUpInside];
-    [self.backButton setImage:[UIImage imageNamed:@"iconBack"] forState:UIControlStateNormal];
-    [self.backButton setImage:[UIImage imageNamed:@"iconBackOnpress"] forState:UIControlStateHighlighted];
+    [self.backButton setImage:[UIImage imageNamed:@"iconBackOnpress"] forState:UIControlStateNormal];
     self.backButton.frame = CGRectMake(10.0, 20.0, 40.0, 40.0);
     [self.topView addSubview:self.backButton];
     
