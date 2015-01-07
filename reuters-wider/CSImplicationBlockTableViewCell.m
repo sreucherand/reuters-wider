@@ -59,6 +59,10 @@
     
     self.quoteLabel.text = self.content.quote;
     self.sourceLabel.text = self.content.source;
+    
+    self.backgroundImageView.image = [UIImage imageNamed:self.content.image];
+    self.backgroundImageView.alpha = 0.2;
+    self.backgroundImageView.clipsToBounds = YES;
 }
 
 @end

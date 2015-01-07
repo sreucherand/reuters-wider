@@ -73,11 +73,12 @@
                     "content": {
                         "views": [
                             {
-                                "date": "Tue, 29 Sep 2014 14:09:53 GMT",
+                                "date": "Wed, 29 Sep 2014 14:09:53 GMT",
                                 "author": "Reuters",
                                 "text": "British Forign Office minister Hugo Swire, called for full universal suffrage."
                             },
                             {
+                                "date": "Tue, 28 Sep 2014 08:54:23 GMT",
                                 "author": "BBC News",
                                 "text": "“Hong Kong's internal affairs will not brook any interference by outside forces.”"
                             }
@@ -156,11 +157,11 @@
                     "content": {
                         "transitions": [
                             {
-                                "title": "One country,\none autocracy",
+                                "title": "One country, one autocracy",
                                 "teasing": "is what Hong-Kong getting"
                             },
                             {
-                                "title": "One country,\ntwo systems",
+                                "title": "One country, two systems",
                                 "teasing": "Instead of"
                             }
                         ]
@@ -263,12 +264,13 @@
                     "content": {
                         "views": [
                             {
-                                "date": "Wed, 30 Sep 2014 11:37:54 GMT",
+                                "date": "Wed, 1 Oct 2014 11:37:54 GMT",
                                 "author": "Reuters",
                                 "text": "In the Admiralty district reads, “My parents are crying for me. I am crying for the future.”"
                             },
                             {
-                                "author": "BBC News",
+                                "date": "Fri, 17 Oct 2014 17:15:38 GMT",
+                                "author": "Vice News",
                                 "text": "“If you want to protest, that is your business. Everyone has their views. But don't involve us.”"
                             }
                         ]
@@ -294,6 +296,29 @@
                 },
                 {
                     "id": 29,
+                    "type": "paragraph",
+                    "content": {
+                        "text": "In the early morning, violence started to break out in Mong Kok, Kowloon and Causeway Bay, Hong Kong Island. Groups of anti-Occupy Central activists including triad members and locals punched and kicked protesters while tearing down their tents and barricades."
+                    }
+                },
+                {
+                    "id": 30,
+                    "type": "transition",
+                    "content": {
+                        "transitions": [
+                            {
+                                "title": "I want to say I fought for you",
+                                "teasing": "a protester about his fight for next generation"
+                            },
+                            {
+                                "title": "Zero chance of winning",
+                                "teasing": "and reply of Chief Executive"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": 31,
                     "type": "part",
                     "content": {
                         "part": 3,
@@ -303,73 +328,91 @@
                     }
                 },
                 {
-                    "id": 30,
+                    "id": 32,
                     "type": "teasing",
                     "content": {
-                        "text": "How is the government reacting? Not well, especially at first. Here’s a video from the ground of protesters."
+                        "text": "How is the government reacting? Not well, especially at first."
                     }
                 },
                 {
-                    "id": 31,
+                    "id": 33,
                     "type": "paragraph",
                     "content": {
                         "text": "International awareness of the movement is increasing, and the movement itself is taking shape in a more structured manner. Rallies in support of the protests have occurred in the all world.\n\nHere’s a video from the ground of protesters being teargassed, in attacks that look familiar from [Ferguson](/glossary/3) and helped stoke outrage among citizens:\n\nThe use of pepper spray has been equally alarming, and is reminiscent of previous Occupy protests in the U.S."
                     }
                 },
                 {
-                    "id": 28,
+                    "id": 34,
                     "type": "interview",
                     "content": {
-                        "title": "Reaction of Tony Yip",
+                        "title": "Reaction of Chuang-Mu Yip",
                         "person": "23, research at a science museum",
                         "subject": "“I think the police have betrayed us, They are using violence against ordinary citizens.”",
-                        "thumbnail": "tony-yip"
+                        "thumbnail": "stay-calm"
                     }
                 },
                 {
-                    "id": 32,
+                    "id": 35,
                     "type": "subtitle",
                     "content": {
                         "text": "Oppressed by chinese politicians"
                     }
                 },
                 {
-                    "id": 33,
+                    "id": 36,
                     "type": "paragraph",
                     "content": {
                         "text": "Hong Kong has canceled its annual fireworks celebration of China’s National Day on October 1st, indicating that this thing may continue for the foreseeable future.\n\nBut a hardcore groupe of demonstrators, has kept up the pressure on Hong Kong authoritiers. China rules that gives the city wide-raging autonomy and freedoms not enjoyed in mainland China, with universal suffrage an eventual goal."
                     }
                 },
                 {
-                    "id": 32,
+                    "id": 37,
+                    "type": "pov",
+                    "content": {
+                        "views": [
+                            {
+                                "date": "Tue, 30 Sep 2014 11:37:54 GMT",
+                                "author": "Reuters",
+                                "text": "A group of demonstrators has kept up the pressure on Hong Kong authorities for universal suffrage."
+                            },
+                            {
+                                "date": "Tue, 30 Sep 2014 15:59:01 GMT",
+                                "author": "New York Times",
+                                "text": "“There’s no market for Hong-Kong independance, and no support.”"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": 38,
                     "type": "subtitle",
                     "content": {
                         "text": "Supporting by the world"
                     }
                 },
                 {
-                    "id": 33,
+                    "id": 39,
                     "type": "paragraph",
                     "content": {
                         "text": "Some chinese protesters have taken to using the “hands up, don’t shoot” imagery of the Michael Brown demonstrations in Ferguson. It’s still a powerful image on the other side of the world.\n\nProtesters in Ferguson have sent a message back:"
                     }
                 },
                 {
-                    "id": 12,
+                    "id": 40,
                     "type": "aside",
                     "content": {
                         "text": "Heater, a #Ferguson protester, wearing a sign that says “Stay strong #Hongkong.”"
                     }
                 },
                 {
-                    "id": 33,
+                    "id": 41,
                     "type": "paragraph",
                     "content": {
                         "text": "The movement was supported by many occidental politicians."
                     }
                 },
                 {
-                    "id": 9,
+                    "id": 42,
                     "type": "figure",
                     "content": {
                         "image": "david-cameron",
@@ -379,7 +422,7 @@
                     }
                 },
                 {
-                    "id": 32,
+                    "id": 43,
                     "type": "subtitle",
                     "content": {
                         "text": "Your country is reacting",
@@ -387,27 +430,43 @@
                     }
                 },
                 {
-                    "id": 34,
+                    "id": 44,
                     "type": "implication",
                     "content": {
                         "city": "Paris",
                         "quote": "The covenant is not a measure for Hong Kong’s political reform",
                         "source": "The French government",
-                        "image": "image"
+                        "image": "french-government"
                     }
                 },
                 {
-                    "id": 32,
+                    "id": 45,
                     "type": "subtitle",
                     "content": {
                         "text": "“Democratic radical” for China"
                     }
                 },
                 {
-                    "id": 33,
+                    "id": 46,
                     "type": "paragraph",
                     "content": {
                         "text": "The Chinese Communist Party claimed that the upheavels in Hong Kong were instigated by democratic radicals who had sought support frome “anti-China forces” in Britain and the United States.\n\nIt called them a “gang of people whose hearts belong to colonial rule and who are besotted with Western democracy”."
+                    }
+                },
+                {
+                    "id": 47,
+                    "type": "transition",
+                    "content": {
+                        "transitions": [
+                            {
+                                "title": "China should move toward democracy",
+                                "teasing": "is the world reaction"
+                            },
+                            {
+                                "title": "China mainland is not ready",
+                                "teasing": "But China Government think"
+                            }
+                        ]
                     }
                 }
             ],
