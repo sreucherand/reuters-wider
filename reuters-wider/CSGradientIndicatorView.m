@@ -57,12 +57,21 @@
     
     CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)colors, locations);
     
-    if (self.direction == CSDirectionBottom) {
-        CGContextRotateCTM(context, M_PI);
-        CGContextTranslateCTM(context, 0, -CGRectGetHeight(self.bounds));
+    switch (self.direction) {
+        case CSDirectionLeft:
+            CGContextDrawLinearGradient(context, gradient, CGPointMake(CGRectGetWidth(rect), 0), CGPointZero, 0);
+            break;
+        case CSDirectionBottom:
+            CGContextDrawLinearGradient(context, gradient, CGPointMake(0, CGRectGetHeight(rect)), CGPointZero, 0);
+            break;
+        case CSDirectionRight:
+            CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(CGRectGetWidth(rect), 0), 0);
+            break;
+            
+        default:
+            CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, CGRectGetHeight(rect)), 0);
+            break;
     }
-    
-    CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, CGRectGetHeight(rect)), 0);
     
     CGColorSpaceRelease(space);
     CGGradientRelease(gradient);
