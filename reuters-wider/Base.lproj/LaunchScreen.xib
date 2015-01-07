@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSplash" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-6k-Amp">
-                    <rect key="frame" x="156" y="275" width="169" height="45"/>
+                    <rect key="frame" x="155" y="262" width="170" height="71"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.1976" green="0.24595999999999982" blue="0.52000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -25,6 +25,6 @@
         </view>
     </objects>
     <resources>
-        <image name="logoSplash" width="169" height="45"/>
+        <image name="logoSplash" width="170" height="71"/>
     </resources>
 </document>

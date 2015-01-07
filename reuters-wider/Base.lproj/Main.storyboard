@@ -278,8 +278,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="glossary" translatesAutoresizingMaskIntoConstraints="NO" id="ZBk-yS-QRQ">
-                                            <rect key="frame" x="148" y="25" width="26" height="26"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glossary" translatesAutoresizingMaskIntoConstraints="NO" id="ZBk-yS-QRQ">
+                                            <rect key="frame" x="147" y="25" width="26" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="48g-d4-jJM"/>
                                                 <constraint firstAttribute="width" constant="26" id="WoQ-Z2-BDa"/>
