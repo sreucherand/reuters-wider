@@ -16,7 +16,9 @@
 #import "CSSummaryViewController.h"
 #import "CSProgressionBarView.h"
 
-@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate>
+@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate> {
+    NSIndexPath *selectedIndexPath;
+}
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLeftConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewRightConstraint;
@@ -142,6 +144,10 @@
     NSString *identifier = [self cellIdentifierForBlockType:block.type];
     CSAbstractArticleViewCellTableViewCell *cell = [self.cells objectForKey:identifier];
     
+    if ([indexPath compare:selectedIndexPath] == NSOrderedSame) {
+        return 1000;
+    }
+    
     if ([block.type isEqualToString:@"part"] || [block.type isEqualToString:@"transition"]) {
         return CGRectGetHeight(self.view.frame);
     }
@@ -249,7 +255,10 @@
 
 - (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
     //[self closeDefinition];
-    
+//    selectedIndexPath = [self.tableView indexPathForRowAtPoint:[recognizer locationInView:self.tableView.]];
+//    [self.tableView beginUpdates];
+//    [self.tableView endUpdates];
+//    
     [self.stickyMenu toggle];
 }
 

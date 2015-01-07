@@ -22,9 +22,9 @@
     
     self.backgroundColor = [UIColor clearColor];
     
-    self.partNumberLabel.font = CALIBRE_REG_11;
-    self.partTitleLabel.font = LEITURA_ROMAN_1_17;
-    self.partSubtitleLabel.font = CALIBRE_LIGHT_17;
+    self.partNumberLabel.font = CALIBRE_REGULAR_21;
+    self.partTitleLabel.font = LEITURA_ROMAN_2_17;
+    self.partSubtitleLabel.font = CALIBRE_LIGHT_16;
     
     [self switchTableViewCellIntoLightMode];
     

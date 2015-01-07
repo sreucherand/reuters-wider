@@ -24,6 +24,7 @@
     self.statementLabel.font = LEITURA_ITALIC_2_20;
     self.statementLabel.textColor = FIRST_PURPLE;
     self.statementLabel.textAlignment = NSTextAlignmentCenter;
+    self.statementLabel.lineHeight = 26;
 }
 
 /*

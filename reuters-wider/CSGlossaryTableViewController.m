@@ -42,7 +42,7 @@
     [self.backButtonAreaView addGestureRecognizer:panGestureRecognizer];
     [self.backButtonAreaView addGestureRecognizer:tapGestureRecognizez];
     
-    self.tableViewHeaderTitleLabel.font = LEITURA_ROMAN_2_23;
+    self.tableViewHeaderTitleLabel.font = LEITURA_ROMAN_2_25;
     
     self.tableViewHeaderDashView.backgroundColor = LIGHT_GREY;
 }

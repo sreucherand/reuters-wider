@@ -7,29 +7,38 @@
 //
 
 #import "CSPovBlockTableViewCell.h"
+#import "CSGradientIndicatorView.h"
 
-@interface CSPovBlockTableViewCell ()
+@interface CSPovBlockTableViewCell () <UIScrollViewDelegate>
 {
     CGSize gradientSize;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UILabel *mainMetaLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *mainTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *comparedMetaLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *comparedTextLabel;
+@property (weak, nonatomic) IBOutlet CSGradientIndicatorView *horizontalGradientIndicatorView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *comparedTextLabelLeftConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *comparedTextLabelRightConstraint;
+
+@property (strong, nonatomic) UIScrollView *scrollView;
 
 @end
 
 @implementation CSPovBlockTableViewCell
 
 - (void)awakeFromNib {
+    self.clipsToBounds = YES;
+    
     self.mainView.backgroundColor = FIRST_PURPLE;
     
     self.mainMetaLabel.font = CALIBRE_LIGHT_14;
     self.mainMetaLabel.textColor = WHITE_DIMMED_COLOR;
     
-    self.mainTextLabel.font = LEITURA_ROMAN_2_23;
+    self.mainTextLabel.font = LEITURA_ROMAN_3_23;
     self.mainTextLabel.textColor = WHITE_COLOR;
     self.mainTextLabel.lineHeight = 28;
     
@@ -38,6 +47,9 @@
     
     self.comparedTextLabel.font = ARCHER_THIN_38;
     self.comparedTextLabel.lineHeight = 38;
+    
+    self.horizontalGradientIndicatorView.topColor = DARK_BLUE;
+    self.horizontalGradientIndicatorView.direction = CSDirectionLeft;
 }
 
 /*
@@ -94,6 +106,26 @@
     [self.comparedTextLabel layoutIfNeeded];
     
     self.comparedTextLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedTextLabel.bounds topColor:FIRST_PURPLE bottomColor:RED_ORANGE]];
+    
+    [self.scrollView removeFromSuperview];
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.comparedTextLabel.frame), CGRectGetMinY(self.comparedTextLabel.frame), CGRectGetWidth(self.comparedTextLabel.frame) - CGRectGetMinX(self.comparedTextLabel.frame), CGRectGetHeight(self.comparedTextLabel.frame))];
+    self.scrollView.contentSize = CGSizeMake(500, CGRectGetHeight(self.scrollView.frame));
+    self.scrollView.alwaysBounceHorizontal = YES;
+    self.scrollView.delegate = self;
+    self.scrollView.clipsToBounds = NO;
+    
+    [self.bottomView addSubview:self.scrollView];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    if (scrollView.contentOffset.x < 0) {
+//        [scrollView setContentOffset:CGPointMake(0, scrollView.contentOffset.y)];
+//    }
+    NSLog(@"coucou %f", scrollView.contentOffset.x);
+    
+    //self.comparedTextLabelLeftConstraint.constant = 145 - scrollView.contentOffset.x*1;
+    //self.comparedTextLabelRightConstraint.constant = -95 + scrollView.contentOffset.x*1;
 }
 
 - (UIImage *)imageGradient:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor {

@@ -17,7 +17,7 @@
 @implementation CSAsideBlockTableViewCell
 
 - (void)awakeFromNib {
-    self.asideLabel.font = CALIBRE_LIGHT_17;
+    self.asideLabel.font = CALIBRE_LIGHT_16;
     self.asideLabel.textColor = FIRST_PURPLE;
     self.asideLabel.lineHeight = 22;
 }

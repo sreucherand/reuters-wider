@@ -29,7 +29,7 @@
     self.interviewTitleLabel.font = LEITURA_ROMAN_3_19;
     self.interviewTitleLabel.textColor = DARK_GREY;
     
-    self.interviewedNameLabel.font = CALIBRE_REG_15;
+    self.interviewedNameLabel.font = CALIBRE_LIGHT_16;
     self.interviewedNameLabel.textColor = FIRST_PURPLE;
     
     self.gradientView.topColor = DARK_BLUE;

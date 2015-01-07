@@ -21,7 +21,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statement" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8O-0W-CCh" customClass="CSAttributedLabel">
-                        <rect key="frame" x="40" y="25" width="435" height="14"/>
+                        <rect key="frame" x="40" y="23" width="435" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                     <constraint firstAttribute="centerX" secondItem="2GK-s9-A0F" secondAttribute="centerX" id="Hgj-pN-cer"/>
                     <constraint firstItem="2GK-s9-A0F" firstAttribute="top" secondItem="Cpa-ig-Kv7" secondAttribute="top" id="L7u-pJ-NTE"/>
                     <constraint firstItem="y8O-0W-CCh" firstAttribute="leading" secondItem="Cpa-ig-Kv7" secondAttribute="leading" constant="40" id="MeF-EY-qfm"/>
-                    <constraint firstItem="y8O-0W-CCh" firstAttribute="top" secondItem="2GK-s9-A0F" secondAttribute="bottom" constant="-5" id="di9-k9-d9V"/>
+                    <constraint firstItem="y8O-0W-CCh" firstAttribute="top" secondItem="2GK-s9-A0F" secondAttribute="bottom" constant="-7" id="di9-k9-d9V"/>
                     <constraint firstAttribute="bottom" secondItem="y8O-0W-CCh" secondAttribute="bottom" constant="40" id="kVU-7I-M5y"/>
                 </constraints>
             </tableViewCellContentView>

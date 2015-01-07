@@ -28,24 +28,24 @@
 - (void)awakeFromNib {
     self.mainView.backgroundColor = FIRST_PURPLE;
     
-    self.reactionCityLabel.font = CALIBRE_MEDIUM_16;
+    self.reactionCityLabel.font = CALIBRE_LIGHT_16;
     self.reactionCityLabel.textColor = WHITE_COLOR;
     
     self.firstGradientView.topColor = WHITE_DIMMED_COLOR;
     
-    self.firstQuoteLabel.font = LEITURA_ROMAN_4_36;
+    self.firstQuoteLabel.font = LEITURA_ROMAN_3_23;
     self.firstQuoteLabel.textColor = LIGHT_GREY;
     self.firstQuoteLabel.text = @"“";
     
-    self.quoteLabel.font = LEITURA_ROMAN_1_24;
+    self.quoteLabel.font = LEITURA_ROMAN_3_23;
     self.quoteLabel.textColor = WHITE_COLOR;
     self.quoteLabel.lineHeight = 30;
     
-    self.secondQuoteLabel.font = LEITURA_ROMAN_4_36;
+    self.secondQuoteLabel.font = LEITURA_ROMAN_3_23;
     self.secondQuoteLabel.textColor = LIGHT_GREY;
     self.secondQuoteLabel.text = @"”";
     
-    self.sourceLabel.font = CALIBRE_REG_17;
+    self.sourceLabel.font = CALIBRE_LIGHT_16;
     self.sourceLabel.textColor = LIGHT_GREY;
     
     self.secondGradientView.topColor = WHITE_DIMMED_COLOR;

@@ -18,10 +18,10 @@
 @implementation CSInArticleGlossaryDefinition
 
 - (void)awakeFromNib {
-    self.titleDefinitionLabel.font = LEITURA_ROMAN_1_17;
+    self.titleDefinitionLabel.font = LEITURA_ROMAN_1_16;
     self.titleDefinitionLabel.textColor = DARK_GREY;
     
-    self.textDefinitionLabel.font = CALIBRE_REG_14;
+    self.textDefinitionLabel.font = CALIBRE_LIGHT_16;
     self.textDefinitionLabel.textColor = FIRST_PURPLE;
     self.textDefinitionLabel.lineHeight = 18;
 }

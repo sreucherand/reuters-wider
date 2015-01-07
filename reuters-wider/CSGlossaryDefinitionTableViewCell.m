@@ -13,12 +13,12 @@
 - (void)awakeFromNib {
     // Initialization code
     
-    self.letterLabel.font = LEITURA_ROMAN_4_32;
+    self.letterLabel.font = LEITURA_ROMAN_3_35;
     self.letterLabel.textColor = DARK_BLUE;
     
     self.titleDefinitionLabel.font = LEITURA_ROMAN_3_19;
     
-    self.definitionLabel.font = CALIBRE_LIGHT_15;
+    self.definitionLabel.font = CALIBRE_LIGHT_16;
     self.definitionLabel.textColor = DARK_GREY;
     self.definitionLabel.lineHeight = 20;
 }

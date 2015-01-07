@@ -44,7 +44,7 @@
     [self.glossaryToggleView addGestureRecognizer:tapGestureRecognizer];
     [self.glossaryToggleView addGestureRecognizer:panGestureRecognizer];
     
-    self.glossaryToggleViewLabel.font = CALIBRE_LIGHT_17;
+    self.glossaryToggleViewLabel.font = CALIBRE_LIGHT_16;
     self.glossaryToggleViewLabel.textColor = DARK_GREY;
     
     CALayer *topBorder = [CALayer layer];
@@ -73,7 +73,7 @@
     
     self.tableViewHeaderDashView.backgroundColor = LIGHT_GREY;
     
-    self.tableViewHeaderTitleLabel.font = LEITURA_ROMAN_2_23;
+    self.tableViewHeaderTitleLabel.font = LEITURA_ROMAN_2_25;
     
     [self switchTableViewIntoDarkMode];
     

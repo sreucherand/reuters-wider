@@ -27,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Part" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdL-Ek-f1n">
-                        <rect key="frame" x="268" y="26" width="32" height="21"/>
+                        <rect key="frame" x="268" y="28" width="32" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                     <constraint firstAttribute="trailing" secondItem="2Mt-3D-xBb" secondAttribute="trailing" id="8z6-9i-ohD"/>
                     <constraint firstItem="2Mt-3D-xBb" firstAttribute="top" secondItem="2Ge-hb-jqv" secondAttribute="top" constant="30" id="APC-ES-d3c"/>
                     <constraint firstAttribute="centerX" secondItem="2Ge-hb-jqv" secondAttribute="centerX" id="B64-t2-cdr"/>
-                    <constraint firstItem="bw0-D4-3UM" firstAttribute="centerY" secondItem="gdL-Ek-f1n" secondAttribute="centerY" id="BhD-y3-k2T"/>
+                    <constraint firstItem="bw0-D4-3UM" firstAttribute="centerY" secondItem="gdL-Ek-f1n" secondAttribute="centerY" constant="-2" id="BhD-y3-k2T"/>
                     <constraint firstItem="c9i-Rh-gIK" firstAttribute="top" secondItem="bw0-D4-3UM" secondAttribute="bottom" constant="40" id="FPK-OO-2Eb"/>
                     <constraint firstItem="Xec-Pf-WFJ" firstAttribute="top" secondItem="c9i-Rh-gIK" secondAttribute="bottom" id="Fyv-hG-sMF"/>
                     <constraint firstItem="2EK-G6-AbE" firstAttribute="leading" secondItem="c9i-Rh-gIK" secondAttribute="trailing" constant="6" id="KMD-aL-GJA"/>

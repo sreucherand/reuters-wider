@@ -32,16 +32,16 @@
 -(void)awakeFromNib {
     [super awakeFromNib];
     
-    self.nightModeLabel.font = LEITURA_ROMAN_2_23;
+    self.nightModeLabel.font = LEITURA_ROMAN_2_25;
     self.nightModeLabel.textColor = WHITE_COLOR;
     self.nightModeLabel.text = @"Night mode";
     
-    self.teasingLabel.font = CALIBRE_REG_15;
+    self.teasingLabel.font = CALIBRE_LIGHT_16;
     self.teasingLabel.textColor = WHITE_COLOR;
     self.teasingLabel.text = @"Are you in a dark environment ?\nYou can activate the night mode,\njust tap on your screen and on the moon.";
     
     [self.dismissButton setTitleColor:WHITE_COLOR forState:UIControlStateNormal];
-    self.dismissButton.titleLabel.font = CALIBRE_REG_15;
+    self.dismissButton.titleLabel.font = CALIBRE_LIGHT_16;
     
     self.gradientIndicatorView.topColor = WHITE_COLOR;
 }

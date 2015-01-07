@@ -56,7 +56,7 @@
         
         keywordLabel.attributedText = stringWithIcon;
         keywordLabel.clipsToBounds=YES;
-        keywordLabel.font = CALIBRE_REG_15;
+        keywordLabel.font = CALIBRE_LIGHT_14;
         keywordLabel.textColor = FIRST_PURPLE;
         
         [self.mainView addSubview: keywordLabel];
