@@ -114,6 +114,14 @@
     [self.backButton setImage:[UIImage imageNamed:@"iconBackOnpress"] forState:UIControlStateHighlighted];
     self.backButton.frame = CGRectMake(10.0, 20.0, 40.0, 40.0);
     [self.topView addSubview:self.backButton];
+    
+    UIImageView *topImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.topView.frame), CGRectGetHeight(self.topView.frame))];
+    topImage.image = [UIImage imageNamed:@"searchTop"];
+    [self.topView addSubview:topImage];
+    
+    UIImageView *bottomImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bottomView.frame), CGRectGetHeight(self.bottomView.frame))];
+    bottomImage.image = [UIImage imageNamed:@"searchBottom"];
+    [self.bottomView addSubview:bottomImage];
 }
 
 #pragma marks - IBActions
