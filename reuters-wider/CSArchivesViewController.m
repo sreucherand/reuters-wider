@@ -117,10 +117,12 @@
     
     UIImageView *topImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.topView.frame), CGRectGetHeight(self.topView.frame))];
     topImage.image = [UIImage imageNamed:@"searchTop"];
+    topImage.contentMode = UIViewContentModeScaleAspectFit;
     [self.topView addSubview:topImage];
     
     UIImageView *bottomImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bottomView.frame), CGRectGetHeight(self.bottomView.frame))];
     bottomImage.image = [UIImage imageNamed:@"searchBottom"];
+    bottomImage.contentMode = UIViewContentModeScaleAspectFit;
     [self.bottomView addSubview:bottomImage];
 }
 
