@@ -48,4 +48,8 @@
     self.content = obj.content;
 }
 
+- (void)hydrateWithContentDataAfterReload:(NSDictionary *)data {
+    [self hydrateWithContentData:data];
+}
+
 @end

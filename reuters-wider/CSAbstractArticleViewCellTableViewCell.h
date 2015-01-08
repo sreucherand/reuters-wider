@@ -16,16 +16,20 @@
 
 @property (assign, nonatomic) CGFloat marginRight;
 
+@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSIndexPath *indexPath;
 @property (strong, nonatomic) CSBlockContentModel *content;
 @property (strong, nonatomic) id<CSAbstractArticleViewCellTableViewCellDelegate> delegate;
 
 - (void)hydrateWithContentData:(NSDictionary *)data;
+- (void)hydrateWithContentDataAfterReload:(NSDictionary *)data;
 
 @end
 
 @protocol CSAbstractArticleViewCellTableViewCellDelegate <NSObject>
 @optional;
 
+- (void)didRowNeedsReload:(NSIndexPath *)indexPath;
 - (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point;
 
 @end
