@@ -87,6 +87,12 @@
     self.horizontalGradientIndicatorView.direction = CSDirectionLeft;
 }
 
+- (void)switchToNormalMode {
+    [super switchToNormalMode];
+    
+    self.comparedQuoteLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedQuoteLabel.bounds topColor:FIRST_PURPLE bottomColor:RED_ORANGE]];
+}
+
 - (void)switchToNightMode {
     [super switchToNightMode];
     
