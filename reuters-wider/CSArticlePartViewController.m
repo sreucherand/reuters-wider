@@ -151,6 +151,8 @@
     
     [cell hydrateWithContentData:(NSDictionary *)block forState:[self.cellsStates objectForKey:[NSString stringWithFormat:@"%i:%i", (int)indexPath.section, (int)indexPath.row]]];
     
+    _isSwitchedToNightMode ? [cell switchToNightMode] : [cell switchToNormalMode];
+    
     return cell;
 }
 
