@@ -110,6 +110,19 @@
     self.containerScrollView.scrollView = self.scrollView;
 }
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    
+    self.mainContainerView.backgroundColor = DARK_NIGHT_BLUE;
+    
+    self.titleTextLabel.textColor = PURPLE_GREY;
+    self.contextLabel.textColor = PURPLE_GREY;
+    
+    self.topGradientIndicatorView.topColor = WHITE_COLOR;
+    self.middleGradientIndicatorView.topColor = WHITE_COLOR;
+    self.bottomGradientIndicatorView.topColor = WHITE_COLOR;
+}
+
 - (void)interpolateItemsAlpha:(UIScrollView *)scrollView {
     for (UIView *subview in self.scrollViewSubviews) {
         CGFloat x = (CGRectGetMinX(subview.frame) - self.scrollView.contentOffset.x);

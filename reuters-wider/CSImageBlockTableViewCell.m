@@ -43,4 +43,10 @@
     self.articleImageHeightConstraint.constant = CGRectGetWidth(self.frame)*ratio;
 }
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    
+    self.gradientIndicatorView.topColor = WHITE_COLOR;
+}
+
 @end

@@ -66,7 +66,7 @@
 }
 
 - (void)switchToNightMode {
-    self.backgroundColor = FIRST_PURPLE;
+    self.backgroundColor = NIGHT_BLUE;
 }
 
 @end

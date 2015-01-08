@@ -71,11 +71,12 @@
 - (void)switchToNightMode {
     [super switchToNightMode];
     
-    self.partNumberLabel.textColor = WHITE_COLOR;
+    self.rectanglePartNumberView.backgroundColor = FIRST_PURPLE;
     
-    self.readDurationLabel.textColor = WHITE_COLOR;
+    self.partNumberLabel.textColor = FIRST_PURPLE;
+    self.readDurationLabel.textColor = FIRST_PURPLE;
     
-    self.titleLabel.textColor = WHITE_COLOR;
+    self.titleLabel.textColor = PURPLE_GREY;
     
     self.gradientIndicatorView.topColor = WHITE_COLOR;
 }

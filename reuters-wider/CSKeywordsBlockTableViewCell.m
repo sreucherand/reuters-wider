@@ -13,11 +13,21 @@
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIView *mainSuperView;
 
+@property (strong, nonatomic) CALayer *topBorderLayer;
 
 @end
 
-
 @implementation CSKeywordsBlockTableViewCell
+
+- (void)awakeFromNib {
+    self.topBorderLayer = [CALayer layer];
+    
+    self.topBorderLayer.frame = CGRectMake(20, 0, (CGRectGetWidth(self.mainSuperView.frame) - 50), 1);
+    self.topBorderLayer.backgroundColor = LIGHT_DIMMED_GREY.CGColor;
+    
+    [self.mainSuperView.layer addSublayer:self.topBorderLayer];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -25,15 +35,6 @@
     // Drawing code
 }
 */
-
-- (void)awakeFromNib {
-    CALayer *topBorder = [CALayer layer];
-    
-    topBorder.frame = CGRectMake(20, 0, (CGRectGetWidth(self.mainSuperView.frame) - 50), 1);
-    topBorder.backgroundColor = LIGHT_DIMMED_GREY.CGColor;
-    
-    [self.mainSuperView.layer addSublayer:topBorder];
-}
 
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
@@ -64,6 +65,12 @@
         CGSize textSize = [[keywordLabel text] sizeWithAttributes:@{NSFontAttributeName:[keywordLabel font]}];
         fullSize += textSize.width + 32;
     }
+}
+
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    
+    self.topBorderLayer.backgroundColor = [FIRST_PURPLE colorWithAlphaComponent:0.5].CGColor;
 }
 
 @end

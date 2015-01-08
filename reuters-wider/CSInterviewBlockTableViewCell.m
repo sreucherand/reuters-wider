@@ -63,4 +63,16 @@
     self.backgroundImageViewHeightConstrint.constant = CGRectGetWidth(self.frame)*ratio;
 }
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    
+    self.interviewViewBackground.backgroundColor = DARK_NIGHT_BLUE;
+    
+    self.gradientView.topColor = WHITE_COLOR;
+    
+    self.interviewTitleLabel.textColor = PURPLE_GREY;
+    self.interviewedNameLabel.textColor = PURPLE_GREY;
+    self.keyphraseLabel.textColor = PURPLE_GREY;
+}
+
 @end
