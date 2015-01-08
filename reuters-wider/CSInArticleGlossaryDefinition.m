@@ -17,6 +17,16 @@
 
 @implementation CSInArticleGlossaryDefinition
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     self.titleDefinitionLabel.font = LEITURA_ROMAN_1_16;
     self.titleDefinitionLabel.textColor = DARK_GREY;
@@ -24,6 +34,10 @@
     self.textDefinitionLabel.font = CALIBRE_LIGHT_16;
     self.textDefinitionLabel.textColor = FIRST_PURPLE;
     self.textDefinitionLabel.lineHeight = 18;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 /*
@@ -43,6 +57,18 @@
     self.textDefinitionLabel.text = text;
     
     self.frame = (CGRect){.origin=self.frame.origin, .size=[self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]};
+}
+
+
+#pragma mark - Switch read mode
+
+- (void)readModeNeedsUpdate:(NSNotification *)sender {
+    if ([[sender.userInfo objectForKey:@"mode"] isEqualToString:@"night"]) {
+        self.titleDefinitionLabel.textColor = PURPLE_GREY;
+        self.textDefinitionLabel.textColor = WHITE_COLOR;
+    } else {
+        [self awakeFromNib];
+    }
 }
 
 @end

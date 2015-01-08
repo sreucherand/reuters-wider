@@ -149,4 +149,26 @@ static CSArticleData *instance = nil;
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (NSString *)getReadModeOfArticle:(NSInteger)articleIndex {
+    NSDictionary *article = [self getSynchronizedArticle:articleIndex];
+    id mode = [article objectForKey:@"readMode"];
+    
+    if ([mode isKindOfClass:[NSString class]]) {
+        return mode;
+    }
+    
+    return @"normal";
+}
+
+- (void)saveReadMode:(NSString *)mode ofArticle:(NSInteger)articleIndex {
+    NSMutableDictionary *articles = [NSMutableDictionary dictionaryWithDictionary:[self getSynchronizedArticles]];
+    NSMutableDictionary *article = [NSMutableDictionary dictionaryWithDictionary:[self getSynchronizedArticle:articleIndex]];
+    
+    [article setValue:mode forKey:@"readMode"];
+    [articles setValue:article forKey:[NSString stringWithFormat:@"%i", (int)articleIndex]];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:articles] forKey:@"articles"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

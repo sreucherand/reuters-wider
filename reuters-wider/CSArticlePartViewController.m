@@ -45,6 +45,8 @@
     if (self) {
         _definitionOpened = NO;
         _isSwitchedToNightMode = NO;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
     }
     
     return self;
@@ -109,13 +111,6 @@
     self.stickyMenu.scrollView = self.tableView;
     self.stickyMenu.delegate = self;
     
-    CALayer *bottomBorder = [CALayer layer];
-    
-    bottomBorder.frame = CGRectMake(0, CGRectGetHeight(self.stickyMenu.frame) - 1, CGRectGetWidth(self.stickyMenu.frame), 1);
-    bottomBorder.backgroundColor = LIGHT_DIMMED_GREY.CGColor;
-    
-    [self.stickyMenu.layer addSublayer:bottomBorder];
-    
     [self.view addSubview:self.stickyMenu];
     
     self.progression = [[CSArticleData sharedInstance] getProgressionOfArticle:2];
@@ -123,11 +118,21 @@
     [self.tableView setContentOffset:CGPointMake(0, self.progression * (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame))) animated:NO];
     
     self.cellsStates = [[NSMutableDictionary alloc] init];
+    
+    NSString *mode = [[CSArticleData sharedInstance] getReadModeOfArticle:2];
+    
+    _isSwitchedToNightMode = [mode isEqualToString:@"night"] ? YES : NO;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"readModeUpdateNotification" object:self userInfo:@{@"mode": mode}];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Table view data source
@@ -214,8 +219,10 @@
     
     [self.definitionView.layer removeAllAnimations];
     
+    UIColor *color = _isSwitchedToNightMode ? WHITE_COLOR : DARK_BLUE;
+    
     [self.definitionView.gradientIndicatorView clearAnimation];
-    [self.definitionView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:DARK_BLUE withProgression:0];
+    [self.definitionView.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:color withProgression:0];
     [self.definitionView.gradientIndicatorView animateWidthDuration:0.35 delay:0.35 timingFunction:CSTweenEaseInOutExpo completion:nil];
     
     self.tableViewLeftConstraint.constant = -CGRectGetWidth(self.view.frame)*0.65;
@@ -312,20 +319,15 @@
     [self.tableView setEasingFunction:easeOutExpo forKeyPath:@"center"];
     [self.definitionView setEasingFunction:easeOutExpo forKeyPath:@"frame"];
     
-    if (fabs(self.tableView.contentOffset.y - location) > 80) {
-        [self.definitionView setFrameForPoint:CGPointMake(CGRectGetWidth(self.view.frame)*1.05, CGRectGetHeight(self.tableView.frame)/2)];
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            self.tableView.contentOffset = CGPointMake(0, location);
-        } completion:^(BOOL finished) {
-            if (finished) {
-                [self openDefinitionWithUrl:url];
-            }
-        }];
-    } else {
-        [self.definitionView setFrameForPoint:CGPointMake(CGRectGetWidth(self.view.frame)*1.05, [point CGPointValue].y - self.tableView.contentOffset.y)];
-        [self openDefinitionWithUrl:url];
-    }
+    [self.definitionView setFrameForPoint:CGPointMake(CGRectGetWidth(self.view.frame)*1.05, CGRectGetHeight(self.tableView.frame)/2)];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.tableView.contentOffset = CGPointMake(0, location);
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self openDefinitionWithUrl:url];
+        }
+    }];
 }
 
 #pragma mark - Transition animations
@@ -369,15 +371,35 @@
 }
 
 - (void)nightModeButtonDidPress {
+    _isSwitchedToNightMode = !_isSwitchedToNightMode;
+    
     [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if (_isSwitchedToNightMode) {
-            [((CSAbstractArticleViewCellTableViewCell *) obj) switchToNormalMode];
-        } else {
             [((CSAbstractArticleViewCellTableViewCell *) obj) switchToNightMode];
+        } else {
+            [((CSAbstractArticleViewCellTableViewCell *) obj) switchToNormalMode];
         }
     }];
     
-    _isSwitchedToNightMode = !_isSwitchedToNightMode;
+    NSString *mode = _isSwitchedToNightMode ? @"night" : @"normal";
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"readModeUpdateNotification" object:self userInfo:@{@"mode": mode}];
+    
+    if (_isSwitchedToNightMode) {
+        [[CSArticleData sharedInstance] saveReadMode:@"night" ofArticle:2];
+    } else {
+        [[CSArticleData sharedInstance] saveReadMode:@"normal" ofArticle:2];
+    }
+}
+
+#pragma mark - Switch read mode
+
+- (void)readModeNeedsUpdate:(NSNotification *)sender {
+    if ([[sender.userInfo objectForKey:@"mode"] isEqualToString:@"night"]) {
+        self.view.backgroundColor = NIGHT_BLUE;
+    } else {
+        self.view.backgroundColor = WHITE_COLOR;
+    }
 }
 
 #pragma mark - Navigation
