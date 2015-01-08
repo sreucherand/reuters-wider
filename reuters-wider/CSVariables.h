@@ -47,6 +47,8 @@
 #define WHITE_DIMMED_COLOR [WHITE_COLOR colorWithAlphaComponent:0.65];
 #define BLACK_COLOR [UIColor colorWithRed:(0.0f/255.0f) green:(0.0f/255.0f) blue:(0.0f/255.0f) alpha:1.0f]
 
+// Normal
+
 #define DARK_GREY [UIColor colorWithRed:(67.0f/255.0f) green:(67.0f/255.0f) blue:(67.0f/255.0f) alpha:1.0f]
 #define LIGHT_GREY [UIColor colorWithRed:(175.0f/255.0f) green:(175.0f/255.0f) blue:(175.0f/255.0f) alpha:1.0f]
 #define LIGHT_DIMMED_GREY [LIGHT_GREY colorWithAlphaComponent:0.5]
@@ -59,3 +61,12 @@
 #define THIRD_PURPLE [UIColor colorWithRed:(202.0f/255.0f) green:(210.0f/255.0f) blue:(239.0f/255.0f) alpha:1.0f]
 
 #define RED_ORANGE [UIColor colorWithRed:(255.0f/255.0f) green:(92.0f/255.0f) blue:(54.0f/255.0f) alpha:1.0f]
+
+// Night
+
+#define NIGHT_BLUE [UIColor colorWithRed:(24.0f/255.0f) green:(24.0f/255.0f) blue:(51.0f/255.0f) alpha:1.0f]
+#define DARK_NIGHT_BLUE [UIColor colorWithRed:(21.0f/255.0f) green:(21.0f/255.0f) blue:(44.0f/255.0f) alpha:1.0f]
+
+#define FOURTH_PURPLE [UIColor colorWithRed:(40.0f/255.0f) green:(42.0f/255.0f) blue:(82.0f/255.0f) alpha:1.0f]
+
+#define PURPLE_GREY [UIColor colorWithRed:(174.0f/255.0f) green:(174.0f/255.0f) blue:(196.0f/255.0f) alpha:1.0f]
