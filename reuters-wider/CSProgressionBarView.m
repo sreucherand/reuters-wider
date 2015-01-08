@@ -31,6 +31,7 @@
 }
 
 - (void)setup {
+    // First_purple
     self.backgroundColor = SECOND_PURPLE;
 }
 
@@ -47,7 +48,7 @@
  An empty implementation adversely affects performance during animation. */
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
+    // Fourth_purple
     CGContextSetFillColorWithColor(context, FIRST_PURPLE.CGColor);
     CGContextFillRect(context, CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)*self.progression));
 }

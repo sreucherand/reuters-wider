@@ -65,4 +65,10 @@
     self.backgroundImageView.clipsToBounds = YES;
 }
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    
+    self.mainView.backgroundColor = FOURTH_PURPLE;
+}
+
 @end
