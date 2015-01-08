@@ -30,6 +30,11 @@
 }
 */
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    self.asideLabel.textColor = WHITE_COLOR;
+}
+
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     
