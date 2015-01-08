@@ -13,19 +13,37 @@
     BOOL _enabled;
 }
 
+@property (weak, nonatomic) IBOutlet UIButton *backToTopButton;
+@property (weak, nonatomic) IBOutlet UIButton *nightModeButton;
+
+@property (strong, nonatomic) CALayer *bottomBorderLayer;
 @property (strong, nonatomic) CSTweenOperation *operation;
 
 @end
 
 @implementation CSStickyMenu
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
+        
+        self.hidden = YES;
+        
+        _visible = NO;
+        _enabled = YES;
+        
+        self.bottomBorderLayer = [CALayer layer];
+        
+        [self.layer addSublayer:self.bottomBorderLayer];
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    self.hidden = YES;
-    
-    _visible = NO;
-    _enabled = YES;
     
     self.backgroundColor = WHITE_COLOR;
     
@@ -33,7 +51,21 @@
     
     self.titleButton.titleLabel.font = CALIBRE_LIGHT_16;
     self.titleButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.bottomBorderLayer.backgroundColor = LIGHT_DIMMED_GREY.CGColor;
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.bottomBorderLayer.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 1, CGRectGetWidth(self.frame), 1);
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Setters
 
 - (void)setScrollView:(UIScrollView *)scrollView {
     _scrollView = scrollView;
@@ -136,6 +168,18 @@
     
     if (!_visible) {
         self.hidden = YES;
+    }
+}
+
+#pragma mark - Switch read mode
+
+- (void)readModeNeedsUpdate:(NSNotification *)sender {
+    if ([[sender.userInfo objectForKey:@"mode"] isEqualToString:@"night"]) {
+        self.backgroundColor = THIRD_PURPLE;
+        
+        self.bottomBorderLayer.backgroundColor = FIRST_PURPLE.CGColor;
+    } else {
+        [self awakeFromNib];
     }
 }
 

@@ -27,5 +27,7 @@
 - (NSDictionary *)getSynchronizedArticle:(NSInteger)articleIndex;
 - (CGFloat)getProgressionOfArticle:(NSInteger)articleIndex;
 - (void)saveProgression:(CGFloat)percentage ofArticle:(NSInteger)articleIndex;
+- (NSString *)getReadModeOfArticle:(NSInteger)articleIndex;
+- (void)saveReadMode:(NSString *)mode ofArticle:(NSInteger)articleIndex;
 
 @end

@@ -8,6 +8,12 @@
 
 #import "CSProgressionBarView.h"
 
+@interface CSProgressionBarView ()
+
+@property (strong, nonatomic) UIColor *foregroundColor;
+
+@end
+
 @implementation CSProgressionBarView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -31,8 +37,18 @@
 }
 
 - (void)setup {
-    // First_purple
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
+    
+    [self initStyle];
+}
+
+- (void)initStyle {
     self.backgroundColor = SECOND_PURPLE;
+    self.foregroundColor = FIRST_PURPLE;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Setters
@@ -43,13 +59,26 @@
     [self setNeedsDisplay];
 }
 
+#pragma mark - Switch read mode
+
+- (void)readModeNeedsUpdate:(NSNotification *)sender {
+    if ([[sender.userInfo objectForKey:@"mode"] isEqualToString:@"night"]) {
+        self.backgroundColor = FIRST_PURPLE;
+        self.foregroundColor = FOURTH_PURPLE;
+    } else {
+        [self initStyle];
+    }
+    
+    [self setNeedsDisplay];
+}
+
 /*
  Only override drawRect: if you perform custom drawing.
  An empty implementation adversely affects performance during animation. */
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    // Fourth_purple
-    CGContextSetFillColorWithColor(context, FIRST_PURPLE.CGColor);
+    
+    CGContextSetFillColorWithColor(context, self.foregroundColor.CGColor);
     CGContextFillRect(context, CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)*self.progression));
 }
 

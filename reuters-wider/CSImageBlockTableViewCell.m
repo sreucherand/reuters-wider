@@ -38,6 +38,7 @@
     
     CGFloat ratio = image.size.height/image.size.width;
     
+    self.articleImageView.clipsToBounds = YES;
     self.articleImageView.image = image;
     self.articleImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.articleImageHeightConstraint.constant = CGRectGetWidth(self.frame)*ratio;
