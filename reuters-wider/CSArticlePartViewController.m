@@ -32,6 +32,7 @@
 @property (strong, nonatomic) CSStickyMenu *stickyMenu;
 @property (strong, nonatomic) NSMutableDictionary *cells;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+@property (strong, nonatomic) NSMutableArray *refreshIndexes;
 
 @end
 
@@ -109,6 +110,8 @@
     self.progression = [[CSArticleData sharedInstance] getProgressionOfArticle:2];
     
     [self.tableView setContentOffset:CGPointMake(0, self.progression * (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame))) animated:NO];
+    
+    self.refreshIndexes = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,6 +135,9 @@
     CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
     
     cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
+    
+    cell.tableView = tableView;
+    cell.indexPath = indexPath;
     cell.delegate = self;
     
     [cell hydrateWithContentData:(NSDictionary *)block];
@@ -143,10 +149,6 @@
     CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
     NSString *identifier = [self cellIdentifierForBlockType:block.type];
     CSAbstractArticleViewCellTableViewCell *cell = [self.cells objectForKey:identifier];
-    
-    if ([indexPath compare:selectedIndexPath] == NSOrderedSame) {
-        return 1000;
-    }
     
     if ([block.type isEqualToString:@"part"] || [block.type isEqualToString:@"transition"]) {
         return CGRectGetHeight(self.view.frame);
@@ -271,6 +273,15 @@
 }
 
 #pragma mark - Cell delegate
+
+- (void)didRowNeedsReload:(NSIndexPath *)indexPath {
+    [self.refreshIndexes addObject:indexPath];
+    
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+    
+//    [self.tableView reloadData];
+}
 
 - (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point {
     CGFloat location = [point CGPointValue].y - CGRectGetHeight(self.tableView.frame)/2;

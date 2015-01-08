@@ -75,12 +75,13 @@
                             {
                                 "date": "Wed, 29 Sep 2014 14:09:53 GMT",
                                 "author": "Reuters",
-                                "text": "British Forign Office minister Hugo Swire, called for full universal suffrage."
+                                "quote": "British Forign Office minister Hugo Swire, called for full universal suffrage."
                             },
                             {
                                 "date": "Tue, 28 Sep 2014 08:54:23 GMT",
                                 "author": "BBC News",
-                                "text": "“Hong Kong's internal affairs will not brook any interference by outside forces.”"
+                                "quote": "“Hong Kong's internal affairs will not brook any interference by outside forces.”",
+                                "text": "In Beijing, Foreign Ministry spokesman Hong Lei said China was “extremely dissatisfied at and resolutely opposed to the thoughtless remarks in the article by the British minister about Hong Kong's political development”."
                             }
                         ]
                     }
@@ -266,12 +267,13 @@
                             {
                                 "date": "Wed, 1 Oct 2014 11:37:54 GMT",
                                 "author": "Reuters",
-                                "text": "In the Admiralty district reads, “My parents are crying for me. I am crying for the future.”"
+                                "quote": "In the Admiralty district reads, “My parents are crying for me. I am crying for the future.”"
                             },
                             {
                                 "date": "Fri, 17 Oct 2014 17:15:38 GMT",
                                 "author": "Vice News",
-                                "text": "“If you want to protest, that is your business. Everyone has their views. But don't involve us.”"
+                                "quote": "“If you want to protest, that is your business. Everyone has their views. But don't involve us.”",
+                                "text": "“The students are blocking the road. We are losing money,” Chong Wing Tong, a 55-year-old taxi driver, told VICE News as he marched with hundreds against the Occupy Central movement."
                             }
                         ]
                     }
@@ -373,12 +375,13 @@
                             {
                                 "date": "Tue, 30 Sep 2014 11:37:54 GMT",
                                 "author": "Reuters",
-                                "text": "A group of demonstrators has kept up the pressure on Hong Kong authorities for universal suffrage."
+                                "quote": "A group of demonstrators has kept up the pressure on Hong Kong authorities for universal suffrage."
                             },
                             {
                                 "date": "Tue, 30 Sep 2014 15:59:01 GMT",
                                 "author": "New York Times",
-                                "text": "“There’s no market for Hong-Kong independance, and no support.”"
+                                "quote": "“There’s no market for Hong-Kong independance, and no support.”",
+                                "text": "A conservative lawyer named Wu Danhong wrote that “those making a stink for no reason are the minority; the majority already understands that Hong Kong isn't a colony anymore. There's no market for Hong Kong independence, and no support. Those willing to act as anti-China pawns are shooting themselves in the foot.”"
                             }
                         ]
                     }

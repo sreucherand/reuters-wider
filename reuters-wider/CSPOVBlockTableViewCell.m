@@ -8,17 +8,19 @@
 
 #import "CSPovBlockTableViewCell.h"
 #import "CSGradientIndicatorView.h"
+#import "CSBoucingView.h"
 
-@interface CSPovBlockTableViewCell () <UIScrollViewDelegate>
-{
-    CGSize gradientSize;
+@interface CSPovBlockTableViewCell () <CSBoucingViewDelegate> {
+    CGFloat _leftConstraintConstantInitialValue;
+    CGFloat _rightConstraintConstantInitialValue;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UILabel *mainMetaLabel;
-@property (weak, nonatomic) IBOutlet CSAttributedLabel *mainTextLabel;
+@property (weak, nonatomic) IBOutlet CSAttributedLabel *mainQuoteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *comparedMetaLabel;
+@property (weak, nonatomic) IBOutlet CSAttributedLabel *comparedQuoteLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *comparedTextLabel;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *horizontalGradientIndicatorView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *comparedTextLabelLeftConstraint;
@@ -38,15 +40,19 @@
     self.mainMetaLabel.font = CALIBRE_LIGHT_14;
     self.mainMetaLabel.textColor = WHITE_DIMMED_COLOR;
     
-    self.mainTextLabel.font = LEITURA_ROMAN_3_23;
-    self.mainTextLabel.textColor = WHITE_COLOR;
-    self.mainTextLabel.lineHeight = 28;
+    self.mainQuoteLabel.font = LEITURA_ROMAN_3_23;
+    self.mainQuoteLabel.textColor = WHITE_COLOR;
+    self.mainQuoteLabel.lineHeight = 28;
     
     self.comparedMetaLabel.font = CALIBRE_LIGHT_14;
     self.comparedMetaLabel.textColor = FIRST_PURPLE;
     
-    self.comparedTextLabel.font = ARCHER_THIN_38;
-    self.comparedTextLabel.lineHeight = 38;
+    self.comparedQuoteLabel.font = ARCHER_THIN_38;
+    self.comparedQuoteLabel.lineHeight = 38;
+    
+    self.comparedTextLabel.font = LEITURA_ROMAN_1_16;
+    self.comparedTextLabel.textColor = RED_ORANGE;
+    self.comparedTextLabel.lineHeight = 25;
     
     self.horizontalGradientIndicatorView.topColor = DARK_BLUE;
     self.horizontalGradientIndicatorView.direction = CSDirectionLeft;
@@ -93,40 +99,56 @@
     }
     
     self.mainMetaLabel.text = [NSString stringWithFormat:@"%@, by %@", [date stringByReplacingOccurrencesOfString:@"%s" withString:suffix], [self.content.views[0] author]];
-    self.mainTextLabel.text = [self.content.views[0] text];
+    self.mainQuoteLabel.text = [self.content.views[0] quote];
     
     formattedDate = [self.content.views[1] formattedDate];
     date = [dateFormat stringFromDate:formattedDate];
     day = [[NSCalendar currentCalendar] component:NSCalendarUnitDay fromDate:formattedDate];
     
     self.comparedMetaLabel.text = [NSString stringWithFormat:@"%@, by %@", [date stringByReplacingOccurrencesOfString:@"%s" withString:suffix], [self.content.views[1] author]];
-    self.comparedTextLabel.text = [self.content.views[1] text];
+    self.comparedQuoteLabel.text = [self.content.views[1] quote];
     
-    [self.comparedTextLabel setNeedsLayout];
-    [self.comparedTextLabel layoutIfNeeded];
+    [self.comparedQuoteLabel setNeedsLayout];
+    [self.comparedQuoteLabel layoutIfNeeded];
     
-    self.comparedTextLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedTextLabel.bounds topColor:FIRST_PURPLE bottomColor:RED_ORANGE]];
+    self.comparedQuoteLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedQuoteLabel.bounds topColor:FIRST_PURPLE bottomColor:RED_ORANGE]];
     
-    [self.scrollView removeFromSuperview];
+    CSBoucingView *view = [[CSBoucingView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.comparedQuoteLabel.frame), CGRectGetMinY(self.comparedQuoteLabel.frame), CGRectGetWidth(self.frame) - CGRectGetMinX(self.comparedQuoteLabel.frame), CGRectGetHeight(self.comparedQuoteLabel.frame))];
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.comparedTextLabel.frame), CGRectGetMinY(self.comparedTextLabel.frame), CGRectGetWidth(self.comparedTextLabel.frame) - CGRectGetMinX(self.comparedTextLabel.frame), CGRectGetHeight(self.comparedTextLabel.frame))];
-    self.scrollView.contentSize = CGSizeMake(500, CGRectGetHeight(self.scrollView.frame));
-    self.scrollView.alwaysBounceHorizontal = YES;
-    self.scrollView.delegate = self;
-    self.scrollView.clipsToBounds = NO;
+    view.delegate = self;
     
-    [self.bottomView addSubview:self.scrollView];
+    [self.bottomView addSubview:view];
+    
+    _leftConstraintConstantInitialValue = self.comparedTextLabelLeftConstraint.constant;
+    _rightConstraintConstantInitialValue = self.comparedTextLabelRightConstraint.constant;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if (scrollView.contentOffset.x < 0) {
-//        [scrollView setContentOffset:CGPointMake(0, scrollView.contentOffset.y)];
-//    }
-    NSLog(@"coucou %f", scrollView.contentOffset.x);
+#pragma mark - Boucing view delegate
+
+- (void)boucingViewDidScroll:(CSBoucingView *)boucingView {
+    CGFloat left = fmax(_leftConstraintConstantInitialValue + boucingView.contentOffset.x*1.5, 25);
+    CGFloat right = fmax(_rightConstraintConstantInitialValue + boucingView.contentOffset.x*1.5, -25);
     
-    //self.comparedTextLabelLeftConstraint.constant = 145 - scrollView.contentOffset.x*1;
-    //self.comparedTextLabelRightConstraint.constant = -95 + scrollView.contentOffset.x*1;
+    if (boucingView.contentOffset.x <= 0) {
+        self.comparedTextLabelLeftConstraint.constant = left;
+        self.comparedTextLabelRightConstraint.constant = right;
+    }
 }
+
+- (void)boucingViewWillBeginDecelarating:(CSBoucingView *)boucingView {
+    CGFloat left = fmax(_leftConstraintConstantInitialValue + boucingView.contentOffset.x*1.5, 25);
+    
+    if (left <= 25) {
+        boucingView.muted = YES;
+        
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+        
+        [self.tableView reloadData];
+    }
+}
+
+#pragma mark - Gradient
 
 - (UIImage *)imageGradient:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor {
     CGSize size = rect.size;
