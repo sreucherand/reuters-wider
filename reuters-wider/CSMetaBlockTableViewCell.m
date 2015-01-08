@@ -30,6 +30,11 @@
 }
  */
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    self.metaLabel.textColor = FIRST_PURPLE;
+}
+
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     

@@ -23,6 +23,11 @@
     self.paragraphTextLabel.delegate = self;
 }
 
+-(void)switchToNightMode {
+    [super switchToNightMode];
+    self.paragraphTextLabel.textColor = PURPLE_GREY;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

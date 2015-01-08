@@ -30,6 +30,11 @@
 }
 */
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    self.teasingText.textColor = PURPLE_GREY;
+}
+
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     

@@ -27,6 +27,12 @@
     self.statementLabel.lineHeight = 26;
 }
 
+-(void)switchToNightMode{
+    [super switchToNightMode];
+    self.gradientView.topColor = WHITE_COLOR;
+    self.statementLabel.textColor = WHITE_COLOR;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
