@@ -121,6 +121,10 @@
     
     _leftConstraintConstantInitialValue = self.comparedTextLabelLeftConstraint.constant;
     _rightConstraintConstantInitialValue = self.comparedTextLabelRightConstraint.constant;
+    
+    if ([self.state intValue] == 2) {
+        self.backgroundColor = [UIColor yellowColor];
+    }
 }
 
 #pragma mark - Boucing view delegate
@@ -141,10 +145,14 @@
     if (left <= 25) {
         boucingView.muted = YES;
         
-        [self.tableView beginUpdates];
-        [self.tableView endUpdates];
-        
-        [self.tableView reloadData];
+//        [self.tableView beginUpdates];
+//        [self.tableView endUpdates];
+//
+    
+//        [self.tableView reloadData];
+        if ([self.delegate respondsToSelector:@selector(tableViewCell:rowNeedsPersistentState:)]) {
+            [self.delegate performSelector:@selector(tableViewCell:rowNeedsPersistentState:) withObject:self withObject:[NSNumber numberWithInt:2]];
+        }
     }
 }
 

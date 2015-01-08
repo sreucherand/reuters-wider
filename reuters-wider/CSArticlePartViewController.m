@@ -32,7 +32,7 @@
 @property (strong, nonatomic) CSStickyMenu *stickyMenu;
 @property (strong, nonatomic) NSMutableDictionary *cells;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
-@property (strong, nonatomic) NSMutableArray *refreshIndexes;
+@property (strong, nonatomic) NSMutableDictionary *cellsStates;
 
 @end
 
@@ -111,7 +111,7 @@
     
     [self.tableView setContentOffset:CGPointMake(0, self.progression * (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame))) animated:NO];
     
-    self.refreshIndexes = [[NSMutableArray alloc] init];
+    self.cellsStates = [[NSMutableDictionary alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,14 +130,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CSAbstractArticleViewCellTableViewCell *cell = nil;
-    
     CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
     
-    cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
+    CSAbstractArticleViewCellTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
     
     cell.tableView = tableView;
     cell.indexPath = indexPath;
+    cell.state = [self.cellsStates objectForKey:indexPath];
     cell.delegate = self;
     
     [cell hydrateWithContentData:(NSDictionary *)block];
@@ -274,11 +273,14 @@
 
 #pragma mark - Cell delegate
 
-- (void)didRowNeedsReload:(NSIndexPath *)indexPath {
-    [self.refreshIndexes addObject:indexPath];
+- (void)tableViewCell:(CSAbstractArticleViewCellTableViewCell *)cell rowNeedsPersistentState:(NSNumber *)state {
+    
+    [self.cellsStates setObject:state forKey:cell.indexPath];
     
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
+    
+    
     
 //    [self.tableView reloadData];
 }
