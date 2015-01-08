@@ -35,6 +35,11 @@
 }
 */
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    self.subtitleLabel.textColor = PURPLE_GREY;
+}
+
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     

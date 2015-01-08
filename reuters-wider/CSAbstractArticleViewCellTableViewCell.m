@@ -62,7 +62,7 @@
 
 - (void)switchToNormalMode {
     [self awakeFromNib];
-    
+    self.backgroundColor = WHITE_COLOR;
 }
 
 - (void)switchToNightMode {

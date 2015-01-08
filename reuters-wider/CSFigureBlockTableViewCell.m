@@ -47,6 +47,15 @@
 }
 */
 
+- (void) switchToNightMode {
+    [super switchToNightMode];
+    self.backgroundColorView.backgroundColor = DARK_NIGHT_BLUE;
+    self.personLabel.textColor = PURPLE_GREY;
+    self.subtitleLabel.textColor = PURPLE_GREY;
+    self.descriptionLabel.textColor = PURPLE_GREY;
+    self.gradientIndicatorView.topColor = WHITE_COLOR;
+}
+
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];
     
