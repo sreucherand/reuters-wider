@@ -87,6 +87,24 @@
     self.horizontalGradientIndicatorView.direction = CSDirectionLeft;
 }
 
+- (void)switchToNormalMode {
+    [super switchToNormalMode];
+    
+    self.comparedQuoteLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedQuoteLabel.bounds topColor:FIRST_PURPLE bottomColor:RED_ORANGE]];
+}
+
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    
+    self.mainView.backgroundColor = FOURTH_PURPLE;
+    self.mainMetaLabel.textColor = PURPLE_GREY;
+    self.mainQuoteLabel.textColor = WHITE_COLOR;
+    self.comparedMetaLabel.textColor = FIRST_PURPLE;
+    self.comparedQuoteLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedQuoteLabel.bounds topColor:WHITE_COLOR bottomColor:RED_ORANGE]];
+    self.comparedTextLabel.textColor = RED_ORANGE;
+    self.horizontalGradientIndicatorView.topColor = WHITE_COLOR;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
