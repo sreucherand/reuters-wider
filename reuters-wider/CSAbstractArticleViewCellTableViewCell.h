@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSIndexPath *indexPath;
+@property (strong, nonatomic) NSNumber *state;
+
 @property (strong, nonatomic) CSBlockContentModel *content;
 @property (strong, nonatomic) id<CSAbstractArticleViewCellTableViewCellDelegate> delegate;
 
@@ -29,7 +31,7 @@
 @protocol CSAbstractArticleViewCellTableViewCellDelegate <NSObject>
 @optional;
 
-- (void)didRowNeedsReload:(NSIndexPath *)indexPath;
+- (void)tableViewCell:(CSAbstractArticleViewCellTableViewCell *)cell rowNeedsPersistentState:(NSNumber *)state;
 - (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point;
 
 @end
