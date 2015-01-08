@@ -11,26 +11,53 @@
 #import "CSBoucingView.h"
 
 @interface CSPovBlockTableViewCell () <CSBoucingViewDelegate> {
-    CGFloat _leftConstraintConstantInitialValue;
-    CGFloat _rightConstraintConstantInitialValue;
+    CGFloat _initialLeftQuoteConstraintConstant;
+    CGFloat _initialRightQuoteConstraintConstant;
+    
+    CGFloat _expandedLeftQuoteConstraintConstant;
+    CGFloat _expandedRightQuoteConstraintConstant;
+    
+    CGFloat _multiplier;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
+
 @property (weak, nonatomic) IBOutlet UILabel *mainMetaLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *mainQuoteLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *comparedMetaLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *comparedQuoteLabel;
 @property (weak, nonatomic) IBOutlet CSAttributedLabel *comparedTextLabel;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *horizontalGradientIndicatorView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *comparedTextLabelLeftConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *comparedTextLabelRightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *horizontalDashView;
 
-@property (strong, nonatomic) UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *comparedQuoteLabelLeftConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *comparedQuoteLabelRightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *comparedTextLabelLeftConstraint;
+
+@property (strong, nonatomic) CSBoucingView *bouncingView;
 
 @end
 
 @implementation CSPovBlockTableViewCell
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        _initialLeftQuoteConstraintConstant = 145;
+        _initialRightQuoteConstraintConstant = 95;
+        
+        _expandedLeftQuoteConstraintConstant = 25;
+        _expandedRightQuoteConstraintConstant = -25;
+        
+        _multiplier = 1.5;
+    }
+    
+    return self;
+}
 
 - (void)awakeFromNib {
     self.clipsToBounds = YES;
@@ -53,6 +80,8 @@
     self.comparedTextLabel.font = LEITURA_ROMAN_1_16;
     self.comparedTextLabel.textColor = RED_ORANGE;
     self.comparedTextLabel.lineHeight = 25;
+    
+    self.horizontalDashView.backgroundColor = [RED_ORANGE colorWithAlphaComponent:0.2];
     
     self.horizontalGradientIndicatorView.topColor = DARK_BLUE;
     self.horizontalGradientIndicatorView.direction = CSDirectionLeft;
@@ -113,45 +142,113 @@
     
     self.comparedQuoteLabel.textColor = [UIColor colorWithPatternImage:[self imageGradient:self.comparedQuoteLabel.bounds topColor:FIRST_PURPLE bottomColor:RED_ORANGE]];
     
-    CSBoucingView *view = [[CSBoucingView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.comparedQuoteLabel.frame), CGRectGetMinY(self.comparedQuoteLabel.frame), CGRectGetWidth(self.frame) - CGRectGetMinX(self.comparedQuoteLabel.frame), CGRectGetHeight(self.comparedQuoteLabel.frame))];
+    self.bouncingView = [[CSBoucingView alloc] initWithFrame:CGRectMake(0, CGRectGetMinY(self.comparedQuoteLabel.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.comparedQuoteLabel.frame))];
     
-    view.delegate = self;
+    self.bouncingView.delegate = self;
     
-    [self.bottomView addSubview:view];
+    [self.bottomView addSubview:self.bouncingView];
+}
+
+- (void)hydrateWithContentData:(NSDictionary *)data forState:(NSNumber *)state {
+    [super hydrateWithContentData:data forState:state];
     
-    _leftConstraintConstantInitialValue = self.comparedTextLabelLeftConstraint.constant;
-    _rightConstraintConstantInitialValue = self.comparedTextLabelRightConstraint.constant;
-    
-    if ([self.state intValue] == 2) {
-        self.backgroundColor = [UIColor yellowColor];
+    if ([state intValue] == 1) {
+        self.bouncingView.direction = CSDirectionRight;
+        
+        self.comparedTextLabel.text = [NSString stringWithFormat:@"\n%@", [self.content.views[1] text]];
+        
+        self.comparedQuoteLabelLeftConstraint.constant = _expandedLeftQuoteConstraintConstant;
+        self.comparedQuoteLabelRightConstraint.constant = _expandedRightQuoteConstraintConstant;
+        
+        self.comparedTextLabelLeftConstraint.constant = 0;
+    } else {
+        self.bouncingView.direction = CSDirectionLeft;
+        
+        self.comparedTextLabel.text = @"";
+        
+        self.comparedQuoteLabelLeftConstraint.constant = _initialLeftQuoteConstraintConstant;
+        self.comparedQuoteLabelRightConstraint.constant = _initialRightQuoteConstraintConstant;
+        
+        self.comparedTextLabelLeftConstraint.constant = CGRectGetWidth(self.frame) - _expandedLeftQuoteConstraintConstant;
     }
 }
 
 #pragma mark - Boucing view delegate
 
 - (void)boucingViewDidScroll:(CSBoucingView *)boucingView {
-    CGFloat left = fmax(_leftConstraintConstantInitialValue + boucingView.contentOffset.x*1.5, 25);
-    CGFloat right = fmax(_rightConstraintConstantInitialValue + boucingView.contentOffset.x*1.5, -25);
+    CGPoint offset = boucingView.contentOffset;
     
-    if (boucingView.contentOffset.x <= 0) {
-        self.comparedTextLabelLeftConstraint.constant = left;
-        self.comparedTextLabelRightConstraint.constant = right;
+    if (self.bouncingView.direction == CSDirectionLeft) {
+        if (boucingView.contentOffset.x >= 0) {
+            offset.x = 0;
+        }
+        
+        CGFloat left = fmax(_initialLeftQuoteConstraintConstant + offset.x*_multiplier, _expandedLeftQuoteConstraintConstant);
+        CGFloat right = fmax(_initialRightQuoteConstraintConstant + offset.x*_multiplier, _expandedRightQuoteConstraintConstant);
+        
+        self.comparedQuoteLabelLeftConstraint.constant = left;
+        self.comparedQuoteLabelRightConstraint.constant = right;
+    } else if (self.bouncingView.direction == CSDirectionRight) {
+        if (boucingView.contentOffset.x <= 0) {
+            offset.x = 0;
+        }
+        
+        CGFloat left = fmin(_expandedLeftQuoteConstraintConstant + offset.x*_multiplier, _initialLeftQuoteConstraintConstant);
+        CGFloat right = fmin(_expandedRightQuoteConstraintConstant + offset.x*_multiplier, _initialRightQuoteConstraintConstant);
+        
+        self.comparedQuoteLabelLeftConstraint.constant = left;
+        self.comparedQuoteLabelRightConstraint.constant = right;
     }
 }
 
 - (void)boucingViewWillBeginDecelarating:(CSBoucingView *)boucingView {
-    CGFloat left = fmax(_leftConstraintConstantInitialValue + boucingView.contentOffset.x*1.5, 25);
-    
-    if (left <= 25) {
-        boucingView.muted = YES;
+    if (self.bouncingView.direction == CSDirectionLeft) {
+        CGFloat left = fmax(_initialLeftQuoteConstraintConstant + boucingView.contentOffset.x*_multiplier, _expandedLeftQuoteConstraintConstant);
         
-//        [self.tableView beginUpdates];
-//        [self.tableView endUpdates];
-//
-    
-//        [self.tableView reloadData];
-        if ([self.delegate respondsToSelector:@selector(tableViewCell:rowNeedsPersistentState:)]) {
-            [self.delegate performSelector:@selector(tableViewCell:rowNeedsPersistentState:) withObject:self withObject:[NSNumber numberWithInt:2]];
+        if (left <= _expandedLeftQuoteConstraintConstant) {
+            self.bouncingView.scrollEnabled = NO;
+            self.bouncingView.direction = CSDirectionRight;
+            
+            self.comparedTextLabel.text = [NSString stringWithFormat:@"\n%@", [self.content.views[1] text]];
+            
+            [CSTween tweenFrom:CGRectGetWidth(self.frame) - _expandedLeftQuoteConstraintConstant to:0 duration:1 delay:0.2 timingFunction:CSTweenEaseOutExpo updateBlock:^(CSTweenOperation *operation) {
+                self.comparedTextLabelLeftConstraint.constant = operation.value;
+            } completeBlock:^(BOOL finished) {
+                if (finished) {
+                    self.bouncingView.scrollEnabled = YES;
+                }
+            }];
+            
+            if ([self.delegate respondsToSelector:@selector(tableViewCell:rowNeedsPersistentState:)]) {
+                [self.delegate performSelector:@selector(tableViewCell:rowNeedsPersistentState:) withObject:self withObject:[NSNumber numberWithInt:1]];
+            }
+            
+            [self.tableView beginUpdates];
+            [self.tableView endUpdates];
+        }
+    } else if (self.bouncingView.direction == CSDirectionRight) {
+        CGFloat left = fmin(_expandedLeftQuoteConstraintConstant + boucingView.contentOffset.x*_multiplier, _initialLeftQuoteConstraintConstant);
+        
+        if (left >= _initialLeftQuoteConstraintConstant) {
+            self.bouncingView.scrollEnabled = NO;
+            self.bouncingView.direction = CSDirectionLeft;
+            
+            [CSTween tweenFrom:0 to:CGRectGetWidth(self.frame) - _expandedLeftQuoteConstraintConstant duration:0.5 delay:0 timingFunction:CSTweenEaseInExpo updateBlock:^(CSTweenOperation *operation) {
+                self.comparedTextLabelLeftConstraint.constant = operation.value;
+            } completeBlock:^(BOOL finished) {
+                if (finished) {
+                    self.bouncingView.scrollEnabled = YES;
+                    
+                    self.comparedTextLabel.text = @"";
+                    
+                    [self.tableView beginUpdates];
+                    [self.tableView endUpdates];
+                }
+            }];
+            
+            if ([self.delegate respondsToSelector:@selector(tableViewCell:rowNeedsPersistentState:)]) {
+                [self.delegate performSelector:@selector(tableViewCell:rowNeedsPersistentState:) withObject:self withObject:[NSNumber numberWithInt:0]];
+            }
         }
     }
 }

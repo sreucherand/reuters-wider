@@ -136,10 +136,9 @@
     
     cell.tableView = tableView;
     cell.indexPath = indexPath;
-    cell.state = [self.cellsStates objectForKey:indexPath];
     cell.delegate = self;
     
-    [cell hydrateWithContentData:(NSDictionary *)block];
+    [cell hydrateWithContentData:(NSDictionary *)block forState:[self.cellsStates objectForKey:[NSString stringWithFormat:@"%i:%i", (int)indexPath.section, (int)indexPath.row]]];
     
     return cell;
 }
@@ -159,12 +158,12 @@
         [self.cells setObject:cell forKey:identifier];
     }
     
-    [cell hydrateWithContentData:(NSDictionary *)block];
+    [cell hydrateWithContentData:(NSDictionary *)block forState:[self.cellsStates objectForKey:[NSString stringWithFormat:@"%i:%i", (int)indexPath.section, (int)indexPath.row]]];
     
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
     
-    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.bounds) - cell.marginRight, CGRectGetHeight(cell.bounds));
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(cell.bounds));
     
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
@@ -257,9 +256,8 @@
 - (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
     //[self closeDefinition];
 //    selectedIndexPath = [self.tableView indexPathForRowAtPoint:[recognizer locationInView:self.tableView.]];
-//    [self.tableView beginUpdates];
-//    [self.tableView endUpdates];
-//    
+    
+//
     [self.stickyMenu toggle];
 }
 
@@ -274,15 +272,7 @@
 #pragma mark - Cell delegate
 
 - (void)tableViewCell:(CSAbstractArticleViewCellTableViewCell *)cell rowNeedsPersistentState:(NSNumber *)state {
-    
-    [self.cellsStates setObject:state forKey:cell.indexPath];
-    
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-    
-    
-    
-//    [self.tableView reloadData];
+    [self.cellsStates setValue:state forKey:[NSString stringWithFormat:@"%i:%i", (int)cell.indexPath.section, (int)cell.indexPath.row]];
 }
 
 - (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point {

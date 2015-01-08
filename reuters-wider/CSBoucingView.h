@@ -12,7 +12,8 @@
 
 @interface CSBoucingView : UIView
 
-@property (assign, nonatomic) BOOL muted;
+@property (assign, nonatomic) BOOL scrollEnabled;
+@property (assign, nonatomic) CSDirection direction;
 @property (assign, nonatomic) CGPoint contentOffset;
 @property (assign, nonatomic) id <CSBoucingViewDelegate> delegate;
 

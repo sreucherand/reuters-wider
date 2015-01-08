@@ -18,13 +18,12 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSIndexPath *indexPath;
-@property (strong, nonatomic) NSNumber *state;
 
 @property (strong, nonatomic) CSBlockContentModel *content;
 @property (strong, nonatomic) id<CSAbstractArticleViewCellTableViewCellDelegate> delegate;
 
 - (void)hydrateWithContentData:(NSDictionary *)data;
-- (void)hydrateWithContentDataAfterReload:(NSDictionary *)data;
+- (void)hydrateWithContentData:(NSDictionary *)data forState:(NSNumber *)state;
 
 @end
 

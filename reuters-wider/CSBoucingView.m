@@ -58,7 +58,8 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     self = [super initWithFrame:frame];
     
     if (self) {
-        _muted = NO;
+        _direction = CSDirectionLeft;
+        _scrollEnabled = YES;
         _decelerating = NO;
         
         self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
@@ -75,10 +76,6 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
     
-    if (self.muted) {
-        return;
-    }
-    
     if (self.decelerationBehavior && !self.springBehavior) {
         UIAttachmentBehavior *springBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.dynamicItem attachedToAnchor:self.startFrame.origin];
         
@@ -92,7 +89,9 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
             if (!_decelerating) {
                 _decelerating = YES;
                 
-                [weakSelf bouncingViewWillBeginDecelerating];
+                if ([weakSelf.delegate respondsToSelector:@selector(boucingViewWillBeginDecelarating:)]) {
+                    [weakSelf.delegate performSelector:@selector(boucingViewWillBeginDecelarating:) withObject:self];
+                }
             }
         };
         
@@ -103,8 +102,24 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     
     self.contentOffset = CGPointMake(frame.origin.x - self.startFrame.origin.x, 0);
     
-    if ([self.delegate respondsToSelector:@selector(boucingViewDidScroll:)]) {
+    if (self.scrollEnabled && [self.delegate respondsToSelector:@selector(boucingViewDidScroll:)]) {
         [self.delegate performSelector:@selector(boucingViewDidScroll:) withObject:self];
+    }
+}
+
+- (void)setScrollEnabled:(BOOL)scrollEnabled {
+    if (scrollEnabled) {
+        [self addGestureRecognizer:self.panGestureRecognizer];
+    } else {
+        [self removeGestureRecognizer:self.panGestureRecognizer];
+    }
+    
+    if (_scrollEnabled != scrollEnabled) {
+        _scrollEnabled = scrollEnabled;
+        
+        [self.animator removeAllBehaviors];
+        
+        self.frame = _startFrame;
     }
 }
 
@@ -132,10 +147,6 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         
         case UIGestureRecognizerStateChanged: {
             CGPoint translation = [panGestureRecognizer translationInView:panGestureRecognizer.view];
-            
-            if (translation.x > 0) {
-                translation.x = 0;
-            }
             
             CGRect frame = self.startFrame;
             CGPoint position = CGPointMake(frame.origin.x + translation.x, 0);
@@ -188,12 +199,6 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     }
     
     return YES;
-}
-
-- (void)bouncingViewWillBeginDecelerating {
-    if ([self.delegate respondsToSelector:@selector(boucingViewWillBeginDecelarating:)]) {
-        [self.delegate performSelector:@selector(boucingViewWillBeginDecelarating:) withObject:self];
-    }
 }
 
 @end
