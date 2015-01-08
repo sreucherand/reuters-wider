@@ -9,7 +9,8 @@
 #import "CSStickyMenu.h"
 
 @interface CSStickyMenu () {
-    BOOL visible;
+    BOOL _visible;
+    BOOL _enabled;
 }
 
 @property (strong, nonatomic) CSTweenOperation *operation;
@@ -23,7 +24,8 @@
     
     self.hidden = YES;
     
-    visible = NO;
+    _visible = NO;
+    _enabled = YES;
     
     self.backgroundColor = WHITE_COLOR;
     
@@ -41,15 +43,31 @@
     self.frame = CGRectMake(0, -CGRectGetHeight(self.frame), CGRectGetWidth(scrollView.frame), CGRectGetHeight(self.frame));
 }
 
+#pragma mark - Specific methods
+
+- (void)enable {
+    _enabled = YES;
+}
+
+- (void)disable {
+    [self close];
+    
+    _enabled = NO;
+}
+
 - (void)open {
-    if (!visible) {
+    if (!_enabled) {
+        return;
+    }
+    
+    if (!_visible) {
         if (self.scrollView.contentOffset.y < CGRectGetHeight(self.frame)) {
             return;
         }
         
         self.hidden = NO;
         
-        visible = YES;
+        _visible = YES;
         
         if (self.operation) {
             [[CSTween sharedInstance] removeTweenOperation:self.operation];
@@ -71,7 +89,11 @@
 }
 
 - (void)toggle {
-    if (visible) {
+    if (!_enabled) {
+        return;
+    }
+    
+    if (_visible) {
         [self close];
     } else {
         [self open];
@@ -79,8 +101,12 @@
 }
 
 - (void)close {
-    if (visible) {
-        visible = NO;
+    if (!_enabled) {
+        return;
+    }
+    
+    if (_visible) {
+        _visible = NO;
         
         if (self.operation) {
             [[CSTween sharedInstance] removeTweenOperation:self.operation];
@@ -108,7 +134,7 @@
 - (void)clearAnimation {
     self.operation = nil;
     
-    if (!visible) {
+    if (!_visible) {
         self.hidden = YES;
     }
 }

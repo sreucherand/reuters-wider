@@ -18,6 +18,8 @@
 
 @property (assign, nonatomic) id <CSStickyMenuDelegate> delegate;
 
+- (void)enable;
+- (void)disable;
 - (void)open;
 - (void)close;
 - (void)toggle;

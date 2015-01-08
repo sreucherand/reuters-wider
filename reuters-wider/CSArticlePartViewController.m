@@ -17,7 +17,7 @@
 #import "CSProgressionBarView.h"
 
 @interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate> {
-    NSIndexPath *selectedIndexPath;
+    BOOL _definitionOpened;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLeftConstraint;
@@ -38,6 +38,16 @@
 
 @implementation CSArticlePartViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        _definitionOpened = NO;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the
@@ -49,9 +59,8 @@
     
     self.definitionView = [[[NSBundle mainBundle] loadNibNamed:@"CSInArticleGlossaryDefinition" owner:self options:nil] lastObject];
     self.definitionView.frame = (CGRect){.origin=self.definitionView.frame.origin, .size=CGSizeMake(CGRectGetWidth(self.view.frame)*0.55, self.definitionView.frame.size.height)};
-    self.definitionView.hidden = YES;
     
-    [self.view insertSubview:self.definitionView belowSubview:self.tableView];
+    [self.view insertSubview:self.definitionView belowSubview:self.progressionBarView];
     
     self.cells = [[NSMutableDictionary alloc] init];
     
@@ -188,6 +197,10 @@
 }
 
 - (void)openDefinitionWithUrl:(NSURL *)url {
+    _definitionOpened = YES;
+    
+    [self.stickyMenu disable];
+    
     CSDefinitionModel *definition = [[CSArticleData sharedInstance] getDefinitionAtIndex:[[[url.relativeString componentsSeparatedByString:@"/"] lastObject] integerValue] ofArticle:2];
     
     [self.definitionView hydrateWithTitle:definition.title andText:definition.text];
@@ -211,6 +224,14 @@
 }
 
 - (void)closeDefinition {
+    if (!_definitionOpened) {
+        return;
+    }
+    
+    _definitionOpened = NO;
+    
+    [self.stickyMenu enable];
+    
     [self.tableView removeGestureRecognizer:self.tapGestureRecognizer];
     [self.tableView.layer removeAllAnimations];
     [self.tableView setScrollEnabled:YES];
@@ -254,11 +275,11 @@
 #pragma mark - Gesture delegate
 
 - (void)didTapOnTableView:(UITapGestureRecognizer *)recognizer {
-    //[self closeDefinition];
-//    selectedIndexPath = [self.tableView indexPathForRowAtPoint:[recognizer locationInView:self.tableView.]];
-    
-//
-    [self.stickyMenu toggle];
+    if (_definitionOpened) {
+        [self closeDefinition];
+    } else {
+        [self.stickyMenu toggle];
+    }
 }
 
 - (void)didSwipeOnView:(UISwipeGestureRecognizer *)recognizer {
@@ -276,6 +297,12 @@
 }
 
 - (void)didSelectLinkWithURL:(NSURL *)url atPoint:(NSValue *)point {
+    if (_definitionOpened) {
+        [self closeDefinition];
+        
+        return;
+    }
+    
     CGFloat location = [point CGPointValue].y - CGRectGetHeight(self.tableView.frame)/2;
     
     [self.tableView setEasingFunction:easeOutExpo forKeyPath:@"center"];

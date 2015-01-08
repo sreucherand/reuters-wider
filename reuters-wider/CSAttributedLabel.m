@@ -380,4 +380,14 @@ static inline CGSize CTFramesetterSuggestFrameSizeForAttributedStringWithConstra
     }
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    CGPoint location = [gestureRecognizer locationInView:self];
+    
+    if ([self linkAtPoint:location]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end

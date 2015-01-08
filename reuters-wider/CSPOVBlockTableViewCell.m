@@ -83,7 +83,7 @@
     
     self.horizontalDashView.backgroundColor = [RED_ORANGE colorWithAlphaComponent:0.2];
     
-    self.horizontalGradientIndicatorView.topColor = DARK_BLUE;
+    self.horizontalGradientIndicatorView.topColor = [DARK_BLUE colorWithAlphaComponent:0.2];
     self.horizontalGradientIndicatorView.direction = CSDirectionLeft;
 }
 
