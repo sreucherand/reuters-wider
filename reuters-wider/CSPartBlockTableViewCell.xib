@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -61,8 +61,16 @@
                             <constraint firstAttribute="height" constant="105" id="EGv-YZ-qNI"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMain" translatesAutoresizingMaskIntoConstraints="NO" id="FGT-X8-dsX">
+                        <rect key="frame" x="20" y="24" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="96N-gB-bPC"/>
+                            <constraint firstAttribute="height" constant="30" id="P7F-sH-FFj"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="FGT-X8-dsX" firstAttribute="leading" secondItem="Hyr-Bw-FRO" secondAttribute="leading" constant="20" id="21C-g4-Qyw"/>
                     <constraint firstAttribute="trailing" secondItem="2Mt-3D-xBb" secondAttribute="trailing" id="8z6-9i-ohD"/>
                     <constraint firstItem="2Mt-3D-xBb" firstAttribute="top" secondItem="2Ge-hb-jqv" secondAttribute="top" constant="30" id="APC-ES-d3c"/>
                     <constraint firstAttribute="centerX" secondItem="2Ge-hb-jqv" secondAttribute="centerX" id="B64-t2-cdr"/>
@@ -77,6 +85,7 @@
                     <constraint firstItem="2EK-G6-AbE" firstAttribute="centerY" secondItem="c9i-Rh-gIK" secondAttribute="centerY" constant="2" id="fOg-HY-NAT"/>
                     <constraint firstItem="2Mt-3D-xBb" firstAttribute="leading" secondItem="Hyr-Bw-FRO" secondAttribute="leading" id="ge7-qa-tYM"/>
                     <constraint firstItem="bw0-D4-3UM" firstAttribute="leading" secondItem="gdL-Ek-f1n" secondAttribute="trailing" constant="14" id="iIX-Rl-utL"/>
+                    <constraint firstItem="FGT-X8-dsX" firstAttribute="centerY" secondItem="gdL-Ek-f1n" secondAttribute="centerY" constant="0.5" id="mIE-DT-TN1"/>
                     <constraint firstAttribute="centerX" secondItem="2EK-G6-AbE" secondAttribute="leading" id="ocR-On-p8c"/>
                     <constraint firstItem="2Mt-3D-xBb" firstAttribute="top" secondItem="Xec-Pf-WFJ" secondAttribute="bottom" constant="30" id="vvI-jf-pRv"/>
                 </constraints>
@@ -90,11 +99,12 @@
                 <outlet property="rectanglePartNumberView" destination="bw0-D4-3UM" id="1wq-It-vNp"/>
                 <outlet property="titleLabel" destination="Xec-Pf-WFJ" id="4oR-R2-NxU"/>
             </connections>
-            <point key="canvasLocation" x="258" y="436"/>
+            <point key="canvasLocation" x="258" y="435"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="clock" width="18" height="18"/>
+        <image name="logoMain" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
