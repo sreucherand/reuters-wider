@@ -18,6 +18,7 @@
 
 @interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate> {
     BOOL _definitionOpened;
+    BOOL _isSwitchedToNightMode;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLeftConstraint;
@@ -43,6 +44,7 @@
     
     if (self) {
         _definitionOpened = NO;
+        _isSwitchedToNightMode = NO;
     }
     
     return self;
@@ -356,12 +358,24 @@
 
 #pragma mark - StickyMenu delegate
 
+- (void)backToTopButtonDidPress {
+    [self.tableView setContentOffset:CGPointMake(self.tableView.contentOffset.x, 0) animated:YES];
+}
+
 - (void)titleButtonDidPress {
     [self unwindToHome];
 }
 
-- (void)backToTopButtonDidPress {
-    [self.tableView setContentOffset:CGPointMake(self.tableView.contentOffset.x, 0) animated:YES];
+- (void)nightModeButtonDidPress {
+    [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (_isSwitchedToNightMode) {
+            [((CSAbstractArticleViewCellTableViewCell *) obj) switchToNormalMode];
+        } else {
+            [((CSAbstractArticleViewCellTableViewCell *) obj) switchToNightMode];
+        }
+    }];
+    
+    _isSwitchedToNightMode = !_isSwitchedToNightMode;
 }
 
 #pragma mark - Navigation

@@ -68,4 +68,16 @@
     self.readDurationCenterAlignmentConstraint.constant = (24 + [self.readDurationLabel.text sizeWithAttributes:@{NSFontAttributeName: CALIBRE_LIGHT_16}].width)/2 - 24;
 }
 
+- (void)switchToNightMode {
+    [super switchToNightMode];
+    
+    self.partNumberLabel.textColor = WHITE_COLOR;
+    
+    self.readDurationLabel.textColor = WHITE_COLOR;
+    
+    self.titleLabel.textColor = WHITE_COLOR;
+    
+    self.gradientIndicatorView.topColor = WHITE_COLOR;
+}
+
 @end

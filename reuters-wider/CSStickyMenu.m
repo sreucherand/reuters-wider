@@ -141,15 +141,21 @@
 
 #pragma mark - Events
 
+- (IBAction)backToTopButtonDidPress:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(backToTopButtonDidPress)]) {
+        [self.delegate performSelector:@selector(backToTopButtonDidPress)];
+    }
+}
+
 - (IBAction)titleButtonDidPress:(id)sender {
     if ([self.delegate respondsToSelector:@selector(titleButtonDidPress)]) {
         [self.delegate performSelector:@selector(titleButtonDidPress)];
     }
 }
 
-- (IBAction)backToTopButtonDidPress:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(backToTopButtonDidPress)]) {
-        [self.delegate performSelector:@selector(backToTopButtonDidPress)];
+- (IBAction)nightModeButtonDidPress:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(nightModeButtonDidPress)]) {
+        [self.delegate performSelector:@selector(nightModeButtonDidPress)];
     }
 }
 

@@ -29,6 +29,7 @@
 @protocol CSStickyMenuDelegate <NSObject>
 @optional;
 
+- (void)nightModeButtonDidPress;
 - (void)titleButtonDidPress;
 - (void)backToTopButtonDidPress;
 

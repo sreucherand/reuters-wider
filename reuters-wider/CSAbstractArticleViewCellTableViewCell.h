@@ -25,6 +25,9 @@
 - (void)hydrateWithContentData:(NSDictionary *)data;
 - (void)hydrateWithContentData:(NSDictionary *)data forState:(NSNumber *)state;
 
+- (void)switchToNormalMode;
+- (void)switchToNightMode;
+
 @end
 
 @protocol CSAbstractArticleViewCellTableViewCellDelegate <NSObject>

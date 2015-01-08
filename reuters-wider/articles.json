@@ -3,21 +3,21 @@
         {
             "id": 0,
             "title": "Social impact\ninvesting",
-            "date": "Mon, 01 Dec 2014 10:07:43 GMT",
+            "date": "Mon, 03 Aug 2014 10:07:43 GMT",
             "number": 29,
             "media": "cover-social-impact-investing"
         },
         {
             "id": 1,
             "title": "Future energy\nin cities",
-            "date": "Mon, 08 Dec 2014 09:11:28 GMT",
+            "date": "Tue, 01 Sep 2014 09:11:28 GMT",
             "number": 30,
             "media": "cover-future-energy-in-cities"
         },
         {
             "id": 2,
             "title": "Hong-Kong\nfor democracy",
-            "date": "Mon, 13 Dec 2014 08:59:14 GMT",
+            "date": "Mon, 05 Oct 2014 08:59:14 GMT",
             "number": 31,
             "media": "cover-hong-kong-for-democracy",
             "blocks": [
@@ -499,22 +499,22 @@
                 {
                     "id": 0,
                     "title": "Chinese rule in 1997",
-                    "text": "The Basic Law was drafted in accordance with the Sino-British Joint Declaration on the Question of Hong-Kong signed between the Chinese and British governments on 19 December 1984 and went into effect on 1 July 1997."
+                    "text": "The Basic Law was drafted in accordance with the Sino-British Joint Declaration on the Question of Hong-Kong signed between both governments on 19 December 1984 and went into effect on 1 July 1997."
                 },
                 {
                     "id": 1,
                     "title": "Communist party",
-                    "text": "Politically, they are Maoists influenced by Hua Guofeng: They think that the Communist Party is the measure of all things; friends of the Party are worthy of support; enemies of the Party should be opposed at all costs. This hard-line thinking led to the occasional vandalism of Democratic Party political bulletin boards by the indigenous Communists."
+                    "text": "Politically, they are Maoists influenced by Hua Guofeng: They think that the Communist Party is the measure of all things; friends of the Party are worthy of support; enemies of the Party should be opposed at all costs."
                 },
                 {
                     "id": 2,
                     "title": "Federation of students",
-                    "text": "Hong Kong Federation of Students is the biggest student organization in Hong Kong. It consists of the student unions of eight tertiary education institutions. With 51,779 members as of March 2006, the purpose of the HKFS is to promote student movements and to enhance students’ engagement in society."
+                    "text": "Hong Kong Federation of Students is the biggest student organization in Hong Kong. It consists of the student unions of eight tertiary education institutions."
                 },
                 {
                     "id": 3,
                     "title": "Ferguson",
-                    "text": "Ferguson is a city in St. Louis County, Missouri, United States. On August 9, 2014, an 18-year-old man, Michael Brown, was fatally shot by Darren Wilson, a Ferguson Police Department officer. The incident sparked protests and acts of vandalism in Ferguson and sparked a vigorous debate about law enforcement's relationship with African-Americans."
+                    "text": "Ferguson is a city in Missouri, United States. On August 9, 2014, an 18-year-old man, Michael Brown, was fatally shot by Darren Wilson, a Police Department officer. The incident sparked protests and acts of vandalism in Ferguson and sparked a vigorous debate about law enforcement's relationship with African-Americans."
                 }
             ]
         }
