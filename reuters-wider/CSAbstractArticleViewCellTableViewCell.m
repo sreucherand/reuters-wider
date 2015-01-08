@@ -31,10 +31,12 @@
 }
 
 - (void)setFrame:(CGRect)frame {
-    frame.size.width -= self.marginRight;
+    frame.size.width = fmax(frame.size.width - self.marginRight, CGRectGetWidth(self.tableView.frame) - self.marginRight);
     
     [super setFrame:frame];
 }
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -48,7 +50,7 @@
     self.content = obj.content;
 }
 
-- (void)hydrateWithContentDataAfterReload:(NSDictionary *)data {
+- (void)hydrateWithContentData:(NSDictionary *)data forState:(NSNumber *)state {
     [self hydrateWithContentData:data];
 }
 

@@ -318,6 +318,15 @@
 			name = FigureBlock;
 			sourceTree = "<group>";
 		};
+		202E59421A5ED9C900005DE6 /* BouncingView */ = {
+			isa = PBXGroup;
+			children = (
+				205A42891A5DE52900BD5185 /* CSBoucingView.h */,
+				205A428A1A5DE52900BD5185 /* CSBoucingView.m */,
+			);
+			name = BouncingView;
+			sourceTree = "<group>";
+		};
 		203010391A25FBB70088FD7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +501,7 @@
 		208C9CF51A10C62E00517B46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				202E59421A5ED9C900005DE6 /* BouncingView */,
 				EBA936901A5D348D00689F5E /* NightModeLayer */,
 				20965A9E1A5C32B5008DDCA6 /* PagingScrollViewContainerView */,
 				209CF3091A59AD7200A8A954 /* ProgressionBar */,
@@ -505,8 +515,6 @@
 				20801A891A2363C700EF38F3 /* IssuesDescription */,
 				20A55B141A228712003B601B /* GradientIndicator */,
 				20A55B131A2286E1003B601B /* IssuesPreview */,
-				205A42891A5DE52900BD5185 /* CSBoucingView.h */,
-				205A428A1A5DE52900BD5185 /* CSBoucingView.m */,
 			);
 			name = Views;
 			path = ..;
