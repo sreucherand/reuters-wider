@@ -61,6 +61,34 @@
     self.backgroundImageView.image = image;
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.backgroundImageViewHeightConstrint.constant = CGRectGetWidth(self.frame)*ratio;
+    
+    if(self.content.video) {
+        [self updateLayoutWithVideo];
+    } else {
+    }
+}
+
+- (void) updateLayoutWithVideo {
+    UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [playButton addTarget:self action:@selector(launchVideo:) forControlEvents:UIControlEventTouchUpInside];
+    [playButton setBackgroundImage:[UIImage imageNamed:@"iconPlay"] forState:UIControlStateNormal];
+    playButton.frame = CGRectMake(((CGRectGetWidth(self.backgroundImageView.frame) / 2) - 22), 12, 44, 44);
+    
+    [self.backgroundImageView addSubview:playButton];
+    
+}
+
+-(void) launchVideo:(id)sender {
+    // Video
+    NSLog(@"coucoucou");
+}
+
+- (void) prepareForReuse {
+    [super prepareForReuse];
+    
+    for(UIView *subview in [self.backgroundImageView subviews]) {
+        [subview removeFromSuperview];
+    }
 }
 
 - (void)switchToNightMode {
