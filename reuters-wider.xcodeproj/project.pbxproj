@@ -949,9 +949,9 @@
 		EBA936901A5D348D00689F5E /* NightModeLayer */ = {
 			isa = PBXGroup;
 			children = (
-				EBA936911A5D34B400689F5E /* CSNightModeLayer.xib */,
 				EBA936931A5D34CC00689F5E /* CSNightModeLayer.h */,
 				EBA936941A5D34CC00689F5E /* CSNightModeLayer.m */,
+				EBA936911A5D34B400689F5E /* CSNightModeLayer.xib */,
 			);
 			name = NightModeLayer;
 			sourceTree = "<group>";

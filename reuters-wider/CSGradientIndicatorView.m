@@ -8,7 +8,10 @@
 
 #import "CSGradientIndicatorView.h"
 
-@interface CSGradientIndicatorView ()
+@interface CSGradientIndicatorView () {
+    UIColor *_queueTopColor;
+    UIColor *_queueBottomColor;
+}
 
 @property (strong, nonatomic) CSTweenOperation *operation;
 
@@ -78,6 +81,21 @@
 }
 
 #pragma mark - Setters
+- (void)setBounds:(CGRect)bounds {
+    [super setBounds:bounds];
+    
+    if (![_queueTopColor isEqual:self.topColor]) {
+        _queueTopColor = self.topColor;
+        
+        [self setNeedsDisplay];
+    }
+    
+    if (![_queueBottomColor isEqual:self.bottomColor]) {
+        _queueBottomColor = self.bottomColor;
+        
+        [self setNeedsDisplay];
+    }
+}
 
 - (void)setTopColor:(UIColor *)topColor {
     _topColor = topColor;

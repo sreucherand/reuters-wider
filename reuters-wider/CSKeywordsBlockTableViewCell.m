@@ -22,10 +22,15 @@
 - (void)awakeFromNib {
     self.topBorderLayer = [CALayer layer];
     
-    self.topBorderLayer.frame = CGRectMake(20, 0, (CGRectGetWidth(self.mainSuperView.frame) - 50), 1);
     self.topBorderLayer.backgroundColor = LIGHT_DIMMED_GREY.CGColor;
     
     [self.mainSuperView.layer addSublayer:self.topBorderLayer];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.topBorderLayer.frame = CGRectMake(20, 0, (CGRectGetWidth(self.mainSuperView.frame) - 50), 1);
 }
 
 /*

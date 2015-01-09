@@ -54,8 +54,9 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
         
-        NSLog(@"%i", (int)[[CSGlobalData sharedInstance] hasUserAlreadyReceiveNightLayer]);
-        [self setupAVCapture];
+        if (![[CSGlobalData sharedInstance] hasUserAlreadyReceiveNightLayer]) {
+            [self setupAVCapture];
+        }
     }
     
     return self;
@@ -508,9 +509,8 @@
     
     NSDictionary *exifMetadata = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
     CGFloat brightnessValue = [[exifMetadata  objectForKey:(NSString *)kCGImagePropertyExifBrightnessValue] floatValue];
-    NSLog(@"ocuou");
+    
     if (brightnessValue < 0) {
-        NSLog(@"pouet");
         [self lakeOffLuminosity];
     }
 }
@@ -534,7 +534,6 @@
         [_session stopRunning];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"coucou");
             CSNightModeLayer *nightLayerView = [[[NSBundle mainBundle] loadNibNamed:@"CSNightModeLayer" owner:self options:nil] lastObject];
             
             nightLayerView.frame = self.view.frame;
@@ -542,6 +541,8 @@
             [self.view addSubview:nightLayerView];
             
             [nightLayerView animate];
+            
+            [[CSGlobalData sharedInstance] userDidReceiveNightLayer];
         });
     });
 }

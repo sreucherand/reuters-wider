@@ -46,10 +46,13 @@
     self.teasingLabel.text = @"Are you in a dark environment ?\nYou can activate the night mode,\njust tap on your screen and on the moon.";
     self.teasingLabel.alpha = 0;
     
+    [self.dismissButton setTitle:@"OK" forState:UIControlStateNormal];
     [self.dismissButton setTitleColor:WHITE_COLOR forState:UIControlStateNormal];
     self.dismissButton.titleLabel.font = CALIBRE_LIGHT_16;
     self.dismissButton.alpha = 0;
     self.dismissButton.userInteractionEnabled = NO;
+    
+    self.moonIconImageView.alpha = 0;
     
     [self.gradientIndicatorView clearAnimation];
     [self.gradientIndicatorView interpolateBetweenColor:[UIColor clearColor] andColor:WHITE_COLOR withProgression:0];
@@ -78,26 +81,39 @@
     CGContextSetFillColorWithColor(context, FIRST_PURPLE.CGColor);
     CGContextFillRect(context, CGRectMake(0, 0, CGRectGetWidth(rect), (CGRectGetHeight(rect)/2)*_progression));
     
-    CGContextDrawLinearGradient(context, gradient, CGPointMake(0, (CGRectGetHeight(rect)/2)*_progression), CGPointMake(0, CGRectGetHeight(rect)*_progression), 0);
+    CGContextDrawLinearGradient(context, gradient, CGPointMake(0, (CGRectGetHeight(rect)/2)*_progression - 1), CGPointMake(0, CGRectGetHeight(rect)*_progression), 0);
     
     CGColorSpaceRelease(space);
     CGGradientRelease(gradient);
 }
 
 - (void)animate {
-//    [CSTween tweenFrom:0 to:1 duration:1.2 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
-//        _progression = operation.value;
-//        
-//        [self setNeedsDisplay];
-//    } completeBlock:nil];
+    [CSTween tweenFrom:0 to:1 duration:1.5 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+        _progression = operation.value;
+        
+        [self setNeedsDisplay];
+    } completeBlock:nil];
     
-    [CSTween tweenFrom:0 to:1 duration:1.5 delay:0.75 timingFunction:CSTweenEaseOutExpo updateBlock:^(CSTweenOperation *operation) {
+    [CSTween tweenFrom:0 to:1 duration:1.5 delay:1 timingFunction:CSTweenEaseOutExpo updateBlock:^(CSTweenOperation *operation) {
         self.nightModeLabel.alpha = operation.value;
         self.teasingLabel.alpha = operation.value;
         self.dismissButton.alpha = operation.value;
+        self.moonIconImageView.alpha = operation.value;
     } completeBlock:nil];
     
-    [self.gradientIndicatorView animateWidthDuration:1 delay:1 timingFunction:CSTweenEaseOutExpo completion:nil];
+    [self.gradientIndicatorView animateWidthDuration:1 delay:1.5 timingFunction:CSTweenEaseOutExpo completion:^{
+        self.dismissButton.userInteractionEnabled = YES;
+    }];
+}
+
+- (IBAction)dismissButtonDidPress:(id)sender {
+    [CSTween tweenFrom:1 to:0 duration:1 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+        self.alpha = operation.value;
+    } completeBlock:^(BOOL finished) {
+        if (finished) {
+            [self removeFromSuperview];
+        }
+    }];
 }
 
 @end
