@@ -112,8 +112,10 @@
 #pragma mark - Specific methos
 
 - (void)interpolateBetweenColor:(UIColor *)topColor andColor:(UIColor *)bottomColor withProgression:(CGFloat)progression {
-    if (![self.topColor isEqual:topColor] || ![self.bottomColor isEqual:bottomColor]) {
+    if (![self.topColor isEqual:topColor]) {
         self.topColor = topColor;
+    }
+    if (![self.bottomColor isEqual:bottomColor]) {
         self.bottomColor = bottomColor;
     }
     
@@ -136,6 +138,7 @@
     self.operation.startValue = self.progression;
     self.operation.endValue = 1.0f;
     self.operation.duration = duration;
+    self.operation.delay = delay;
     self.operation.target = self;
     self.operation.timingFunction = timingFunction;
     self.operation.updateSelector = @selector(update:);

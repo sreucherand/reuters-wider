@@ -28,6 +28,9 @@
 - (void)switchToNormalMode;
 - (void)switchToNightMode;
 
+- (void)enter;
+- (void)leave;
+
 @end
 
 @protocol CSAbstractArticleViewCellTableViewCellDelegate <NSObject>
