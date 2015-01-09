@@ -244,7 +244,7 @@
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
     
-    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(cell.bounds));
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame) - cell.marginRight, CGRectGetHeight(cell.bounds));
     
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
