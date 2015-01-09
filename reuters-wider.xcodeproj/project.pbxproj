@@ -72,6 +72,7 @@
 		209CF3131A59E66400A8A954 /* cover-social-impact-investing.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 209CF30F1A59D33B00A8A954 /* cover-social-impact-investing.mp4 */; };
 		20A55B0B1A222C46003B601B /* CSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A55B0A1A222C46003B601B /* CSMainNavigationController.m */; };
 		20A55B0F1A223B32003B601B /* CSIssuesPreviewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A55B0E1A223B32003B601B /* CSIssuesPreviewFlowLayout.m */; };
+		20A9A3B01A5FEC260080E9AE /* honk-kong-interview.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 20A9A3AF1A5FEC260080E9AE /* honk-kong-interview.mp4 */; };
 		20B2A7FB1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2A7FA1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m */; };
 		20B2A7FF1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2A7FE1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m */; };
 		20B2A8031A521F2300A9E5A8 /* CSArticleHomeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2A8021A521F2300A9E5A8 /* CSArticleHomeTransition.m */; };
@@ -224,6 +225,7 @@
 		20A55B0A1A222C46003B601B /* CSMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMainNavigationController.m; sourceTree = "<group>"; };
 		20A55B0D1A223B32003B601B /* CSIssuesPreviewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSIssuesPreviewFlowLayout.h; sourceTree = "<group>"; };
 		20A55B0E1A223B32003B601B /* CSIssuesPreviewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSIssuesPreviewFlowLayout.m; sourceTree = "<group>"; };
+		20A9A3AF1A5FEC260080E9AE /* honk-kong-interview.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "honk-kong-interview.mp4"; sourceTree = "<group>"; };
 		20B2A7F91A50AD5E00A9E5A8 /* CSHomeArticleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSHomeArticleTransition.h; sourceTree = "<group>"; };
 		20B2A7FA1A50AD5E00A9E5A8 /* CSHomeArticleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSHomeArticleTransition.m; sourceTree = "<group>"; };
 		20B2A7FD1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSScrollViewNavigationControl.h; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 		209CF30D1A59CF5D00A8A954 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				20A9A3AF1A5FEC260080E9AE /* honk-kong-interview.mp4 */,
 				209CF3101A59E52E00A8A954 /* cover-hong-kong-for-democracy.mp4 */,
 				209CF30E1A59D33B00A8A954 /* cover-future-energy-in-cities.mp4 */,
 				209CF30F1A59D33B00A8A954 /* cover-social-impact-investing.mp4 */,
@@ -1073,6 +1076,7 @@
 				20801A851A2360A800EF38F3 /* Archer-Thin.otf in Resources */,
 				20801A7E1A23609600EF38F3 /* Leitura-Roman1.otf in Resources */,
 				20801A7F1A23609600EF38F3 /* Leitura-Roman2.otf in Resources */,
+				20A9A3B01A5FEC260080E9AE /* honk-kong-interview.mp4 in Resources */,
 				209060471A10BB50001EC87E /* Main.storyboard in Resources */,
 				208B5F6A1A538144003D4718 /* CSImageBlockTableViewCell.xib in Resources */,
 				206FD85B1A30CE1700636737 /* CSAsideBlockTableViewCell.xib in Resources */,
