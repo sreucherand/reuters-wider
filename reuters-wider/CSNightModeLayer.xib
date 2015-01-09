@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -47,16 +47,16 @@
             </subviews>
             <constraints>
                 <constraint firstItem="dcX-t6-xAi" firstAttribute="top" secondItem="6s3-3c-oHG" secondAttribute="bottom" constant="23" id="1XW-oX-70w"/>
-                <constraint firstAttribute="centerX" secondItem="6s3-3c-oHG" secondAttribute="centerX" constant="0.5" id="8oc-sa-iBQ"/>
+                <constraint firstAttribute="centerX" secondItem="6s3-3c-oHG" secondAttribute="centerX" id="8oc-sa-iBQ"/>
                 <constraint firstItem="dcX-t6-xAi" firstAttribute="leading" secondItem="xwB-tF-JZi" secondAttribute="leading" constant="35" id="BMP-6S-USC"/>
                 <constraint firstItem="UY2-B4-4QR" firstAttribute="top" secondItem="DDl-TT-nh9" secondAttribute="bottom" constant="10" id="He6-JZ-dlC"/>
                 <constraint firstItem="DDl-TT-nh9" firstAttribute="top" secondItem="uWO-rL-9Vn" secondAttribute="bottom" constant="45" id="cTJ-44-Qs7"/>
                 <constraint firstItem="uWO-rL-9Vn" firstAttribute="top" secondItem="dcX-t6-xAi" secondAttribute="bottom" constant="35" id="d6j-2v-NMH"/>
-                <constraint firstAttribute="centerX" secondItem="uWO-rL-9Vn" secondAttribute="centerX" constant="0.5" id="gly-nG-DJ8"/>
+                <constraint firstAttribute="centerX" secondItem="uWO-rL-9Vn" secondAttribute="centerX" id="gly-nG-DJ8"/>
                 <constraint firstItem="6s3-3c-oHG" firstAttribute="top" secondItem="xwB-tF-JZi" secondAttribute="top" constant="45" id="imf-Ie-hcm"/>
-                <constraint firstAttribute="centerX" secondItem="DDl-TT-nh9" secondAttribute="centerX" constant="0.5" id="qUc-HZ-uee"/>
+                <constraint firstAttribute="centerX" secondItem="DDl-TT-nh9" secondAttribute="centerX" id="qUc-HZ-uee"/>
                 <constraint firstAttribute="trailing" secondItem="dcX-t6-xAi" secondAttribute="trailing" constant="35" id="rKi-Na-yPj"/>
-                <constraint firstAttribute="centerX" secondItem="UY2-B4-4QR" secondAttribute="centerX" constant="0.5" id="vSB-l7-GgV"/>
+                <constraint firstAttribute="centerX" secondItem="UY2-B4-4QR" secondAttribute="centerX" id="vSB-l7-GgV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

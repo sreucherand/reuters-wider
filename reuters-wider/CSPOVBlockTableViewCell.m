@@ -150,7 +150,6 @@
     
     formattedDate = [self.content.views[1] formattedDate];
     date = [dateFormat stringFromDate:formattedDate];
-    day = [[NSCalendar currentCalendar] component:NSCalendarUnitDay fromDate:formattedDate];
     
     self.comparedMetaLabel.text = [NSString stringWithFormat:@"%@, by %@", [date stringByReplacingOccurrencesOfString:@"%s" withString:suffix], [self.content.views[1] author]];
     self.comparedQuoteLabel.text = [self.content.views[1] quote];

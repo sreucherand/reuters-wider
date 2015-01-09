@@ -37,6 +37,8 @@
 @property (strong, nonatomic) CSInArticleGlossaryDefinition *definitionView;
 @property (strong, nonatomic) CSScrollViewNavigationControl *topNavigationControl;
 @property (strong, nonatomic) CSStickyMenu *stickyMenu;
+
+@property (strong, nonatomic) NSMutableArray *visibleCells;
 @property (strong, nonatomic) NSMutableDictionary *cells;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
 @property (strong, nonatomic) NSMutableDictionary *cellsStates;
@@ -65,6 +67,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the
+    
+    self.visibleCells = [[NSMutableArray alloc] init];
     
     self.tableView.backgroundColor = [UIColor clearColor];
     
@@ -340,6 +344,22 @@
         self.progression = self.tableView.contentOffset.y/(self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame));
         self.progressionBarView.progression = self.progression;
     }
+    
+    [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(CSAbstractArticleViewCellTableViewCell *obj, NSUInteger idx, BOOL *stop) {
+        if (![self.visibleCells containsObject:obj]) {
+            [obj enter];
+            
+            [self.visibleCells addObject:obj];
+        }
+    }];
+    
+    [self.visibleCells enumerateObjectsUsingBlock:^(CSAbstractArticleViewCellTableViewCell *obj, NSUInteger idx, BOOL *stop) {
+        if (![self.tableView.visibleCells containsObject:obj]) {
+            [obj leave];
+            
+            [self.visibleCells removeObject:obj];
+        }
+    }];
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {

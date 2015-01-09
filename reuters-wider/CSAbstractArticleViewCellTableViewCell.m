@@ -69,5 +69,13 @@
     self.backgroundColor = NIGHT_BLUE;
 }
 
+#pragma mark - Navigation
+
+- (void)enter {
+}
+
+- (void)leave {
+}
+
 @end
 
