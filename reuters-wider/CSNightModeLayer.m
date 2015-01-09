@@ -99,11 +99,13 @@
         self.teasingLabel.alpha = operation.value;
         self.dismissButton.alpha = operation.value;
         self.moonIconImageView.alpha = operation.value;
-    } completeBlock:nil];
-    
-    [self.gradientIndicatorView animateWidthDuration:1 delay:1.5 timingFunction:CSTweenEaseOutExpo completion:^{
-        self.dismissButton.userInteractionEnabled = YES;
+    } completeBlock:^(BOOL finished) {
+        if (finished) {
+            self.dismissButton.userInteractionEnabled = YES;
+        }
     }];
+    
+    [self.gradientIndicatorView animateWidthDuration:1 delay:1.5 timingFunction:CSTweenEaseOutExpo completion:nil];
 }
 
 - (IBAction)dismissButtonDidPress:(id)sender {

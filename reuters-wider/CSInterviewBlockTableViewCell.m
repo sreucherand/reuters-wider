@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *backgroundImageViewHeightConstrint;
 
+@property (strong, nonatomic) UIButton *playButton;
+
 @end
 
 @implementation CSInterviewBlockTableViewCell
@@ -68,27 +70,29 @@
     }
 }
 
-- (void) updateLayoutWithVideo {
-    UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [playButton addTarget:self action:@selector(launchVideo:) forControlEvents:UIControlEventTouchUpInside];
-    [playButton setBackgroundImage:[UIImage imageNamed:@"iconPlay"] forState:UIControlStateNormal];
-    playButton.frame = CGRectMake(((CGRectGetWidth(self.backgroundImageView.frame) / 2) - 22), 12, 44, 44);
+- (void)updateLayoutWithVideo {
+    [self.backgroundImageView layoutIfNeeded];
     
-    [self.backgroundImageView addSubview:playButton];
+    self.playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [self.playButton addTarget:self action:@selector(launchVideo:) forControlEvents:UIControlEventTouchUpInside];
+    [self.playButton setBackgroundImage:[UIImage imageNamed:@"iconPlay"] forState:UIControlStateNormal];
+    
+    self.playButton.frame = CGRectMake(((CGRectGetWidth(self.backgroundImageView.frame) / 2) - 22), CGRectGetHeight(self.interviewViewBackground.frame) + 12, 44, 44);
+    
+    [self addSubview:self.playButton];
     
 }
 
--(void) launchVideo:(id)sender {
+- (void)launchVideo:(id)sender {
     // Video
     NSLog(@"coucoucou");
 }
 
-- (void) prepareForReuse {
+- (void)prepareForReuse {
     [super prepareForReuse];
     
-    for(UIView *subview in [self.backgroundImageView subviews]) {
-        [subview removeFromSuperview];
-    }
+    [self.playButton removeFromSuperview];
 }
 
 - (void)switchToNightMode {

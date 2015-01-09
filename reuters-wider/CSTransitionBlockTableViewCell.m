@@ -76,7 +76,9 @@
 }
 
 - (void)hydrateWithContentData:(NSDictionary *)data forState:(NSNumber *)state {
-    [super hydrateWithContentData:data forState:state];
+    if (data) {
+        [super hydrateWithContentData:data forState:state];
+    }
     
     self.state = state;
     
@@ -130,6 +132,16 @@
             }
         }
     }];
+}
+
+- (void)leave {
+    if ([self.state intValue] == 2) {
+        return;
+    }
+    
+    [self hydrateWithContentData:nil forState:[NSNumber numberWithInt:1]];
+    
+    [[CSTween sharedInstance] removeAllTweenOperations];
 }
 
 @end
