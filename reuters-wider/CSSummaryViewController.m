@@ -87,12 +87,12 @@
 #pragma mark - Table view datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[CSArticleData sharedInstance] getPartsOfArticle:2] count];
+    return [[[CSArticleData sharedInstance] getPartsOfArticle:0] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSSummaryEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"summaryEntryCellID" forIndexPath:indexPath];
-    CSPartModel *part = [[CSArticleData sharedInstance] getPart:indexPath.row ofArticle:2];
+    CSPartModel *part = [[CSArticleData sharedInstance] getPart:indexPath.row ofArticle:0];
     
     cell.partNumberLabel.text = [NSString stringWithFormat:@"0%i", (int)indexPath.row+1];
     cell.partTitleLabel.text = part.title;
@@ -103,7 +103,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return (CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.tableView.tableHeaderView.frame) - CGRectGetHeight(self.glossaryToggleView.frame))/[[[CSArticleData sharedInstance] getPartsOfArticle:2] count];
+    return (CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.tableView.tableHeaderView.frame) - CGRectGetHeight(self.glossaryToggleView.frame))/[[[CSArticleData sharedInstance] getPartsOfArticle:0] count];
 }
 
 #pragma mark - Table view cell delegate
