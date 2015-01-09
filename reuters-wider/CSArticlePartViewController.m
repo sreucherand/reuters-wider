@@ -123,13 +123,13 @@
     
     [self.view addSubview:self.stickyMenu];
     
-    self.progression = [[CSArticleData sharedInstance] getProgressionOfArticle:2];
+    self.progression = [[CSArticleData sharedInstance] getProgressionOfArticle:0];
     
     [self.tableView setContentOffset:CGPointMake(0, self.progression * (self.tableView.contentSize.height - CGRectGetHeight(self.tableView.frame))) animated:NO];
     
     self.cellsStates = [[NSMutableDictionary alloc] init];
     
-    NSString *mode = [[CSArticleData sharedInstance] getReadModeOfArticle:2];
+    NSString *mode = [[CSArticleData sharedInstance] getReadModeOfArticle:0];
     
     _isSwitchedToNightMode = [mode isEqualToString:@"night"] ? YES : NO;
     
@@ -205,11 +205,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[CSArticleData sharedInstance] getBlocksOfArticle:2] count];
+    return [[[CSArticleData sharedInstance] getBlocksOfArticle:0] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
+    CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:0] objectAtIndex:indexPath.row];
     
     CSAbstractArticleViewCellTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForBlockType:block.type] forIndexPath:indexPath];
     
@@ -225,7 +225,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:2] objectAtIndex:indexPath.row];
+    CSBlockModel *block = [[[CSArticleData sharedInstance] getBlocksOfArticle:0] objectAtIndex:indexPath.row];
     NSString *identifier = [self cellIdentifierForBlockType:block.type];
     CSAbstractArticleViewCellTableViewCell *cell = [self.cells objectForKey:identifier];
     
@@ -273,7 +273,7 @@
     
     [self.stickyMenu disable];
     
-    CSDefinitionModel *definition = [[CSArticleData sharedInstance] getDefinitionAtIndex:[[[url.relativeString componentsSeparatedByString:@"/"] lastObject] integerValue] ofArticle:2];
+    CSDefinitionModel *definition = [[CSArticleData sharedInstance] getDefinitionAtIndex:[[[url.relativeString componentsSeparatedByString:@"/"] lastObject] integerValue] ofArticle:0];
     
     [self.definitionView hydrateWithTitle:definition.title andText:definition.text];
     
@@ -449,9 +449,9 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"readModeUpdateNotification" object:self userInfo:@{@"mode": mode}];
     
     if (_isSwitchedToNightMode) {
-        [[CSArticleData sharedInstance] saveReadMode:@"night" ofArticle:2];
+        [[CSArticleData sharedInstance] saveReadMode:@"night" ofArticle:0];
     } else {
-        [[CSArticleData sharedInstance] saveReadMode:@"normal" ofArticle:2];
+        [[CSArticleData sharedInstance] saveReadMode:@"normal" ofArticle:0];
     }
 }
 
@@ -468,7 +468,7 @@
 #pragma mark - Navigation
 
 - (void)unwindToHome {
-    [[CSArticleData sharedInstance] saveProgression:self.progression ofArticle:2];
+    [[CSArticleData sharedInstance] saveProgression:self.progression ofArticle:0];
     
     [self performSegueWithIdentifier:@"unwindArticleToHomeSegueID" sender:self];
 }
