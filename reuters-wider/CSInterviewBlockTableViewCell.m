@@ -135,6 +135,10 @@
 }
 
 - (void)leave {
+    if (!self.moviePlayer) {
+        return;
+    }
+    
     [self.moviePlayer stop];
     [self.moviePlayer.view removeFromSuperview];
     
