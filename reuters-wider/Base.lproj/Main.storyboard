@@ -363,11 +363,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4W-Wn-qZJ">
                                 <rect key="frame" x="262" y="26" width="40" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconClose" translatesAutoresizingMaskIntoConstraints="NO" id="JOE-AO-ktf">
-                                        <rect key="frame" x="13" y="16" width="15" height="8"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowBottom" translatesAutoresizingMaskIntoConstraints="NO" id="JOE-AO-ktf">
+                                        <rect key="frame" x="11" y="11" width="18" height="18"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="15" id="Aok-I7-bSX"/>
-                                            <constraint firstAttribute="height" constant="8" id="IWH-Xx-yXc"/>
+                                            <constraint firstAttribute="width" constant="18" id="Aok-I7-bSX"/>
+                                            <constraint firstAttribute="height" constant="18" id="IWH-Xx-yXc"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -552,9 +552,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowBottom" width="18" height="18"/>
         <image name="arrowTop" width="18" height="18"/>
         <image name="glossary" width="26" height="26"/>
-        <image name="iconClose" width="15" height="8"/>
         <image name="iconGlass" width="26" height="26"/>
         <image name="logoMain" width="30" height="30"/>
         <image name="summary" width="26" height="26"/>
