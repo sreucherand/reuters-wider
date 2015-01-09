@@ -187,8 +187,8 @@ static inline CGSize CTFramesetterSuggestFrameSizeForAttributedStringWithConstra
         NSString *url = [[string string] substringWithRange:[result rangeAtIndex:2]];
         
         [mutableString replaceCharactersInRange:result.range withString:title];
-        [mutableString addAttribute:NSBackgroundColorAttributeName value:FIRST_DIMMED_PURPLE range:NSMakeRange(result.range.location, [result rangeAtIndex:1].length)];
-        
+        [mutableString addAttribute:NSForegroundColorAttributeName value:FIRST_PURPLE range:NSMakeRange(result.range.location, [result rangeAtIndex:1].length)];
+        [mutableString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:NSMakeRange(result.range.location, [result rangeAtIndex:1].length)];
         [self addLinkToURL:[NSURL URLWithString:url] withRange:NSMakeRange(result.range.location, [result rangeAtIndex:1].length)];
     }
     
