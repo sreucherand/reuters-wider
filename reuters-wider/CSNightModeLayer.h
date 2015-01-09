@@ -10,4 +10,6 @@
 
 @interface CSNightModeLayer : UIView
 
+- (void)animate;
+
 @end

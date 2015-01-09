@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Gobelins. All rights reserved.,
 //
 
+#import <AVFoundation/AVFoundation.h>
+#import <ImageIO/ImageIO.h>
+
 #import "CSArticlePartViewController.h"
 #import "CSAbstractArticleViewCellTableViewCell.h"
 #import "CSPartBlockTableViewCell.h"
@@ -15,10 +18,13 @@
 #import "CSArticleSummaryTransition.h"
 #import "CSSummaryViewController.h"
 #import "CSProgressionBarView.h"
+#import "CSNightModeLayer.h"
 
-@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate> {
+@interface CSArticlePartViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, CSAbstractArticleViewCellTableViewCellDelegate, CSStickyMenuDelegate> {
     BOOL _definitionOpened;
     BOOL _isSwitchedToNightMode;
+    
+    AVCaptureSession *_session;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewLeftConstraint;
@@ -47,6 +53,9 @@
         _isSwitchedToNightMode = NO;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
+        
+        NSLog(@"%i", (int)[[CSGlobalData sharedInstance] hasUserAlreadyReceiveNightLayer]);
+        [self setupAVCapture];
     }
     
     return self;
@@ -126,6 +135,55 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"readModeUpdateNotification" object:self userInfo:@{@"mode": mode}];
 }
 
+- (void)setupAVCapture {
+    _session = [[AVCaptureSession alloc] init];
+    _session.sessionPreset = AVCaptureSessionPresetMedium;
+    
+    AVCaptureDevice *device = [self frontCamera];
+    NSError *error = nil;
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
+    
+    if (!error) {
+        if ([device lockForConfiguration:&error]) {
+            if ([device hasTorch] && [device isTorchModeSupported:AVCaptureTorchModeOn]) {
+                [device setTorchMode:AVCaptureTorchModeOn];
+            }
+            [device unlockForConfiguration];
+        }
+        
+        if ([_session canAddInput:input]) {
+            [_session addInput:input];
+        }
+        
+        AVCaptureVideoDataOutput *videoDataOutput = [AVCaptureVideoDataOutput new];
+        
+        [videoDataOutput setVideoSettings:@{(NSString *)kCVPixelBufferPixelFormatTypeKey:@(kCVPixelFormatType_32BGRA)}];
+        [videoDataOutput setAlwaysDiscardsLateVideoFrames:YES];
+        dispatch_queue_t videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
+        [videoDataOutput setSampleBufferDelegate:self queue:videoDataOutputQueue];
+        
+        if ([_session canAddOutput:videoDataOutput]) {
+            [_session addOutput:videoDataOutput];
+        }
+        
+        [_session startRunning];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (_session) {
+        [_session startRunning];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    //[self stopSession];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -133,6 +191,10 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [self stopSession];
+    
+    _session = nil;
 }
 
 #pragma mark - Table view data source
@@ -422,6 +484,66 @@
         destinationViewController.transitioningDelegate = self.transition;
         destinationViewController.progression = self.progression;
     }
+}
+
+#pragma mark - AV Session
+
+- (AVCaptureDevice *)frontCamera {
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    
+    for (AVCaptureDevice *device in devices) {
+        if ([device position] == AVCaptureDevicePositionFront) {
+            return device;
+        }
+    }
+    
+    return nil;
+}
+
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    CFDictionaryRef metadataDict = CMCopyDictionaryOfAttachments(NULL, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
+    NSDictionary *metadata = [[NSMutableDictionary alloc] initWithDictionary:(__bridge NSDictionary*)metadataDict];
+    
+    CFRelease(metadataDict);
+    
+    NSDictionary *exifMetadata = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
+    CGFloat brightnessValue = [[exifMetadata  objectForKey:(NSString *)kCGImagePropertyExifBrightnessValue] floatValue];
+    NSLog(@"ocuou");
+    if (brightnessValue < 0) {
+        NSLog(@"pouet");
+        [self lakeOffLuminosity];
+    }
+}
+
+- (void)stopSession {
+    if (!_session) {
+        return;
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [_session stopRunning];
+    });
+}
+
+- (void)lakeOffLuminosity {
+    if (!_session) {
+        return;
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [_session stopRunning];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"coucou");
+            CSNightModeLayer *nightLayerView = [[[NSBundle mainBundle] loadNibNamed:@"CSNightModeLayer" owner:self options:nil] lastObject];
+            
+            nightLayerView.frame = self.view.frame;
+            
+            [self.view addSubview:nightLayerView];
+            
+            [nightLayerView animate];
+        });
+    });
 }
 
 @end

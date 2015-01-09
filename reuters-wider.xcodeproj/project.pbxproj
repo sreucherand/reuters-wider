@@ -22,6 +22,7 @@
 		2030104E1A2608330088FD7C /* CSArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030104D1A2608330088FD7C /* CSArticlesModel.m */; };
 		203EFFAF1A1658870085D493 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203EFFAD1A16578E0085D493 /* QuartzCore.framework */; };
 		205A428B1A5DE52900BD5185 /* CSBoucingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 205A428A1A5DE52900BD5185 /* CSBoucingView.m */; };
+		205A428E1A5F4DF100BD5185 /* CSGlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 205A428D1A5F4DF100BD5185 /* CSGlobalData.m */; };
 		206C55EA1A16022400E2B152 /* CSArchivesHomeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */; };
 		206FD85B1A30CE1700636737 /* CSAsideBlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 206FD85A1A30CE1700636737 /* CSAsideBlockTableViewCell.xib */; };
 		206FD85E1A30CE4400636737 /* CSAsideBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FD85D1A30CE4400636737 /* CSAsideBlockTableViewCell.m */; };
@@ -141,6 +142,8 @@
 		203EFFAD1A16578E0085D493 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		205A42891A5DE52900BD5185 /* CSBoucingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSBoucingView.h; path = "reuters-wider/CSBoucingView.h"; sourceTree = "<group>"; };
 		205A428A1A5DE52900BD5185 /* CSBoucingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSBoucingView.m; path = "reuters-wider/CSBoucingView.m"; sourceTree = "<group>"; };
+		205A428C1A5F4DF100BD5185 /* CSGlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGlobalData.h; sourceTree = "<group>"; };
+		205A428D1A5F4DF100BD5185 /* CSGlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGlobalData.m; sourceTree = "<group>"; };
 		206C55E81A16022400E2B152 /* CSArchivesHomeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSArchivesHomeTransition.h; sourceTree = "<group>"; };
 		206C55E91A16022400E2B152 /* CSArchivesHomeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSArchivesHomeTransition.m; sourceTree = "<group>"; };
 		206C55EC1A163B0400E2B152 /* reuters-wider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reuters-wider-Prefix.pch"; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 			children = (
 				203010491A2605230088FD7C /* CSArticleData.h */,
 				2030104A1A2605230088FD7C /* CSArticleData.m */,
+				205A428C1A5F4DF100BD5185 /* CSGlobalData.h */,
+				205A428D1A5F4DF100BD5185 /* CSGlobalData.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -1177,6 +1182,7 @@
 				20B2A7FF1A51BC2900A9E5A8 /* CSScrollViewNavigationControl.m in Sources */,
 				209CF30C1A59AD8700A8A954 /* CSProgressionBarView.m in Sources */,
 				202833371A3DE528002DCA1C /* CSInArticleGlossaryDefinition.m in Sources */,
+				205A428E1A5F4DF100BD5185 /* CSGlobalData.m in Sources */,
 				EB3B87221A5AD1F800DB58AD /* CSInterviewBlockTableViewCell.m in Sources */,
 				208B5F521A5343FA003D4718 /* CSStickyMenu.m in Sources */,
 				2027E9761A530A14007B5E92 /* CSTween.m in Sources */,

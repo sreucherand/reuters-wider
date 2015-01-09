@@ -96,7 +96,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-top" translatesAutoresizingMaskIntoConstraints="NO" id="Pun-uE-d4K">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowTop" translatesAutoresizingMaskIntoConstraints="NO" id="Pun-uE-d4K">
                                         <rect key="frame" x="242" y="27" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="63q-eE-Ujw"/>
@@ -552,7 +552,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow-top" width="18" height="18"/>
+        <image name="arrowTop" width="18" height="18"/>
         <image name="glossary" width="26" height="26"/>
         <image name="iconClose" width="15" height="8"/>
         <image name="iconGlass" width="26" height="26"/>
