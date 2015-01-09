@@ -71,7 +71,7 @@
 }
 - (IBAction)ctaButtonDidPress:(id)sender {
 //    self.ctaView.hidden = YES;
-    [CSTween tweenFrom:1 to:0 duration:1 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+    [CSTween tweenFrom:1 to:0 duration:1.5 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
         self.ctaView.alpha = operation.value;
     } completeBlock:^(BOOL finished) {
         if (finished) {
