@@ -10,7 +10,7 @@
 #import "CSGradientIndicatorView.h"
 
 @interface CSImplicationBlockTableViewCell ()
-
+@property (weak, nonatomic) IBOutlet UIView *localisationView;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *reactionCityLabel;
@@ -21,11 +21,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *secondGradientView;
 
+@property (weak, nonatomic) IBOutlet UIView *ctaView;
+@property (weak, nonatomic) IBOutlet UILabel *ctaTitle;
+@property (weak, nonatomic) IBOutlet UIButton *ctaButton;
+@property (weak, nonatomic) IBOutlet CSGradientIndicatorView *ctaGradient;
 @end
 
 @implementation CSImplicationBlockTableViewCell
 
 - (void)awakeFromNib {
+    // Location view
     self.mainView.backgroundColor = FIRST_PURPLE;
     
     self.reactionCityLabel.font = CALIBRE_LIGHT_16;
@@ -50,7 +55,31 @@
     
     self.secondGradientView.topColor = WHITE_DIMMED_COLOR;
     self.secondGradientView.direction = CSDirectionBottom;
+    
+    self.ctaView.backgroundColor = FIRST_PURPLE;
+    
+    self.ctaTitle.font = LEITURA_ROMAN_2_25;
+    self.ctaTitle.textColor = WHITE_COLOR;
+    self.ctaTitle.text = @"See the reactions\nin your country";
+    
+    self.ctaGradient.topColor = WHITE_COLOR;
+    
+    [self.ctaButton setTitle:@"Locate me" forState:UIControlStateNormal];
+    [self.ctaButton setTitleColor:WHITE_COLOR forState:UIControlStateNormal];
+    self.ctaButton.titleLabel.font = CALIBRE_REGULAR_21;
+    
 }
+- (IBAction)ctaButtonDidPress:(id)sender {
+//    self.ctaView.hidden = YES;
+    [CSTween tweenFrom:1 to:0 duration:1 timingFunction:CSTweenEaseInOutExpo updateBlock:^(CSTweenOperation *operation) {
+        self.ctaView.alpha = operation.value;
+    } completeBlock:^(BOOL finished) {
+        if (finished) {
+            [self.ctaView removeFromSuperview];
+        }
+    }];
+}
+
 
 - (void)hydrateWithContentData:(NSDictionary *)data {
     [super hydrateWithContentData:data];

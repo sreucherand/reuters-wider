@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -89,18 +89,65 @@
                             <constraint firstItem="NzK-Mo-34n" firstAttribute="top" secondItem="jWG-wp-Rzn" secondAttribute="bottom" constant="60" id="yti-X4-squ"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVl-CA-8Q5">
+                        <rect key="frame" x="0.0" y="10" width="320" height="533"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-5e-3Ub">
+                                <rect key="frame" x="137" y="272" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ctaButtonDidPress:" destination="Set-kk-oPh" eventType="touchUpInside" id="hvw-F2-gjR"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zH-Wu-6s2" customClass="CSGradientIndicatorView">
+                                <rect key="frame" x="157" y="313" width="6" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Gbv-jR-paQ"/>
+                                    <constraint firstAttribute="width" constant="6" id="ueU-YC-FTe"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I02-LQ-Yi5">
+                                <rect key="frame" x="40" y="211" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7zH-Wu-6s2" firstAttribute="top" secondItem="qMf-5e-3Ub" secondAttribute="bottom" constant="11" id="11Q-fa-P6h"/>
+                            <constraint firstAttribute="centerY" secondItem="I02-LQ-Yi5" secondAttribute="centerY" constant="45" id="5HJ-xP-ybX"/>
+                            <constraint firstItem="I02-LQ-Yi5" firstAttribute="leading" secondItem="JVl-CA-8Q5" secondAttribute="leading" constant="40" id="LO8-tO-uGU"/>
+                            <constraint firstAttribute="centerX" secondItem="7zH-Wu-6s2" secondAttribute="centerX" id="SfE-bd-qHa"/>
+                            <constraint firstAttribute="centerX" secondItem="qMf-5e-3Ub" secondAttribute="centerX" id="gqr-ip-cNJ"/>
+                            <constraint firstItem="qMf-5e-3Ub" firstAttribute="top" secondItem="I02-LQ-Yi5" secondAttribute="bottom" constant="40" id="ue9-KX-VzL"/>
+                            <constraint firstAttribute="trailing" secondItem="I02-LQ-Yi5" secondAttribute="trailing" constant="40" id="xPZ-cf-52e"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="1SP-Eg-iYM" secondAttribute="trailing" id="4Id-nb-Dgx"/>
+                    <constraint firstAttribute="bottom" secondItem="JVl-CA-8Q5" secondAttribute="bottom" constant="40" id="ALI-HP-eLX"/>
                     <constraint firstItem="1SP-Eg-iYM" firstAttribute="top" secondItem="Bmn-8R-Nkd" secondAttribute="top" constant="10" id="D2x-df-Aip"/>
                     <constraint firstItem="1SP-Eg-iYM" firstAttribute="leading" secondItem="Bmn-8R-Nkd" secondAttribute="leading" id="UcY-GB-Ax8"/>
                     <constraint firstAttribute="bottom" secondItem="1SP-Eg-iYM" secondAttribute="bottom" constant="40" id="UkQ-Mm-Xsi"/>
+                    <constraint firstItem="JVl-CA-8Q5" firstAttribute="leading" secondItem="Bmn-8R-Nkd" secondAttribute="leading" id="Zet-1p-B1M"/>
+                    <constraint firstAttribute="trailing" secondItem="JVl-CA-8Q5" secondAttribute="trailing" id="rQf-cN-snU"/>
+                    <constraint firstItem="JVl-CA-8Q5" firstAttribute="top" secondItem="Bmn-8R-Nkd" secondAttribute="top" constant="10" id="uiv-PU-IJn"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundImageView" destination="Ye9-w2-Oy0" id="jKs-Re-vJ9"/>
+                <outlet property="ctaButton" destination="qMf-5e-3Ub" id="El1-zf-5WE"/>
+                <outlet property="ctaGradient" destination="7zH-Wu-6s2" id="flI-JY-x9m"/>
+                <outlet property="ctaTitle" destination="I02-LQ-Yi5" id="uK5-NJ-ggf"/>
+                <outlet property="ctaView" destination="JVl-CA-8Q5" id="u6s-Q7-f7Z"/>
                 <outlet property="firstGradientView" destination="jWG-wp-Rzn" id="FIV-f4-gV8"/>
                 <outlet property="firstQuoteLabel" destination="agF-le-o0m" id="vVG-Ug-gOH"/>
+                <outlet property="localisationView" destination="1SP-Eg-iYM" id="fpZ-ef-6TD"/>
                 <outlet property="mainView" destination="1SP-Eg-iYM" id="cXY-KD-u5z"/>
                 <outlet property="quoteLabel" destination="NzK-Mo-34n" id="4xx-oP-ETG"/>
                 <outlet property="reactionCityLabel" destination="jAU-mr-Hgq" id="VZi-QP-ev0"/>
@@ -108,7 +155,7 @@
                 <outlet property="secondQuoteLabel" destination="CSn-NO-StN" id="kIq-bI-yf7"/>
                 <outlet property="sourceLabel" destination="EiV-Tk-1D9" id="UtW-1z-xXr"/>
             </connections>
-            <point key="canvasLocation" x="269" y="341"/>
+            <point key="canvasLocation" x="269" y="339"/>
         </tableViewCell>
     </objects>
 </document>
