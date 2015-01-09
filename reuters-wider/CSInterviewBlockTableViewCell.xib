@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -46,6 +46,19 @@
                                     <constraint firstAttribute="height" priority="999" constant="120" id="nIb-2C-CPJ"/>
                                 </constraints>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoL-5N-Jzg">
+                                <rect key="frame" x="138" y="273" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QwD-WF-BLF"/>
+                                    <constraint firstAttribute="width" constant="44" id="gUz-E6-DH2"/>
+                                </constraints>
+                                <state key="normal" image="iconPlay">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="launchVideo:" destination="DvQ-mU-c8I" eventType="touchUpInside" id="uln-wY-r9C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -57,8 +70,10 @@
                             <constraint firstItem="xmg-lH-8V7" firstAttribute="top" secondItem="19H-RB-xzf" secondAttribute="bottom" constant="15" id="Mmk-SM-nHs"/>
                             <constraint firstAttribute="centerX" secondItem="19H-RB-xzf" secondAttribute="centerX" id="PWq-MW-mbj"/>
                             <constraint firstItem="xmg-lH-8V7" firstAttribute="leading" secondItem="FR9-GQ-g3c" secondAttribute="leading" constant="40" id="Uen-Fz-3hf"/>
+                            <constraint firstItem="YoL-5N-Jzg" firstAttribute="top" secondItem="8RX-hz-x6m" secondAttribute="top" constant="12" id="XAl-t7-tef"/>
                             <constraint firstAttribute="centerX" secondItem="6LI-xq-dIO" secondAttribute="centerX" id="bV6-S1-XKD"/>
                             <constraint firstAttribute="bottom" secondItem="8RX-hz-x6m" secondAttribute="bottom" id="fI2-Rk-Q5N"/>
+                            <constraint firstAttribute="centerX" secondItem="YoL-5N-Jzg" secondAttribute="centerX" id="jgR-FA-mvE"/>
                             <constraint firstItem="19H-RB-xzf" firstAttribute="top" secondItem="1sn-hn-c7j" secondAttribute="bottom" constant="15" id="k3S-ty-9ov"/>
                             <constraint firstAttribute="trailing" secondItem="8RX-hz-x6m" secondAttribute="trailing" id="rwr-uU-dau"/>
                             <constraint firstItem="6LI-xq-dIO" firstAttribute="top" secondItem="FR9-GQ-g3c" secondAttribute="top" constant="35" id="wkv-6o-hp7"/>
@@ -80,8 +95,12 @@
                 <outlet property="interviewViewBackground" destination="FR9-GQ-g3c" id="aO3-fS-lGh"/>
                 <outlet property="interviewedNameLabel" destination="1sn-hn-c7j" id="sjN-8Q-Cro"/>
                 <outlet property="keyphraseLabel" destination="xmg-lH-8V7" id="sey-Wx-Esu"/>
+                <outlet property="playButton" destination="YoL-5N-Jzg" id="FCi-sj-ks7"/>
             </connections>
             <point key="canvasLocation" x="384" y="652"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="iconPlay" width="45" height="45"/>
+    </resources>
 </document>

@@ -9,6 +9,8 @@
 #import "CSInterviewBlockTableViewCell.h"
 #import "CSGradientIndicatorView.h"
 
+#import <MediaPlayer/MediaPlayer.h>
+
 @interface CSInterviewBlockTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UIView *interviewViewBackground;
@@ -18,8 +20,9 @@
 @property (weak, nonatomic) IBOutlet CSGradientIndicatorView *gradientView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *backgroundImageViewHeightConstrint;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
 
-@property (strong, nonatomic) UIButton *playButton;
+@property (strong, nonatomic) MPMoviePlayerController *moviePlayer;
 
 @end
 
@@ -64,35 +67,59 @@
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.backgroundImageViewHeightConstrint.constant = CGRectGetWidth(self.frame)*ratio;
     
-    if(self.content.video) {
-        [self updateLayoutWithVideo];
-    } else {
+    if (self.content.video) {
+        self.playButton.hidden = NO;
     }
 }
 
-- (void)updateLayoutWithVideo {
-    [self.backgroundImageView layoutIfNeeded];
-    
-    self.playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    [self.playButton addTarget:self action:@selector(launchVideo:) forControlEvents:UIControlEventTouchUpInside];
-    [self.playButton setBackgroundImage:[UIImage imageNamed:@"iconPlay"] forState:UIControlStateNormal];
-    
-    self.playButton.frame = CGRectMake(((CGRectGetWidth(self.backgroundImageView.frame) / 2) - 22), CGRectGetHeight(self.interviewViewBackground.frame) + 12, 44, 44);
-    
-    [self addSubview:self.playButton];
-    
-}
-
-- (void)launchVideo:(id)sender {
+- (IBAction)launchVideo:(id)sender {
     // Video
     NSLog(@"coucoucou");
+    [self layoutIfNeeded];
+    
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"honk-kong-interview" ofType:@"mp4"]];
+    
+    self.moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    
+    [self.moviePlayer prepareToPlay];
+    
+    self.moviePlayer.view.frame = self.backgroundImageView.frame;
+    self.moviePlayer.view.alpha = 0;
+    self.moviePlayer.repeatMode = MPMovieRepeatModeNone;
+    
+    [self addSubview:self.moviePlayer.view];
+    
+    [self.moviePlayer play];
+    
+    self.moviePlayer.view.userInteractionEnabled = NO;
+    
+    [CSTween tweenFrom:0 to:1 duration:0.5 timingFunction:CSTweenEaseLinear updateBlock:^(CSTweenOperation *operation) {
+        self.moviePlayer.view.alpha = operation.value;
+    } completeBlock:^(BOOL finished) {
+        if (finished) {
+            self.moviePlayer.view.userInteractionEnabled = YES;
+        }
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MPMoviePlayerPlaybackStateDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+}
+
+- (void)MPMoviePlayerPlaybackStateDidFinish:(NSNotification *)notification {
+    self.moviePlayer.view.userInteractionEnabled = NO;
+    
+    [CSTween tweenFrom:1 to:0 duration:0.5 timingFunction:CSTweenEaseLinear updateBlock:^(CSTweenOperation *operation) {
+        self.moviePlayer.view.alpha = operation.value;
+    } completeBlock:^(BOOL finished) {
+        [self.moviePlayer.view removeFromSuperview];
+        
+        self.moviePlayer = nil;
+    }];
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
     
-    [self.playButton removeFromSuperview];
+    self.playButton.hidden = YES;
 }
 
 - (void)switchToNightMode {
@@ -105,6 +132,15 @@
     self.interviewTitleLabel.textColor = PURPLE_GREY;
     self.interviewedNameLabel.textColor = PURPLE_GREY;
     self.keyphraseLabel.textColor = PURPLE_GREY;
+}
+
+- (void)leave {
+    [self.moviePlayer stop];
+    [self.moviePlayer.view removeFromSuperview];
+    
+    self.moviePlayer = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
 }
 
 @end
