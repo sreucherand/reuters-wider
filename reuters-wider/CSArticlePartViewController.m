@@ -56,9 +56,9 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
         
-        if (![[CSGlobalData sharedInstance] hasUserAlreadyReceiveNightLayer]) {
+        //if (![[CSGlobalData sharedInstance] hasUserAlreadyReceiveNightLayer]) {
             [self setupAVCapture];
-        }
+        //}
     }
     
     return self;
