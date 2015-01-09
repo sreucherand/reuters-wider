@@ -16,7 +16,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-rL-9Vn" userLabel="Moon icon">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moonFatWhite" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-rL-9Vn" userLabel="Moon icon">
                     <rect key="frame" x="149" y="145" width="52" height="52"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="Qw3-0J-Wc4"/>
@@ -70,6 +70,9 @@
             <point key="canvasLocation" x="490.5" y="298"/>
         </view>
     </objects>
+    <resources>
+        <image name="moonFatWhite" width="26" height="26"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
