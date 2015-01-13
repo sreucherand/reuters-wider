@@ -16,20 +16,12 @@
 
 @implementation CSScrollViewNavigationControl
 
-- (instancetype)init {
-    self = [super init];
-    
-    if (self) {
-        self.position = UINavigationControlPositionTop;
-    }
-    
-    return self;
-}
-
 - (instancetype)initWithPosition:(UINavigationControlPosition)position {
     self = [super init];
     
     if (self) {
+        [self setup];
+        
         self.position = position;
     }
     
@@ -40,13 +32,41 @@
     self = [super initWithFrame:frame];
     
     if (self) {
+        [self setup];
+        
         self.scrollView = scrollView;
     }
     
     return self;
 }
 
+- (void)initStyle {
+    self.backgroundColor = WHITE_COLOR;
+}
+
+- (void)setup {
+    self.position = UINavigationControlPositionTop;
+    
+    [self initStyle];
+}
+
+- (void)dealloc {
+    if (self.allowNightMode) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+    }
+}
+
 #pragma mark - Setters
+
+- (void)setAllowNightMode:(BOOL)allowNightMode {
+    _allowNightMode = allowNightMode;
+    
+    if (_allowNightMode) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
+    } else {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+    }
+}
 
 - (void)setScrollView:(UIScrollView *)scrollView {
     _scrollView = scrollView;
@@ -117,6 +137,16 @@
         [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, -CGRectGetHeight(self.frame)) animated:NO];
         
         [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+}
+
+#pragma mark - Switch read mode
+
+- (void)readModeNeedsUpdate:(NSNotification *)sender {
+    if ([[sender.userInfo objectForKey:@"mode"] isEqualToString:@"night"]) {
+        self.backgroundColor = NIGHT_BLUE;
+    } else {
+        [self initStyle];
     }
 }
 

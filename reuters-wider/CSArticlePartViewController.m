@@ -54,8 +54,13 @@
         _definitionOpened = NO;
         _isSwitchedToNightMode = NO;
         
+        NSString *mode = [[CSArticleData sharedInstance] getReadModeOfArticle:0];
+        
+        _isSwitchedToNightMode = [mode isEqualToString:@"night"] ? YES : NO;
+        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readModeNeedsUpdate:) name:@"readModeUpdateNotification" object:nil];
         
+        // Uncomment condition to display night mode layer once
         //if (![[CSGlobalData sharedInstance] hasUserAlreadyReceiveNightLayer]) {
             [self setupAVCapture];
         //}
@@ -112,8 +117,7 @@
     
     self.topNavigationControl = [[CSScrollViewNavigationControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60) scrollView:self.tableView];
     
-    self.topNavigationControl.backgroundColor = WHITE_COLOR;
-    
+    self.topNavigationControl.allowNightMode = YES;
     [self.topNavigationControl setLabelText:@"Home"];
     [self.topNavigationControl addTarget:self action:@selector(scrollViewDidPullForTransition:) forControlEvents:UIControlEventValueChanged];
     
@@ -134,8 +138,6 @@
     self.cellsStates = [[NSMutableDictionary alloc] init];
     
     NSString *mode = [[CSArticleData sharedInstance] getReadModeOfArticle:0];
-    
-    _isSwitchedToNightMode = [mode isEqualToString:@"night"] ? YES : NO;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"readModeUpdateNotification" object:self userInfo:@{@"mode": mode}];
 }
@@ -477,12 +479,20 @@
 
 #pragma mark - Switch read mode
 
-- (void)readModeNeedsUpdate:(NSNotification *)sender {
-    if ([[sender.userInfo objectForKey:@"mode"] isEqualToString:@"night"]) {
+- (void)needsDisplay {
+    if (_isSwitchedToNightMode) {
         self.view.backgroundColor = NIGHT_BLUE;
     } else {
         self.view.backgroundColor = WHITE_COLOR;
     }
+}
+
+- (void)readModeNeedsUpdate:(NSNotification *)sender {
+    NSString *mode = [sender.userInfo objectForKey:@"mode"];
+    
+    _isSwitchedToNightMode = [mode isEqualToString:@"night"] ? YES : NO;
+    
+    [self needsDisplay];
 }
 
 #pragma mark - Navigation

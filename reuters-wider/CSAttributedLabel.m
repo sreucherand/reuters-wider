@@ -5,6 +5,9 @@
 //  Created by Sylvain Reucherand on 02/12/2014.
 //  Copyright (c) 2014 Gobelins. All rights reserved.
 //
+//  Freely inspired from https://github.com/TTTAttributedLabel/TTTAttributedLabel
+//  Adapted for my needs
+//
 
 #import "CSAttributedLabel.h"
 

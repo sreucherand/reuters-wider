@@ -5,6 +5,8 @@
 //  Created by Sylvain Reucherand on 30/12/2014.
 //  Copyright (c) 2014 Sylvain Reucherand. All rights reserved.
 //
+//  Freely inspired from https://github.com/PRTween/PRTween
+//
 
 #import "CSTween.h"
 

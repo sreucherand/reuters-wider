@@ -3,7 +3,19 @@
 //  Tween
 //
 //  Created by Sylvain Reucherand on 30/12/2014.
-//  Copyright (c) 2014 Sylvain Reucherand. All rights reserved.
+//
+//  These timing functions are adapted from Robert Penner's excellent AS2 easing equations.
+//  Themselves freely inspired from https://github.com/PRTween/PRTween
+//  For more information, check out http://robertpenner.com/easing/
+// 
+//  --
+// 
+//  TERMS OF USE - EASING EQUATIONS
+// 
+//  Open source under the BSD License.
+// 
+//  Copyright © 2001 Robert Penner
+//  All rights reserved.
 //
 
 #import "CSTweenTimingFunctions.h"

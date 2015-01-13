@@ -15,6 +15,7 @@
 
 @property (retain, nonatomic) UIScrollView *scrollView;
 
+@property (assign, nonatomic) BOOL allowNightMode;
 @property (assign, nonatomic) UINavigationControlPosition position;
 
 - (void)setLabelText:(NSString *)text;
