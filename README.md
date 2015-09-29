@@ -29,7 +29,7 @@ pod install
 
 **Designers**
 
-- Marthe Siestrunk
+- Marthe Siestrunck
 - Benjamin Vimont
 
 **Developpers**
