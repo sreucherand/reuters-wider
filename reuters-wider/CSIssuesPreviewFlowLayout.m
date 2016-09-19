@@ -16,16 +16,19 @@
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
     NSArray *attributesInRect = [super layoutAttributesForElementsInRect:rect];
+    NSMutableArray *attributesCopy = [[NSMutableArray alloc] initWithCapacity:[attributesInRect count]];
     
     for (UICollectionViewLayoutAttributes *attributes in attributesInRect) {
-        [self editLayoutAttributes:attributes];
+        UICollectionViewLayoutAttributes *attrCopy = [attributes copy];
+        [attributesCopy addObject:attrCopy];
+        [self editLayoutAttributes:attrCopy];
     }
     
-    return attributesInRect;
+    return attributesCopy;
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewLayoutAttributes *attributes = [super layoutAttributesForItemAtIndexPath:indexPath];
+    UICollectionViewLayoutAttributes *attributes = [[super layoutAttributesForItemAtIndexPath:indexPath] copy];
     
     [self editLayoutAttributes:attributes];
     
